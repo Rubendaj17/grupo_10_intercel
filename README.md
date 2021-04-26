@@ -16,3 +16,8 @@ https://www.stockcenter.com.ar ==> Navegación por marcas en el home
 https://www.olx.com.ar/motos_c379 ==> filtro/busqueda en la izquierda de los productos
 https://tiendamia.com/ar/ ==> Comentarios de los clientes en el home
 
+
+Wireframes
+Home: https://wireframe.cc/20xuog
+Productos: https://wireframe.cc/4fF9cf
+Descripción Producto: https://wireframe.cc/uvdsNL
