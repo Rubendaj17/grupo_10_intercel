@@ -23,4 +23,4 @@ Productos: https://wireframe.cc/4fF9cf
 Descripción Producto: https://wireframe.cc/uvdsNL
 Registro: https://wireframe.cc/pro/edit/434792
 Inicio: https://wireframe.cc/pro/edit/434853
-Carrito de compras: https://wireframe.cc/pro/edit/435202
+Carrito de compras: https://wireframe.cc/pro/pp/0b945403e436154
