@@ -21,6 +21,6 @@ Wireframes
 Home: https://wireframe.cc/20xuog
 Productos: https://wireframe.cc/4fF9cf
 Descripción Producto: https://wireframe.cc/uvdsNL
-Registro: https://wireframe.cc/pro/edit/434792
-Inicio: https://wireframe.cc/pro/edit/434853
+Registro: 
+Iniciar sesion: https://wireframe.cc/qhd7hh
 Carrito de compras: https://wireframe.cc/pro/pp/9d8053e56435202
