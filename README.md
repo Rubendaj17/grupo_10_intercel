@@ -9,18 +9,15 @@ Personas interesadas en adquirir tecnologia de última generación y que desean 
 ¿Cómo ajustaremos nuestra oferta a ese público?
 El sitio web tiene como objetivo acercar a nuestro público a los mejores celulares de las mejores marcas en un solo lugar.
 
+Benchmark
+https://www.phonelectrics.com/      ==> Menu Navegación.Sección comentarios clientes
+https://veganessentials.com/        ==> Diseño simple, categorías diferenciadas (Best Sellers, Top Categories..)
+https://www.stockcenter.com.ar      ==> Navegación por marcas en el home
+https://www.olx.com.ar/motos_c379   ==> filtro/busqueda en la izquierda de los productos
+https://tiendamia.com/ar/           ==> Comentarios de los clientes en el home
 
-https://www.phonelectrics.com/ ==> Menu Navegación.Sección comentarios clientes
-https://veganessentials.com/ ==> Diseño simple, categorías diferenciadas bien (Best Sellers, Top Categories..)
-https://www.stockcenter.com.ar ==> Navegación por marcas en el home
-https://www.olx.com.ar/motos_c379 ==> filtro/busqueda en la izquierda de los productos
-https://tiendamia.com/ar/ ==> Comentarios de los clientes en el home
-
-
-Wireframes
-Home: https://wireframe.cc/20xuog
-Productos: https://wireframe.cc/4fF9cf
-Descripción Producto: https://wireframe.cc/uvdsNL
-Registro: https://wireframe.cc/yWSeMQ
-Iniciar sesion: https://wireframe.cc/qhd7hh
-Carrito de compras: https://wireframe.cc/pro/pp/9d8053e56435202
+Descripción integrantes del grupo
+ALEJANDRO BULLORINI
+Licenciado en RRHH, 26 años. Trabajé como Recruiter IT y actualmente sigo trabajando en empresas de tecnología. 
+Me interesa el desarrollo porque creo que es el futuro del trabajo y y vengo usando distintas herramientas para acelerar mi día a día (Visual Basic para macros de Excel, automatizaciones en Python para manejo de nominas y reportes)
+Me gusta crear cosas y verlas funcionar, resolver pequeños desafíos que llevan a un proyecto más grande me entusiasma.
