@@ -28,3 +28,6 @@ Me gusta crear cosas y verlas funcionar, resolver pequeños desafíos que llevan
 
 <h5><strong>RUBEN JAIME</strong></h5>
 <p align="justify"> Profesional en Relaciones Internacionales y Estudios Políticos. Actualmente trabajo en una misión diplomática en la que he tenido la oportunidad de aplicar todo lo que aprendí en mis años universitarios, sin embargo estoy interesado en aprender nuevos conocimientos en áreas que me llaman mucho la atención, como lo son el desarrollo web y la programación.</p>
+
+<h5><strong>JUSTINA ITURRASPE </strong></h5>
+<p align="justify">Estudiante de Ingenieria en Informatica. 21 años.</p>
