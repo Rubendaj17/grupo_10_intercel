@@ -9,6 +9,9 @@
 <strong>¿Cómo ajustaremos nuestra oferta a ese público?</strong>
 <p>El sitio web tiene como objetivo acercar a nuestro público a los mejores celulares de las mejores marcas en un solo lugar.</p>
 
+<strong>Link TRELLO </strong>
+https://trello.com/b/Iy7wxuFf/intercel-ecommerce
+
 <strong>Benchmark </strong>
 <ol>
 <li> https://www.phonelectrics.com/      ==> Menu de navegación y sección de comentarios clientes </li>
