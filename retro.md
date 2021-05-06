@@ -10,7 +10,7 @@
   <span>Mantener comunicación constante para resolver cualquier problema que se presente.</span><br>
   <span> Distribuir las tareas o asignaciones con base en las habilidades y fortalezas de los miembros del equipo.</span><br>
   <li><b>Hacer menos:</b></li>
-  
+  <span>N/A</span><br>
   <li><b>Dejar de hacer:</b></li>
   <span>No quedarnos con la primera idea propuesta. Discutir otras opciones antes de tomar una decisión definitiva sobre un aspecto fundamental del proyecto </span>
 </ol>
