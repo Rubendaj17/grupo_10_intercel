@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+}
+
+
+header{
+    height: 90px;
+    background-color: #f1f1f1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img{
+    margin-left: 25px;
+    height: 40px;
+    width: 142px;
+
+}
+
+nav{
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+nav div{
+    margin: 1vw;
+}
+input{
+    width: 25vw;
+    padding: 6px;
+    font-size: 12px;
+    border-radius: 8px 0 0 8px ;
+    border: 1px solid #B7BDC7;
+}
+
+#search-icon{
+    font-size: 10px;
+    padding: 9px;
+    border-radius: 0 8px 8px 0 ;
+    border: 1px solid #B7BDC7;
+    background-color: #71D894;
+}
+
+ul{   
+    display: flex;
+    justify-content: center;
+    width: 50vw;
+}
+
+li{
+    list-style: none;
+    height: 40px;
+    width: 100%;
+    border-right: 2px solid #B7BDC7;
+    
+    display: flex;
+    align-items: center;
+
+}
+
+a{
+    text-decoration: none;
+    color: #2E3646;
+    display: block;
+    width: 100%;
+    font-weight: 500;
+    text-align: center;
+}
+
+#login-header{
+    display: flex;
+}
+#user-icon,
+#carrito-icon{
+    font-size: 20px;    
+    margin: 0 5px;
+}
+
+#login-header a,
+#carrito-header a{
+    text-align: left;
+    line-height: 12px;
+}
+
+#login-header span{
+    display: block;
+    font-size: 12px;
+    color: #868FA0;
+}
+
+#carrito-header{
+    border-right: none;
+}
