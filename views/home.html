@@ -20,16 +20,15 @@ rel="stylesheet" />
 </head>
 <body>
     <header>
-        <img src="/images/Logo.svg" alt="Logo Genial de Intercel">
+        <div class="logo-header"><img src="/images/Logo.svg" alt="Logo Genial de Intercel"></div>
         
-        <nav>
-        
-            <div><input type="text" placeholder="¿Qué buscas?"><i class="fas fa-search" id="search-icon"></i></div>
+        <div class="search-bar"><input type="text" placeholder="¿Qué buscas?"><i class="fas fa-search" id="search-icon"></i></div>
 
-        
+        <nav>
+            <i class="fas fa-bars" id="hamburger-menu"></i>
             <ul>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Nosotros</a></li>
+                <li id="productos-header"><a href="#">Productos</a></li>
+                <li id="nosotros-header"><a href="#">Nosotros</a></li>
                 <li id="login-header">
                     <i class="far fa-user" id="user-icon"></i>
                     <a href="#">Iniciar Sesión <span>Mi Cuenta</span></a>
