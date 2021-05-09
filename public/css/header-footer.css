@@ -5,6 +5,7 @@
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
 }
+/* HEADER */
 
 header{
     width: 100vw;
@@ -13,6 +14,7 @@ header{
 
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .logo-header{
@@ -46,13 +48,13 @@ input{
     background-color: #71D894;
 }
 
-nav{
+.nav-header{
     flex-grow: 1;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
-ul{
+.nav-header ul{
     display: none;
 }
 #hamburger-menu{
@@ -62,6 +64,15 @@ ul{
     border-radius: 8px;
 
 }
+
+/* FOOTER */
+footer{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
 
 
 
@@ -79,17 +90,17 @@ ul{
         margin-left: auto;
         width: 50%;
     }
-    nav{
+    .nav-header{
         margin-top: 5px;
     }
-    ul{   
+    .nav-header ul{   
         flex-basis: 100%;
         display: flex;
         justify-content: space-around;
         
     }
 
-    li{
+    .nav-header li{
         list-style: none;
         height: 40px;
         width: 100%;
@@ -155,7 +166,7 @@ ul{
     header{
         flex-wrap: nowrap;
     }
-    nav{
+    .nav-header{
         margin-top:0;
         margin-left: 15px;
     }    
