@@ -7,7 +7,7 @@ main img{
     height: 100%;
 }
 
-main a{
+main>a{
     display: inline-block;
     width: 100%;
     text-align: right;
@@ -94,18 +94,40 @@ main a{
     font-size: 10px;
 }
 
-
 .relacionados-container{
-    margin:auto;
-    width:90%;
+    margin: 10px auto;
+    width: 75%;
+
     padding:15px;
     
     display: flex;
-    flex-direction: column;
-
-    border: 1px solid #B7BDC7;
-    border-radius: 8px;   
+    align-items: center;   
 }
+
 .relacionados-logo{
     display: none;
+}
+
+.relacionados-foto-container{
+    width: 50%;
+
+    margin: auto 5px;
+    padding: 2px;
+
+    border: 1px solid #B7BDC7;
+    border-radius: 8px;  
+    box-shadow: 1px 3px 8px #b7bdc7;
+}
+.relacionados-foto-container a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color:#71D894;
+    font-weight: 700;    
+
+}
+
+.relacionado-nombre{
+    order: -1;
 }
