@@ -1,0 +1,111 @@
+main{
+    padding: 0 10px;
+}
+
+main img{
+    width: 100%;
+    height: 100%;
+}
+
+main a{
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    text-decoration: none;
+    color:#71D894;
+    font-weight: 700;
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
+
+.producto-container{
+    margin:auto;
+    width:90%;
+    padding:15px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid #B7BDC7;
+    border-radius: 8px;
+    box-shadow: 3px 5px 15px #b7bdc7;
+    
+}
+.fotos-secundarias-container{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.foto-principal-container,
+.fotos-secundarias-container div{
+    margin: 5px 10px 15px;
+}
+
+
+.informacion-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.marca{
+    color:#868FA0;
+    font-size: 14px;
+}
+.celular-nombre{
+    color:#2E3646;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.descripcion{
+    color:#2E3646;
+    font-size: 12px;
+    font-weight: 500;
+}
+.bottom-info{
+    margin-top: 15px;
+    display:flex;
+}
+.precio-container{
+    width: 40%;
+}
+
+.precio-container h3{
+    color:#2E3646;
+    font-size: 12px;
+}
+.precio-container p{
+    color:#71D894;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+.bottom-info button{
+    width: 60%;
+
+    font-size: 12px;
+    font-weight: 700;
+    padding: .25em .5em;
+    
+    background-color: #71D894;
+    border: 1px solid #B7BDC7;
+    border-radius: 8px;
+}
+#carrito-icon-body{
+    font-size: 10px;
+}
+
+
+.relacionados-container{
+    margin:auto;
+    width:90%;
+    padding:15px;
+    
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid #B7BDC7;
+    border-radius: 8px;   
+}
+.relacionados-logo{
+    display: none;
+}

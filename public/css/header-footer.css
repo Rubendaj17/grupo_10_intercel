@@ -5,12 +5,12 @@
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
 }
-/* HEADER */
 body{
     min-width: 290px;
+
+/* HEADER */
 }
 header{
-    width: 100vw;
     padding: 10px;
     background-color: #f1f1f1;
 
@@ -19,23 +19,24 @@ header{
     margin-bottom: 10px;
 }
 
-.logo-header{
+header .logo-header{
     height: 30px;
     margin-left: 5px;
 }
 
-img{
+header img,
+footer img{
     width: 100%;
     height: 100%;
 }
 
-.search-bar{
+header .search-bar{
     width: 75%;
     margin: 0 5px;
     display: flex;
     justify-content: center;
 }
-input{
+header input{
     width: 80%;
     padding: 6px;
     font-size: 12px;
@@ -50,13 +51,13 @@ input{
     background-color: #71D894;
 }
 
-.nav-header{
+header .nav-header{
     flex-grow: 1;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
-.nav-header ul{
+header .nav-header ul{
     display: none;
 }
 #hamburger-menu{
@@ -79,12 +80,12 @@ footer{
     
 }
 
-.logo-footer{
+footer .logo-footer{
     height: 100px;
     
 }
 
-h5{
+footer h5{
     width: 100%;
     text-align: center;
     color: #2E3646;
@@ -93,7 +94,7 @@ h5{
     
 }
 
-.redes-container ul{
+footer .redes-container ul{
     width:50%;
     margin: 5px auto;
     display: flex;
@@ -102,17 +103,17 @@ h5{
     
 }
 
-.redes-container ul li{
+footer .redes-container ul li{
     list-style: none;
     width: 33%;
     text-align: center;
 }
-.redes-container img{
+footer .redes-container img{
     height: 18px;
     width: 18px;
 }
 
-.pagos-container ul{
+footer .pagos-container ul{
     width:50%;
     margin: 5px auto;
     display: flex;
@@ -121,17 +122,17 @@ h5{
     
 }
 
-.pagos-container ul li{
+footer .pagos-container ul li{
     list-style: none;
     width: 33%;
     text-align: center;
 }
-.pagos-container img{
+footer .pagos-container img{
     height: 50px;
     width: 50px;
 }
 
-.nav-footer{
+footer .nav-footer{
     display: none;
 }
 
@@ -150,21 +151,21 @@ h5{
         flex-wrap: wrap;
     }
 
-    .search-bar{
+    header .search-bar{
         margin-left: auto;
         width: 50%;
     }
-    .nav-header{
+    header .nav-header{
         margin-top: 5px;
     }
-    .nav-header ul{   
+    header .nav-header ul{   
         flex-basis: 100%;
         display: flex;
         justify-content: space-around;
         
     }
 
-    .nav-header li{
+    header .nav-header li{
         list-style: none;
         height: 40px;
         width: 100%;
@@ -173,14 +174,13 @@ h5{
         display: flex;
         align-items: center;
         justify-content: center;
-        /* padding: 0 10px; */
     }
 
-    .nav-header a{
+    header .nav-header a{
         text-decoration: none;
         color: #2E3646;
         display: block;
-        /* width: 100%; */
+
         font-size: 12px;
         font-weight: 500;
 
@@ -190,7 +190,7 @@ h5{
     #login-header{
         flex-grow: 1;
         display: flex;
-        /* min-width: 95px; */
+
         padding-right: 5px;
     }
     #user-icon,
@@ -232,27 +232,27 @@ h5{
         
     }
     
-    .pagos-container,
-    .logo-footer,
-    .redes-container,
-    .nav-footer{
+    footer .pagos-container,
+    footer .logo-footer,
+    footer .redes-container,
+    footer .nav-footer{
         flex-basis: 50%;
     }
     
-    .pagos-container,
-    .logo-footer{
+    footer .pagos-container,
+    footer .logo-footer{
         order:-1;
     }
 
-    .pagos-container ul{
+    footer .pagos-container ul{
         width: 85%;
     }
 
-    .nav-footer{
+    footer .nav-footer{
         display: block;
     }
 
-    .nav-footer ul{
+    footer .nav-footer ul{
         width:80%;
         margin: 5px auto;
         display: flex;
@@ -260,18 +260,18 @@ h5{
         justify-content: space-between;
     }
     
-    .nav-footer ul li{
+    footer .nav-footer ul li{
         list-style: none;
         text-align: left;
         flex-basis: 50%;
     }
 
-    .nav-footer ul li:nth-child(2),
-    .nav-footer ul li:nth-child(4){
+    footer .nav-footer ul li:nth-child(2),
+    footer .nav-footer ul li:nth-child(4){
         text-align: right;
     }
 
-    .nav-footer ul li a{
+    footer .nav-footer ul li a{
         text-decoration: none;
         color: #2E3646;
         font-size: 12px;
@@ -285,14 +285,14 @@ h5{
     header{
         flex-wrap: nowrap;
     }
-    .nav-header{
+    header .nav-header{
         margin-top:0;
         margin-left: 15px;
     }    
-    .search-bar{
+    header .search-bar{
         width: 33%;
     }
-    .logo-header{
+    header .logo-header{
         margin: 0 15px;
     }
 
@@ -302,44 +302,44 @@ h5{
         flex-wrap: nowrap;
         align-items: flex-start;
     }
-    h5{
+    footer h5{
         text-align: left;
     }
     
-    .nav-footer{
+    footer .nav-footer{
         order:1;
     }
-    .redes-container{
+    footer .redes-container{
         order:2;
     }
-    .pagos-container{
+    footer .pagos-container{
         order:3;
     }
     
-    .nav-footer ul,
-    .redes-container ul,
-    .pagos-container ul{
+    footer .nav-footer ul,
+    footer .redes-container ul,
+    footer .pagos-container ul{
         width:auto;
         margin: 10px auto;
         justify-content: flex-start;
     }
-    .nav-footer ul{
+    footer .nav-footer ul{
         height: 150px;
         flex-direction: column;
         align-items: flex-start;
         justify-content: space-between;
     }
-    .nav-footer ul li{
+    footer .nav-footer ul li{
         flex-basis: auto;
     }
-    .redes-container ul li{
+    footer .redes-container ul li{
         text-align: left;
     }
-    .pagos-container ul{
+    footer .pagos-container ul{
         width:auto;
         margin-top: 0;
     }
-    .pagos-container ul li{
+    footer .pagos-container ul li{
         flex-basis:50%;
         text-align: left;
     }
