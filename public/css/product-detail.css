@@ -178,15 +178,17 @@ main>a{
     }
     .fotos-secundarias-container{
         flex-direction: column;
-        width: 30%;
-        height: 100%;
+        width: 15%;
+        align-self: stretch;
         justify-content: space-around;
     }
     
     .foto-principal-container{
+        width: 30%;
         flex-grow: 1;
     }
     .informacion-container{
+        width: 35%;
         align-self: stretch;
         justify-content: space-around;
     }
