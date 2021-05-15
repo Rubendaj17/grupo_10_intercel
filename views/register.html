@@ -1,32 +1,58 @@
-
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Intercel</title>
+    <link rel="stylesheet" href="/css/login-register.css">
 </head>
-<body>
-    <div>volver</div>
-    <!--centrado el logo y fondo azul-->
-    <div class="logo-header"><img src="/images/logos/Logo.svg" alt="Logo Genial de Intercel"></div>
-    <div>Registro</div>
-    <br>
-    <div>Registrate con Gmail</div>
-    <div>Registrate con Facebook</div>
-    <div>Nombre</div>
-    <div>Escriba su nombre</div>
-    <div>Apellido</div>
-    <div>Escriba su apellido</div>
-    <div>Correo electronico</div>
-    <div>Escriba su correo electronico</div>
-    <div>Contrasena</div>
-    <div>Escriba su contrasena</div>
-    <div>Olvidaste tu contrasena?</div>
-    <br>
-    <div>Registrarse</div>
-    <div>Ya tienes cuenta? Iniciar sesion</div>
+<body>      
+
+    <main>        
+        <div class="contenedor">
+        <img src="/images/logos/Logo.svg" alt="">
+        <h2>Registrarse</h2>
+
+        <form class="create-form" action="/register" method="POST">
+        <div  class="registro-cuenta" > 
+            <div> <button type="button"><img class="logos" src="/images/logos/gmail.png" alt="">   Registrate con Gmail</button></div>
+            <div> <button type="button"><img class="logos" src="/images/logos/facebook.jpg" alt="">    Registrate con Facebook</button></div>
+        </div>
+            <br>
+            <div class="control-formulario">
+                <label>Nombre</label>
+                <input type="text" name="nombre" class="control" required>
+            </div>
+            <div class="control-formulario">
+                <label>Apellido</label>
+                <input type="text" name="apellido" class="control" required>
+            </div>
+            <div class="control-formulario">
+                <label>Teléfono</label>
+                <input type="tel" name="telefono" class="control" required>
+            </div>
+            <div class="control-formulario">
+                <label>Correo electrónico</label>
+                <input type="email" name="mail" class="control" required>
+            </div>
+            <div class="control-formulario">
+                <label>Contraseña   </label>
+                <input type="password" name="contrasena" class="control" required>
+            </div>
+            <button type="submit" class="boton-formulario">Registrarse</button>
+           
+            <div class="textos">Ya tienes cuenta?<a href="login"> Iniciar sesión</a></div>
+        </form>
+    </div>
+
+    </main>
+
+
+</body>
+</html>
+
+
 </body>
 
 

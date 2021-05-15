@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+}
+body{
+    min-width: 290px;
+    background-color: #2188ff;
+}
+img{
+    margin-top: 5px;
+    margin-left: 5px;
+    text-align: center;
+    width: 50%;
+}
+
+.logos{
+    height: 30px;
+    width: 30px;
+}
+
+h2{
+    margin-top: 30px;
+    font-size: 21px;
+    text-align: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+form label{
+    text-align: left;
+}
+
+.textos{
+    text-align: right;
+    margin-top: 7px;
+}
+
+.contenedor{
+    margin: 30px 30px;
+    text-align: center;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius:3%;
+}
+
+.registro-cuenta{
+    width:80%;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.create-form{
+    padding:20px 15px;
+}
+
+.control-formulario{
+    margin-bottom: 15px;
+}
+
+.control-formulario label{
+    margin-bottom: 5px;
+    display: block;
+}
+
+.control{
+    width:100%;
+    padding:8px 8px;
+    border-radius: 5px;
+}
+
+.boton-formulario{
+    background-color: #85e89d;
+    border: none;
+    color: black;
+    padding: 10px 10px;
+    font-size:18px;
+    border-radius: 5px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+@media (min-width: 361px){
+    
+}
+@media (min-width: 769px){
+
+}

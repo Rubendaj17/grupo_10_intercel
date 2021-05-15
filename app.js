@@ -21,3 +21,11 @@ app.get("/product-detail", (req,res)=>{
 app.get("/redes", (req,res)=>{
     res.sendFile(path.resolve(__dirname,"./views/redes.html"))
 })
+
+app.get("/login", (req,res)=>{
+    res.sendFile(path.resolve(__dirname,"./views/login.html"))
+})
+
+app.get("/register", (req,res)=>{
+    res.sendFile(path.resolve(__dirname,"./views/register.html"))
+})
