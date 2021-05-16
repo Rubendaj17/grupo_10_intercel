@@ -1,0 +1,13 @@
+#header-products, #footer-products{
+    background-color: white;
+}
+
+#footer-products{
+    border-top: solid 1px #B7BDC7;
+}
+
+main .blue-bar{
+    background-color: #1A70E4;
+    width: 100vw;
+    height: 50px;
+}
