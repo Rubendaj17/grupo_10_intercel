@@ -184,16 +184,17 @@ main .order{
 .discount-button{
     display: flex;
     flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
+    max-width: 380px;
+    justify-content: space-evenly;
     align-items: center;
+;
 }
 
 .discount-number{
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 225px;
+    width: 200px;
     padding: 8px 8px;
     border: 1px solid #868FA0;
     border-radius: 8px;
@@ -205,11 +206,12 @@ main .order{
     font-weight: bold;
     display: flex;
     flex-direction: row;
-    padding: 12px 16px;
+    padding: 12px 12px 20px 12px;
     background: #71D894;
     border-radius: 8px;
     border: 1px solid #868FA0;
     height: 40px;
+    
 }
 
 .payment-button input{
@@ -285,23 +287,38 @@ main .order{
     
 /* tablet */
 @media (min-width: 361px){
+
     article{
         position: relative;
         display: flex;
-        justify-content: space-around;
-
+        flex-wrap: wrap;
     }
-    .delete-product{
-        position: absolute;
-        left: 65px;
-        bottom: 0px;
+
+    article .product-container1{
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    
+    .product-price{
+        width: 100px;
     }
     
 
-
-
-
-}
+    
+    .delete-product{
+        position: absolute;
+        left: 60px;
+        bottom: -5px;
+    }
+    
+    .delivery{
+        margin-left: 5px;
+    }
+    
+    
+}    
 
 
 /* desktop */
@@ -317,7 +334,8 @@ main .order{
         margin-bottom: 20px;
     }
     .carts{
-        min-width: 60%
+        display: flex;
+        flex-wrap: nowrap;
     }
     .cart1{
         position: relative;
@@ -340,17 +358,20 @@ main .order{
     
     .product-container1{
         margin-bottom: 16px ;
+        flex-wrap: nowrap;
     }
 
     .product-container2{
         display: flex;
         flex-direction: row-reverse;
+        flex-wrap: nowrap;
     }
 
     .cart2{
         position: relative;
         display: flex;
         flex-direction: row;
+        flex-wrap: nowrap;
         border: 1px solid #B7BDC7;
         box-shadow: 0px 2px 7px rgba(70, 102, 133, 0.1);
         border-radius: 16p;
@@ -376,12 +397,13 @@ main .order{
         margin-top: 18px;
     }
 
-    .fa-truck{
-        margin: initial;
-        border: solid green 1px;
+    .payment{
+        display: flex;
+        flex-wrap: wrap;
     }
+    
+}
 
 
     
 
-}
