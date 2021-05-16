@@ -7,6 +7,10 @@ main{
     background-color: white;
 }
 
+#footer-cart{
+    border-top: solid 1px #B7BDC7;
+}
+
 main .process{
     background-color: white;
     margin-top: 10px;
@@ -39,9 +43,11 @@ section p{
 }
 
 .numeral {
-    padding: 5px;
+    width: 15px;
+    text-align: center;
     border-radius: 50%;
     background-color: #EFF1F4;
+    
 }
 
 
@@ -54,15 +60,16 @@ main .order{
 } 
 
 .cart1{
-    border:solid 1px black;
     margin-bottom:15px; 
-    background-color: white;    
+    background-color: white; 
+    padding: 20px 20px 20px 10px;   
 }
 
 .cart2{
-    border:solid 1px black;
+
     margin-bottom:15px; 
-    background-color: white;    
+    background-color: white;
+    padding:20px;    
 }
 
 .cart h3{
@@ -145,7 +152,8 @@ main .order{
 }
 
 .symbol{
-    padding: 5px;
+    width: 18px;
+    text-align: center;
     border-radius: 50%;
     background-color: #EFF1F4;
 }
@@ -154,6 +162,7 @@ main .order{
     position: relative;
     left: 49px;
     color: #40B568;
+    width: 30px;
     font-weight: bold;
     text-decoration: underline;
     margin-bottom: 10px;
@@ -274,20 +283,41 @@ main .order{
     
 }
     
+/* tablet */
+@media (min-width: 361px){
+    article{
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+
+    }
+    .delete-product{
+        position: absolute;
+        left: 65px;
+        bottom: 0px;
+    }
+    
+
+
+
+
+}
 
 
 /* desktop */
 @media (min-width: 769px){
     .process div{
-        max-width: 770px;
+        max-width: 700px;
         margin: auto;
     }
 
     .main-content{
         display: flex;
         flex-direction: row;
-        
         margin-bottom: 20px;
+    }
+    .carts{
+        min-width: 60%
     }
     .cart1{
         position: relative;
@@ -299,6 +329,7 @@ main .order{
         padding: 16px;
         max-width: 572px;
         margin-bottom: 15px;
+        margin-left: 10px;
     }
 
     .delete-product{
@@ -326,6 +357,7 @@ main .order{
         padding: 16px;
         max-width: 572px;
         margin-bottom: 15px;
+        margin-left: 10px;
     }
 
     .product-price{
@@ -342,6 +374,11 @@ main .order{
 
     delivery p{
         margin-top: 18px;
+    }
+
+    .fa-truck{
+        margin: initial;
+        border: solid green 1px;
     }
 
 
