@@ -17,7 +17,7 @@ body>footer{
     width: 100vw;
 }
 body>header{
-    padding: 10px;
+    padding: 5px 10px;
     background-color: #f1f1f1;
 
     display: flex;
@@ -100,18 +100,11 @@ footer h5{
     
 }
 
-footer .redes-container ul{
-    width:50%;
-    margin: 5px auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    
-}
 
+footer .pagos-container ul li,
 footer .redes-container ul li{
     list-style: none;
-    width: 33%;
+    margin: 0 auto 0 0;
     text-align: center;
 }
 footer .redes-container img{
@@ -119,8 +112,9 @@ footer .redes-container img{
     width: 18px;
 }
 
+footer .redes-container ul,
 footer .pagos-container ul{
-    width:50%;
+    width:70%;
     margin: 5px auto;
     display: flex;
     flex-wrap: wrap;
@@ -128,11 +122,6 @@ footer .pagos-container ul{
     
 }
 
-footer .pagos-container ul li{
-    list-style: none;
-    width: 33%;
-    text-align: center;
-}
 footer .pagos-container img{
     height: 50px;
     width: 50px;
@@ -162,7 +151,7 @@ footer .nav-footer{
         width: 50%;
     }
     header .nav-header{
-        margin-top: 5px;
+        margin-top: 10px;
     }
     header .nav-header ul{   
         flex-basis: 100%;
@@ -283,6 +272,10 @@ footer .nav-footer{
         font-size: 12px;
         font-weight: 500;
     }
+    
+    footer .redes-container ul li{
+        margin: 0 auto;
+    }
 }
 
 /* desktop */
@@ -329,6 +322,7 @@ footer .nav-footer{
         margin: 10px auto;
         justify-content: flex-start;
     }
+    
     footer .nav-footer ul{
         height: 150px;
         flex-direction: column;
@@ -340,13 +334,16 @@ footer .nav-footer{
     }
     footer .redes-container ul li{
         text-align: left;
+        margin: 0 auto 0 0;
     }
     footer .pagos-container ul{
         width:auto;
         margin-top: 0;
+
     }
     footer .pagos-container ul li{
         flex-basis:50%;
         text-align: left;
+        margin:0;
     }
 }
