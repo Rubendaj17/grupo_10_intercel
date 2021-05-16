@@ -7,18 +7,13 @@
 }
 body{
     min-width: 290px;
-    background-color: #2188ff;
+    background-color: #2F80EC;
 }
 img{
     margin-top: 5px;
     margin-left: 5px;
     text-align: center;
     width: 50%;
-}
-
-.logos{
-    height: 30px;
-    width: 30px;
 }
 
 h2{
@@ -30,7 +25,6 @@ h2{
 form{
     display: flex;
     flex-direction: column;
-    align-items:center;
 }
 
 form label{
@@ -42,18 +36,25 @@ form label{
     margin-top: 7px;
 }
 
+.logos{
+    height: 30px;
+    width: 30px;
+}
+
 .contenedor{
-    margin: 30px 30px;
+    margin: auto;
+    margin-top:50px;
     text-align: center;
     background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     border-radius:3%;
+    width: 80vw;
 }
 
 .registro-cuenta{
-    width:80%;
+    width:auto;
     margin-bottom: 5px;
     text-align: center;
 }
@@ -73,6 +74,7 @@ form label{
 
 .control{
     width:100%;
+    text-align: center;
     padding:8px 8px;
     border-radius: 5px;
 }
@@ -89,6 +91,13 @@ form label{
 }
 
 @media (min-width: 361px){
+    .contenedor{
+        width: 60vw;
+        margin-top:100px;
+    }
+    .control{
+        /*width: ;*/
+    }
     
 }
 @media (min-width: 769px){
