@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<!-- Font DM Sans de GoogleFonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+<!-- FontAwesome para los iconitos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+rel="stylesheet" />
+
+<!-- nuestros css -->
+    <link rel="stylesheet" href="/css/header-footer.css">
+    <link rel="stylesheet" href="/css/product-cart.css">
+
+    <title>Carrito</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <header id="header-cart">
+        <div class="logo-header"><img src="/images/logos/Logo.svg" alt="Logo Genial de Intercel"></div>
+        
+        <div class="search-bar"><input type="text" placeholder="¿Qué buscas?"><i class="fas fa-search" id="search-icon"></i></div>
+
+        <nav class="nav-header">
+            <i class="fas fa-bars" id="hamburger-menu"></i>
+            <ul>
+                <li id="productos-header"><a href="#">Productos</a></li>
+                <li id="nosotros-header"><a href="#">Nosotros</a></li>
+                <li id="login-header">
+                    <i class="far fa-user" id="user-icon"></i>
+                    <a href="#">Iniciar Sesión <span>Mi Cuenta</span></a>
+                </li>
+                <li id="carrito-header">
+                    <i class="fas fa-shopping-cart" id="carrito-icon"></i>
+                    <a href="#">Carrito</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="process">
+            <div>
+                <i class="fas fa-check"></i>
+                <p>Compra</p>
+                <i class="fas fa-chevron-right"></i>
+                <p class="numeral">2</p>
+                <p>Despacho</p>
+                <i class="fas fa-chevron-right"></i>
+                <p class="numeral">3</p>
+                <p>Pago</p>
+                <i class="fas fa-chevron-right"></i>
+                <p class="numeral">4</p>
+            <p>Confirmación</p>
+            </div>
+        </section>
+        <h2 class="order">Orden de compra</h2>
+        <div class="main-content">
+            <div class="carts">
+                <section class="cart">
+                    
+                    <article class="cart1">
+                        <div class="product-container1">
+                            <img src="/images/Iphone.png" class="iphone">
+                            <div class="product-features">
+                                <h3>Apple</h3>
+                                <p>Iphone X</p>
+                                <ul>
+                                    <li>Negro</li>
+                                    <li>128 GB</li>
+                                    <li>8GB RAM</li>
+                                </ul>
+                            </div>
+                            <div class="delivery">
+                                <h3>Envío</h3>
+                                <p>Domicilio</p>
+                                <i class="fas fa-truck"></i>
+                            </div>
+                        </div>
+                        <div class="product-container2">
+                            <div class="product-price">
+                                <h3>Precio</h3>
+                                <p>$179.449</p>
+                            </div>
+                            <div class="product-quantity">
+                                <h3>Cantidad</h3>
+                                <div class="quantity-button">
+                                    <p class="symbol" >-</p>
+                                    <p>1</p>
+                                    <p class="symbol" >+</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="delete-product">Eliminar</p>
+                    </article>
+                    <article class="cart2">
+                        <div class="product-container1">
+                            <img src="/images/Moto.png" alt="motorola">
+                            <div class="product-features">
+                                <h3>Motorola</h3>
+                                    <p>Motorola G7</p>
+                                    <ul>
+                                        <li>Negro</li>
+                                        <li>128 GB</li>
+                                        <li>8GB RAM</li>
+                                    </ul>
+                            </div>
+                            <div class="delivery">
+                                <h3>Envío</h3>
+                                <p>Domicilio</p>
+                                <i class="fas fa-truck"></i>
+                            </div>
+                        </div>
+                        <div class="product-container2">
+                            <div class="product-price">     
+                                <h3>Precio</h3>
+                                <p>$179.449</p>
+                            </div>   
+                            <div class="product-quantity">
+                                <h3>Cantidad</h3>
+                                <div class="quantity-button">
+                                    <p class="symbol">-</p>
+                                    <p>1</p>
+                                    <p class="symbol">+</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="delete-product">Eliminar</p>
+                    </article>
+                </section>
+            </div>
+            <section class="payment">
+                <div class="discount-button">
+                    <input type="text" value="Escribe tu código de descuento" class="discount-number">
+                    <input type="button" value="Aplicar" class="apply-button">
+                </div>
+                <div class="order-summary">
+                    <h3>Resumen de tu Orden</h3>
+                    <div class="summary">
+                        <div class="subtotal">
+                            <h4>Subtotal productos</h4>
+                            <p>$349.998</p>
+                        </div>
+                        <div class="delivery-cost">
+                            <h4>Envío</h4>
+                            <p>$0</p>
+                        </div>
+                        <div class="final-discount">
+                            <h4>Descuentos</h4>
+                            <p>$0</p>
+                        </div>
+                        <div class="total">
+                            <h4>Total</h4>
+                            <p>$349.998</p>
+                        </div>
+                    </div>
+                    <div class="payment-button">
+                        <input type="button" value="Finalizar compra" class="p-button">
+                    </div>
+                </div>
+            </section>
+        </div>
+    
+    </main>
+    
+    <!-- FOOTER -->
+    <footer id="footer-cart">
+
+        <div class="logo-footer">
+            <img src="/images/logos/LogoGray.svg" alt="Logo Genial de Intercel en Gris">
+        </div>
+
+        <div class="redes-container">
+            <h5>Encuentranos en</h5>
+            <ul>
+                <li><a href="/redes"><img src="/images/logos/FB.svg" alt="Facebook logo"></a></li>
+                <li><a href="/redes"><img src="/images/logos/youtube.svg" alt="Youtube logo"></a></li>
+                <li><a href="/redes"><img src="/images/logos/IG.svg" alt="Instagram logo"></a></li>
+            </ul>
+        </div>
+
+        <div class="pagos-container">
+            <h5>Métodos de Pago</h5>
+            <ul>
+                <li><img src="/images/logos/mastercard.svg" alt="MasterCard"></li>
+                <li><img src="/images/logos/visa.svg" alt="Visa"></li>
+                <li><img src="/images/logos/americanExpress.svg" alt="American Express"></li>
+            </ul>
+            </div>
+
+        <nav class="nav-footer">
+            <h5>Mapa del Sitio</h5>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Ingresar</a></li>
+            </ul>
+        </nav>
+
+    </footer>
+</body>
+</html>
