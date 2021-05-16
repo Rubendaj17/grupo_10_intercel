@@ -6,8 +6,24 @@
     border-top: solid 1px #B7BDC7;
 }
 
+main {
+    background-color:#F8F9FC;
+}
+
 main .blue-bar{
     background-color: #1A70E4;
     width: 100vw;
     height: 50px;
 }
+
+main .title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+}
+article img{
+    width: 120px;
+}
+
