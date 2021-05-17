@@ -22,6 +22,10 @@ main .title{
     justify-content: space-between;
     margin: 25px 10px;
 }
+
+main .title h2{
+    font-size: 16px;
+}
 main .title p{
     color: #868FA0;
     font-size: 12px;
@@ -30,12 +34,95 @@ main .title p{
 article{
     display: flex;
     flex-direction: row;
+    justify-content: space-around; 
     background-color: white;
-    padding: 20px 0px;
+    margin: 15px 0px;
+    padding: 15px 0px;
+    
 }
 
 article img{
     width: 120px;
 }
+
+
+.product-features p,.product-features li{
+    color:#868FA0;
+    font-size: 12px;
+}
+
+
+
+.product-price input{
+
+    color:#40B568;
+    border: solid #40B568 1px;
+    background-color: white;
+    font-size: 12px;
+    border-radius: 8px;
+    padding: 5px 9px;
+    margin-top: 15px;
+
+}
+
+.product-price p{
+    color:#40B568;
+    font-weight: bold;
+}
+
+
+@media (min-width: 361px){
+
+    main{
+        margin: auto;
+    }
+
+    .product-features ul{
+        margin-top: 5px;
+        margin-left: 18px;
+
+    }
+
+    .product-price input{
+        padding: 8px 12px;
+    
+    }
+    
+    article{
+        max-width: 550px;
+    }
+
+    section{
+        max-width: 550px;
+        margin: auto;
+    }
+    
+    main .title{
+        max-width: 600px;
+        margin: auto;
+    }  
+    
+    main .title h2, main .title p{
+        margin: 15px 10px;
+    }
+
+
+        
+}
+
+@media (min-width: 769px){
+    article{
+        box-shadow: 0px 2px 7px rgba(70, 102, 133, 0.1);
+        border-radius: 16px;
+        margin-bottom: 25px;
+
+    }
+
+   
+}
+
+  
+
+    
 
 
