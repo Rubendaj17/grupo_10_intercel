@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intercel</title>
     <link rel="stylesheet" href="/css/login-register.css">
-    <link rel="stylesheet" href="/css/header-footer.css">
+    
     
 <!-- Font DM Sans de GoogleFonts -->
 <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -18,14 +18,14 @@ rel="stylesheet" />
 
 </head>
 <body>   
-        
+    <div  class="boton-volver"><a href="/"><i class="fas fa-arrow-left"></i>    Volver</a></div>
     <main>
-        <div class="contenedor">
 
+    <div class="contenedor">
         <img src="/images/logos/Logo.svg">
         <h2>Iniciar sesión</h2>
         <form class="create-form" action="/login" method="POST">
-
+    
             <div class="control-formulario">
                 <label>Nombre de usuario</label>
                 <input type="text" name="usuario" class="control" required>
@@ -35,7 +35,7 @@ rel="stylesheet" />
                 <input type="password" name="contrasena" class="control" required>
                 <div class="textos"><a href="#"> Olvidé mi contraseña</a></div>
             </div>
-           
+           <br>
             <button type="menu" class="boton-formulario">Iniciar sesión</button>
             <div class="textos">No tienes cuenta?<a href="register"> Registrate</a></div>
 
