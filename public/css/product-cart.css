@@ -300,9 +300,14 @@ main .order{
         justify-content: space-around;
         flex-wrap: wrap;
     }
+
+    article .product-container2{
+        margin-right: 0px;
+    }
     
     .product-price{
         width: 100px;
+        margin-left: 15px;
     }
     
 
@@ -358,20 +363,19 @@ main .order{
     
     .product-container1{
         margin-bottom: 16px ;
-        flex-wrap: nowrap;
+
     }
 
     .product-container2{
         display: flex;
         flex-direction: row-reverse;
-        flex-wrap: nowrap;
+
     }
 
     .cart2{
         position: relative;
         display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
         border: 1px solid #B7BDC7;
         box-shadow: 0px 2px 7px rgba(70, 102, 133, 0.1);
         border-radius: 16p;
@@ -384,9 +388,12 @@ main .order{
     .product-price{
         width: initial;
     }
+    .product-quantity{
+        margin: 10px;
+    }
 
     .product-quantity,.delivery,.product-price{
-        margin: 0px 25px
+        margin: 0px 20px
     }
 
     .product-quantity p,.delivery p,.product-price p{
@@ -397,11 +404,7 @@ main .order{
         margin-top: 18px;
     }
 
-    .payment{
-        display: flex;
-        flex-wrap: wrap;
-    }
-    
+
 }
 
 

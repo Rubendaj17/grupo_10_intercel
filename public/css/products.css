@@ -20,10 +20,22 @@ main .title{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
-
+    margin: 25px 10px;
 }
+main .title p{
+    color: #868FA0;
+    font-size: 12px;
+}
+
+article{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    padding: 20px 0px;
+}
+
 article img{
     width: 120px;
 }
+
 
