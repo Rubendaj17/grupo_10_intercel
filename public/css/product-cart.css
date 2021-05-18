@@ -336,12 +336,11 @@ main .order{
     .main-content{
         display: flex;
         flex-direction: row;
+        justify-content: space-evenly;
         margin-bottom: 20px;
+        flex-wrap: wrap;
     }
-    .carts{
-        display: flex;
-        flex-wrap: nowrap;
-    }
+    
     .cart1{
         position: relative;
         display: flex;
@@ -402,6 +401,9 @@ main .order{
 
     delivery p{
         margin-top: 18px;
+    }
+    .payment{
+        margin:initial;
     }
 
 
