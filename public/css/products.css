@@ -70,6 +70,15 @@ article img{
     font-weight: bold;
 }
 
+main a{
+    display: block;
+    width: 180px;
+    margin: auto;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
 
 @media (min-width: 361px){
 
@@ -116,6 +125,13 @@ article img{
         border-radius: 16px;
         margin-bottom: 25px;
 
+    }
+    article img{
+        width: 145px;
+    }
+
+    .product-features{
+        margin-left: -50px;
     }
 
    
