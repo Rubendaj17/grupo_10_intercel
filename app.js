@@ -18,8 +18,8 @@ app.get("/product-detail", (req,res)=>{
     res.sendFile(path.resolve(__dirname,"./views/product-detail.html"))
 })
 
-app.get("/redes", (req,res)=>{
-    res.sendFile(path.resolve(__dirname,"./views/redes.html"))
+app.get("/proximamente", (req,res)=>{
+    res.sendFile(path.resolve(__dirname,"./views/proximamente.html"))
 })
 
 app.get("/login", (req,res)=>{
