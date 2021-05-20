@@ -5,15 +5,16 @@
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
 }
+
 body{
     min-width: 290px;
     background-color: #2F80EC;
 }
+
 img{
     margin-top: 5px;
     margin-left: 5px;
     text-align: center;
-    width: 50%;
 }
 
 h2{
@@ -139,9 +140,6 @@ form label{
         padding: 2px;
         font-weight: bold;
     }
-    img{
-        width: 40%;
-    }
     .contenedor{
         width: 70vw;
         margin-top:100px;
@@ -159,16 +157,12 @@ form label{
     }        
 }
 @media (min-width: 769px){
-    img{
-        width: 30%;
-    }
     .create-form{
         padding: 30px 80px;
     }
     .contenedor{
         width: 50vw;
     }
-    
     .registro-google,
     .registro-facebook,
     .boton-formulario{
