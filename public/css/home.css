@@ -240,9 +240,7 @@ div form{
     .precio{
         order:3;
     }
-    .marcas-img-container{
-        /* width: auto; */
-    }
+
     .vendidos-producto-container{
         width: 45%;
         text-align: left;
