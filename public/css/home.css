@@ -102,6 +102,10 @@ button a i{
     width: 100vw;
 }
 
+div form{
+    width:50%;
+}
+
 .marcas-container{
     flex-direction: row;
     justify-content: space-around;
@@ -252,8 +256,7 @@ button a i{
         right: 2%;
         top:50%;
         transform: translateY(-50%);
-    }
-    
+    }   
 }
 
 /* desktop */
