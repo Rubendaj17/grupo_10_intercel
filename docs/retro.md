@@ -40,11 +40,11 @@
   <br>
   <li><b>Dejar de hacer:</b></li>
   <p>No quedarse solo con lo que nos piden</p>
-
   <br>
+
   <li><b>Action Items:</b></li>
     <p>
-    Usar más los mensajes (wpp, slack, etc) entre semana
+    Usar más los mensajes (wpp, slack, etc) entre semana. Poner una call cada 3/4 días.
     <br>
     Describir mejor las tareas en Trello
     <br>
