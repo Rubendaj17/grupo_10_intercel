@@ -32,8 +32,6 @@
   <li><b>Continuar haciendo:</b></li>
   <p>Organizamos bien.</p>
   <br>
-  <p>.</p>
-  <br>
   <li><b>Hacer menos:</b></li>
   <p>Desentendernos una vez divididas las tareas. 
     </p>
