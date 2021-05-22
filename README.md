@@ -26,7 +26,7 @@
 <strong>Descripción integrantes del grupo </strong>
 <h5><strong>ALEJANDRO BULLORINI </strong></h5>
 <p align="justify">Licenciado en RRHH, 26 años. Trabajé como Recruiter IT y actualmente sigo trabajando en empresas de tecnología. 
-Me interesa el desarrollo porque creo que es el futuro del trabajo y y vengo usando distintas herramientas para acelerar mi día a día (Visual Basic para macros de Excel, automatizaciones en Python para manejo de nominas y reportes)
+Me interesa el desarrollo porque creo que es el futuro del trabajo y y vengo usando distintas herramientas para acelerar mi día a día (Visual Basic para macros de Excel, automatizaciones en Python para manejo de nominas y reportes).
 Me gusta crear cosas y verlas funcionar, resolver pequeños desafíos que llevan a un proyecto más grande me entusiasma.</p>
 
 <h5><strong>RUBEN JAIME</strong></h5>
@@ -34,3 +34,4 @@ Me gusta crear cosas y verlas funcionar, resolver pequeños desafíos que llevan
 
 <h5><strong>JUSTINA ITURRASPE </strong></h5>
 <p align="justify">Estudiante de Ingenieria en Informatica. 21 años.</p>
+
