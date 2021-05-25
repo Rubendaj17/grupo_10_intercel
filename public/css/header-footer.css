@@ -353,11 +353,6 @@ footer .nav-footer{
         text-align: left;
         margin:0;
     }
-    /*login div para pasar a click con js */
-    #login-header a:hover .login-form-container{
-        display: block;
-        opacity:1;
-    }
 
     .login-form-container{
         background-image: url("/images/home/cel-login.png");

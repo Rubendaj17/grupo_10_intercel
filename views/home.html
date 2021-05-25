@@ -232,7 +232,7 @@ rel="stylesheet" />
     
     <script>
         function solucionMomentaria(){
-            document.getElementsByClassName('login-form-container')[0].style.cssText = 'display:block;'
+            window.innerWidth>768 ? document.getElementsByClassName('login-form-container')[0].style.cssText = 'display:block;':''
         }
     </script>
 <!-- Bootsrap scripts     -->
