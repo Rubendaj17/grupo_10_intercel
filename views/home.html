@@ -35,10 +35,31 @@ rel="stylesheet" />
             <ul>
                 <li id="productos-header"><a href="/products">Productos</a></li>
                 <li id="nosotros-header"><a href="/proximamente">Nosotros</a></li>
-                <li id="login-header">
+                <li id="login-header" onclick="solucionMomentaria();">
                     <i class="far fa-user" id="user-icon"></i>
                     <a href="/login">Iniciar Sesión <span>Mi Cuenta</span></a>
                 </li>
+                <div class="login-form-container">
+                    
+                    <form class="login-form" action="/login" method="POST">
+                        <h2>Iniciar sesión</h2>
+                        <div class="control-form">
+                            <label>Nombre de usuario</label>
+                            <input type="text" name="usuario" class="control" required>
+                            <span class="control-error">Incorrecto</span>
+                        </div>
+                        <div class="control-form">
+                            <label>Contraseña</label>
+                            <input type="password" name="contrasena" class="control" required>
+                            
+                            <span class="control-error">Incorrecto</span>
+                        </div>
+                        <div class="remember-pass"><a href="#"> Olvidé mi contraseña</a></div>
+                        <button type="submit" class="boton-login">Iniciar sesión</button>
+                        <div class="register-container"><p>Sin cuenta?</p><a id="register-button" href="register"> Registrate</a></div>
+            
+                    </form>
+                </div>
                 <li id="carrito-header">
                     <i class="fas fa-shopping-cart" id="carrito-icon"></i>
                     <a href="/cart">Carrito</a>
@@ -209,7 +230,11 @@ rel="stylesheet" />
 
     </footer>
     
-
+    <script>
+        function solucionMomentaria(){
+            document.getElementsByClassName('login-form-container')[0].style.cssText = 'display:block;'
+        }
+    </script>
 <!-- Bootsrap scripts     -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
