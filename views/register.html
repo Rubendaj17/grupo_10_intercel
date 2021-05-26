@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intercel</title>
-    <link rel="stylesheet" href="/css/login-register.css">
+    <link rel="stylesheet" href="/css/loginRegister.css">
 
     <!-- Font DM Sans de GoogleFonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -16,42 +16,42 @@
     rel="stylesheet" />
 </head>
 <body>      
-    <div  class="boton-volver"><a href="/"><i class="fas fa-arrow-left"></i>    Volver</a></div>
+    <div  class="backButton"><a href="/"><i class="fas fa-arrow-left"></i>    Volver</a></div>
 
     <main>        
-        <div class="contenedor">
+        <div class="container">
         <a href="/"> <img src="/images/logos/Logo.svg" width="200"> </a>
         <h2>Registrarse</h2>
-            <form class="create-form" action="/" method="POST">
+            <form class="createForm" action="/" method="POST">
             
-            <div  class="registro-cuenta" >
-                <div><button class="registro-google"><i class="fab fa-google"></i>    Registrate con Google </button></div>
-                <div><button class="registro-facebook"><i class="fab fa-facebook-f"></i>    Registrate con Facebook </button></div>
+            <div  class="registerWith" >
+                <div><button class="registerGoogle"><i class="fab fa-google"></i>    Registrate con Google </button></div>
+                <div><button class="registerFacebook"><i class="fab fa-facebook-f"></i>    Registrate con Facebook </button></div>
             </div>
                 <br>
-                <div class="control-formulario">
+                <div class="formControl">
                     <label>Nombre</label>
-                    <input type="text" name="nombre" class="control"  minlength="3" required>
+                    <input type="text" name="name" class="control"  minlength="3" required>
                 </div>
-                <div class="control-formulario">
+                <div class="formControl">
                     <label>Apellido</label>
-                    <input type="text" name="apellido" class="control" minlength="3" required>
+                    <input type="text" name="lastName" class="control" minlength="3" required>
                 </div>
-                <div class="control-formulario">
+                <div class="formControl">
                     <label>Teléfono</label>
-                    <input type="tel" name="telefono" class="control" minlength="7" required>
+                    <input type="tel" name="phoneNumber" class="control" minlength="7" required>
                 </div>
-                <div class="control-formulario">
+                <div class="formControl">
                     <label>Correo electrónico</label>
-                    <input type="email" name="mail" class="control" required>
+                    <input type="email" name="email" class="control" required>
                 </div>
-                <div class="control-formulario">
+                <div class="formControl">
                     <label>Contraseña   </label>
-                    <input type="password" name="contrasena" class="control" minlength="8" required>
+                    <input type="password" name="password" class="control" minlength="8" required>
                 </div>
-                <button type="submit" class="boton-formulario">Registrarse</button>
+                <button type="submit" class="formButton">Registrarse</button>
             
-                <div class="textos">Ya tienes cuenta?<a href="login"> Iniciar sesión</a></div>
+                <div class="texts">Ya tienes cuenta?<a href="login"> Iniciar sesión</a></div>
             </form>
         </div>
 

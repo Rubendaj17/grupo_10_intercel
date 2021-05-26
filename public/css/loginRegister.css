@@ -34,7 +34,7 @@ form label{
     padding: 5px;
 }
 
-.boton-volver{
+.backButton{
     padding: 6px 10px;
     width: 85px;
     height: 28px;
@@ -42,16 +42,18 @@ form label{
     background-color: #71D894;
     border-radius: 5%;
     margin: 10px;
-    
+}
+.backButton:hover{
+    background-color: #33d469;
 }
 
-.boton-volver a{
+.backButton a{
     text-decoration: none;
     color: black;
     font-weight: bold;
 }
 
-.textos{
+.texts{
     text-align: right;
     margin-top: 7px;
 }
@@ -61,7 +63,7 @@ form label{
     width: 30px;
 }
 
-.contenedor{
+.container{
     margin: auto;
     margin-top:70px;
     text-align: center;
@@ -73,21 +75,28 @@ form label{
     width: 80vw;
 }
 
-.registro-cuenta{
+.registerWith{
     width:auto;
     margin-bottom: 5px;
     text-align: center;
 }
 
-.registro-facebook{
+.registerFacebook{
     background-color: #2962ff;
 }
-.registro-google{
-    background-color: #d93025;
+.registerFacebook:hover{
+    background-color: #0c4af5;
 }
 
-.registro-google,
-.registro-facebook{
+.registerGoogle{
+    background-color: #d93025;
+}
+.registerGoogle:hover{
+    background-color: #d40f02;
+}
+
+.registerGoogle,
+.registerFacebook{
     border: none;
     margin-top:3px;
     border-radius: 5%;
@@ -101,15 +110,15 @@ form label{
     margin-bottom: 5px;
 }
 
-.create-form{
+.createForm{
     padding:20px 20px;
 }
 
-.control-formulario{
+.formControl{
     margin-bottom: 10px;
 }
 
-.control-formulario label{
+.formControl label{
     display: block;
 }
 
@@ -120,7 +129,7 @@ form label{
     border-radius: 5px;
 }
 
-.boton-formulario{
+.formButton{
     background-color: #71D894;
     border: none;
     color: black;
@@ -132,6 +141,10 @@ form label{
     margin-top: 15px;
 }
 
+.formButton:hover{
+    background-color: #33d469;
+}
+
 @media (min-width: 361px){
     h2{
         margin-top: 40px;  
@@ -140,32 +153,32 @@ form label{
         padding: 2px;
         font-weight: bold;
     }
-    .contenedor{
+    .container{
         width: 70vw;
         margin-top:100px;
     }
-    .create-form{
+    .createForm{
         padding: 25px 35px;
     }
-    .boton-formulario{
+    .formButton{
         width: 160px;
     }
 
-    .registro-google,
-    .registro-facebook{
+    .registerGoogle,
+    .registerFacebook{
         width: 200px;
     }        
 }
 @media (min-width: 769px){
-    .create-form{
+    .createForm{
         padding: 30px 80px;
     }
-    .contenedor{
+    .container{
         width: 50vw;
     }
-    .registro-google,
-    .registro-facebook,
-    .boton-formulario{
+    .registerGoogle,
+    .registerFacebook,
+    .formButton{
         width: 200px;
     }
 }
