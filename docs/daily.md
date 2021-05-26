@@ -18,4 +18,4 @@
     <br>
     Hizo el login como un div en el home para desktop. Tiene que modificar la parte del logo
     </p>
-    <p>Para el próximo Sprint vamos a cambiar los nombres de las clases y IDs de html en el siguiente formato en inglés: aaaa-bbbb</p>
+    <p>Para el próximo Sprint vamos a cambiar los nombres de las clases y IDs de html en el siguiente formato en inglés: aaaBbbb</p>
