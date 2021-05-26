@@ -14,26 +14,18 @@ app.get('/', (req, res)=>{
     res.sendFile(path.resolve(__dirname, './views/home.html'))
 })
 
-app.get("/product-detail", (req,res)=>{
-    res.sendFile(path.resolve(__dirname,"./views/product-detail.html"))
-})
-
 app.get("/proximamente", (req,res)=>{
     res.sendFile(path.resolve(__dirname,"./views/proximamente.html"))
 })
 
-app.get("/login", (req,res)=>{
-    res.sendFile(path.resolve(__dirname,"./views/login.html"))
-})
+const usersRoutes = require('./routes/usersRoutes');
+//user/
+app.use("/users", usersRoutes)
 
-app.get("/register", (req,res)=>{
-    res.sendFile(path.resolve(__dirname,"./views/register.html"))
-})
+//products/
+const productsRoutes = require('./routes/productsRoutes');
+app.use("/products", productsRoutes)
 
-app.get("/cart", (req,res)=>{
-    res.sendFile(path.resolve(__dirname,"./views/productCart.html"))
-})
-
-app.get("/products", (req,res)=>{
-    res.sendFile(path.resolve(__dirname,"./views/products.html"))
-})
+//cart
+const cartRoutes = require('./routes/cartRoutes');
+app.use("/cart", cartRoutes)
