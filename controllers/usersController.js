@@ -10,6 +10,9 @@ let usersController = {
     newProduct: (req, res)=>{
         res.sendFile(path.resolve(__dirname,"../views/newProduct.html"))
     },
+    editProduct: (req, res)=>{
+        return res.render('editProduct');
+    }
 }
 
 module.exports = usersController
