@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intercel - Editar</title>
+    <link rel="stylesheet" href="/css/loginRegister.css">
 </head>
 <body>
     <div  class="backButton"><a href="/"><i class="fas fa-arrow-left"></i>    Volver</a></div>
@@ -16,11 +17,11 @@
                 <br>
                 <div class="formControl">
                     <label>Modelo</label>
-                    <input placeholder="" type="email" name="email" class="control" required>
+                    <input placeholder="<%=producto.modelo%>" type="email" name="email" class="control" required>
                 </div>
                 <div class="formControl">
                     <label>Descripción del producto</label>
-                    <input type="text" name="description" class="control" minlength="10">
+                    <input placeholder="" type="text" name="description" class="control" minlength="10">
                 </div>
                 <div class="formControl">
                     <label>Imagen</label>
@@ -39,7 +40,7 @@
                     <input type="number" step="0.1" name="width" class="control" minlength="1" required>
                 </div>
             
-                <button type="submit" class="formButton">Cargar producto</button>
+                <button type="submit" class="formButton">Guardar cambios</button>
             
             </form>
         </div>

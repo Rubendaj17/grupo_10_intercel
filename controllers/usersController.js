@@ -11,8 +11,19 @@ let usersController = {
         res.sendFile(path.resolve(__dirname,"../views/newProduct.html"))
     },
     editProduct: (req, res)=>{
-        return res.render('editProduct');
-    }
+        res.sendFile(path.resolve(__dirname,"../views/editProduct.ejs"))
+    },
+    editProduct: (req, res)=>{
+        let producto={
+            modelo: "X",
+            descripcion: "blanco",
+            precio: 576,
+
+        }
+
+        return res.render('editProduct', {'producto': producto});
+    },
+    //NO ANDA CON NINGUNA DE LAS 2
 }
 
 module.exports = usersController
