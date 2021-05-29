@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
+app.set('view engine','ejs')
+app.set('views','./views')
 
 const publicPath = path.resolve(__dirname, './public');
 app.use(express.static(publicPath));
@@ -11,11 +13,11 @@ app.listen(3000, ()=> {
 })
 
 app.get('/', (req, res)=>{
-    res.sendFile(path.resolve(__dirname, './views/home.html'))
+    res.render('home')
 })
 
 app.get("/proximamente", (req,res)=>{
-    res.sendFile(path.resolve(__dirname,"./views/proximamente.html"))
+    res.render('proximamente')
 })
 
 const usersRoutes = require('./routes/usersRoutes');
