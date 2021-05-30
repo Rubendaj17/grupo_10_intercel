@@ -12,6 +12,27 @@
                 <i class="far fa-user" id="user-icon"></i>
                 <a href="/users/login">Iniciar Sesión <span>Mi Cuenta</span></a>
             </li>
+            <div class="login-form-container">
+                    
+                <form class="login-form" action="/login" method="POST">
+                    <h2>Iniciar sesión</h2>
+                    <div class="control-form">
+                        <label>Nombre de usuario</label>
+                        <input type="text" name="usuario" class="control" required>
+                        <span class="control-error">Incorrecto</span>
+                    </div>
+                    <div class="control-form">
+                        <label>Contraseña</label>
+                        <input type="password" name="contrasena" class="control" required>
+                        
+                        <span class="control-error">Incorrecto</span>
+                    </div>
+                    <div class="remember-pass"><a href="#"> Olvidé mi contraseña</a></div>
+                    <button type="submit" class="boton-login">Iniciar sesión</button>
+                    <div class="register-container"><p>Sin cuenta?</p><a id="register-button" href="register"> Registrate</a></div>
+        
+                </form>
+            </div>
             <li id="carrito-header"> 
                 <i class="fas fa-shopping-cart" id="carrito-icon"></i>
                 <a href="/cart/list">Carrito</a>
