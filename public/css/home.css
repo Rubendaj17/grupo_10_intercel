@@ -98,6 +98,10 @@ button a i{
     width: 100vw;
 }
 
+div form{
+    width:50%;
+}
+
 .marcas-container{
     flex-direction: row;
     justify-content: space-around;
@@ -230,9 +234,7 @@ img{
     .precio{
         order:3;
     }
-    .marcas-img-container{
-        /* width: auto; */
-    }
+
     .vendidos-producto-container{
         width: 45%;
         text-align: left;
@@ -246,6 +248,7 @@ img{
         right: 2%;
         top:50%;
         transform: translateY(-50%);
+<<<<<<< HEAD
     }
     .video-player{
         width: 100%;
@@ -254,6 +257,9 @@ img{
 
 
     
+=======
+    }   
+>>>>>>> main
 }
 
 /* desktop */
