@@ -14,16 +14,15 @@ let usersController = {
         res.sendFile(path.resolve(__dirname,"../views/editProduct.ejs"))
     },
     editProduct: (req, res)=>{
-        let producto={
-            modelo: "X",
-            descripcion: "blanco",
-            precio: 576,
-
+        let product={
+            model: "X",
+            description: "blanco",
+            price: 576,
+            high: 8,
+            width: 3.9,
         }
-
-        return res.render('editProduct', {'producto': producto});
+        return res.render('editProduct', {'product': product});
     },
-    //NO ANDA CON NINGUNA DE LAS 2
 }
 
 module.exports = usersController
