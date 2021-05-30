@@ -2,21 +2,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Bootsrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-<!-- Font DM Sans de GoogleFonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
-
-<!-- FontAwesome para los iconitos -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-rel="stylesheet" />
-
+    <%- include('partials/head') %>
 <!-- nuestros css -->
     <link rel="stylesheet" href="/css/header-footer.css">
     <link rel="stylesheet" href="/css/home.css">
@@ -25,28 +11,7 @@ rel="stylesheet" />
 </head>
 <body>
     <!-- HEADER -->
-    <header>
-        <div class="logo-header"><img src="/images/logos/Logo.svg" alt="Logo Genial de Intercel"></div>
-        
-        <div class="search-bar"><input type="text" placeholder="¿Qué buscas?"><i class="fas fa-search" id="search-icon"></i></div>
-
-        <nav class="nav-header">
-            <i class="fas fa-bars" id="hamburger-menu"></i>
-            <ul>
-                <li id="productos-header"><a href="#">Productos</a></li>
-                <li id="nosotros-header"><a href="#">Nosotros</a></li>
-                <li id="login-header">
-                    <i class="far fa-user" id="user-icon"></i>
-                    <a href="login">Iniciar Sesión <span>Mi Cuenta</span></a>
-                </li>
-                <li id="carrito-header">
-                    <i class="fas fa-shopping-cart" id="carrito-icon"></i>
-                    <a href="#">Carrito</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    
+    <%- include('partials/header') %>
     <main>
 
         <section class="carousel-container">
@@ -77,14 +42,14 @@ rel="stylesheet" />
                 </a>
             </div>
             
-            <button><a href="#">Ver Productos<i class="fas fa-arrow-right"></i></a></button>
+            <button><a href="/products/list">Ver Productos<i class="fas fa-arrow-right"></i></a></button>
         </section>
 
         <section class="marcas-container">
-            <article class="marcas-img-container"><a href="#"><img src="/images/logos/motorola.svg" alt="Motorola logo"></a></article>
-            <article class="marcas-img-container"><a href="#"><img src="/images/logos/samsung.svg" alt="Samsung logo"></a></article>
-            <article class="marcas-img-container"><a href="#"><img src="/images/logos/apple.svg" alt="Apple logo"></a></article>
-            <article class="marcas-img-container"><a href="#"><img src="/images/logos/lg.svg" alt="LG logo"></a></article>
+            <article class="marcas-img-container"><a href="/products"><img src="/images/logos/motorola.svg" alt="Motorola logo"></a></article>
+            <article class="marcas-img-container"><a href="/products"><img src="/images/logos/samsung.svg" alt="Samsung logo"></a></article>
+            <article class="marcas-img-container"><a href="/products"><img src="/images/logos/apple.svg" alt="Apple logo"></a></article>
+            <article class="marcas-img-container"><a href="/products"><img src="/images/logos/lg.svg" alt="LG logo"></a></article>
         </section>
         
         <section class="ofertas-container">
@@ -171,45 +136,13 @@ rel="stylesheet" />
     </main>
     
     <!-- FOOTER -->
-    <footer>
-
-        <div class="logo-footer">
-            <img src="/images/logos/LogoGray.svg" alt="Logo Genial de Intercel en Gris">
-        </div>
-
-        <div class="redes-container">
-            <h5>Encuentranos en</h5>
-            <ul>
-                <li><a href="/redes"><img src="/images/logos/FB.svg" alt="Facebook logo"></a></li>
-                <li><a href="/redes"><img src="/images/logos/youtube.svg" alt="Youtube logo"></a></li>
-                <li><a href="/redes"><img src="/images/logos/IG.svg" alt="Instagram logo"></a></li>
-            </ul>
-        </div>
-
-        <div class="pagos-container">
-            <h5>Métodos de Pago</h5>
-            <ul>
-                <li><img src="/images/logos/mastercard.svg" alt="MasterCard"></li>
-                <li><img src="/images/logos/visa.svg" alt="Visa"></li>
-                <li><img src="/images/logos/americanExpress.svg" alt="American Express"></li>
-            </ul>
-            </div>
-
-        <nav class="nav-footer">
-            <h5>Mapa del Sitio</h5>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Ingresar</a></li>
-            </ul>
-        </nav>
-
-
-    </footer>
+    <%- include('partials/footer') %>
     
-
+    <script>
+        function solucionMomentaria(){
+            window.innerWidth>768 ? document.getElementsByClassName('login-form-container')[0].style.cssText = 'display:block;':''
+        }
+    </script>
 <!-- Bootsrap scripts     -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
