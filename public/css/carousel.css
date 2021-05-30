@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+}
+
+
+
+section{
+    display:flex;
+    max-width: 1080px;
+    align-items: center;
+}
+
+
+
+
+.carousel-item{
+    text-align: center;
+    height: 32rem;
+    background-color: #777;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.video-player{
+    width: 100%;
+}
+
+
+.btn-primary {
+    font-size: 12px;
+    font-weight: 700;
+    padding: .4em .5em;
+    border-radius: 8px;
+}
+
+.container2 h2{
+    color: white;
+}
+
+.container3 p{
+    color: white;
+}

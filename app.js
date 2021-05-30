@@ -37,3 +37,7 @@ app.get("/cart", (req,res)=>{
 app.get("/products", (req,res)=>{
     res.sendFile(path.resolve(__dirname,"./views/products.html"))
 })
+
+app.get("/carusel", (req,res)=>{
+    res.sendFile(path.resolve(__dirname,"./views/carusel.html"))
+})
