@@ -3,10 +3,10 @@
 
 <h2>Sprint 3</h2>
 <ol>
-    <li>Martes 25   20.30hs</li>
-    <li>Sabado 29  13hs</li>
-    <li>Lunes 31   20hs</li>
-    <li>Viernes 4 entreg</li>
+    <li>Martes 25 de mayo a las 20.30hs</li>
+    <li>Domingo 30 de mayo a las 9hs</li>
+    <li>Miércoles 2 de junio a las 19.30hs</li>
+    <li>Viernes 4 de junio:  entrega</li>
 </ol>
 
 <h3>Martes 25 de mayo 20.30hs</h3>
@@ -20,10 +20,11 @@
     </p>
     <p>Para el próximo Sprint vamos a cambiar los nombres de las clases y IDs de html en el siguiente formato en inglés: aaaBbbb</p>
     
-    <h3>Domingo 30 09.00hs</h3>
-    <p><span>Ruben:</span> Corrigió el carrusel y se encargará de subirlo a la branch main para incorporarlo al resto del proyecto. </p>
-    <p><span>Justi:</span> Elaboró los formularios de creación de producto y edición de producto. Trabajará en cambiar los colores de los formularios y en agregar el footer y el header a los archivos ejs. en los que se encuentran los formularios.</p>
-     <p><span>Ale:</span> Estuvo revisando el trabajo realizado durante las clases prácticas para asegurarse de qué la página de Intercel funcione correctamente. Se encargará de linkear el formulario de creación de usuario al home.<p>
-     <p><span>El equipo seguirá trabajando en finalizar las consignas del sprint  actual y en implementar recomendaciones del sprint pasado.</p>
+ <h3>Domingo 30 de mayo  09.00hs</h3>
+    
+<p><span>Ruben:</span> Corrigió el carrusel y se encargará de subirlo a la branch main para incorporarlo al resto del proyecto. </p>
+<p><span>Justi:</span> Elaboró los formularios de creación de producto y edición de producto. Trabajará en cambiar los colores de los formularios y en agregar el footer y el header a los archivos ejs. en los que se encuentran los formularios.</p>
+<p><span>Ale:</span> Estuvo revisando el trabajo realizado durante las clases prácticas para asegurarse de qué la página de Intercel funcione correctamente. Se encargará de linkear el formulario de creación de usuario al home.</p>
+<p>El equipo seguirá trabajando en finalizar las consignas del sprint  actual y en implementar recomendaciones del sprint pasado.</p>
      
      
