@@ -9,8 +9,8 @@
     <li>Viernes 4 entreg</li>
 </ol>
 
-<h3>Martes 25 20.30hs</h3>
-    <p><span>Ruben:</span> Estuvo corrigiendo el carrousel de la página home y buscando imágenes más impactantes. Tiene trabas con respecto a que se deforme la imagen al setear height/width. </p>
+<h3>Martes 25 de mayo 20.30hs</h3>
+    <p><span>Ruben:</span> Estuvo corrigiendo el carrusel de la página home y buscando imágenes más impactantes. Tiene trabas con respecto a que se deforme la imagen al setear height/width. </p>
     <p><span>Justi:</span>Avanzó con el formulario de creación de producto. 
     <br>
     Va a continuar con el de edición de productos pensando en un lugar para mostrar la información actual</p>
@@ -19,3 +19,11 @@
     Hizo el login como un div en el home para desktop. Tiene que modificar la parte del logo
     </p>
     <p>Para el próximo Sprint vamos a cambiar los nombres de las clases y IDs de html en el siguiente formato en inglés: aaaBbbb</p>
+    
+    <h3>Domingo 30 09.00hs</h3>
+    <p><span>Ruben:</span> Corrigió el carrusel y se encargará de subirlo a la branch main para incorporarlo al resto del proyecto. </p>
+    <p><span>Justi:</span> Elaboró los formularios de creación de producto y edición de producto. Trabajará en cambiar los colores de los formularios y en agregar el footer y el header a los archivos ejs. en los que se encuentran los formularios.</p>
+     <p><span>Ale:</span> Estuvo revisando el trabajo realizado durante las clases prácticas para asegurarse de qué la página de Intercel funcione correctamente. Se encargará de linkear el formulario de creación de usuario al home.<p>
+     <p><span>El equipo seguirá trabajando en finalizar las consignas del sprint  actual y en implementar recomendaciones del sprint pasado.</p>
+     
+     
