@@ -21,10 +21,57 @@ main section h3{
     font-weight: 700;
 }
 
+.carousel-item{
+    height: 20rem;
+}
 .carousel-container{
     position: relative;
     order: -1;
 }
+
+#slide1{
+    background-image: url(../images/home/IPhone-Banner.jpg);
+    text-align: center;
+    width: 100vw;
+    background-position: center;
+    background-size: cover;
+}
+
+#slide2{
+    background-image: url(../images/home/S21-Banner.jpg);
+    text-align: center;
+    width: 100vw;
+    background-position: center;
+    background-size: cover;
+}
+
+#slide3{
+    background-image: url(../images/home/LG-Banner.jpg);
+    text-align: center;
+    width: 100vw;
+    background-position: center;
+    background-size: cover;
+}
+
+.btn-primary{
+    color: #2E3646;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #71D894;
+    border: 1px solid #B7BDC7;
+    border-radius: 8px;
+    position: absolute;
+    top:2%;
+    right: 3%;
+    
+    
+}
+.btn-primary:hover{
+    background-color: #64c283;
+    border: 1px solid #B7BDC7;
+}
+
+
 .carousel-control-prev-icon{
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232E3646' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E")
 }
@@ -189,13 +236,6 @@ div form{
     margin-left: 15px;
 }
 
-img{
-    max-height: 433px;
-}
-
-
-
-
 
 
 /* tablet */
@@ -203,7 +243,10 @@ img{
     .carousel-container button{
         display: none;
     }
-
+    .carousel-item{
+        height: 28rem;
+    }
+    
     .ofertas-container,
     .vendidos-container{
         flex-direction: row;
@@ -248,18 +291,7 @@ img{
         right: 2%;
         top:50%;
         transform: translateY(-50%);
-<<<<<<< HEAD
-    }
-    .video-player{
-        width: 100%;
-        height: 100%;
-    }
-
-
-    
-=======
     }   
->>>>>>> main
 }
 
 /* desktop */
@@ -270,14 +302,14 @@ img{
         justify-content: space-between;
         border-radius: 15px;
     }
+    .carousel-item{
+        height: 34rem;
+    }
     .carousel{
         width: 100%;
         margin-left: auto;
     }
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon{
-        display: none;
-    }
+    
     
     .carousel-container button{
         order:-1;
