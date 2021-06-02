@@ -4,8 +4,8 @@
 <h2>Sprint 3</h2>
 <ol>
     <li>Martes 25   20.30hs</li>
-    <li>Sabado 29  13hs</li>
-    <li>Lunes 31   20hs</li>
+    <li>Domingo 30  11hs</li>
+    <li>Miércoles 3   19.30hs</li>
     <li>Viernes 4 entreg</li>
 </ol>
 

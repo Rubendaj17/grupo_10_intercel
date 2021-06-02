@@ -8,11 +8,11 @@ let usersController = {
         res.render('register')
     },
     newProduct: (req, res)=>{
-        res.sendFile(path.resolve(__dirname,"../views/newProduct.html"))
+        res.render('newProduct')
     },
-    editProduct: (req, res)=>{
-        res.sendFile(path.resolve(__dirname,"../views/editProduct.ejs"))
-    },
+    // editProduct: (req, res)=>{
+    //     res.render('editProduct')
+    // },
     editProduct: (req, res)=>{
         let product={
             model: "X",
@@ -21,7 +21,7 @@ let usersController = {
             high: 8,
             width: 3.9,
         }
-        return res.render('editProduct', {'product': product});
+        return res.render('editProduct', {product});
     },
 }
 
