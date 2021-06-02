@@ -13,11 +13,12 @@ let usersController = {
     },
     editProduct (req, res){
         let product={
-            model: "X",
-            description: "blanco",
+            brand: "samsung",
+            model: "A20",
+            color: "blanco",
             price: 576,
-            high: 8,
-            width: 3.9,
+            ram: 8,
+            memory: 128,
         }
         res.render('editProduct', {'product': product})
     }
