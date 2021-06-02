@@ -3,10 +3,12 @@
 <head>
     <%- include ('partials/head') %> 
     <title>Intercel - Editar</title>
-    <link rel="stylesheet" href="/css/loginRegister.css">
+    <link rel="stylesheet" href="/css/NewEditProduct.css">
+    <link rel="stylesheet" href="/css/headerFooter.css">
 </head>
 <body>
-    <div  class="backButton"><a href="/"><i class="fas fa-arrow-left"></i>    Volver</a></div>
+    <!-- HEADER -->
+    <%- include('partials/header') %>
 
         <div class="container">
         <a href="/"> <img src="/images/logos/Logo.svg" width="200"> </a>
@@ -15,11 +17,11 @@
                 <br>
                 <div class="formControl">
                     <label>Modelo</label>
-                    <input placeholder="<%=product.model %>" type="email" name="email" class="control" required>
+                    <input placeholder="<%=product.model %>" type="email" name="email" class="inputControl" required>
                 </div>
                 <div class="formControl">
                     <label>Descripción del producto</label>
-                    <input placeholder="<%=product.description %>" type="text" name="description" class="control" minlength="10">
+                    <input placeholder="<%=product.description %>" type="text" name="description" class="inputControl" minlength="10">
                 </div>
                 <div class="formControl">
                     <label>Imagen</label>
@@ -27,20 +29,26 @@
                 </div>
                 <div class="formControl">
                     <label>Precio</label>
-                    <input placeholder="$<%=product.price%>" type="tel" name="price" class="control" minlength="1" required>
+                    <input placeholder="$<%=product.price%>" type="tel" name="price" class="inputControl" minlength="1" required>
                 </div>
                 <div class="formControl">
                     <label>Alto</label>
-                    <input placeholder="<%=product.high %>" type="number" step="0.1" name="high" class="control" minlength="1" required>
+                    <input placeholder="<%=product.high %>" type="number" step="0.1" name="high" class="inputControl" minlength="1" required>
                 </div>
                 <div class="formControl">
                     <label>Ancho</label>
-                    <input placeholder="<%=product.width %>" type="number" step="0.1" name="width" class="control" minlength="1" required>
+                    <input placeholder="<%=product.width %>" type="number" step="0.1" name="width" class="inputControl" minlength="1" required>
                 </div>
             
                 <button type="submit" class="formButton">Guardar cambios</button>
             
             </form>
         </div>
+        
+    <!-- FOOTER -->
+    <footer>
+        <%- include('partials/footer') %>
+    </footer>
+    
 </body>
 </html>

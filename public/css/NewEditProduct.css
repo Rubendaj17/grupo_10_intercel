@@ -8,7 +8,7 @@
 
 body{
     min-width: 290px;
-    background-color: #2F80EC;
+    background-color: #F8F9FC;
 }
 
 img{
@@ -32,30 +32,7 @@ form{
 form label{
     text-align: left;
     padding: 5px;
-}
-
-.backButton{
-    padding: 6px 10px;
-    width: 85px;
-    height: 28px;
-    text-align: left;
-    background-color: #71D894;
-    border-radius: 5%;
-    margin: 10px;
-}
-.backButton:hover{
-    background-color: #33d469;
-}
-
-.backButton a{
-    text-decoration: none;
-    color: black;
     font-weight: bold;
-}
-
-.texts{
-    text-align: right;
-    margin-top: 7px;
 }
 
 .container{
@@ -68,41 +45,8 @@ form label{
     justify-content: center;
     border-radius:3%;
     width: 80vw;
-}
-
-.registerWith{
-    width:auto;
-    margin-bottom: 5px;
-    text-align: center;
-}
-
-.registerFacebook{
-    background-color: #2962ff;
-}
-.registerFacebook:hover{
-    background-color: #0c4af5;
-}
-
-.registerGoogle{
-    background-color: #d93025;
-}
-.registerGoogle:hover{
-    background-color: #d40f02;
-}
-
-.registerGoogle,
-.registerFacebook{
-    border: none;
-    margin-top:3px;
-    border-radius: 5%;
-    width: 100%;
-    height: 40px;
-    color:white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: auto;
-    margin-bottom: 5px;
+    box-shadow: 0px 0px 15px 2px #919191;
+    margin-bottom: 60px;
 }
 
 .createForm{
@@ -117,7 +61,7 @@ form label{
     display: block;
 }
 
-.control{
+.inputControl{
     width:100%;
     padding:8px 8px;
     border-radius: 5px;
@@ -145,7 +89,6 @@ form label{
       }
     form label{
         padding: 2px;
-        font-weight: bold;
     }
     .container{
         width: 70vw;
@@ -157,11 +100,7 @@ form label{
     .formButton{
         width: 160px;
     }
-
-    .registerGoogle,
-    .registerFacebook{
-        width: 200px;
-    }        
+  
 }
 @media (min-width: 769px){
     .createForm{
@@ -170,8 +109,6 @@ form label{
     .container{
         width: 50vw;
     }
-    .registerGoogle,
-    .registerFacebook,
     .formButton{
         width: 200px;
     }

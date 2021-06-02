@@ -3,13 +3,13 @@
 <head>
     <%- include ('partials/head') %> 
     <title>Intercel - Nuevo producto</title>
-    <link rel="stylesheet" href="/css/loginRegister.css">
-
+    <link rel="stylesheet" href="/css/NewEditProduct.css">
+    <link rel="stylesheet" href="/css/headerFooter.css">
 </head>
 <body>      
-    <div  class="backButton"><a href="/"><i class="fas fa-arrow-left"></i>    Volver</a></div>
-
-    <main>        
+    <!-- HEADER -->
+    <%- include('partials/header') %>
+       
         <div class="container">
         <a href="/"> <img src="/images/logos/Logo.svg" width="200"> </a>
         <h2>Nuevo producto</h2>
@@ -17,36 +17,37 @@
                 <br>
                 <div class="formControl">
                     <label>Modelo</label>
-                    <input type="email" name="email" class="control" required>
+                    <input type="email" name="email" class="inputControl" required>
                 </div>
                 <div class="formControl">
                     <label>Descripción del producto</label>
-                    <input type="text" name="description" class="control" minlength="10">
+                    <input type="text" name="description" class="inputControl" minlength="10">
                 </div>
                 <div class="formControl">
                     <label>Imagen</label>
-                    <input type="file" name="photo" accept = ".jpg" required>>
+                    <input type="file" name="photo" accept = ".jpg" class="inputControl " required multiple>
                 </div>
                 <div class="formControl">
                     <label>Precio</label>
-                    <input type="tel" name="price" class="control" minlength="1" required>
+                    <input type="tel" name="price" class="inputControl" minlength="1" required>
                 </div>
                 <div class="formControl">
                     <label>Alto</label>
-                    <input type="number" step="0.1" name="high" class="control" minlength="1" required>
+                    <input type="number" step="0.1" name="high" class="inputControl" minlength="1" required>
                 </div>
                 <div class="formControl">
                     <label>Ancho</label>
-                    <input type="number" step="0.1" name="width" class="control" minlength="1" required>
+                    <input type="number" step="0.1" name="width" class="inputControl" minlength="1" required>
                 </div>
             
                 <button type="submit" class="formButton">Cargar producto</button>
             
             </form>
         </div>
-
-    </main>
-
+    <!-- FOOTER -->
+    <footer>
+        <%- include('partials/footer') %>
+    </footer>
 </body>
 
 </html>
