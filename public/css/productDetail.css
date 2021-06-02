@@ -45,7 +45,7 @@ main>a{
     flex-direction: column;
     flex-wrap: wrap;
 }
-.marca{
+.brand{
     color:#868FA0;
     font-size: 14px;
 }
@@ -125,12 +125,12 @@ main>a{
 .NameRelated{
     order: -1;
 }
-.MarcaRelated{
+.brandRelated{
     color:#2E3646;
     font-size: 12px;
     font-weight: 500;
 }
-.MarcaRelated span{
+.brandRelated span{
     font-size: 14px;
     font-weight: 700;
 }

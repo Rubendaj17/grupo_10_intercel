@@ -18,7 +18,6 @@ let usersController = {
             color: "blanco",
             price: 576,
             ram: 8,
-            memory: 128,
         }
         res.render('editProduct', {'product': product})
     }

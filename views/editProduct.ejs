@@ -16,7 +16,7 @@
             <form class="createForm" action="/" method="POST">
                 <br>
                 <div class="formControl">
-                    <label>Marca</label>
+                    <label>brand</label>
                     <input placeholder="<%=product.brand %>" type="text" name="brand" class="inputControl" required>
                 </div>
                 <div class="formControl">
@@ -29,7 +29,7 @@
                 </div>
                 <div class="formControl">
                     <label>Imagen</label>
-                    <input type="file" name="photo" accept = ".jpg, .png" required multiple>
+                    <input type="file" name="photo" accept = ".jpg, .png" class="inputControl" required multiple>
                     <%# <img src="/images/Iphone.png" alt="">  %>                    
                 </div>
                 <div class="formControl">
@@ -37,12 +37,8 @@
                     <input placeholder="$<%=product.price%>" type="tel" name="price" class="inputControl" minlength="1" required>
                 </div>
                 <div class="formControl">
-                    <label>RAM</label>
+                    <label>Almacenamiento</label>
                     <input placeholder="<%=product.ram %>" type="number" step="0.1" name="ram" class="inputControl" required>
-                </div>
-                <div class="formControl">
-                    <label>Memoria</label>
-                    <input placeholder="<%=product.memory %>" type="number" step="0.1" name="memory" class="inputControl" required>
                 </div>
             
                 <button type="submit" class="formButton">Guardar cambios</button>
