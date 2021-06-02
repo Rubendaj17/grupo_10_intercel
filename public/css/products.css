@@ -10,7 +10,7 @@ main {
     background-color:#F8F9FC;
 }
 
-main .blue-bar{
+main .blueBar{
     background-color: #1A70E4;
     width: 100vw;
     height: 50px;
@@ -46,14 +46,14 @@ article img{
 }
 
 
-.product-features p,.product-features li{
+.productFeatures p,.productFeatures li{
     color:#868FA0;
     font-size: 12px;
 }
 
 
 
-.product-price input{
+.productPrice input{
 
     color:#40B568;
     border: solid #40B568 1px;
@@ -65,7 +65,7 @@ article img{
 
 }
 
-.product-price p{
+.productPrice p{
     color:#40B568;
     font-weight: bold;
 }
@@ -86,13 +86,13 @@ main a{
         margin: auto;
     }
 
-    .product-features ul{
+    .productFeatures ul{
         margin-top: 5px;
         margin-left: 18px;
 
     }
 
-    .product-price input{
+    .productPrice input{
         padding: 8px 12px;
     
     }
@@ -130,7 +130,7 @@ main a{
         width: 145px;
     }
 
-    .product-features{
+    .productFeatures{
         margin-left: -50px;
     }
 

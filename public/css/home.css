@@ -104,15 +104,15 @@ button a{
 button a i{
     margin-left: 4px;
 }
-.ofertasContainer{
+.offersContainer{
     order: 0;
     width: 100vw;
     background-color: #71D894;
 }
 
-.ofertasProductoContainer,
-.vendidosProductoContainer,
-.comentariosCardContainer{
+.offersProductContainer,
+.soldProductContainer,
+.commentsCardContainer{
     text-align: center;
     
     width: 90vw;
@@ -121,26 +121,26 @@ button a i{
     border-radius: 5px;  
 }
 
-.comentariosCardContainer{
+.commentsCardContainer{
     background-color: #fff;   
 }
 
-.ofertasProductoNombre,
-.precio{
+.offersProductoNombre,
+.price{
     display: inline-block;
     margin: 5px 25px 0;
 }
-.precio{
+.price{
     font-weight: 700;
     color: #40B568;
 }
-.ofertasProductoContainer img{
+.offersProductContainer img{
     height: 33vh;
     width: auto;
 }
 .marcasContainer,
-.vendidosContainer,
-.comentariosContainer{
+.soldContainer,
+.commentsContainer{
     order: 1;
     width: 100vw;
 }
@@ -171,18 +171,18 @@ div form{
     
 }
 
-.vendidosProductoContainer{
+.soldProductContainer{
     position: relative;
     overflow: hidden;
     height: 25vh;
 }
-.vendidosProductoContainer.impar{
+.soldProductContainer.impar{
     background-color: #4890F1;   
 }
-.vendidosProductoContainer.par{
+.soldProductContainer.par{
     background-color: #514DF8; 
 }
-.vendidosProductoNombre{
+.soldProductNombre{
     position: absolute;
     bottom:5%;
     right:5%;
@@ -190,25 +190,25 @@ div form{
     color: #f1f1f1;
     font-size: 16px;
 }
-.ofertasProductoContainer{
+.offersProductContainer{
     background-color: #f1f1f1;
     overflow: hidden;
 }
-.comentariosContainer{
+.commentsContainer{
     order: 1;
 }
-.comentariosCardContainer{
+.commentsCardContainer{
     display: flex;
     flex-direction: column;
     background-color: #f1f1f1;
 }
-.comentariosHeader{
+.commentsHeader{
     display: flex;
     padding: 5px 15px;
     text-align: left;
 
 }
-.comentariosImgContainer{
+.commentsImgContainer{
     position: relative;
     height: 55px;
     width: 55px;
@@ -216,7 +216,7 @@ div form{
     border: 1px solid #B7BDC7;
     overflow: hidden;
 }
-.comentariosImgContainer img{
+.commentsImgContainer img{
     width: 55px;
     height: auto;
     position: absolute;
@@ -224,14 +224,14 @@ div form{
     left:50%;
     transform: translateX(-50%);
 }
-.comentariosInfoContainer{
+.commentsInfoContainer{
     margin: auto 15px;
 }
-.comentariosNombre,
-.comentariosPais{
+.commentsNombre,
+.commentsPais{
     margin:0;
 }
-.comentario{
+.comment{
     text-align: left;
     margin-left: 15px;
 }
@@ -247,19 +247,19 @@ div form{
         height: 28rem;
     }
     
-    .ofertasContainer,
-    .vendidosContainer{
+    .offersContainer,
+    .soldContainer{
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
     }
 
-    .ofertasContainer h2,
-    .vendidosContainer h2{
+    .offersContainer h2,
+    .soldContainer h2{
         width: 100%;
         text-align: center;
     }
-    .ofertasProductoContainer{
+    .offersProductContainer{
         width: 35%;
         margin: 10px 0;
         padding: 5px;
@@ -267,26 +267,26 @@ div form{
         flex-direction: column;
         box-shadow: 0px 0px 10px 3px #448259;        
     }
-    .ofertasProductoContainer img{
+    .offersProductContainer img{
         height: auto;
         width: 100%;
     }
-    .ofertasProductoNombre{
+    .offersProductoNombre{
         order:2;
     }
-    .precio{
+    .price{
         order:3;
     }
 
-    .vendidosProductoContainer{
+    .soldProductContainer{
         width: 45%;
         text-align: left;
     }
-    .vendidosProductoContainer img{
+    .soldProductContainer img{
         width: auto;
         height: 100%;
     }
-    .vendidosProductoNombre{
+    .soldProductNombre{
         bottom: initial;
         right: 2%;
         top:50%;
@@ -332,26 +332,26 @@ div form{
         padding: 5px;
     }
 
-    .ofertasProductoContainer{
+    .offersProductContainer{
         width: 20%;
         transition: all .5s;
     }
-    .ofertasProductoContainer:hover{
+    .offersProductContainer:hover{
         transform: scale(1.1) translate(5px, -5px);
     }
     main section h3,
-    .precio{
+    .price{
         font-size: 16px;
     }
 
-    .vendidosProductoContainer{
+    .soldProductContainer{
         width: 20%;
         height: auto;
     }
-    .vendidosProductoContainer img{
+    .soldProductContainer img{
         width: 100%;
     }
-    .vendidosProductoNombre{
+    .soldProductNombre{
         margin:0;
         padding-top: 25px;
         width: 100%;
@@ -368,22 +368,22 @@ div form{
         transition: all 1s;
     }
     
-    .vendidosProductoContainer:hover .vendidosProductoNombre{
+    .soldProductContainer:hover .soldProductNombre{
         transform: translateY(0);
         opacity: .85;
     }
 
-    .comentariosContainer{
+    .commentsContainer{
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
     }
-    .comentariosContainer h2{
+    .commentsContainer h2{
         width: 100%;
         text-align: center;
         margin-bottom: 15px;
     }
-    .comentariosCardContainer{
+    .commentsCardContainer{
         width: 33%;
         border: 1px solid #2e364683;
         box-shadow: 0px 0px 15px 2px #919191;

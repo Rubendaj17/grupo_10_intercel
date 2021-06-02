@@ -107,18 +107,18 @@ footer h5{
 }
 
 
-footer .pagosContainer ul li,
-footer .redesContainer ul li{
+footer .cardsContainer ul li,
+footer .mediaContainer ul li{
     list-style: none;
     text-align: center;
 }
-footer .redesContainer img{
+footer .mediaContainer img{
     height: 18px;
     width: 18px;
 }
 
-footer .redesContainer ul,
-footer .pagosContainer ul{
+footer .mediaContainer ul,
+footer .cardsContainer ul{
     width:70%;
     margin: 5px auto;
     display: flex;
@@ -127,7 +127,7 @@ footer .pagosContainer ul{
     
 }
 
-footer .pagosContainer img{
+footer .cardsContainer img{
     height: 50px;
     width: 50px;
 }
@@ -135,10 +135,6 @@ footer .pagosContainer img{
 footer .navFooter{
     display: none;
 }
-
-
-
-
 
 
 /* tablet */
@@ -194,7 +190,7 @@ footer .navFooter{
         padding-right: 5px;
     }
     #userIcon,
-    #carritoIcon{
+    #cartIcon{
         font-size: 18px;    
         margin: 0 5px;
     }
@@ -205,7 +201,7 @@ footer .navFooter{
     }
     
     #loginHeader a,
-    #carritoHeader a{
+    #cartHeader a{
         text-align: left;
         line-height: 12px;    
     }
@@ -216,7 +212,7 @@ footer .navFooter{
         color: #868FA0;
     }
     
-    #carritoHeader{
+    #cartHeader{
         flex-grow: 1;
         border-right: none;
         padding-right: 1px;
@@ -232,19 +228,19 @@ footer .navFooter{
         
     }
     
-    footer .pagosContainer,
+    footer .cardsContainer,
     footer .logoFooter,
-    footer .redesContainer,
+    footer .mediaContainer,
     footer .navFooter{
         flex-basis: 50%;
     }
     
-    footer .pagosContainer,
+    footer .cardsContainer,
     footer .logoFooter{
         order:-1;
     }
 
-    footer .pagosContainer ul{
+    footer .cardsContainer ul{
         width: 85%;
     }
 
@@ -278,7 +274,7 @@ footer .navFooter{
         font-weight: 500;
     }
     
-    footer .redesContainer ul li{
+    footer .mediaContainer ul li{
         margin: 0 auto;
     }
 }
@@ -314,16 +310,16 @@ footer .navFooter{
     footer .navFooter{
         order:1;
     }
-    footer .redesContainer{
+    footer .mediaContainer{
         order:2;
     }
-    footer .pagosContainer{
+    footer .cardsContainer{
         order:3;
     }
     
     footer .navFooter ul,
-    footer .redesContainer ul,
-    footer .pagosContainer ul{
+    footer .mediaContainer ul,
+    footer .cardsContainer ul{
         width:auto;
         margin: 10px auto;
         justify-content: flex-start;
@@ -338,16 +334,16 @@ footer .navFooter{
     footer .navFooter ul li{
         flex-basis: auto;
     }
-    footer .redesContainer ul li{
+    footer .mediaContainer ul li{
         text-align: left;
         margin: 0 auto 0 0;
     }
-    footer .pagosContainer ul{
+    footer .cardsContainer ul{
         width:auto;
         margin-top: 0;
 
     }
-    footer .pagosContainer ul li{
+    footer .cardsContainer ul li{
         flex-basis:50%;
         text-align: left;
         margin:0;

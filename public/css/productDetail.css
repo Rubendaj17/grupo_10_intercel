@@ -17,7 +17,7 @@ main>a{
     padding-bottom: 5px;
 }
 
-.producto-container{
+.productContainer{
     margin:auto;
     width:90%;
     padding:15px;
@@ -30,17 +30,17 @@ main>a{
     box-shadow: 3px 5px 15px #b7bdc7;
     
 }
-.fotos-secundarias-container{
+.minorPhotosContainer{
     display: flex;
     flex-wrap: nowrap;
 }
-.foto-principal-container,
-.fotos-secundarias-container div{
+.mainPhotoContainer,
+.minorPhotosContainer div{
     margin: 5px 10px 15px;
 }
 
 
-.informacion-container{
+.containerInformation{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -49,36 +49,36 @@ main>a{
     color:#868FA0;
     font-size: 14px;
 }
-.celular-nombre{
+.phoneName{
     color:#2E3646;
     font-size: 18px;
     text-transform: uppercase;
 }
-.descripcion{
+.description{
     color:#2E3646;
     font-size: 12px;
     font-weight: 500;
 }
-.bottom-info{
+.bottomInfo{
     margin-top: 15px;
     display:flex;
 }
-.precio-container{
+.containerPrice{
     width: 40%;
 }
 
-.precio-container h3{
+.containerPrice h3{
     color:#2E3646;
     font-size: 12px;
 }
-.precio-container p{
+.containerPrice p{
     color:#71D894;
     font-size: 16px;
     line-height: 20px;
     font-weight: 700;
 }
 
-.bottom-info button{
+.bottomInfo button{
     width: 60%;
 
     font-size: 12px;
@@ -89,11 +89,11 @@ main>a{
     border: 1px solid #B7BDC7;
     border-radius: 8px;
 }
-#carritoIcon-body{
+#carritoIconBody{
     font-size: 10px;
 }
 
-.relacionados-container{
+.containerRelated{
     margin: 25px auto;
     padding:15px;
     
@@ -101,11 +101,11 @@ main>a{
     align-items: center;   
 }
 
-.relacionados-logo{
+.logoRelated{
     display: none;
 }
 
-.relacionados-foto-container{
+.photoContainerRelated{
     margin: auto 5px;
     padding: 2px;
 
@@ -113,7 +113,7 @@ main>a{
     border-radius: 8px;  
     box-shadow: 1px 3px 8px #b7bdc7;
 }
-.relacionados-foto-container a{
+.photoContainerRelated a{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -122,15 +122,15 @@ main>a{
     font-weight: 700;    
 }
 
-.relacionado-nombre{
+.NameRelated{
     order: -1;
 }
-.relacionados-marca{
+.MarcaRelated{
     color:#2E3646;
     font-size: 12px;
     font-weight: 500;
 }
-.relacionados-marca span{
+.MarcaRelated span{
     font-size: 14px;
     font-weight: 700;
 }
@@ -138,12 +138,12 @@ main>a{
 
 /* tablet */
 @media (min-width: 361px){
-    .relacionados-container{
+    .containerRelated{
         width: 90%;
         justify-content: center;
     }
 
-    .relacionados-info{
+    .InformationRelated{
         margin: 0 5px;
         align-self: stretch;
         display: flex;
@@ -152,15 +152,15 @@ main>a{
         justify-content: space-between;
     }
 
-    .relacionados-logo{
+    .logoRelated{
         display: block;
         margin: auto;
     }
     
-    .relacionados-container img{
+    .containerRelated img{
         max-width: 110px;
     }
-    .relacionados-logo img{
+    .logoRelated img{
         min-width: 107px
     }
 }
@@ -172,36 +172,36 @@ main>a{
         text-align: left;
         margin-left: 20px;
     }
-    .producto-container{
+    .productContainer{
         flex-direction: row;
         align-items: center;
         height: 75vh;
     }
-    .fotos-secundarias-container{
+    .minorPhotosContainer{
         flex-direction: column;
         width: 15%;
         align-self: stretch;
         justify-content: space-around;
     }
     
-    .foto-principal-container{
+    .mainPhotoContainer{
         width: 30%;
         flex-grow: 1;
     }
-    .informacion-container{
+    .containerInformation{
         width: 35%;
         align-self: stretch;
         justify-content: space-around;
     }
-    .relacionados-info{
+    .InformationRelated{
         align-items: flex-start;
         align-self: auto;
     }
-    .relacionados-logo{
+    .logoRelated{
         width: 50%;
         margin: 20px 0;
     }
-    .relacionados-container{
+    .containerRelated{
         justify-content: space-around;
     }
 }

@@ -2,14 +2,14 @@ main{
     width: 100vw;   
     background-color:  #F8F9FC
 }
-
+/* //??? 
 #header-cart, #footer-cart{
     background-color: white;
 }
 
 #footer-cart{
     border-top: solid 1px #B7BDC7;
-}
+}*/
 
 main .process{
     background-color: white;
@@ -42,7 +42,7 @@ section p{
     font-size: 12px;
 }
 
-.numeral {
+.number {
     width: 15px;
     text-align: center;
     border-radius: 50%;
@@ -86,26 +86,26 @@ main .order{
 
 }
 
-.product-container1{
+.productContainer1{
     display: flex;
     flex-direction: row;
 
     
 }
 
-.product-features{
+.productFeatures{
     display: flex;
     flex-direction: column;
     align-items:flex-start;
     flex-grow: 1;   
 }
 
-.product-features ul{
+.productFeatures ul{
     margin-left: 20px;
 
 }
 
-.product-features li{
+.productFeatures li{
     color: #868FA0;
     font-size: 12px;
     line-height: 24px;
@@ -118,33 +118,33 @@ main .order{
     text-align: left;
 }
 
-.product-container2{
+.productContainer2{
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
 
 }
 
-.product-price{
+.productPrice{
     display: flex;
     flex-direction: column;
     width: 140px;
     align-items: center;
 }
 
-.product-price p{
+.productPrice p{
     color:#40B568;
     font-size: 15px;
 
 }
 
-.product-quantity{
+.productQuantity{
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
-.quantity-button{
+.quantityButton{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -158,7 +158,7 @@ main .order{
     background-color: #EFF1F4;
 }
 
-.delete-product{
+.deleteProduct{
     position: relative;
     left: 49px;
     color: #40B568;
@@ -180,17 +180,15 @@ main .order{
 
 }
 
-
-.discount-button{
+.discountButton{
     display: flex;
     flex-direction: row;
     max-width: 380px;
     justify-content: space-evenly;
     align-items: center;
-;
 }
 
-.discount-number{
+.discountNumber{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -201,7 +199,7 @@ main .order{
     height: 32px;
 }
 
-.apply-button{
+.applyButton{
     color: #000000;
     font-weight: bold;
     display: flex;
@@ -214,7 +212,7 @@ main .order{
     
 }
 
-.payment-button input{
+.paymentButton input{
     color: #2E3646;
     display: flex;
     flex-direction: row;
@@ -225,7 +223,7 @@ main .order{
     border-radius: 8px;
 
 }
-.order-summary{
+.orderSummary{
     margin: 15px;
     border: solid 1px #B7BDC7;
     box-shadow: 0px 2px 7px rgba(70, 102, 133, 0.1);
@@ -235,23 +233,23 @@ main .order{
     
 }
 
-.order-summary h3{
+.orderSummary h3{
     text-align: center;
     margin: 15px;
     font-size: 16px;
 }
 
-.subtotal, .delivery-cost, .final-discount, .total{
+.subtotal, .deliveryCost, .finalDiscount, .total{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.delivery-cost, .final-discount, .total{
+.deliveryCost, .finalDiscount, .total{
     margin-top: 22px;
 }
 
-.subtotal p, .delivery-cost p, .final-discount p, .total p{
+.subtotal p, .deliveryCost p, .finalDiscount p, .total p{
     color: #868FA0;
 }
 
@@ -271,14 +269,14 @@ main .order{
     padding: 15px;
 }
 
-.payment-button{
+.paymentButton{
     display: flex;
     margin: 40px 0px;
     justify-content: center;
     
 }
 
-.p-button{
+.payButton{
     color: #000000;
     font-weight: bold;
     border: 1px solid #868FA0
@@ -294,25 +292,25 @@ main .order{
         flex-wrap: wrap;
     }
 
-    article .product-container1{
+    article .productContainer1{
         position: relative;
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
     }
 
-    article .product-container2{
+    article .productContainer2{
         margin-right: 0px;
     }
     
-    .product-price{
+    .productPrice{
         width: 100px;
         margin-left: 15px;
     }
     
 
     
-    .delete-product{
+    .deleteProduct{
         position: absolute;
         left: 60px;
         bottom: -5px;
@@ -333,7 +331,7 @@ main .order{
         margin: auto;
     }
 
-    .main-content{
+    .mainContent{
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
@@ -354,18 +352,18 @@ main .order{
         margin-left: 10px;
     }
 
-    .delete-product{
+    .deleteProduct{
         position: absolute;
         left: 65px;
         bottom: 0px;
     }
     
-    .product-container1{
+    .productContainer1{
         margin-bottom: 16px ;
 
     }
 
-    .product-container2{
+    .productContainer2{
         display: flex;
         flex-direction: row-reverse;
 
@@ -384,18 +382,18 @@ main .order{
         margin-left: 10px;
     }
 
-    .product-price{
+    .productPrice{
         width: initial;
     }
-    .product-quantity{
+    .productQuantity{
         margin: 10px;
     }
 
-    .product-quantity,.delivery,.product-price{
+    .productQuantity,.delivery,.productPrice{
         margin: 0px 20px
     }
 
-    .product-quantity p,.delivery p,.product-price p{
+    .productQuantity p,.delivery p,.productPrice p{
         margin-top: 18px;
     }
 
@@ -405,9 +403,6 @@ main .order{
     .payment{
         margin:initial;
     }
-
-    
-
 
 }
 
