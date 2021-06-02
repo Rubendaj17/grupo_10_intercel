@@ -1,6 +1,4 @@
-img{
-    width: 100%;
-}
+
 main{
     display: flex;
     flex-direction: column;
@@ -23,12 +21,57 @@ main section h3{
     font-weight: 700;
 }
 
-.carousel-container{
+.carousel-item{
+    height: 20rem;
+}
+.carouselContainer{
     position: relative;
-    background-color: #4890F1;
-    padding: 10px;
     order: -1;
 }
+
+#slide1{
+    background-image: url(../images/home/IPhone-Banner.jpg);
+    text-align: center;
+    width: 100vw;
+    background-position: center;
+    background-size: cover;
+}
+
+#slide2{
+    background-image: url(../images/home/S21-Banner.jpg);
+    text-align: center;
+    width: 100vw;
+    background-position: center;
+    background-size: cover;
+}
+
+#slide3{
+    background-image: url(../images/home/LG-Banner.jpg);
+    text-align: center;
+    width: 100vw;
+    background-position: center;
+    background-size: cover;
+}
+
+.btn-primary{
+    color: #2E3646;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #71D894;
+    border: 1px solid #B7BDC7;
+    border-radius: 8px;
+    position: absolute;
+    top:2%;
+    right: 3%;
+    
+    
+}
+.btn-primary:hover{
+    background-color: #64c283;
+    border: 1px solid #B7BDC7;
+}
+
+
 .carousel-control-prev-icon{
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%232E3646' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E")
 }
@@ -41,7 +84,7 @@ main section h3{
 .carousel-indicators .active{
     background-color: #000;
 }
-.carousel-container button{
+.carouselContainer button{
     position: absolute;
     bottom: -5%;
     right: 5%;
@@ -61,15 +104,15 @@ button a{
 button a i{
     margin-left: 4px;
 }
-.ofertas-container{
+.offersContainer{
     order: 0;
     width: 100vw;
     background-color: #71D894;
 }
 
-.ofertas-producto-container,
-.vendidos-producto-container,
-.comentarios-card-container{
+.offersProductContainer,
+.soldProductContainer,
+.commentsCardContainer{
     text-align: center;
     
     width: 90vw;
@@ -78,26 +121,26 @@ button a i{
     border-radius: 5px;  
 }
 
-.comentarios-card-container{
+.commentsCardContainer{
     background-color: #fff;   
 }
 
-.ofertas-producto-nombre,
-.precio{
+.offersProductoNombre,
+.price{
     display: inline-block;
     margin: 5px 25px 0;
 }
-.precio{
+.price{
     font-weight: 700;
     color: #40B568;
 }
-.ofertas-producto-container img{
+.offersProductContainer img{
     height: 33vh;
     width: auto;
 }
-.marcas-container,
-.vendidos-container,
-.comentarios-container{
+.brandsContainer,
+.soldContainer,
+.commentsContainer{
     order: 1;
     width: 100vw;
 }
@@ -106,14 +149,14 @@ div form{
     width:50%;
 }
 
-.marcas-container{
+.brandsContainer{
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
 
     background-color: #f1f1f1;
 }
-.marcas-img-container{
+.brandsImgContainer{
     width: 40%;
     padding: 15px;
     margin: 5px 0;
@@ -121,25 +164,25 @@ div form{
     /* border-radius: 5px; */
     /* background-color: #fff; */
 }
-.marcas-img-container img{
+.brandsImgContainer img{
     display: block;
     width: 50%;
     margin: auto;
     
 }
 
-.vendidos-producto-container{
+.soldProductContainer{
     position: relative;
     overflow: hidden;
     height: 25vh;
 }
-.vendidos-producto-container.impar{
+.soldProductContainer.impar{
     background-color: #4890F1;   
 }
-.vendidos-producto-container.par{
+.soldProductContainer.par{
     background-color: #514DF8; 
 }
-.vendidos-producto-nombre{
+.soldProductNombre{
     position: absolute;
     bottom:5%;
     right:5%;
@@ -147,25 +190,25 @@ div form{
     color: #f1f1f1;
     font-size: 16px;
 }
-.ofertas-producto-container{
+.offersProductContainer{
     background-color: #f1f1f1;
     overflow: hidden;
 }
-.comentarios-container{
+.commentsContainer{
     order: 1;
 }
-.comentarios-card-container{
+.commentsCardContainer{
     display: flex;
     flex-direction: column;
     background-color: #f1f1f1;
 }
-.comentarios-header{
+.commentsHeader{
     display: flex;
     padding: 5px 15px;
     text-align: left;
 
 }
-.comentarios-img-container{
+.commentsImgContainer{
     position: relative;
     height: 55px;
     width: 55px;
@@ -173,7 +216,7 @@ div form{
     border: 1px solid #B7BDC7;
     overflow: hidden;
 }
-.comentarios-img-container img{
+.commentsImgContainer img{
     width: 55px;
     height: auto;
     position: absolute;
@@ -181,48 +224,42 @@ div form{
     left:50%;
     transform: translateX(-50%);
 }
-.comentarios-info-container{
+.commentsInfoContainer{
     margin: auto 15px;
 }
-.comentarios-nombre,
-.comentarios-pais{
+.commentsNombre,
+.commentsPais{
     margin:0;
 }
-.comentario{
+.comment{
     text-align: left;
     margin-left: 15px;
 }
 
 
 
-
-
-
-
 /* tablet */
 @media (min-width: 361px){
-    .carousel-container,
-    .carousel-inner,
-    .w-100{
-        height: 60vh;
-    }
-    .carousel-container button{
+    .carouselContainer button{
         display: none;
     }
-
-    .ofertas-container,
-    .vendidos-container{
+    .carousel-item{
+        height: 28rem;
+    }
+    
+    .offersContainer,
+    .soldContainer{
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
     }
 
-    .ofertas-container h2,
-    .vendidos-container h2{
+    .offersContainer h2,
+    .soldContainer h2{
         width: 100%;
         text-align: center;
     }
-    .ofertas-producto-container{
+    .offersProductContainer{
         width: 35%;
         margin: 10px 0;
         padding: 5px;
@@ -230,26 +267,26 @@ div form{
         flex-direction: column;
         box-shadow: 0px 0px 10px 3px #448259;        
     }
-    .ofertas-producto-container img{
+    .offersProductContainer img{
         height: auto;
         width: 100%;
     }
-    .ofertas-producto-nombre{
+    .offersProductoNombre{
         order:2;
     }
-    .precio{
+    .price{
         order:3;
     }
 
-    .vendidos-producto-container{
+    .soldProductContainer{
         width: 45%;
         text-align: left;
     }
-    .vendidos-producto-container img{
+    .soldProductContainer img{
         width: auto;
         height: 100%;
     }
-    .vendidos-producto-nombre{
+    .soldProductNombre{
         bottom: initial;
         right: 2%;
         top:50%;
@@ -259,27 +296,22 @@ div form{
 
 /* desktop */
 @media (min-width: 769px){
-    .carousel-container,
-    .carousel-inner,
-    .w-100{
-        height: 50vh;
-    }
-    .carousel-container{
-        width: 80vw;
+    .carouselContainer{
+        width: 100vw;
         flex-direction: row;
         justify-content: space-between;
         border-radius: 15px;
+    }
+    .carousel-item{
+        height: 34rem;
     }
     .carousel{
         width: 100%;
         margin-left: auto;
     }
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon{
-        display: none;
-    }
     
-    .carousel-container button{
+    
+    .carouselContainer button{
         order:-1;
         display: block;
         position: absolute;
@@ -289,37 +321,37 @@ div form{
     main section h2{
         font-size: 22px;
     }
-    .marcas-container{
+    .brandsContainer{
         order:0;
     }
-    .marcas-img-container img{
+    .brandsImgContainer img{
         height: 8vh;
     }
-    .marcas-img-container{
+    .brandsImgContainer{
         width: auto;
         padding: 5px;
     }
 
-    .ofertas-producto-container{
+    .offersProductContainer{
         width: 20%;
         transition: all .5s;
     }
-    .ofertas-producto-container:hover{
+    .offersProductContainer:hover{
         transform: scale(1.1) translate(5px, -5px);
     }
     main section h3,
-    .precio{
+    .price{
         font-size: 16px;
     }
 
-    .vendidos-producto-container{
+    .soldProductContainer{
         width: 20%;
         height: auto;
     }
-    .vendidos-producto-container img{
+    .soldProductContainer img{
         width: 100%;
     }
-    .vendidos-producto-nombre{
+    .soldProductNombre{
         margin:0;
         padding-top: 25px;
         width: 100%;
@@ -336,22 +368,22 @@ div form{
         transition: all 1s;
     }
     
-    .vendidos-producto-container:hover .vendidos-producto-nombre{
+    .soldProductContainer:hover .soldProductNombre{
         transform: translateY(0);
         opacity: .85;
     }
 
-    .comentarios-container{
+    .commentsContainer{
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
     }
-    .comentarios-container h2{
+    .commentsContainer h2{
         width: 100%;
         text-align: center;
         margin-bottom: 15px;
     }
-    .comentarios-card-container{
+    .commentsCardContainer{
         width: 33%;
         border: 1px solid #2e364683;
         box-shadow: 0px 0px 15px 2px #919191;

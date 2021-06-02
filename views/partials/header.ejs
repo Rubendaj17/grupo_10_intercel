@@ -1,40 +1,40 @@
 <header>
-    <div class="logo-header"><a href="/"><img src="/images/logos/Logo.svg" alt="Logo Genial de Intercel"></a></div>
+    <div class="logoHeader"><a href="/"><img src="/images/logos/Logo.svg" alt="Logo Genial de Intercel"></a></div>
     
-    <div class="search-bar"><input type="text" placeholder="¿Qué buscas?"><i class="fas fa-search" id="search-icon"></i></div>
+    <div class="searchBar"><input type="text" placeholder="¿Qué buscas?"><i class="fas fa-search" id="search-icon"></i></div>
 
-    <nav class="nav-header">
-        <i class="fas fa-bars" id="hamburger-menu"></i>
+    <nav class="navHeader">
+        <i class="fas fa-bars" id="hamburgerMenu"></i>
         <ul>
-            <li id="productos-header"><a href="/products/list">Productos</a></li>
-            <li id="nosotros-header"><a href="/proximamente">Nosotros</a></li>
-            <li id="login-header">
+            <li id="productosHeader"><a href="/products/list">Productos</a></li>
+            <li id="nosotrosHeader"><a href="/proximamente">Nosotros</a></li>
+            <li id="loginHeader">
                 <i class="far fa-user" id="userIcon"></i>
                 <a href="/users/login">Iniciar Sesión <span>Mi Cuenta</span></a>
             </li>
-            <div class="login-form-container">
+            <div class="loginFormContainer">
                     
-                <form class="login-form" action="/login" method="POST">
+                <form class="loginForm" action="/login" method="POST">
                     <h2>Iniciar sesión</h2>
-                    <div class="control-form">
+                    <div class="controlForm">
                         <label>Nombre de usuario</label>
                         <input type="text" name="usuario" class="control" required>
-                        <span class="control-error">Incorrecto</span>
+                        <span class="controlError">Incorrecto</span>
                     </div>
-                    <div class="control-form">
+                    <div class="controlForm">
                         <label>Contraseña</label>
                         <input type="password" name="contrasena" class="control" required>
                         
-                        <span class="control-error">Incorrecto</span>
+                        <span class="controlError">Incorrecto</span>
                     </div>
                     <div class="remember-pass"><a href="#"> Olvidé mi contraseña</a></div>
-                    <button type="submit" class="boton-login">Iniciar sesión</button>
-                    <div class="register-container"><p>Sin cuenta?</p><a id="register-button" href="register"> Registrate</a></div>
+                    <button type="submit" class="botonLogin">Iniciar sesión</button>
+                    <div class="registerContainer"><p>Sin cuenta?</p><a id="registerButton" href="register"> Registrate</a></div>
         
                 </form>
             </div>
-            <li id="carrito-header"> 
-                <i class="fas fa-shopping-cart" id="carrito-icon"></i>
+            <li id="cartHeader"> 
+                <i class="fas fa-shopping-cart" id="cartIcon"></i>
                 <a href="/cart/list">Carrito</a>
             </li>
         </ul>

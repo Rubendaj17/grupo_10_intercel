@@ -1,0 +1,207 @@
+main{
+    padding: 0 10px;
+}
+
+main img{
+    width: 100%;
+}
+
+main>a{
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    text-decoration: none;
+    color:#71D894;
+    font-weight: 700;
+    padding-right: 10px;
+    padding-bottom: 5px;
+}
+
+.productContainer{
+    margin:auto;
+    width:90%;
+    padding:15px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid #B7BDC7;
+    border-radius: 8px;
+    box-shadow: 3px 5px 15px #b7bdc7;
+    
+}
+.minorPhotosContainer{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.mainPhotoContainer,
+.minorPhotosContainer div{
+    margin: 5px 10px 15px;
+}
+
+
+.containerInformation{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.brand{
+    color:#868FA0;
+    font-size: 14px;
+}
+.phoneName{
+    color:#2E3646;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.description{
+    color:#2E3646;
+    font-size: 12px;
+    font-weight: 500;
+}
+.bottomInfo{
+    margin-top: 15px;
+    display:flex;
+}
+.containerPrice{
+    width: 40%;
+}
+
+.containerPrice h3{
+    color:#2E3646;
+    font-size: 12px;
+}
+.containerPrice p{
+    color:#71D894;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+.bottomInfo button{
+    width: 60%;
+
+    font-size: 12px;
+    font-weight: 700;
+    padding: .25em .5em;
+    
+    background-color: #71D894;
+    border: 1px solid #B7BDC7;
+    border-radius: 8px;
+}
+#carritoIconBody{
+    font-size: 10px;
+}
+
+.containerRelated{
+    margin: 25px auto;
+    padding:15px;
+    
+    display: flex;
+    align-items: center;   
+}
+
+.logoRelated{
+    display: none;
+}
+
+.photoContainerRelated{
+    margin: auto 5px;
+    padding: 2px;
+
+    border: 1px solid #B7BDC7;
+    border-radius: 8px;  
+    box-shadow: 1px 3px 8px #b7bdc7;
+}
+.photoContainerRelated a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color:#71D894;
+    font-weight: 700;    
+}
+
+.NameRelated{
+    order: -1;
+}
+.brandRelated{
+    color:#2E3646;
+    font-size: 12px;
+    font-weight: 500;
+}
+.brandRelated span{
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* tablet */
+@media (min-width: 361px){
+    .containerRelated{
+        width: 90%;
+        justify-content: center;
+    }
+
+    .InformationRelated{
+        margin: 0 5px;
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logoRelated{
+        display: block;
+        margin: auto;
+    }
+    
+    .containerRelated img{
+        max-width: 110px;
+    }
+    .logoRelated img{
+        min-width: 107px
+    }
+}
+
+
+/* desktop */
+@media (min-width: 769px){
+    main>a{
+        text-align: left;
+        margin-left: 20px;
+    }
+    .productContainer{
+        flex-direction: row;
+        align-items: center;
+        height: 75vh;
+    }
+    .minorPhotosContainer{
+        flex-direction: column;
+        width: 15%;
+        align-self: stretch;
+        justify-content: space-around;
+    }
+    
+    .mainPhotoContainer{
+        width: 30%;
+        flex-grow: 1;
+    }
+    .containerInformation{
+        width: 35%;
+        align-self: stretch;
+        justify-content: space-around;
+    }
+    .InformationRelated{
+        align-items: flex-start;
+        align-self: auto;
+    }
+    .logoRelated{
+        width: 50%;
+        margin: 20px 0;
+    }
+    .containerRelated{
+        justify-content: space-around;
+    }
+}

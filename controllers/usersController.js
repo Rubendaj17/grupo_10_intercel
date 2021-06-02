@@ -7,22 +7,20 @@ let usersController = {
     register: (req,res)=>{
         res.render('register')
     },
-    newProduct: (req, res)=>{
+    newProduct: (req,res)=>{
         res.render('newProduct')
+        //res.sendFile(path.resolve(__dirname,"../views/newProduct.ejs"))
     },
-    // editProduct: (req, res)=>{
-    //     res.render('editProduct')
-    // },
-    editProduct: (req, res)=>{
+    editProduct (req, res){
         let product={
-            model: "X",
-            description: "blanco",
+            brand: "samsung",
+            model: "A20",
+            color: "blanco",
             price: 576,
-            high: 8,
-            width: 3.9,
+            ram: 8,
         }
-        return res.render('editProduct', {product});
-    },
+        res.render('editProduct', {'product': product})
+    }
 }
 
 module.exports = usersController

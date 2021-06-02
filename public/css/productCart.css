@@ -1,0 +1,411 @@
+main{
+    width: 100vw;   
+    background-color:  #F8F9FC
+}
+/* //??? 
+#header-cart, #footer-cart{
+    background-color: white;
+}
+
+#footer-cart{
+    border-top: solid 1px #B7BDC7;
+}*/
+
+main .process{
+    background-color: white;
+    margin-top: 10px;
+
+}
+
+
+.process div{
+    display: flex;
+    padding: 40px 0;
+    justify-content: space-around;
+    align-items: center; 
+    background-color: white;    
+}
+
+.process i,.process p{ 
+    color: #868FA0;
+}
+
+.process .fa-check{
+    color: #2E3646;
+    padding: 5px;
+    background-color: #71D894;
+    border-radius: 50%;
+    
+}
+
+section p{
+    font-size: 12px;
+}
+
+.number {
+    width: 15px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #EFF1F4;
+    
+}
+
+
+/* ORDEN DE COMPRA */
+
+main .order{
+    text-align: center;
+    margin: 20px 0px;
+    font-size: 16px;
+} 
+
+.cart1{
+    margin-bottom:15px; 
+    background-color: white; 
+    padding: 20px 20px 20px 10px;   
+}
+
+.cart2{
+
+    margin-bottom:15px; 
+    background-color: white;
+    padding:20px;    
+}
+
+.cart h3{
+    margin-top: 10px;
+}
+
+.cart img{
+    width: 140px;
+    padding: 0;
+}
+.cart i{
+    margin-top: 30px;
+    margin-left: 12px;
+
+}
+
+.productContainer1{
+    display: flex;
+    flex-direction: row;
+
+    
+}
+
+.productFeatures{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    flex-grow: 1;   
+}
+
+.productFeatures ul{
+    margin-left: 20px;
+
+}
+
+.productFeatures li{
+    color: #868FA0;
+    font-size: 12px;
+    line-height: 24px;
+   
+}
+
+.delivery{
+    flex: display;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.productContainer2{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+
+}
+
+.productPrice{
+    display: flex;
+    flex-direction: column;
+    width: 140px;
+    align-items: center;
+}
+
+.productPrice p{
+    color:#40B568;
+    font-size: 15px;
+
+}
+
+.productQuantity{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.quantityButton{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.symbol{
+    width: 18px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #EFF1F4;
+}
+
+.deleteProduct{
+    position: relative;
+    left: 49px;
+    color: #40B568;
+    width: 30px;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+
+/* PAGO */
+
+.payment{
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    margin: auto;
+    
+
+}
+
+.discountButton{
+    display: flex;
+    flex-direction: row;
+    max-width: 380px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.discountNumber{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 200px;
+    padding: 8px 8px;
+    border: 1px solid #868FA0;
+    border-radius: 8px;
+    height: 32px;
+}
+
+.applyButton{
+    color: #000000;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    padding: 12px 12px 20px 12px;
+    background: #71D894;
+    border-radius: 8px;
+    border: 1px solid #868FA0;
+    height: 40px;
+    
+}
+
+.paymentButton input{
+    color: #2E3646;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 16px;
+    background: #71D894;
+    border-radius: 8px;
+
+}
+.orderSummary{
+    margin: 15px;
+    border: solid 1px #B7BDC7;
+    box-shadow: 0px 2px 7px rgba(70, 102, 133, 0.1);
+    border-radius: 16px;
+    max-width: 380px;
+    background-color: white;    
+    
+}
+
+.orderSummary h3{
+    text-align: center;
+    margin: 15px;
+    font-size: 16px;
+}
+
+.subtotal, .deliveryCost, .finalDiscount, .total{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.deliveryCost, .finalDiscount, .total{
+    margin-top: 22px;
+}
+
+.subtotal p, .deliveryCost p, .finalDiscount p, .total p{
+    color: #868FA0;
+}
+
+
+.total p{
+    color: #40B568;
+    font-size: 14px;
+}
+
+.total h4{
+    font-size: 15px;
+}
+
+.summary{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.paymentButton{
+    display: flex;
+    margin: 40px 0px;
+    justify-content: center;
+    
+}
+
+.payButton{
+    color: #000000;
+    font-weight: bold;
+    border: 1px solid #868FA0
+    
+}
+    
+/* tablet */
+@media (min-width: 361px){
+
+    article{
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    article .productContainer1{
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    article .productContainer2{
+        margin-right: 0px;
+    }
+    
+    .productPrice{
+        width: 100px;
+        margin-left: 15px;
+    }
+    
+
+    
+    .deleteProduct{
+        position: absolute;
+        left: 60px;
+        bottom: -5px;
+    }
+    
+    .delivery{
+        margin-left: 5px;
+    }
+    
+    
+}    
+
+
+/* desktop */
+@media (min-width: 769px){
+    .process div{
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .mainContent{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .cart1{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        border: 1px solid #B7BDC7;
+        box-shadow: 0px 2px 7px rgba(70, 102, 133, 0.1);
+        border-radius: 16p;
+        padding: 16px;
+        max-width: 572px;
+        margin-bottom: 15px;
+        margin-left: 10px;
+    }
+
+    .deleteProduct{
+        position: absolute;
+        left: 65px;
+        bottom: 0px;
+    }
+    
+    .productContainer1{
+        margin-bottom: 16px ;
+
+    }
+
+    .productContainer2{
+        display: flex;
+        flex-direction: row-reverse;
+
+    }
+
+    .cart2{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        border: 1px solid #B7BDC7;
+        box-shadow: 0px 2px 7px rgba(70, 102, 133, 0.1);
+        border-radius: 16p;
+        padding: 16px;
+        max-width: 572px;
+        margin-bottom: 15px;
+        margin-left: 10px;
+    }
+
+    .productPrice{
+        width: initial;
+    }
+    .productQuantity{
+        margin: 10px;
+    }
+
+    .productQuantity,.delivery,.productPrice{
+        margin: 0px 20px
+    }
+
+    .productQuantity p,.delivery p,.productPrice p{
+        margin-top: 18px;
+    }
+
+    delivery p{
+        margin-top: 18px;
+    }
+    .payment{
+        margin:initial;
+    }
+
+}
+
+
+    
+
