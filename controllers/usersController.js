@@ -9,7 +9,6 @@ let usersController = {
     },
     newProduct: (req,res)=>{
         res.render('newProduct')
-        //res.sendFile(path.resolve(__dirname,"../views/newProduct.ejs"))
     },
     editProduct (req, res){
         let product={
