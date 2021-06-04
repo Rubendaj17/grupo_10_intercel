@@ -6,8 +6,4 @@ usersRouter.get("/login", usersController.login);
 
 usersRouter.get("/register",usersController.register);
 
-usersRouter.get("/newProduct", usersController.newProduct);
-
-usersRouter.get("/editProduct", usersController.editProduct);
-
 module.exports = usersRouter
