@@ -21,10 +21,17 @@
     <p>Para el próximo Sprint vamos a cambiar los nombres de las clases y IDs de html en el siguiente formato en inglés: aaaBbbb</p>
     
  <h3>Domingo 30 de mayo  09.00hs</h3>
-    
-<p><span>Ruben:</span> Corrigió el carrusel y se encargará de subirlo a la branch main para incorporarlo al resto del proyecto. </p>
-<p><span>Justi:</span> Elaboró los formularios de creación de producto y edición de producto. Trabajará en cambiar los colores de los formularios y en agregar el footer y el header a los archivos ejs. en los que se encuentran los formularios.</p>
-<p><span>Ale:</span> Estuvo revisando el trabajo realizado durante las clases prácticas para asegurarse de qué la página de Intercel funcione correctamente. Se encargará de linkear el formulario de creación de usuario al home.</p>
-<p>El equipo seguirá trabajando en finalizar las consignas del sprint  actual y en implementar recomendaciones del sprint pasado.</p>
-     
-     
+        
+    <p><span>Ruben:</span> Corrigió el carrusel y se encargará de subirlo a la branch main para incorporarlo al resto del proyecto. </p>
+    <p><span>Justi:</span> Elaboró los formularios de creación de producto y edición de producto. Trabajará en cambiar los colores de los formularios y en agregar el footer y el header a los archivos ejs. en los que se encuentran los formularios.</p>
+    <p><span>Ale:</span> Estuvo revisando el trabajo realizado durante las clases prácticas para asegurarse de qué la página de Intercel funcione correctamente. Se encargará de linkear el formulario de creación de usuario al home.</p>
+    <p>El equipo seguirá trabajando en finalizar las consignas del sprint  actual y en implementar recomendaciones del sprint pasado.</p>
+        
+           
+ <h3>Miercoles 2 de junio  19.30hs</h3>
+    <p>
+        El equipo se reunio para ultimar detalles, revisar posibles conflictos y pushear a main arreglos finales.
+    </p>
+        
+        
+

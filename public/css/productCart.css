@@ -2,14 +2,7 @@ main{
     width: 100vw;   
     background-color:  #F8F9FC
 }
-/* //??? 
-#header-cart, #footer-cart{
-    background-color: white;
-}
 
-#footer-cart{
-    border-top: solid 1px #B7BDC7;
-}*/
 
 main .process{
     background-color: white;

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head') %>
+
+<!-- nuestros css -->
+    <link rel="stylesheet" href="/css/headerFooter.css">
+    <link rel="stylesheet" href="/css/products.css">
+
+    <title>Products</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <%- include('../partials/header') %>
+    
+    <main>
+        <p class="blueBar"></p>
+
+        <div class="title">
+            <h2>Productos</h2>
+            <p><%= brand %></p>
+        </div>
+        <section class="products">
+                
+            <% productList.forEach( e => {%>
+                <article>
+                    <img src="<%= e.image %>" alt="<%= e.model %>">
+                    <div class="productFeatures">
+                        <h3><%= e.model %></h3>
+                        <p><%= e.brand %></p>
+                        <ul>
+                            <li><%= e.color %></li>
+                            <li><%= e.ram %></li>
+                        </ul>
+                    </div>
+                    <div class="productPrice">
+                        <h3>Precio</h3>
+                        <p>$<%= e.price %></p>
+                        <input type="button" value="Agregar al carrito" class="add-to-cart-button">
+                    </div>
+                </article>
+ 
+            <%}); %> 
+            
+            <a href="#">Siguiente página</a>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <%- include('../partials/footer') %>
+</body>
+</html>

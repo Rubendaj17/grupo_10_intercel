@@ -1,0 +1,5 @@
+[{"id":1,"brand":"samsung","model":"S20","color":"negro","price":"100.000","ram":"16GB", "image":"/images/cellphones/samsung/S20/s20-1.png"},
+{"id":2,"brand":"motorola","model":"Iphone XS","color":"gris","price":"200.000","ram":"24GB","image":"/images/cellphones/apple/iphone XS/xs-1.png"},
+{"id":3,"brand":"motorola","model":"e7","color":"blanco","price":"150.000","ram":"16GB", "image":"/images/cellphones/motorola/e7/e7-1.png"},
+{"id":4,"brand":"lg","model":"K31","color":"blanco","price":"123.000","ram":"8GB", "image":"/images/cellphones/LG/K31/k31-1.png"}
+]
