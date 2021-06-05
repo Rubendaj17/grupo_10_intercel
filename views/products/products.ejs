@@ -19,80 +19,30 @@
 
         <div class="title">
             <h2>Productos</h2>
-            <p>Mostrando 1 página de 12</p>
+            <p><%= brand %></p>
         </div>
-        <section>
-            <div class="products">
+        <section class="products">
+                
+            <% productList.forEach( e => {%>
                 <article>
-                    <img src="/images/cellphones/apple/iphone 11/iphone11-1.png" alt="Iphone 11">
+                    <img src="<%= e.image %>" alt="<%= e.model %>">
                     <div class="productFeatures">
-                        <h3>Apple</h3>
-                        <p>Iphone X</p>
+                        <h3><%= e.model %></h3>
+                        <p><%= e.brand %></p>
                         <ul>
-                            <li>548 GB</li>
-                            <li>Cámara triple</li>
-                            <li>16GB RAM</li>
+                            <li><%= e.color %></li>
+                            <li><%= e.ram %></li>
                         </ul>
                     </div>
                     <div class="productPrice">
                         <h3>Precio</h3>
-                        <p>$179.449</p>
+                        <p>$<%= e.price %></p>
                         <input type="button" value="Agregar al carrito" class="add-to-cart-button">
                     </div>
                 </article>
-                <article>
-                    <img src="/images/cellphones/LG/K31/K31-2.png" alt="LG">
-                    <div class="productFeatures">
-                        <h3>LG</h3>
-                        <p>LG K31</p>
-                        <ul>
-                            <li>128 GB</li>
-                            <li>Cámara triple</li>
-                            <li>16GB RAM</li>
-                        </ul>
-                    </div>
-                    <div class="productPrice">
-                        <h3>Precio</h3>
-                        <p>$179.449</p>
-                        <input type="button" value="Agregar al carrito" class="add-to-cart-button">
-                    </div>
-                </article>
+ 
+            <%}); %> 
             
-                <article>
-                    <img src="/images/cellphones/motorola/e7/e7-1.png" alt="Motorola">
-                    <div class="productFeatures">
-                        <h3>Motorola</h3>
-                        <p>Motorola E7</p>
-                        <ul>
-                            <li>252 GB</li>
-                            <li>Cámara triple</li>
-                            <li>16GB RAM</li>
-                        </ul>
-                    </div>
-                    <div class="productPrice">
-                        <h3>Precio</h3>
-                        <p>$179.449</p>
-                        <input type="button" value="Agregar al carrito" class="add-to-cart-button">
-                    </div>
-                </article>
-                <article>
-                    <img src="/images/cellphones/samsung/S20/s20-4.png" alt="Samsung">
-                    <div class="productFeatures">
-                        <h3>Samsung</h3>
-                        <p>S20</p>
-                        <ul>
-                            <li>128 GB</li>
-                            <li>4 cámaras</li>
-                            <li>16GB RAM</li>
-                        </ul>
-                    </div>
-                    <div class="productPrice">
-                        <h3>Precio</h3>
-                        <p>$179.449</p>
-                        <input type="button" value="Agregar al carrito" class="add-to-cart-button">
-                    </div>
-                </article>
-            </div>
             <a href="#">Siguiente página</a>
         </section>
     </main>

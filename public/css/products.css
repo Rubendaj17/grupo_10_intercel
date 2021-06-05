@@ -21,6 +21,7 @@ main .title h2{
 main .title p{
     color: #868FA0;
     font-size: 12px;
+    text-transform: capitalize;
 }
 
 article{
@@ -41,6 +42,7 @@ article img{
 .productFeatures p,.productFeatures li{
     color:#868FA0;
     font-size: 12px;
+    text-transform: capitalize;
 }
 
 

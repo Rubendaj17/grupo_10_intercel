@@ -1,9 +1,22 @@
 const path = require('path');
+const productsModel = require('../model/productsModel')
 
 let productController = {
     list: (req,res)=>{
-        res.render('products/products')
+        const productList = productsModel.findAll() 
+        const brand = 'Todos los Productos'
+        res.render('products/products',{productList, brand})
     },
+    brandList: (req, res) => {
+        const {brand} = req.params
+
+        const productList = productsModel.findByBrand(brand) 
+        
+        res.render('products/products',{productList, brand})
+
+    },
+
+
     detail:(req,res)=>{
         res.render('products/productDetail')
     },

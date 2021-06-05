@@ -120,6 +120,11 @@ button a i{
     
     border-radius: 5px;  
 }
+.offersProductContainer a{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
 
 .commentsCardContainer{
     background-color: #fff;   
