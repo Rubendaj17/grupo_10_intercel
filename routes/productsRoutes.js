@@ -7,7 +7,7 @@ productsRouter.get("/list/:brand", productsController.brandList)
 productsRouter.get("/:id", productsController.detail)
 
 productsRouter.get("/newProduct", productsController.newProduct);
-productsRouter.get("/editProduct", productsController.editProduct);
+productsRouter.get("/:id/editProduct", productsController.editProduct);
 
 
 module.exports = productsRouter
