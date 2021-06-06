@@ -48,6 +48,8 @@ main>a{
 .brand{
     color:#868FA0;
     font-size: 14px;
+    text-transform: capitalize;
+
 }
 .phoneName{
     color:#2E3646;

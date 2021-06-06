@@ -18,29 +18,29 @@
         <section class="productContainer">
             <article class="minorPhotosContainer">
             
-                <div><img src="/images/cellphones/samsung/Note20/Note20-1.png" alt="Preview celular 1"></div>
-                <div><img src="/images/cellphones/samsung/Note20/Note20-2.png" alt="Preview celular 2"></div>
-                <div><img src="/images/cellphones/samsung/Note20/Note20-3.png" alt="Preview celular 3"></div>
+                <div><img src="<%= idDetail.image %>" alt="Preview <%= idDetail.model %>"></div>
+                <div><img src="<%= idDetail.image %>" alt="Preview <%= idDetail.model %>"></div>
+                <div><img src="<%= idDetail.image %>" alt="Preview <%= idDetail.model %>"></div>
             
             </article>
             
             <article class="mainPhotoContainer">
             
-                <div><img src="/images/cellphones/samsung/Note20/Note20-4.png" alt="Celular Note20"></div>
+                <div><img src="<%= idDetail.image %>" alt="Celular  <%= idDetail.model %>"></div>
             
             </article>
                 
             <article class="containerInformation">
                 <div>
-                    <h2 class="brand">Samsung</h2>
-                    <h1 class="phoneName">Note 20</h1>
+                    <h2 class="brand"><%= idDetail.brand %></h2>
+                    <h1 class="phoneName"><%= idDetail.model %></h1>
                 </div>
                 <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum dicta autem commodi eum consequatur deserunt. Qui vitae illo sint tempore accusamus? Cum blanditiis excepturi, nam perferendis doloribus consequatur nulla voluptatum.</p>
                 
                 <div class="bottomInfo">
                     <div class="containerPrice">
                         <h3>Precio</h3>
-                        <p>$113.999</p>
+                        <p>$<%= idDetail.price %></p>
                     </div>
             
                     <button>Agregar al Carrito  <i class="fas fa-shopping-cart" id="carritoIconBody"></i></button>

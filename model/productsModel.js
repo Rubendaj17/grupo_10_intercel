@@ -18,6 +18,11 @@ module.exports = {
 
         return products.filter( e => e.brand == brand)
 
+    },
+
+    findByPk(id){
+        const products = this.readFile()
+        return products.find (e => e.id == id)
     }
 
 

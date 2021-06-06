@@ -18,8 +18,16 @@ let productController = {
 
 
     detail:(req,res)=>{
-        res.render('products/productDetail')
+        const {id} = req.params;
+        const idDetail = productsModel.findByPk(id)
+
+        res.render('products/productDetail', {idDetail})
     },
+    
+    
+    
+    
+    
     newProduct: (req,res)=>{
         res.render('products/newProduct')
         //res.sendFile(path.resolve(__dirname,"../views/newProduct.ejs"))

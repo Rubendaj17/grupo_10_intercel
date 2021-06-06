@@ -1,0 +1,6 @@
+[
+    {"id":1,"name":"Ruben","lastName":"Jaime","phoneNumber":"3003116484","email":"rubendaj@msn.com","password":"holamundo", "category":"admin", "image":""},
+    {"id":2,"name":"Justi","lastName":"Iturraspe","phoneNumber":"3003116485","email":"justi@msn.com","password":"holamundo1", "category":"admin", "image":""},
+    {"id":3,"name":"Alejandro","lastName":"Bullorini","phoneNumber":"3003116481","email":"ale@msn.com","password":"holamundo2", "category":"admin", "image":""}
+
+]
