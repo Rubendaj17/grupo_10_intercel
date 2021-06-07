@@ -24,10 +24,6 @@ let productController = {
         res.render('products/productDetail', {idDetail})
     },
     
-    
-    
-    
-    
     newProduct: (req,res)=>{
         res.render('products/newProduct')
         //res.sendFile(path.resolve(__dirname,"../views/newProduct.ejs"))
