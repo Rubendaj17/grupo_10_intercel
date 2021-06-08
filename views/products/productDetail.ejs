@@ -40,7 +40,7 @@
                 <div class="bottomInfo">
                     <div class="containerPrice">
                         <h3>Precio</h3>
-                        <p>$<%= idDetail.price %></p>
+                        <p>US$ <%= idDetail.price %></p>
                     </div>
             
                     <button>Agregar al Carrito  <i class="fas fa-shopping-cart" id="carritoIconBody"></i></button>
@@ -56,11 +56,12 @@
         <section class="containerRelated">
             
             <div class="InformationRelated">
-            <p class="brandRelated">Más de <span>Samsung</span></p>
-            <div class="logoRelated"><img src="/images/logos/samsung.png" alt="Samsung Logo"></div>
+            <p class="brandRelated">Más de <span><%=idDetail.brand %></span></p>
+            <div class="logoRelated"><img src="/images/logos/<%=idDetail.brand %>.svg" alt="Samsung Logo"></div>
             </div>
 
             <div class="photoContainerRelated">
+                
                 <a href="/productDetail"><img src="/images/cellphones/samsung/A71/a71-1.png" alt="Preview Celular 2"><p class="NameRelated">A71</p></a>
             </div>
             <div class="photoContainerRelated">
