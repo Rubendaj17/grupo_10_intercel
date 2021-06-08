@@ -17,28 +17,28 @@
                 <br>
                 <div class="formControl">
                     <label>Brand</label>
-                    <input placeholder="<%=product.brand %>" type="text" name="brand" class="inputControl" required>
+                    <input placeholder="<%=idDetail.brand %>" type="text" name="brand" class="inputControl" required>
                 </div>
                 <div class="formControl">
                     <label>Modelo</label>
-                    <input placeholder="<%=product.model %>" type="text" name="model" class="inputControl" required>
+                    <input placeholder="<%=idDetail.model %>" type="text" name="model" class="inputControl" required>
                 </div>
                 <div class="formControl">
                     <label>Color</label>
-                    <input placeholder="<%=product.color %>" type="text" name="color" class="inputControl" minlength="3">
+                    <input placeholder="<%=idDetail.color %>" type="text" name="color" class="inputControl" minlength="3">
                 </div>
                 <div class="formControl">
                     <label>Imagen</label>
-                    <input type="file" name="photo" accept = ".jpg, .png" class="inputControl" required multiple>
+                    <input type="file" name="image" accept = ".jpg, .png" class="inputControl" required multiple>
                     <%# <img src="/images/Iphone.png" alt="">  %>                    
                 </div>
                 <div class="formControl">
                     <label>Precio</label>
-                    <input placeholder="US$<%=product.price%>" type="tel" name="price" class="inputControl" minlength="1" required>
+                    <input placeholder="US$<%=idDetail.price%>" type="tel" name="price" class="inputControl" minlength="1" required>
                 </div>
                 <div class="formControl">
                     <label>Almacenamiento</label>
-                    <input placeholder="<%=product.ram %>" type="number" step="0.1" name="ram" class="inputControl" required>
+                    <input placeholder="<%=idDetail.ram %>" type="number" step="0.1" name="ram" class="inputControl" required>
                 </div>
             
                 <button type="submit" class="formButton">Guardar cambios</button>
