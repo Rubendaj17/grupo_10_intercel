@@ -43,10 +43,15 @@
         </section>
 
         <section class="brandsContainer">
-            <article class="brandsImgContainer"><a href="/products/list/motorola"><img src="/images/logos/motorola.svg" alt="Motorola logo"></a></article>
-            <article class="brandsImgContainer"><a href="/products/list/samsung"><img src="/images/logos/samsung.svg" alt="Samsung logo"></a></article>
+            
+            <% brandList.forEach( brand => { %>
+                <article class="brandsImgContainer"><a href="/products/list/<%=brand%>"><img src="/images/logos/<%=brand%>.svg" alt="<%=brand%> logo"></a></article>    
+            <%}); %> 
+            
+            
+            <!-- <article class="brandsImgContainer"><a href="/products/list/samsung"><img src="/images/logos/samsung.svg" alt="Samsung logo"></a></article>
             <article class="brandsImgContainer"><a href="/products/list/apple"><img src="/images/logos/apple.svg" alt="Apple logo"></a></article>
-            <article class="brandsImgContainer"><a href="/products/list/lg"><img src="/images/logos/lg.svg" alt="LG logo"></a></article>
+            <article class="brandsImgContainer"><a href="/products/list/lg"><img src="/images/logos/lg.svg" alt="LG logo"></a></article> -->
         </section>
         
         <section class="offersContainer">

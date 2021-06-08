@@ -23,14 +23,19 @@ module.exports = {
     findByPk(id){
         const products = this.readFile()
         return products.find (e => e.id == id)
+    },
+    
+    getBrands() {
+        const products = this.readFile()
+        let brands = []
+
+        products.forEach(e => {
+            if (!brands.includes(e.brand)){
+                brands.push(e.brand)
+            }
+        });
+        return brands
     }
-
-
-
-
-
-
-
-
+    
 
 }

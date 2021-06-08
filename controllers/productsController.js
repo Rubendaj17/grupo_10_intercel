@@ -7,6 +7,7 @@ let productController = {
         const brand = 'Todos los Productos'
         res.render('products/products',{productList, brand})
     },
+    
     brandList: (req, res) => {
         const {brand} = req.params
 
