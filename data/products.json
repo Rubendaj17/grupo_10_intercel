@@ -15,6 +15,6 @@
 {"id":15,"brand":"pixel","model":"5","color":"Negro","price":"800","ram":"8GB", "image":"/images/cellphones/pixel/5/5-1.jpg", "offer": "si"}, 
 {"id":16,"brand":"pixel","model":"4","color":"Blanco","price":"600","ram":"6GB", "image":"/images/cellphones/pixel/4/4-1.jpeg", "offer": "si"}, 
 {"id":17,"brand":"lg","model":"K31","color":"Purpura","price":"200","ram":"4GB", "image":"/images/cellphones/LG/K52/k52-1.jpg", "offer": "no"},
-{"id":18,"brand":"lg","model":"K61","color":"Gris","price":"30","ram":"4GB", "image":"/images/cellphones/LG/K61/k61-1.png", "offer": "no"},
+{"id":18,"brand":"lg","model":"K61","color":"Gris","price":"300","ram":"4GB", "image":"/images/cellphones/LG/K61/k61-1.png", "offer": "no"},
 {"id":19,"brand":"lg","model":"W41","color":"Azul","price":"180","ram":"4GB", "image":"/images/cellphones/LG/W41/w41-2.png", "offer": "si"}
 ]
