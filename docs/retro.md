@@ -79,6 +79,7 @@
     <br>
     Agregar más actividades al Trello que nos permitan desarrollar más funcionalidades para nuestro proyecto
     <br>
+    <br>
     Próxima reuniones
     <br>
     Weekly Stand-up: miércoles 9 de junio 8:00 pm 
