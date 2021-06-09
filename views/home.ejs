@@ -52,7 +52,7 @@
         <section class="offersContainer">
             <h2>Ofertas</h2>
             
-            <% offer.forEach( (e) => { %>
+            <% offerList.forEach( (e) => { %>
                 <article class="offersProductContainer">
                     <a href="/products/<%=e.id%>">
                         <h3 class="offersProductoNombre"><%=e.model%></h3>
@@ -66,27 +66,21 @@
         
         <section class="soldContainer">
             <h2>Más Vendidos</h2>
-            
-            <article class="soldProductContainer impar">
-                <h3 class="soldProductNombre">Iphone 12</h3>
-                <img src="/images/cellphones/apple/iphone12/iphone12-2.png" alt="Iphone 12">
+        
+            <% soldProductsList.forEach(e => { 
+                let i = 1 
+                console.log(i);%> 
+                
+                <article class="soldProductContainer <%= i%2 ==0 ? 'par' : 'impar'%> ">
+             
+                <h3 class="soldProductNombre"><%= e.model%></h3>
+                <img src="<%= e.image%>" alt="<%= e.model%>">
+                <% i+=1 %>
             </article>
             
-            <article class="soldProductContainer par">
-                <h3 class="soldProductNombre">Samsung A71</h3>
-                <img src="/images/cellphones/samsung/A71/a71-4.png" alt="Samsung A71">
-            </article>
+            <%  }); %>          
             
-            <article class="soldProductContainer impar">
-                <h3 class="soldProductNombre">Samsung S20</h3>
-                <img src="/images/cellphones/samsung/S20/s20-2.png" alt="Samsung S20">
-            </article>
             
-            <article class="soldProductContainer par">
-                <h3 class="soldProductNombre">Samsung Note20</h3>
-                <img src="/images/cellphones/samsung/Note20/Note20-1.png" alt="Samsung A71">
-            </article>
-
         </section>
         
         <section class="commentsContainer">
