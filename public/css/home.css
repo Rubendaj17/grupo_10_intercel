@@ -254,8 +254,10 @@ div form{
     
     .offersContainer,
     .soldContainer{
-        flex-direction: row;
+        display: flex;
         flex-wrap: wrap;
+        align-items: stretch;
+        flex-direction: row;
         justify-content: space-around;
     }
 
@@ -336,7 +338,11 @@ div form{
         width: auto;
         padding: 5px;
     }
-
+    .offersContainer{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
     .offersProductContainer{
         width: 20%;
         transition: all .5s;

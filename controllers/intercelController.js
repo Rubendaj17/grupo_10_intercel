@@ -13,8 +13,18 @@ let intercelController = {
     
         }
 
-        res.render('home', {brandList})
+        let offer=[]
+        const offerAux = productsModel.offers();
+        
+        while(offer.length<4){
+            let random = Math.round(Math.random()* (offerAux.length - 1))
+            offer.includes(offerAux[random])? '' : offer.push(offerAux[random])
+        }
+
+        
+        res.render('home', {brandList, offer})
     },
+
     underConstruction: (req,res) => {
         res.render('soon')
     }

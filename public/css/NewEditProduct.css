@@ -67,6 +67,10 @@ form label{
     border-radius: 5px;
 }
 
+.formRadio{
+    text-align: left;
+}
+
 .formButton{
     background-color: #71D894;
     border: none;

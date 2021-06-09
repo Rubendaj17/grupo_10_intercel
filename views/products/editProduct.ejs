@@ -13,19 +13,19 @@
         <div class="container">
         <a href="/"> <img src="/images/logos/Logo.svg" width="200"> </a>
         <h2>Editar producto</h2>
-            <form class="createForm" action="/" method="POST">
+            <form class="createForm" action="/" method="POST" enctype="multipart/form-data">
                 <br>
                 <div class="formControl">
                     <label>Brand</label>
-                    <input placeholder="<%=idDetail.brand %>" type="text" name="brand" class="inputControl" required>
+                    <input value="<%=idDetail.brand %>" type="text" name="brand" class="inputControl" required>
                 </div>
                 <div class="formControl">
                     <label>Modelo</label>
-                    <input placeholder="<%=idDetail.model %>" type="text" name="model" class="inputControl" required>
+                    <input value="<%=idDetail.model %>" type="text" name="model" class="inputControl" required>
                 </div>
                 <div class="formControl">
                     <label>Color</label>
-                    <input placeholder="<%=idDetail.color %>" type="text" name="color" class="inputControl" minlength="3">
+                    <input value="<%=idDetail.color %>" type="text" name="color" class="inputControl" minlength="3">
                 </div>
                 <div class="formControl">
                     <label>Imagen</label>
@@ -34,11 +34,18 @@
                 </div>
                 <div class="formControl">
                     <label>Precio</label>
-                    <input placeholder="US$<%=idDetail.price%>" type="tel" name="price" class="inputControl" minlength="1" required>
+                    <input value="US$<%=idDetail.price%>" type="tel" name="price" class="inputControl" minlength="1" required>
                 </div>
                 <div class="formControl">
                     <label>Almacenamiento</label>
-                    <input placeholder="<%=idDetail.ram %>" type="number" step="0.1" name="ram" class="inputControl" required>
+                    <input value="<%=idDetail.ram %>" type="number" step="0.1" name="ram" class="inputControl" required>
+                </div>
+                <div  class="formControl">
+                    <label for="">Este producto esta en oferta?</label>
+                    <div class="formRadio">
+                        <input type="radio" name="offer" value="si" <%= idDetail.offer == 'si' ? 'checked': '' %> />Si
+                        <input type="radio" name="offer" value="no" <%= idDetail.offer == 'no' ? 'checked': '' %> /> No
+                    </div>
                 </div>
             
                 <button type="submit" class="formButton">Guardar cambios</button>

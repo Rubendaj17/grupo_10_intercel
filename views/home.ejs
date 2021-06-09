@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -47,47 +46,21 @@
             <% brandList.forEach( brand => { %>
                 <article class="brandsImgContainer"><a href="/products/list/<%=brand%>"><img src="/images/logos/<%=brand%>.svg" alt="<%=brand%> logo"></a></article>    
             <%}); %> 
-            
-            
-            <!-- <article class="brandsImgContainer"><a href="/products/list/samsung"><img src="/images/logos/samsung.svg" alt="Samsung logo"></a></article>
-            <article class="brandsImgContainer"><a href="/products/list/apple"><img src="/images/logos/apple.svg" alt="Apple logo"></a></article>
-            <article class="brandsImgContainer"><a href="/products/list/lg"><img src="/images/logos/lg.svg" alt="LG logo"></a></article> -->
+
         </section>
         
         <section class="offersContainer">
             <h2>Ofertas</h2>
             
-            <article class="offersProductContainer">
-                <a href="/products/1">
-                    <h3 class="offersProductoNombre">Samsung Note20</h3>
-                    <p class="price">$150.000</p>
-                    <img src="/images/cellphones/samsung/Note20/Note20-2.png" alt="Samsung Note20">
-                </a>
-             </article>
-            
-            <article class="offersProductContainer">
-                <a href="/products/list">
-                    <h3 class="offersProductoNombre">Iphone 11</h3>
-                    <p class="price">$150.000</p>
-                    <img src="/images/cellphones/apple/iphone 11/iphone11-3.png" alt="Iphone 11">
-                </a>    
-            </article>
-            
-            <article class="offersProductContainer">
-                <a href="/products/list">
-                    <h3 class="offersProductoNombre">Samsung S20</h3>
-                    <p class="price">$150.000</p>
-                    <img src="/images/cellphones/samsung/S20/s20-3.png" alt="Samsung S20">
-                </a>
-            </article>
-            
-            <article class="offersProductContainer">
-                <a href="/products/list">
-                    <h3 class="offersProductoNombre">Samsung A71</h3>
-                    <p class="price">$150.000</p>
-                    <img src="/images/cellphones/samsung/A71/a71-4.png" alt="Samsung A71">
-                </a>
-                </article>
+            <% offer.forEach( (e) => { %>
+                <article class="offersProductContainer">
+                    <a href="/products/<%=e.id%>">
+                        <h3 class="offersProductoNombre"><%=e.model%></h3>
+                        <p class="price"><%=e.price%></p>
+                        <img src="<%= e.image %>" alt="<%= e.model %>">
+                    </a>
+                 </article>    
+            <%}); %> 
             
         </section>
         
@@ -96,7 +69,7 @@
             
             <article class="soldProductContainer impar">
                 <h3 class="soldProductNombre">Iphone 12</h3>
-                <img src="/images/cellphones/apple/iphone 12/iphone12-2.png" alt="Iphone 12">
+                <img src="/images/cellphones/apple/iphone12/iphone12-2.png" alt="Iphone 12">
             </article>
             
             <article class="soldProductContainer par">

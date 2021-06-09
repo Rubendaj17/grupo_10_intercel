@@ -35,7 +35,17 @@ module.exports = {
             }
         });
         return brands
-    }
+    },
+
+    offers(){
+        const products = this.readFile();
+        let offerAux = products.filter(e => {
+            return e.offer == 'si'
+        })
+
+        
+        return offerAux;
+    },
     
 
 }
