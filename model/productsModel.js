@@ -39,9 +39,7 @@ module.exports = {
 
     offers(){
         const products = this.readFile();
-        let offerAux = products.filter(e => {
-            return e.offer == 'si'
-        })
+        let offerAux = products.filter(e => e.offer == 'si')
 
         
         return offerAux;

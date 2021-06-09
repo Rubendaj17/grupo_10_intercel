@@ -2,27 +2,30 @@ const path = require('path');
 const productsModel = require('../model/productsModel')
 
 let intercelController = {
+    randomize: (array)=>{
+        let finalList = []
+
+       while(finalList.length<4){
+            let random = Math.round(Math.random()* (array.length - 1))
+            finalList.includes(array[random])? '' : finalList.push(array[random])
+        }
+        return finalList
+    },
+    
     home: (req,res) => {
         const brands = productsModel.getBrands()
-        let brandList = []
+        const brandList = intercelController.randomize(brands)
 
-        for(brandList.length; brandList.length<=3;){
-            let random = Math.round(Math.random()* (brands.length - 1))
+        const offers = productsModel.offers();
+        const offerList = intercelController.randomize(offers)     
 
-            brandList.includes(brands[random])? '' : brandList.push(brands[random])
-    
-        }
+        // solucion temporaria para Mas Vendidos
+        const soldProducts = productsModel.findAll();
+        const soldProductsList = intercelController.randomize(soldProducts) 
+        console.log(soldProductsList);    
 
-        let offer=[]
-        const offerAux = productsModel.offers();
-        
-        while(offer.length<4){
-            let random = Math.round(Math.random()* (offerAux.length - 1))
-            offer.includes(offerAux[random])? '' : offer.push(offerAux[random])
-        }
 
-        
-        res.render('home', {brandList, offer})
+        res.render('home', {brandList, offerList, soldProductsList})
     },
 
     underConstruction: (req,res) => {
