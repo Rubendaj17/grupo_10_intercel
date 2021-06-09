@@ -23,6 +23,7 @@ const upload = multer({storage})
 
 productsRouter.get("/list", productsController.list)
 productsRouter.get("/list/:brand", productsController.brandList)
+
 productsRouter.get("/create", productsController.newProduct);
 productsRouter.post("/create", productsController.store);
 
