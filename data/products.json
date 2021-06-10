@@ -1,75 +1,5 @@
 [
   {
-    "id": 7,
-    "brand": "apple",
-    "model": "Iphone SE",
-    "color": "Negro",
-    "price": "400",
-    "ram": "8GB",
-    "image": "/images/cellphones/apple/iphoneSE/iphoneSE-1.jpg",
-    "offer": "no"
-  },
-  {
-    "id": 9,
-    "brand": "samsung",
-    "model": "A71",
-    "color": "Negro",
-    "price": "500",
-    "ram": "6GB",
-    "image": "/images/cellphones/samsung/a71/a71-1.png",
-    "offer": "no"
-  },
-  {
-    "id": 10,
-    "brand": "samsung",
-    "model": "Note 20",
-    "color": "Blanco",
-    "price": "800",
-    "ram": "8GB",
-    "image": "/images/cellphones/samsung/Note20/note20-1.png",
-    "offer": "si"
-  },
-  {
-    "id": 11,
-    "brand": "samsung",
-    "model": "Z Fold",
-    "color": "Bronce",
-    "price": "1100",
-    "ram": "5GB",
-    "image": "/images/cellphones/samsung/ZFold/zfold-1.jpg",
-    "offer": "si"
-  },
-  {
-    "id": 12,
-    "brand": "motorola",
-    "model": "Edge S",
-    "color": "Negro",
-    "price": "500",
-    "ram": "5GB",
-    "image": "/images/cellphones/motorola/edgeS/edgeS-1.png",
-    "offer": "si"
-  },
-  {
-    "id": 13,
-    "brand": "motorola",
-    "model": "G60",
-    "color": "Negro",
-    "price": "300",
-    "ram": "6GB",
-    "image": "/images/cellphones/motorola/g60/g60-1.png",
-    "offer": "si"
-  },
-  {
-    "id": 14,
-    "brand": "motorola",
-    "model": "G100",
-    "color": "Azul",
-    "price": "620",
-    "ram": "5GB",
-    "image": "/images/cellphones/motorola/g100/g100-1.jpg",
-    "offer": "no"
-  },
-  {
     "id": 16,
     "brand": "pixel",
     "model": "4",
@@ -98,15 +28,5 @@
     "ram": "4GB",
     "image": "/images/cellphones/LG/K61/k61-1.png",
     "offer": "no"
-  },
-  {
-    "id": 19,
-    "brand": "lg",
-    "model": "W41",
-    "color": "Azul",
-    "price": "180",
-    "ram": "4GB",
-    "image": "/images/cellphones/LG/W41/w41-2.png",
-    "offer": "si"
   }
 ]

@@ -40,8 +40,8 @@ let productController = {
     destroy(req, res){
         const id = req.params.id;
         productsModel.destroy(id);
-        res.render('products/list');
-        //res.redirect('/products/list' )
+        //res.render('products/list');
+        res.redirect('/products/list' )
     }
 }
 
