@@ -8,9 +8,7 @@ module.exports = {
         const productsJSON = fs.readFileSync(this.fileName,'utf-8')
         return JSON.parse(productsJSON)
     },
-<<<<<<< HEAD
-=======
-    
+
     writeFile(newData){
         const dataJSON = JSON.stringify(newData, null, 2)
         fs.writeFileSync(this.fileName, dataJSON)
@@ -22,7 +20,6 @@ module.exports = {
         return lastProduct.id + 1
     },
 
->>>>>>> d02cdaab495f3d198d74b4c6ccc15defd9c39d1d
     findAll() {
         return this.readFile()
     },
@@ -53,14 +50,13 @@ module.exports = {
 
     offers(){
         const products = this.readFile();
-        let offerAux = products.filter(e => e.offer == 'si')
+        let offer = products.filter(e => e.offer == 'si')
 
-        
-        return offerAux;
+        return offer;
     },
     destroy(id){
         const products = this.readFile();
         const newList = products.filter(e => e.id != id);
-        fs.writeFile()
+        this.writeFile(newList);
     }
 }

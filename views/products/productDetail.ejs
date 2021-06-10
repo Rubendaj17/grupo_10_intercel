@@ -47,8 +47,11 @@
                 </div>
                 <form  class= "bottomInfo" action="/products/<%=idDetail.id%>/editProduct" method="GET">
                    <button type="submit">Editar</button>
-
                 </form>
+                <form  class= "bottomInfo" action="/products/<%=idDetail.id%>?_method=DELETE" method="POST">
+                   <button type="submit">Eliminar</button>
+                </form>
+                
             </article>
         
         </section>
@@ -69,14 +72,9 @@
             </div>
         
         </section>
-    
-    
-    
-    
     </main>
-    
+
     <!-- FOOTER -->
     <%- include('../partials/footer') %>
-
 </body>
 </html>

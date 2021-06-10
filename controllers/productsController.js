@@ -21,7 +21,7 @@ let productController = {
         const {id} = req.params;
         const idDetail = productsModel.findByPk(id)
 
-        res.render('products/productDetail', {idDetail})
+        res.render('products/productDetail',{idDetail})
     },
     
     newProduct: (req,res)=>{
@@ -36,8 +36,13 @@ let productController = {
     },
     store(req, res){
         
+    },
+    destroy(req, res){
+        const id = req.params.id;
+        productsModel.destroy(id);
+        res.render('products/list');
+        //res.redirect('/products/list' )
     }
-    
 }
 
 module.exports = productController
