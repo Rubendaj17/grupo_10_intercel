@@ -1,5 +1,8 @@
 const express = require('express');
 const path = require('path');
+const methodOverride = require('method-override')
+
+app.use(methodOverride('_method'))
 
 const app = express();
 const methodOverride = require('method-override');
@@ -19,7 +22,9 @@ app.listen(3000, ()=> {
     console.log('Servidor corriendo');
 })
 
-
+// No olvidarse esto para que la data se envie correctamente desde un formulario
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 // generic
 const intercelRoutes = require('./routes/intercelRoutes');
