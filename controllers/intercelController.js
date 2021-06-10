@@ -22,7 +22,7 @@ let intercelController = {
         // solucion temporaria para Mas Vendidos
         const soldProducts = productsModel.findAll();
         const soldProductsList = intercelController.randomize(soldProducts) 
-        console.log(soldProductsList);    
+        // console.log(soldProductsList);    
 
 
         res.render('home', {brandList, offerList, soldProductsList})
