@@ -8,7 +8,6 @@ module.exports = {
         const productsJSON = fs.readFileSync(this.fileName,'utf-8')
         return JSON.parse(productsJSON)
     },
-
     findAll() {
         return this.readFile()
     },
@@ -46,6 +45,9 @@ module.exports = {
         
         return offerAux;
     },
-    
-
+    destroy(id){
+        const products = this.readFile();
+        const newList = products.filter(e => e.id != id);
+        fs.writeFile()
+    }
 }

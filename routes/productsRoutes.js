@@ -21,12 +21,13 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage})
 
-productsRouter.get("/list", productsController.list)
-productsRouter.get("/list/:brand", productsController.brandList)
+productsRouter.get("/list", productsController.list);
+productsRouter.get("/list/:brand", productsController.brandList);
 productsRouter.get("/create", productsController.newProduct);
 productsRouter.post("/create", productsController.store);
 
-productsRouter.get("/:id", productsController.detail)
+productsRouter.delete("/:id", productsController.destroy);
+productsRouter.get("/:id", productsController.detail);
 productsRouter.get("/:id/editProduct" , productsController.editProduct);
 //planetsRoutes.post('/create', upload.single('image'), planetsController.store);
 
