@@ -1,20 +1,7 @@
-[{"id":1,"brand":"samsung","model":"S20","color":"Negro","price":"700","ram":"8GB", "image":"/images/cellphones/samsung/S20/s20-1.png", "offer": "no"},
-{"id":2,"brand":"apple","model":"Iphone XS","color":"Gris","price":"500","ram":"24GB","image":"/images/cellphones/apple/iphoneXS/xs-1.png", "offer": "no"},
-{"id":3,"brand":"motorola","model":"e7","color":"Blanco","price":"200","ram":"4GB", "image":"/images/cellphones/motorola/e7/e7-1.png", "offer": "no"},
-{"id":4,"brand":"lg","model":"K31","color":"Gris","price":"149","ram":"2GB", "image":"/images/cellphones/LG/K31/k31-1.png", "offer": "si"},
-{"id":5,"brand":"apple","model":"Iphone 11","color":"Negro","price":"600","ram":"8GB", "image":"/images/cellphones/apple/iphone11/iphone11-1.png", "offer": "si"},
-{"id":6,"brand":"apple","model":"Iphone 12","color":"Blanco","price":"800","ram":"24GB", "image":"/images/cellphones/apple/iphone12/iphone12-1.png", "offer": "no"},
-{"id":7,"brand":"apple","model":"Iphone SE","color":"Negro","price":"400","ram":"8GB", "image":"/images/cellphones/apple/iphoneSE/iphoneSE-1.jpg", "offer": "no"},
-{"id":8,"brand":"apple","model":"Iphone 12 mini","color":"Rosa","price":"700","ram":"8GB", "image":"/images/cellphones/apple/iphone12mini/iphone12mini-1.jpg", "offer": "no"},
-{"id":9,"brand":"samsung","model":"A71","color":"Negro","price":"500","ram":"6GB", "image":"/images/cellphones/samsung/a71/a71-1.png", "offer": "no"},
-{"id":10,"brand":"samsung","model":"Note 20","color":"Blanco","price":"800","ram":"8GB", "image":"/images/cellphones/samsung/Note20/note20-1.png", "offer": "si"},
-{"id":11,"brand":"samsung","model":"Z Fold","color":"Bronce","price":"1100","ram":"5GB", "image":"/images/cellphones/samsung/ZFold/zfold-1.jpg", "offer": "si"},
-{"id":12,"brand":"motorola","model":"Edge S","color":"Negro","price":"500","ram":"5GB", "image":"/images/cellphones/motorola/edgeS/edgeS-1.png", "offer": "si"},
-{"id":13,"brand":"motorola","model":"G60","color":"Negro","price":"300","ram":"6GB", "image":"/images/cellphones/motorola/g60/g60-1.png", "offer": "si"},
-{"id":14,"brand":"motorola","model":"G100","color":"Azul","price":"620","ram":"5GB", "image":"/images/cellphones/motorola/g100/g100-1.jpg", "offer": "no"},
-{"id":15,"brand":"pixel","model":"5","color":"Negro","price":"800","ram":"8GB", "image":"/images/cellphones/pixel/5/5-1.jpg", "offer": "si"}, 
-{"id":16,"brand":"pixel","model":"4","color":"Blanco","price":"600","ram":"6GB", "image":"/images/cellphones/pixel/4/4-1.jpeg", "offer": "si"}, 
-{"id":17,"brand":"lg","model":"K31","color":"Purpura","price":"200","ram":"4GB", "image":"/images/cellphones/LG/K52/k52-1.jpg", "offer": "no"},
-{"id":18,"brand":"lg","model":"K61","color":"Gris","price":"30","ram":"4GB", "image":"/images/cellphones/LG/K61/k61-1.png", "offer": "no"},
-{"id":19,"brand":"lg","model":"W41","color":"Azul","price":"180","ram":"4GB", "image":"/images/cellphones/LG/W41/w41-2.png", "offer": "si"}
+[
+    {"id":1,"brand":"apple","image":"/images/logos/apple.svg"},
+    {"id":2,"brand":"lg", "image":"/images/logos/lg.svg"},
+    {"id":3,"brand":"motorola","image":"/images/logos/motorola.svg"},
+    {"id":3,"brand":"pixel", "image":"/images/logos/Google-Pixel.svg"},
+    {"id":3,"brand":"samsung", "image":"/images/logos/samsung.svg"}
 ]
