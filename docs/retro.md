@@ -52,6 +52,47 @@
     </p>
 </ol>
 
+<h3> Retro Sprint 3 </h3>
+<ol>
+  <li><b>Comenzar a hacer:</b></li>
+  <p>Tener reuniones para codear juntos y mejorar aspectos que afectan las tareas específicas de cada uno</p>
+  <br>
+  <li><b>Hacer más:</b></li>
+  <p>Analizar mejor el esfuerzo y el tiempo que requiere cada tarea específica para lograr una mejor distribución de las actividades.</p>
+  <br>
+  
+  <li><b>Continuar haciendo:</b></li>
+  <p>Seguir utilizando GIT y las ramas propias para mejorar el proyecto .</p>
+  <p>Tener sesiones para mergear las ramas y resolver conflictos en el código.</p>
+  <br>
+  <li><b>Hacer menos:</b></li>
+  <p>Quedarnos únicamente con la división de las tareas y no asignar tareas adicionales.  
+  </p>
+  <br>
+  <li><b>Dejar de hacer:</b></li>
+  <p>No quedarse solo con lo que nos piden</p>
+  <br>
+
+  <li><b>Action Items:</b></li>
+    <p>
+    Analizar la configuración actual de la página
+    <br>
+    Agregar más actividades al Trello que nos permitan desarrollar más funcionalidades para nuestro proyecto
+    <br>
+    <br>
+    Próxima reuniones
+    <br>
+    Weekly Stand-up: miércoles 9 de junio 8:00 pm 
+    <br> 
+    Coding session: Domingo 13 de junio
+    <br>
+     Weekly Stand-up: miércoles 16 de junio 8:00 pm
+    <br>
+    Coding session: Domingo 20 de junio
+    
+</ol>
+
+
 
 
 .

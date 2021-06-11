@@ -1,5 +1,8 @@
 const express = require('express');
 const path = require('path');
+const methodOverride = require('method-override')
+
+app.use(methodOverride('_method'))
 
 const app = express();
 app.set('view engine','ejs')
@@ -14,16 +17,16 @@ app.listen(3000, ()=> {
     console.log('Servidor corriendo');
 })
 
-app.get('/', (req, res)=>{
-    res.render('home')
-})
+// No olvidarse esto para que la data se envie correctamente desde un formulario
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-app.get("/proximamente", (req,res)=>{
-    res.render('proximamente')
-})
+// generic
+const intercelRoutes = require('./routes/intercelRoutes');
+app.use("/", intercelRoutes)
 
-const usersRoutes = require('./routes/usersRoutes');
 //user/
+const usersRoutes = require('./routes/usersRoutes');
 app.use("/users", usersRoutes)
 
 //products/

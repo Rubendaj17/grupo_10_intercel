@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include ('partials/head') %> 
+    <%- include ('../partials/head') %> 
     <title>Intercel - Nuevo producto</title>
     <link rel="stylesheet" href="/css/NewEditProduct.css">
     <link rel="stylesheet" href="/css/headerFooter.css">
 </head>
 <body>      
     <!-- HEADER -->
-    <%- include('partials/header') %>
+    <%- include('../partials/header') %>
        
         <div class="container">
         <a href="/"> <img src="/images/logos/Logo.svg" width="200"> </a>
@@ -16,7 +16,7 @@
             <form class="createForm" action="/" method="POST">
                 <br>
                 <div class="formControl">
-                    <label>brand</label>
+                    <label>Brand</label>
                     <input type="text" name="brand" class="inputControl" required>
                 </div>
                 <div class="formControl">
@@ -29,7 +29,7 @@
                 </div>
                 <div class="formControl">
                     <label>Imagen</label>
-                    <input type="file" name="photo" accept = ".jpg, .png" class="inputControl " required multiple>
+                    <input type="file" name="image" accept = ".jpg, .png" class="inputControl " required multiple>
                 </div>
                 <div class="formControl">
                     <label>Precio</label>
@@ -39,6 +39,11 @@
                     <label>Almacenamiento</label>
                     <input type="number" step="0.1" name="ram" class="inputControl" minlength="1" required>
                 </div>
+                <div  class="formControl">
+                    <label for="">Este producto esta en oferta?</label>
+                    <input type="radio" name="offer" value="si"/>Si
+                    <input type="radio" name="offer" value="no"/>No
+                </div>
             
                 <button type="submit" class="formButton">Crear producto</button>
             
@@ -46,7 +51,7 @@
         </div>
     <!-- FOOTER -->
     <footer>
-        <%- include('partials/footer') %>
+        <%- include('../partials/footer') %>
     </footer>
 </body>
 

@@ -1,11 +1,3 @@
-#header-products, #footer-products{
-    background-color: white;
-}
-
-#footer-products{
-    border-top: solid 1px #B7BDC7;
-}
-
 main {
     background-color:#F8F9FC;
 }
@@ -29,6 +21,7 @@ main .title h2{
 main .title p{
     color: #868FA0;
     font-size: 12px;
+    text-transform: capitalize;
 }
 
 article{
@@ -49,6 +42,7 @@ article img{
 .productFeatures p,.productFeatures li{
     color:#868FA0;
     font-size: 12px;
+    text-transform: capitalize;
 }
 
 
@@ -70,12 +64,11 @@ article img{
     font-weight: bold;
 }
 
-main a{
+.nextPage{
     display: block;
-    width: 180px;
-    margin: auto;
+    margin-right: 5px;
     font-size: 12px;
-    text-align: center;
+    text-align: right;
     margin-bottom: 15px;
 }
 
@@ -133,7 +126,15 @@ main a{
     .productFeatures{
         margin-left: -50px;
     }
-
+    /*.products{
+        display: flex;
+        font-weight: wrap;
+        flex-direction: column;
+        justify-content: center;
+       }
+    .products article{
+        flex-basis:50%;
+    }*/
    
 }
 
