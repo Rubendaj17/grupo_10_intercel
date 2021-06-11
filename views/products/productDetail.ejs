@@ -60,13 +60,11 @@
             <div class="logoRelated"><img src="/images/logos/<%=idDetail.brand %>.svg" alt="Samsung Logo"></div>
             </div>
 
-            <div class="photoContainerRelated">
-                
-                <a href="/productDetail"><img src="/images/cellphones/samsung/A71/a71-1.png" alt="Preview Celular 2"><p class="NameRelated">A71</p></a>
-            </div>
-            <div class="photoContainerRelated">
-                <a href="/productDetail"><img src="/images/cellphones/samsung/S20/s20-1.png" alt="Preview Celular 3"><p class="NameRelated">S20</p></a>
-            </div>
+            <% relatedList.forEach(e => {%>
+                <div class="photoContainerRelated">
+                    <a href="/products/<%=e.id%>"><img src="<%=e.image%>" alt="Preview <%=e.model%>"><p class="NameRelated"><%=e.model%></p></a>    
+                </div>
+            <%}); %>                
         
         </section>
     

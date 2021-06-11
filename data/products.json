@@ -188,25 +188,5 @@
     "ram": "4GB",
     "image": "/images/cellphones/LG/W41/w41-2.png",
     "offer": "si"
-  },
-  {
-    "brand": "ALE",
-    "model": "13",
-    "color": "azul",
-    "image": "samsung.png",
-    "price": "123123",
-    "ram": "8",
-    "offer": "no",
-    "id": 20
-  },
-  {
-    "brand": "ALE",
-    "model": "13",
-    "color": "azul",
-    "image": "samsung.png",
-    "price": "123123",
-    "ram": "8",
-    "offer": "no",
-    "id": 21
   }
 ]

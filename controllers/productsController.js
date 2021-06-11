@@ -18,21 +18,32 @@ let productController = {
     },
 
     detail:(req,res)=>{
-        const {id} = req.params;
+        const {id} = req.params
+        
         const idDetail = productsModel.findByPk(id)
+        const brandList = productsModel.findByBrand(idDetail.brand) 
+        const relatedList = productsModel.randomize(brandList,2) 
+        
 
-        res.render('products/productDetail', {idDetail})
+        res.render('products/productDetail', {idDetail, relatedList})
     },
     
     newProductForm: (req,res)=>{
         res.render('products/newProduct')
     },
+    createNewProduct(req, res){
+        const newProduct = req.body
+
+        productsModel.storeNew(newProduct)
+
+
+        res.redirect('/products/list')
+    },
 
     editProductForm (req, res){
         const {id} = req.params;
         const idDetail = productsModel.findByPk(id)
-        // const pedido = req.body
-        // console.log(id, pedido);
+    
         res.render('products/editProduct',{idDetail})
     },
 
@@ -44,14 +55,7 @@ let productController = {
         res.redirect('/')
     },
 
-    createNewProduct(req, res){
-        const newProduct = req.body
 
-        productsModel.storeNew(newProduct)
-
-
-        res.redirect('/products/list')
-    }
     
 }
 
