@@ -67,15 +67,12 @@
         <section class="soldContainer">
             <h2>Más Vendidos</h2>
         
-            <% soldProductsList.forEach(e => { 
-                let i = 1 
-                console.log(i);%> 
+            <% soldProductsList.forEach(e => { %> 
                 
-                <article class="soldProductContainer <%= i%2 ==0 ? 'par' : 'impar'%> ">
+                <article class="soldProductContainer <%= soldProductsList.indexOf(e)%2 ==0 ? 'par' : 'impar'%> ">
              
                 <h3 class="soldProductNombre"><%= e.model%></h3>
                 <img src="<%= e.image%>" alt="<%= e.model%>">
-                <% i+=1 %>
             </article>
             
             <%  }); %>          

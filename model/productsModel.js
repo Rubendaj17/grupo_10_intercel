@@ -56,5 +56,17 @@ module.exports = {
         return offerAux;
     },
     
+    storeNew(cellphone){
+        cellphone.id = this.generateID()
+
+        const products = this.readFile()
+
+        const productsUpdated = [...products, cellphone]
+
+        this.writeFile(productsUpdated)
+
+        return products
+    
+    },
 
 }

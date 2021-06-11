@@ -24,18 +24,33 @@ let productController = {
         res.render('products/productDetail', {idDetail})
     },
     
-    newProduct: (req,res)=>{
+    newProductForm: (req,res)=>{
         res.render('products/newProduct')
+    },
+
+    editProductForm (req, res){
+        const {id} = req.params;
+        const idDetail = productsModel.findByPk(id)
+        // const pedido = req.body
+        // console.log(id, pedido);
+        res.render('products/editProduct',{idDetail})
     },
 
     editProduct (req, res){
         const {id} = req.params;
-        const idDetail = productsModel.findByPk(id)
-
-        res.render('products/editProduct',{idDetail})
+        // const idDetail = productsModel.findByPk(id)
+        const pedido = req.body
+        console.log(id, pedido);
+        res.redirect('/')
     },
-    store(req, res){
-        
+
+    createNewProduct(req, res){
+        const newProduct = req.body
+
+        productsModel.storeNew(newProduct)
+
+
+        res.redirect('/products/list')
     }
     
 }
