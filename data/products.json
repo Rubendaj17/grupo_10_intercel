@@ -283,5 +283,32 @@
       "/images/cellphones/LG/W41/w41-4.png"
     ],
     "offer": "si"
+  },
+  {
+    "brand": "Apple",
+    "model": "Iphone11",
+    "color": "rojo",
+    "price": "US$dssdsd",
+    "ram": "0.1",
+    "offer": "si",
+    "id": 20
+  },
+  {
+    "brand": "Apple",
+    "model": "Iphone11",
+    "color": "rojo",
+    "price": "US$dssdsd",
+    "ram": "0.2",
+    "offer": "si",
+    "id": 21
+  },
+  {
+    "brand": "Apple",
+    "model": "Iphone11",
+    "color": "rojo",
+    "price": "US$dssdsd",
+    "ram": "0.2",
+    "offer": "si",
+    "id": 22
   }
 ]

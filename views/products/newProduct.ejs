@@ -14,7 +14,7 @@
         <a href="/"> <img src="/images/logos/Logo.svg" width="200"> </a>
         <h2>Nuevo producto</h2>
             
-        <form class="createForm" action="/products/create" method="POST">
+        <form class="createForm" action="/products/create" method="POST" enctype="multipart/form-data">
                 <br>
                 <div class="formControl">
                     <label>Brand</label>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="formControl">
                     <label>Imagen</label>
-                    <input type="file" name="image" accept = ".jpg, .png" class="inputControl " required multiple>
+                    <input type="file" name="mainImage" accept = ".jpg, .png" class="inputControl " required >
                 </div>
                 <div class="formControl">
                     <label>Precio</label>

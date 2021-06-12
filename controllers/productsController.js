@@ -33,9 +33,10 @@ let productController = {
     },
     createNewProduct(req, res){
         const newProduct = req.body
+        console.log(req)
 
         productsModel.storeNew(newProduct)
-
+        console.log("controlador request file", req.file)
 
         res.redirect('/products/list')
     },

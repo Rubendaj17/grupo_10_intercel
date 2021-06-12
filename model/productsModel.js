@@ -85,10 +85,11 @@ module.exports = {
         })
         this.writeFile(newProducts)
 
-    }
+    },
     
     storeNew(cellphone){
         cellphone.id = this.generateID()
+        console.log(cellphone)
 
         const products = this.readFile()
 
