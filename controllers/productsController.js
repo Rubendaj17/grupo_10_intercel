@@ -32,12 +32,26 @@ let productController = {
         res.render('products/newProduct')
     },
     createNewProduct(req, res){
-        const newProduct = req.body
-        console.log(req)
+        const imagePath = `/images/cellphones/${req.body.brand}/${req.body.model}/`
+
+        const mainImageUser = req.files.mainImage[0]
+        const mainImage = imagePath + mainImageUser.filename        
+        
+        const imagesUser = req.files.images
+        let images = []
+        imagesUser.forEach(e => {
+            let newImage = imagePath + e.filename
+            images.push(newImage)
+        })
+        
+        const newProduct = {
+            ...req.body,
+            mainImage,
+            images
+    }
 
         productsModel.storeNew(newProduct)
-        console.log("controlador request file", req.file)
-
+        
         res.redirect('/products/list')
     },
 

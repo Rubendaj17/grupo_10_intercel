@@ -285,30 +285,17 @@
     "offer": "si"
   },
   {
-    "brand": "Apple",
-    "model": "Iphone11",
-    "color": "rojo",
-    "price": "US$dssdsd",
-    "ram": "0.1",
+    "brand": "samsung",
+    "model": "A71",
+    "color": "Jade",
+    "price": "100",
+    "ram": "0.3",
     "offer": "si",
+    "mainImage": "/images/cellphones/samsung/A71/A711623507174539.png",
+    "images": [
+      "/images/cellphones/samsung/A71/A711623507174541.jpg",
+      "/images/cellphones/samsung/A71/A711623507174542.png"
+    ],
     "id": 20
-  },
-  {
-    "brand": "Apple",
-    "model": "Iphone11",
-    "color": "rojo",
-    "price": "US$dssdsd",
-    "ram": "0.2",
-    "offer": "si",
-    "id": 21
-  },
-  {
-    "brand": "Apple",
-    "model": "Iphone11",
-    "color": "rojo",
-    "price": "US$dssdsd",
-    "ram": "0.2",
-    "offer": "si",
-    "id": 22
   }
 ]
