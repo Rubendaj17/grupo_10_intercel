@@ -84,7 +84,7 @@
     <br>
     Weekly Stand-up: miércoles 9 de junio 8:00 pm 
     <br> 
-    Coding session: Domingo 13 de junio
+    Coding session: Domingo 13 de junio (18~)
     <br>
      Weekly Stand-up: miércoles 16 de junio 8:00 pm
     <br>

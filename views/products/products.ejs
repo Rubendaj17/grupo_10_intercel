@@ -19,14 +19,14 @@
 
         <div class="title">
             <h2>Productos</h2>
-            <p><%= brand %></p>
+            <p><%=brand%></p>
         </div>
         <section class="products">
                 
             <% productList.forEach( e => {%>
                 <article>
                 <a href="/products/<%=e.id%>">
-                    <img src="<%= e.image %>" alt="<%= e.model %>">
+                    <img src="<%= e.mainImage %>" alt="<%= e.model %>">
                 </a>
                     <div class="productFeatures">
                         <h3><%= e.model %></h3>

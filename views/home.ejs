@@ -57,7 +57,7 @@
                     <a href="/products/<%=e.id%>">
                         <h3 class="offersProductoNombre"><%=e.model%></h3>
                         <p class="price"><%=e.price%></p>
-                        <img src="<%= e.image %>" alt="<%= e.model %>">
+                        <img src="<%= e.mainImage %>" alt="<%= e.model %>">
                     </a>
                  </article>    
             <%}); %> 
@@ -67,15 +67,14 @@
         <section class="soldContainer">
             <h2>Más Vendidos</h2>
         
-            <% soldProductsList.forEach(e => { 
-                let i = 1%> 
+            <% soldProductsList.forEach(e => { %> 
                 
-                <article class="soldProductContainer <%= i%2 ==0 ? 'par' : 'impar'%> ">
-             
-                <h3 class="soldProductNombre"><%= e.model%></h3>
-                <img src="<%= e.image%>" alt="<%= e.model%>">
-                <% i+=1 %>
-            </article>
+                <article class="soldProductContainer <%= soldProductsList.indexOf(e)%2 ==0 ? 'par' : 'impar'%> ">
+                    <a href="/products/<%=e.id%>">
+                        <h3 class="soldProductNombre"><%= e.model%></h3>
+                        <img src="<%= e.mainImage%>" alt="<%= e.model%>">
+                    </a>
+                </article>
             
             <%  }); %>          
             

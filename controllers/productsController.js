@@ -18,25 +18,35 @@ let productController = {
     },
 
     detail:(req,res)=>{
-        const {id} = req.params;
+        const {id} = req.params
+        
         const idDetail = productsModel.findByPk(id)
+        const brandList = productsModel.findByBrand(idDetail.brand) 
+        const relatedList = productsModel.randomize(brandList,2) 
+        
 
-        res.render('products/productDetail', {idDetail})
+        res.render('products/productDetail', {idDetail, relatedList})
     },
     
-    newProduct: (req,res)=>{
+    newProductForm: (req,res)=>{
         res.render('products/newProduct')
     },
+    createNewProduct(req, res){
+        const newProduct = req.body
 
-    editProduct (req, res){
+        productsModel.storeNew(newProduct)
+
+
+        res.redirect('/products/list')
+    },
+
+    editProductForm (req, res){
         const {id} = req.params;
         const idDetail = productsModel.findByPk(id)
-
+    
         res.render('products/editProduct',{idDetail})
     },
-    store(req, res){
-        
-    },
+    
 
     updateProduct (req,res){
         console.log('Hola controlador')
@@ -48,7 +58,14 @@ let productController = {
         res.redirect('/')
         
         console.log(data)
-    }
+    },
+
+    destroy(req, res){
+        const id = req.params.id;
+        productsModel.destroy(id);
+        //res.render('products/list');
+        res.redirect('/products/list' )
+    },
     
 }
 

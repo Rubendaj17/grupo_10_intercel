@@ -17,16 +17,18 @@
         <a href="/products/list">Volver al Listado</a>
         <section class="productContainer">
             <article class="minorPhotosContainer">
-            
-                <div><img src="<%= idDetail.image %>" alt="Preview <%= idDetail.model %>"></div>
-                <div><img src="<%= idDetail.image %>" alt="Preview <%= idDetail.model %>"></div>
-                <div><img src="<%= idDetail.image %>" alt="Preview <%= idDetail.model %>"></div>
+                <% idDetail.images.forEach( e => {%>
+                    <div><img src="<%= e %>" alt="Preview <%= idDetail.model %>"></div>
+                <%}) %> 
+                <!-- <div><img src="<%= idDetail.image %>" alt="Preview <%= idDetail.model %>"></div> -->
+                <!-- <div><img src="<%= idDetail.image %>" alt="Preview <%= idDetail.model %>"></div> -->
+                <!-- <div><img src="<%= idDetail.image %>" alt="Preview <%= idDetail.model %>"></div> -->
             
             </article>
             
             <article class="mainPhotoContainer">
             
-                <div><img src="<%= idDetail.image %>" alt="Celular  <%= idDetail.model %>"></div>
+                <div><img src="<%= idDetail.mainImage %>" alt="Celular  <%= idDetail.model %>"></div>
             
             </article>
                 
@@ -47,8 +49,11 @@
                 </div>
                 <form  class= "bottomInfo" action="/products/<%=idDetail.id%>/editProduct" method="GET">
                    <button type="submit">Editar</button>
-
                 </form>
+                <form  class= "bottomInfo" action="/products/<%=idDetail.id%>?_method=DELETE" method="POST">
+                   <button type="submit">Eliminar</button>
+                </form>
+                
             </article>
         
         </section>
@@ -60,23 +65,16 @@
             <div class="logoRelated"><img src="/images/logos/<%=idDetail.brand %>.svg" alt="Samsung Logo"></div>
             </div>
 
-            <div class="photoContainerRelated">
-                
-                <a href="/productDetail"><img src="/images/cellphones/samsung/A71/a71-1.png" alt="Preview Celular 2"><p class="NameRelated">A71</p></a>
-            </div>
-            <div class="photoContainerRelated">
-                <a href="/productDetail"><img src="/images/cellphones/samsung/S20/s20-1.png" alt="Preview Celular 3"><p class="NameRelated">S20</p></a>
-            </div>
+            <% relatedList.forEach(e => {%>
+                <div class="photoContainerRelated">
+                    <a href="/products/<%=e.id%>"><img src="<%=e.mainImage%>" alt="Preview <%=e.model%>"><p class="NameRelated"><%=e.model%></p></a>    
+                </div>
+            <%}); %>                
         
         </section>
-    
-    
-    
-    
     </main>
-    
+
     <!-- FOOTER -->
     <%- include('../partials/footer') %>
-
 </body>
 </html>

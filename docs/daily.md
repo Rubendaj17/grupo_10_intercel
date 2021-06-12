@@ -34,4 +34,13 @@
     </p>
         
         
-
+<h3>Miercoles 9 de junio 20hs</h3>
+    <p><span>Ruben:</span> Comenzo a trabajar con el formulario de edicion (PUT)
+    <br>Va a trabajar sobre /create</p>
+    <p><span>Justi:</span> Home y productos dinamicos
+    <br>Para el viernes debe terminar la accion de borrado (DELETE) </p>
+    <p><span>Ale:</span> Home dinamico
+    <br>Para el viernes debe terminar accion de creacion(POST)</p>
+    <p>Pusheamos los cambios a main y configuramos el app.js para method-override
+    <br> Organizamos el codigo en productsModel.js </p>
+    
