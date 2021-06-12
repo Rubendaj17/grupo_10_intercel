@@ -19,6 +19,16 @@ module.exports = {
         const lastProduct = products.pop()
         return lastProduct.id + 1
     },
+    
+    randomize: (array, n)=>{
+        let finalList = []
+
+       while(finalList.length<n){
+            let random = Math.round(Math.random()* (array.length - 1))
+            finalList.includes(array[random])? '' : finalList.push(array[random])
+        }
+        return finalList
+    },
 
     findAll() {
         return this.readFile()
@@ -58,5 +68,19 @@ module.exports = {
         const products = this.readFile();
         const newList = products.filter(e => e.id != id);
         this.writeFile(newList);
-    }
+    },
+    
+    storeNew(cellphone){
+        cellphone.id = this.generateID()
+
+        const products = this.readFile()
+
+        const productsUpdated = [...products, cellphone]
+
+        this.writeFile(productsUpdated)
+
+        return products
+    
+    },
+
 }

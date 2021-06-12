@@ -15,8 +15,8 @@ app.listen(3000, ()=> {
 })
 
 // No olvidarse esto para que la data se envie correctamente desde un formulario
-app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 // generic
 const intercelRoutes = require('./routes/intercelRoutes');
