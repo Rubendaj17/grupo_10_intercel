@@ -2,15 +2,6 @@ const path = require('path');
 const productsModel = require('../model/productsModel')
 
 let intercelController = {
-    // randomize: (array)=>{
-    //     let finalList = []
-
-    //    while(finalList.length<4){
-    //         let random = Math.round(Math.random()* (array.length - 1))
-    //         finalList.includes(array[random])? '' : finalList.push(array[random])
-    //     }
-    //     return finalList
-    // },
     
     home: (req,res) => {
         const brands = productsModel.getBrands()

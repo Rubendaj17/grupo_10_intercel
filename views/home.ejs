@@ -57,7 +57,7 @@
                     <a href="/products/<%=e.id%>">
                         <h3 class="offersProductoNombre"><%=e.model%></h3>
                         <p class="price"><%=e.price%></p>
-                        <img src="<%= e.image %>" alt="<%= e.model %>">
+                        <img src="<%= e.mainImage %>" alt="<%= e.model %>">
                     </a>
                  </article>    
             <%}); %> 
@@ -70,10 +70,11 @@
             <% soldProductsList.forEach(e => { %> 
                 
                 <article class="soldProductContainer <%= soldProductsList.indexOf(e)%2 ==0 ? 'par' : 'impar'%> ">
-             
-                <h3 class="soldProductNombre"><%= e.model%></h3>
-                <img src="<%= e.image%>" alt="<%= e.model%>">
-            </article>
+                    <a href="/products/<%=e.id%>">
+                        <h3 class="soldProductNombre"><%= e.model%></h3>
+                        <img src="<%= e.mainImage%>" alt="<%= e.model%>">
+                    </a>
+                </article>
             
             <%  }); %>          
             

@@ -6,7 +6,8 @@
     "color": "Negro",
     "price": "700",
     "ram": "8GB",
-    "image": "/images/cellphones/samsung/S20/s20-1.png",
+    "mainImage": "/images/cellphones/samsung/S20/s20-1.png",
+    "images": ["/images/cellphones/samsung/S20/s20-2.png","/images/cellphones/samsung/S20/s20-3.png","/images/cellphones/samsung/S20/s20-4.png"],
     "offer": "no"
   },
   {
@@ -16,7 +17,8 @@
     "color": "Gris",
     "price": "500",
     "ram": "24GB",
-    "image": "/images/cellphones/apple/iphoneXS/xs-1.png",
+    "mainImage": "/images/cellphones/apple/iphoneXS/xs-1.png",
+    "images": ["/images/cellphones/apple/iphoneXS/xs-2.png","/images/cellphones/apple/iphoneXS/xs-3.png","/images/cellphones/apple/iphoneXS/xs-4.png"],
     "offer": "no"
   },
   {
@@ -26,7 +28,8 @@
     "color": "Blanco",
     "price": "200",
     "ram": "4GB",
-    "image": "/images/cellphones/motorola/e7/e7-1.png",
+    "mainImage": "/images/cellphones/motorola/e7/e7-1.png",
+    "images": ["/images/cellphones/motorola/e7/e7-2.png","/images/cellphones/motorola/e7/e7-3.png","/images/cellphones/motorola/e7/e7-4.png"],
     "offer": "no"
   },
   {
@@ -36,7 +39,8 @@
     "color": "Gris",
     "price": "149",
     "ram": "2GB",
-    "image": "/images/cellphones/LG/K31/k31-1.png",
+    "mainImage": "/images/cellphones/LG/K31/k31-1.png",
+    "images": ["/images/cellphones/LG/K31/k31-2.png","/images/cellphones/LG/K31/k31-3.png","/images/cellphones/LG/K31/k31-4.png"],
     "offer": "si"
   },
   {
@@ -46,7 +50,8 @@
     "color": "Negro",
     "price": "600",
     "ram": "8GB",
-    "image": "/images/cellphones/apple/iphone11/iphone11-1.png",
+    "mainImage": "/images/cellphones/apple/iphone11/iphone11-1.png",
+    "images": ["/images/cellphones/apple/iphone11/iphone11-2.png","/images/cellphones/apple/iphone11/iphone11-3.png","/images/cellphones/apple/iphone11/iphone11-4.png"],
     "offer": "si"
   },
   {
@@ -56,7 +61,8 @@
     "color": "Blanco",
     "price": "800",
     "ram": "24GB",
-    "image": "/images/cellphones/apple/iphone12/iphone12-1.png",
+    "mainImage": "/images/cellphones/apple/iphone12/iphone12-1.png",
+    "images": ["/images/cellphones/apple/iphone12/iphone12-2.png","/images/cellphones/apple/iphone12/iphone12-3.png","/images/cellphones/apple/iphone12/iphone12-4.png"],
     "offer": "no"
   },
   {
@@ -66,7 +72,8 @@
     "color": "Negro",
     "price": "400",
     "ram": "8GB",
-    "image": "/images/cellphones/apple/iphoneSE/iphoneSE-1.jpg",
+    "mainImage": "/images/cellphones/apple/iphoneSE/iphoneSE-1.png",
+    "images": ["/images/cellphones/apple/iphoneSE/iphoneSE-2.png","/images/cellphones/apple/iphoneSE/iphoneSE-3.png","/images/cellphones/apple/iphoneSE/iphoneSE-4.png"],
     "offer": "no"
   },
   {
@@ -76,7 +83,8 @@
     "color": "Rosa",
     "price": "700",
     "ram": "8GB",
-    "image": "/images/cellphones/apple/iphone12mini/iphone12mini-1.jpg",
+    "mainImage": "/images/cellphones/apple/iphone12mini/iphone12mini-1.png",
+    "images": ["/images/cellphones/apple/iphone12mini/iphone12mini-2.png","/images/cellphones/apple/iphone12mini/iphone12mini-3.png","/images/cellphones/apple/iphone12mini/iphone12mini-4.png"],
     "offer": "no"
   },
   {
@@ -86,7 +94,8 @@
     "color": "Negro",
     "price": "500",
     "ram": "6GB",
-    "image": "/images/cellphones/samsung/a71/a71-1.png",
+    "mainImage": "/images/cellphones/samsung/a71/a71-1.png",
+    "images": ["/images/cellphones/samsung/a71/a71-2.png","/images/cellphones/samsung/a71/a71-3.png","/images/cellphones/samsung/a71/a71-4.png"],
     "offer": "no"
   },
   {
@@ -96,7 +105,8 @@
     "color": "Blanco",
     "price": "800",
     "ram": "8GB",
-    "image": "/images/cellphones/samsung/Note20/note20-1.png",
+    "mainImage": "/images/cellphones/samsung/Note20/note20-1.png",
+    "images": ["/images/cellphones/samsung/Note20/note20-2.png","/images/cellphones/samsung/Note20/note20-3.png","/images/cellphones/samsung/Note20/note20-4.png"],
     "offer": "si"
   },
   {
@@ -106,7 +116,8 @@
     "color": "Bronce",
     "price": "1100",
     "ram": "5GB",
-    "image": "/images/cellphones/samsung/ZFold/zfold-1.jpg",
+    "mainImage": "/images/cellphones/samsung/ZFold/zfold-1.png",
+    "images": ["/images/cellphones/samsung/ZFold/zfold-2.png","/images/cellphones/samsung/ZFold/zfold-3.png","/images/cellphones/samsung/ZFold/zfold-4.png"],
     "offer": "si"
   },
   {
@@ -116,7 +127,8 @@
     "color": "Negro",
     "price": "500",
     "ram": "5GB",
-    "image": "/images/cellphones/motorola/edgeS/edgeS-1.png",
+    "mainImage": "/images/cellphones/motorola/edgeS/edgeS-1.png",
+    "images": ["/images/cellphones/motorola/edgeS/edgeS-2.png","/images/cellphones/motorola/edgeS/edgeS-3.png","/images/cellphones/motorola/edgeS/edgeS-4.png"],
     "offer": "si"
   },
   {
@@ -126,7 +138,8 @@
     "color": "Negro",
     "price": "300",
     "ram": "6GB",
-    "image": "/images/cellphones/motorola/g60/g60-1.png",
+    "mainImage": "/images/cellphones/motorola/g60/g60-1.png",
+    "images": ["/images/cellphones/motorola/g60/g60-2.png","/images/cellphones/motorola/g60/g60-3.png","/images/cellphones/motorola/g60/g60-4.png"],
     "offer": "si"
   },
   {
@@ -136,7 +149,8 @@
     "color": "Azul",
     "price": "620",
     "ram": "5GB",
-    "image": "/images/cellphones/motorola/g100/g100-1.jpg",
+    "mainImage": "/images/cellphones/motorola/g100/g100-1.png",
+    "images": ["/images/cellphones/motorola/g100/g100-2.png","/images/cellphones/motorola/g100/g100-3.png","/images/cellphones/motorola/g100/g100-4.png"],
     "offer": "no"
   },
   {
@@ -146,7 +160,8 @@
     "color": "Negro",
     "price": "800",
     "ram": "8GB",
-    "image": "/images/cellphones/pixel/5/5-1.jpg",
+    "mainImage": "/images/cellphones/pixel/5/5-1.png",
+    "images": ["/images/cellphones/pixel/5/5-2.png","/images/cellphones/pixel/5/5-3.png","/images/cellphones/pixel/5/5-4.png"],
     "offer": "si"
   },
   {
@@ -156,7 +171,8 @@
     "color": "Blanco",
     "price": "600",
     "ram": "6GB",
-    "image": "/images/cellphones/pixel/4/4-1.jpeg",
+    "mainImage": "/images/cellphones/pixel/4/4-1.png",
+    "images": ["/images/cellphones/pixel/4/4-2.png","/images/cellphones/pixel/4/4-3.png","/images/cellphones/pixel/4/4-4.png"],
     "offer": "si"
   },
   {
@@ -166,7 +182,8 @@
     "color": "Purpura",
     "price": "200",
     "ram": "4GB",
-    "image": "/images/cellphones/LG/K52/k52-1.jpg",
+    "mainImage": "/images/cellphones/LG/K52/k52-1.png",
+    "images": ["/images/cellphones/LG/K52/k52-2.png","/images/cellphones/LG/K52/k52-3.png","/images/cellphones/LG/K52/k52-4.png"],
     "offer": "no"
   },
   {
@@ -176,7 +193,8 @@
     "color": "Gris",
     "price": "30",
     "ram": "4GB",
-    "image": "/images/cellphones/LG/K61/k61-1.png",
+    "mainImage": "/images/cellphones/LG/K61/k61-1.png",
+    "images": ["/images/cellphones/LG/K61/k61-2.png","/images/cellphones/LG/K61/k61-3.png","/images/cellphones/LG/K61/k61-4.png"],
     "offer": "no"
   },
   {
@@ -186,7 +204,8 @@
     "color": "Azul",
     "price": "180",
     "ram": "4GB",
-    "image": "/images/cellphones/LG/W41/w41-2.png",
+    "mainImage": "/images/cellphones/LG/W41/w41-1.png",
+    "images": ["/images/cellphones/LG/W41/w41-2.png","/images/cellphones/LG/W41/w41-3.png","/images/cellphones/LG/W41/w41-4.png"],
     "offer": "si"
   }
 ]

@@ -17,16 +17,18 @@
         <a href="/products/list">Volver al Listado</a>
         <section class="productContainer">
             <article class="minorPhotosContainer">
-            
-                <div><img src="<%= idDetail.image %>" alt="Preview <%= idDetail.model %>"></div>
-                <div><img src="<%= idDetail.image %>" alt="Preview <%= idDetail.model %>"></div>
-                <div><img src="<%= idDetail.image %>" alt="Preview <%= idDetail.model %>"></div>
+                <% idDetail.images.forEach( e => {%>
+                    <div><img src="<%= e %>" alt="Preview <%= idDetail.model %>"></div>
+                <%}) %> 
+                <!-- <div><img src="<%= idDetail.image %>" alt="Preview <%= idDetail.model %>"></div> -->
+                <!-- <div><img src="<%= idDetail.image %>" alt="Preview <%= idDetail.model %>"></div> -->
+                <!-- <div><img src="<%= idDetail.image %>" alt="Preview <%= idDetail.model %>"></div> -->
             
             </article>
             
             <article class="mainPhotoContainer">
             
-                <div><img src="<%= idDetail.image %>" alt="Celular  <%= idDetail.model %>"></div>
+                <div><img src="<%= idDetail.mainImage %>" alt="Celular  <%= idDetail.model %>"></div>
             
             </article>
                 
@@ -62,7 +64,7 @@
 
             <% relatedList.forEach(e => {%>
                 <div class="photoContainerRelated">
-                    <a href="/products/<%=e.id%>"><img src="<%=e.image%>" alt="Preview <%=e.model%>"><p class="NameRelated"><%=e.model%></p></a>    
+                    <a href="/products/<%=e.id%>"><img src="<%=e.mainImage%>" alt="Preview <%=e.model%>"><p class="NameRelated"><%=e.model%></p></a>    
                 </div>
             <%}); %>                
         
