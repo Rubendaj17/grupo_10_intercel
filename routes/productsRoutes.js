@@ -28,7 +28,9 @@ productsRouter.get("/create", productsController.newProduct);
 productsRouter.post("/create", productsController.store);
 
 productsRouter.get("/:id", productsController.detail)
+
 productsRouter.get("/:id/editProduct" , productsController.editProduct);
+productsRouter.put("/:id/" , productsController.updateProduct);
 //planetsRoutes.post('/create', upload.single('image'), planetsController.store);
 
 

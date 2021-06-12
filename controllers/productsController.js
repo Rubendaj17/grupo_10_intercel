@@ -36,6 +36,18 @@ let productController = {
     },
     store(req, res){
         
+    },
+
+    updateProduct (req,res){
+        console.log('Hola controlador')
+        const data = req.body
+        const {id} = req.params;
+        
+        productsModel.update (data,id)
+
+        res.redirect('/')
+        
+        console.log(data)
     }
     
 }

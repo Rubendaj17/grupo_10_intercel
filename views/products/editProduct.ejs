@@ -13,7 +13,7 @@
         <div class="container">
         <a href="/"> <img src="/images/logos/Logo.svg" width="200"> </a>
         <h2>Editar producto</h2>
-            <form class="createForm" action="/" method="POST" enctype="multipart/form-data">
+            <form class="createForm" action="/products/<%=idDetail.id %>?_method=PUT" method="POST">
                 <br>
                 <div class="formControl">
                     <label>Brand</label>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="formControl">
                     <label>Almacenamiento</label>
-                    <input value="<%=idDetail.ram %>" type="number" step="0.1" name="ram" class="inputControl" required>
+                    <input value="<%=idDetail.ram %>" type="text" step="0.1" name="ram" class="inputControl" required>
                 </div>
                 <div  class="formControl">
                     <label for="">Este producto esta en oferta?</label>

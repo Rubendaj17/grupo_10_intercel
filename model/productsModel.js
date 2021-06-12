@@ -55,6 +55,23 @@ module.exports = {
         
         return offerAux;
     },
+
+    update(data,id){
+        const products = this.readFile()
+
+        const newProducts = products.map(product => {
+            if(product.id == id){
+                product ={
+                    id,
+                    ...data
+                }
+            }
+            return product
+            
+        })
+        this.writeFile(newProducts)
+
+    }
     
 
 }
