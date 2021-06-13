@@ -67,8 +67,10 @@ main section h3{
     
 }
 .btn-primary:hover{
-    background-color: #64c283;
-    border: 1px solid #B7BDC7;
+    color:#2E3646;
+    background-color: #33d469;
+    border: 1px solid #33d469;
+   
 }
 
 

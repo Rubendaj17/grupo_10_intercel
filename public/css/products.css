@@ -47,16 +47,20 @@ article img{
 
 
 .productPrice input{
-
-    color:#40B568;
-    border: solid #40B568 1px;
-    background-color: white;
-    font-size: 12px;
+    font-weight: 500;
+    padding: .25em .5em;
+    background-color: #71D894;
+    border: 1px solid #B7BDC7;
     border-radius: 8px;
-    padding: 5px 9px;
+    font-size: 12px;
     margin-top: 15px;
 
 }
+
+.productPrice input:hover{
+    background-color: #33d469;
+}
+
 
 .productPrice p{
     color:#40B568;
