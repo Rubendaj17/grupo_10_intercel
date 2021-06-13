@@ -91,16 +91,19 @@ article img{
     }
     
     article{
-        max-width: 550px;
+        max-width: 480px;
+        box-shadow: 0px 2px 7px rgba(70, 102, 133, 0.1);
+        border-radius: 16px;
+        margin-bottom: 25px;
     }
 
     section{
-        max-width: 550px;
         margin: auto;
+        width: fit-content;
     }
     
     main .title{
-        max-width: 600px;
+        max-width: 800px;
         margin: auto;
     }  
     
@@ -108,8 +111,7 @@ article img{
         margin: 15px 10px;
     }
 
-
-        
+          
 }
 
 @media (min-width: 769px){
@@ -117,6 +119,7 @@ article img{
         box-shadow: 0px 2px 7px rgba(70, 102, 133, 0.1);
         border-radius: 16px;
         margin-bottom: 25px;
+
 
     }
     article img{
@@ -126,15 +129,19 @@ article img{
     .productFeatures{
         margin-left: -50px;
     }
-    /*.products{
-        display: flex;
-        font-weight: wrap;
-        flex-direction: column;
-        justify-content: center;
-       }
+    
     .products article{
-        flex-basis:50%;
-    }*/
+        flex-basis:48%;
+    }
+
+    .products{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 98%;
+        flex-wrap: wrap;
+    }
+
    
 }
 
