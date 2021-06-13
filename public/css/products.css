@@ -4,7 +4,6 @@ main {
 
 main .blueBar{
     background-color: #1A70E4;
-    width: 100vw;
     height: 50px;
 }
 
@@ -77,6 +76,7 @@ article img{
 
     main{
         margin: auto;
+        width: 100%;
     }
 
     .productFeatures ul{
