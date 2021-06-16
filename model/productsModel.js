@@ -64,6 +64,7 @@ module.exports = {
 
         return offer;
     },
+
     destroy(id){
         const products = this.readFile();
         const newList = products.filter(e => e.id != id);
@@ -84,7 +85,6 @@ module.exports = {
             
         })
         this.writeFile(newProducts)
-
     },
     
     storeNew(cellphone){

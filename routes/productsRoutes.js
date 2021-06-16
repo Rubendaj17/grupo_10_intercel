@@ -17,7 +17,6 @@ const storage = multer.diskStorage({
 
         cb(null, filename);
     }
-
 })
 
 const upload = multer({storage})
@@ -27,7 +26,7 @@ productsRouter.get("/list/:brand", productsController.brandList)
 
 // formulario crear y envio de creacion
 productsRouter.get("/create", productsController.newProductForm);
-productsRouter.post("/create",upload.fields([{name:'mainImage', maxCount:1},{name:'images'}])  ,productsController.createNewProduct);
+productsRouter.post("/create",upload.fields([{name:'mainImage', maxCount:1},{name:'images'}]), productsController.createNewProduct);
 productsRouter.delete("/:id", productsController.destroy);
 
 // formulario editar y envio de edicion
@@ -35,7 +34,6 @@ productsRouter.get("/:id", productsController.detail)
 
 productsRouter.get("/:id/editProduct" , productsController.editProductForm);
 productsRouter.put("/:id/" , productsController.updateProduct);
-//planetsRoutes.post('/create', upload.single('image'), planetsController.store);
 
 
 
