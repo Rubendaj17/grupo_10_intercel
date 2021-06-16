@@ -28,9 +28,21 @@
                     <input value="<%=idDetail.color %>" type="text" name="color" class="inputControl" minlength="3">
                 </div>
                 <div class="formControl">
-                    <label>Imagen</label>
-                    <input type="file" name="image" accept = ".jpg, .png" class="inputControl" required multiple>
-                    <%# <img src="/images/Iphone.png" alt="">  %>                    
+                    <label>Imagen principal</label>
+                    <div class="currentImage">
+                        <img src="<%= idDetail.mainImage%>" alt="">
+                        <span>Imagen actual</span>
+                    </div>  
+                    <input type="file" name="mainImage" accept = ".jpg, .png" class="inputControl" required multiple>                       
+                </div>
+                <div class="formControl">
+                    <label>Imagenes secundarias</label>
+                    <div class="secondaryImage">
+                        <% idDetail.images.forEach( e => {%>
+                            <img src="<%= e %>" alt="Preview ">
+                        <%}) %>
+                    </div> 
+                    <input type="file" name="images" accept = ".jpg, .png" class="inputControl " multiple >
                 </div>
                 <div class="formControl">
                     <label>Precio</label>

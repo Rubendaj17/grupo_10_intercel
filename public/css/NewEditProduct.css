@@ -87,6 +87,26 @@ form label{
     background-color: #33d469;
 }
 
+.currentImage {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.currentImage img {
+   width: 40%
+}
+
+.secondaryImage {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.secondaryImage img {
+    width: 34%;
+}
+
 @media (min-width: 361px){
     h2{
         margin-top: 40px;  
