@@ -34,7 +34,7 @@ productsRouter.delete("/:id", productsController.destroy);
 productsRouter.get("/:id", productsController.detail)
 
 productsRouter.get("/:id/editProduct" , productsController.editProductForm);
-productsRouter.put("/:id/" , productsController.updateProduct);
+productsRouter.put("/:id/" ,upload.fields([{name:'mainImage', maxCount:1},{name:'images'}]), productsController.updateProduct);
 //planetsRoutes.post('/create', upload.single('image'), planetsController.store);
 
 

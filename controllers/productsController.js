@@ -56,6 +56,7 @@ let productController = {
     },
 
     editProductForm (req, res){
+        
         const {id} = req.params;
         const idDetail = productsModel.findByPk(id)
     
@@ -64,15 +65,28 @@ let productController = {
     
 
     updateProduct (req,res){
-        console.log('Hola controlador')
+
+        const imagePath = `/images/cellphones/${req.body.brand}/${req.body.model}/`
+
+        const mainImageUser = req.files.mainImage[0]
+        const mainImage = imagePath + mainImageUser.filename        
+        
+        const imagesUser = req.files.images
+        let images = []
+        imagesUser.forEach(e => {
+            let newImage = imagePath + e.filename
+            images.push(newImage)
+        })
+        
+                        
         const data = req.body
         const {id} = req.params;
         
-        productsModel.update (data,id)
+        productsModel.update (data,id,mainImage,images)
 
         res.redirect('/')
         
-        console.log(data)
+       
     },
 
     destroy(req, res){

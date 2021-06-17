@@ -70,14 +70,16 @@ module.exports = {
         this.writeFile(newList);
     },
 
-    update(data,id){
+    update(data,id,mainImage,images){
         const products = this.readFile()
 
         const newProducts = products.map(product => {
             if(product.id == id){
                 product ={
                     id,
-                    ...data
+                    ...data,
+                    mainImage,
+                    images
                 }
             }
             return product

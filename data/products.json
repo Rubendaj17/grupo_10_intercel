@@ -285,17 +285,16 @@
     "offer": "si"
   },
   {
+    "id": "20",
     "brand": "samsung",
     "model": "A71",
     "color": "Jade",
-    "price": "100",
-    "ram": "0.3",
-    "offer": "si",
-    "mainImage": "/images/cellphones/samsung/A71/A711623507174539.png",
+    "price": "50",
+    "ram": "2444",
+    "offer": "no",
+    "mainImage": "/images/cellphones/samsung/A71/A711623890103628.jpg",
     "images": [
-      "/images/cellphones/samsung/A71/A711623507174541.jpg",
-      "/images/cellphones/samsung/A71/A711623507174542.png"
-    ],
-    "id": 20
+      "/images/cellphones/samsung/A71/A711623890103630.jpg"
+    ]
   }
 ]

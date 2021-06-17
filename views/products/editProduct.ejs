@@ -13,7 +13,7 @@
         <div class="container">
         <a href="/"> <img src="/images/logos/Logo.svg" width="200"> </a>
         <h2>Editar producto</h2>
-            <form class="createForm" action="/products/<%=idDetail.id %>?_method=PUT" method="POST">
+            <form class="createForm" action="/products/<%=idDetail.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <br>
                 <div class="formControl">
                     <label>Brand</label>
@@ -42,11 +42,11 @@
                             <img src="<%= e %>" alt="Preview ">
                         <%}) %>
                     </div> 
-                    <input type="file" name="images" accept = ".jpg, .png" class="inputControl " multiple >
+                    <input type="file" name="images" accept = ".jpg, .png" class="inputControl " required multiple >
                 </div>
                 <div class="formControl">
                     <label>Precio</label>
-                    <input value="US$<%=idDetail.price%>" type="tel" name="price" class="inputControl" minlength="1" required>
+                    <input value="<%=idDetail.price%>" type="number" name="price" class="inputControl" minlength="1" required>
                 </div>
                 <div class="formControl">
                     <label>Almacenamiento</label>
