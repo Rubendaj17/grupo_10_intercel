@@ -44,3 +44,8 @@
     <p>Pusheamos los cambios a main y configuramos el app.js para method-override
     <br> Organizamos el codigo en productsModel.js </p>
     
+<h3>Domingo 13 de junio 18hs</h3>
+<p><span>Ruben:</span> Estuvo trabajando en la vista de Products para terminarlo responsive
+<br>Va a trabajar sobre el formulario de edicion, poniendo las imagenes actuales y multer (mas de una imagen)</p>
+<p><span>Justi:</span> Reviso y termino el formulario de eliminacion (Delete) </p>
+<p><span>Ale:</span> Termino con la accion de formulario de creacion (POST) con multiples archivos</p>

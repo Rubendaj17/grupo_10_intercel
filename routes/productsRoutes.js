@@ -1,8 +1,11 @@
 const express = require('express');
-const productsController = require('../controllers/productsController');
 const productsRouter = express.Router()
 const path = require('path');
 const multer = require('multer');
+
+const productsController = require('../controllers/productsController');
+const searchBarValidation = require('../middlewares/searchBarValidation');
+
 
 const storage = multer.diskStorage({
     destination: (req, file, cb)=>{
@@ -12,7 +15,7 @@ const storage = multer.diskStorage({
     },
     filename:  (req, file, cb)=>{
         const extension = path.extname(file.originalname)   //El nombre del archivo original es: file.originalname
-        const model = req.body.model + Date.now();
+        const model = req.body.model+ " - "+ Date.now();
         const filename = model+extension; //generar un nombre para el archivo
 
         cb(null, filename);
@@ -27,12 +30,14 @@ productsRouter.get("/list/:brand", productsController.brandList)
 
 // formulario crear y envio de creacion
 productsRouter.get("/create", productsController.newProductForm);
-productsRouter.post("/create",upload.fields([{name:'mainImage', maxCount:1},{name:'images'}])  ,productsController.createNewProduct);
+productsRouter.post("/create",upload.fields([{name:'mainImage'},{name:'images'}])  ,productsController.createNewProduct);
 productsRouter.delete("/:id", productsController.destroy);
 
-// formulario editar y envio de edicion
+// detalle producto
 productsRouter.get("/:id", productsController.detail)
+productsRouter.get("/search/:id", searchBarValidation, productsController.search)
 
+// formulario editar y envio de edicion
 productsRouter.get("/:id/editProduct" , productsController.editProductForm);
 productsRouter.put("/:id/" , productsController.updateProduct);
 //planetsRoutes.post('/create', upload.single('image'), planetsController.store);

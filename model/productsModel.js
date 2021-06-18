@@ -40,6 +40,12 @@ module.exports = {
         return products.filter( e => e.brand == brand)
 
     },
+    findByName(name){
+        const products = this.readFile()
+
+        return products.find (e => e.model == name)
+    
+    },
 
     findByPk(id){
         const products = this.readFile()
@@ -56,6 +62,17 @@ module.exports = {
             }
         });
         return brands
+    },
+    getModels() {
+        const products = this.readFile()
+        let models = []
+
+        products.forEach(e => {
+            if (!models.includes(e.model)){
+                models.push(e.model)
+            }
+        });
+        return models
     },
 
     offers(){
