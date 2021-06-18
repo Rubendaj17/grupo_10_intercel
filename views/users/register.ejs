@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <%- include ('../partials/head') %> 
@@ -13,12 +13,11 @@
         <div class="container">
         <a href="/"> <img src="/images/logos/Logo.svg" width="200"> </a>
         <h2>Registrarse</h2>
-            <form class="createForm" action="/" method="POST">
-            
-            <div  class="registerWith" >
-                <div><button class="registerGoogle"><i class="fab fa-google"></i>    Registrate con Google </button></div>
-                <div><button class="registerFacebook"><i class="fab fa-facebook-f"></i>    Registrate con Facebook </button></div>
-            </div>
+            <form class="createForm" action="/users" method="POST" enctype="multipart/form-data">
+                <div  class="registerWith" >
+                    <div><button class="registerGoogle"><i class="fab fa-google"></i>    Registrate con Google </button></div>
+                    <div><button class="registerFacebook"><i class="fab fa-facebook-f"></i>    Registrate con Facebook </button></div>
+                </div>
                 <br>
                 <div class="formControl">
                     <label>Nombre</label>
