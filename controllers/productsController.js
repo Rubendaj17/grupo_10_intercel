@@ -1,5 +1,6 @@
 const path = require('path');
 const productsModel = require('../model/productsModel')
+const {validationResult} = require('express-validator')
 
 let productController = {
     list: (req,res)=>{
@@ -28,6 +29,31 @@ let productController = {
         res.render('products/productDetail', {idDetail, relatedList})
     },
     
+    search(req,res){
+        const searchValidation = validationResult(req)
+
+        if (!searchValidation.isEmpty()){
+            res.render('soon')
+            return
+        }
+
+        const { userValue } = req.query
+        const idDetail = productsModel.findByName(userValue)
+        const productList = productsModel.findByBrand(userValue)
+        
+        if (idDetail){
+            const brandList = productsModel.findByBrand(idDetail.brand) 
+
+            const relatedList = productsModel.randomize(brandList,2) 
+            
+            res.render('products/productDetail', {idDetail, relatedList})
+        }
+        else if(productList){
+            res.render('products/products', {productList, brand:userValue})
+        }
+        
+    },
+
     newProductForm: (req,res)=>{
         res.render('products/newProduct')
     },

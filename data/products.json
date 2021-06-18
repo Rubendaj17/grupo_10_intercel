@@ -45,21 +45,6 @@
     "offer": "no"
   },
   {
-    "id": 4,
-    "brand": "lg",
-    "model": "K31",
-    "color": "Gris",
-    "price": "149",
-    "ram": "2GB",
-    "mainImage": "/images/cellphones/LG/K31/k31-1.png",
-    "images": [
-      "/images/cellphones/LG/K31/k31-2.png",
-      "/images/cellphones/LG/K31/k31-3.png",
-      "/images/cellphones/LG/K31/k31-4.png"
-    ],
-    "offer": "si"
-  },
-  {
     "id": 5,
     "brand": "apple",
     "model": "Iphone 11",
@@ -283,18 +268,5 @@
       "/images/cellphones/LG/W41/w41-4.png"
     ],
     "offer": "si"
-  },
-  {
-    "id": "20",
-    "brand": "samsung",
-    "model": "A71",
-    "color": "Jade",
-    "price": "50999999",
-    "ram": "24445",
-    "offer": "si",
-    "mainImage": "/images/cellphones/samsung/A71/A711623977176402.png",
-    "images": [
-      "/images/cellphones/samsung/A71/A711623977176403.png"
-    ]
   }
 ]
