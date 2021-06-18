@@ -10,16 +10,6 @@
     "image": ""
   },
   {
-    "id": 2,
-    "name": "Justina",
-    "lastName": "Iturraspe",
-    "phoneNumber": "3003116485",
-    "email": "justi@msn.com",
-    "password": "holamundo1",
-    "category": "admin",
-    "image": ""
-  },
-  {
     "id": 3,
     "name": "Alejandro",
     "lastName": "Bullorini",
@@ -45,5 +35,14 @@
     "password": "wergdfcdcs",
     "photo": "/images/pp/1623834397217.jpg",
     "id": 5
+  },
+  {
+    "name": "Pepe",
+    "lastName": "Ramirez",
+    "phoneNumber": "3434195980",
+    "email": "peperamirez@gmail.com",
+    "password": "colombia",
+    "photo": "/images/pp/default.png",
+    "id": 6
   }
 ]
