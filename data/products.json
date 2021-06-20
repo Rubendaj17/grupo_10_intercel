@@ -24,8 +24,7 @@
     "mainImage": "/images/cellphones/apple/iphoneXS/xs-1.png",
     "images": [
       "/images/cellphones/apple/iphoneXS/xs-2.png",
-      "/images/cellphones/apple/iphoneXS/xs-3.png",
-      "/images/cellphones/apple/iphoneXS/xs-4.png"
+      "/images/cellphones/apple/iphoneXS/xs-3.png"
     ],
     "offer": "no"
   },
@@ -54,8 +53,7 @@
     "mainImage": "/images/cellphones/apple/iphone11/iphone11-1.png",
     "images": [
       "/images/cellphones/apple/iphone11/iphone11-2.png",
-      "/images/cellphones/apple/iphone11/iphone11-3.png",
-      "/images/cellphones/apple/iphone11/iphone11-4.png"
+      "/images/cellphones/apple/iphone11/iphone11-3.png"
     ],
     "offer": "si"
   },
@@ -83,9 +81,7 @@
     "ram": "8GB",
     "mainImage": "/images/cellphones/apple/iphoneSE/iphoneSE-1.png",
     "images": [
-      "/images/cellphones/apple/iphoneSE/iphoneSE-2.png",
-      "/images/cellphones/apple/iphoneSE/iphoneSE-3.png",
-      "/images/cellphones/apple/iphoneSE/iphoneSE-4.png"
+
     ],
     "offer": "no"
   },
@@ -98,9 +94,7 @@
     "ram": "8GB",
     "mainImage": "/images/cellphones/apple/iphone12mini/iphone12mini-1.png",
     "images": [
-      "/images/cellphones/apple/iphone12mini/iphone12mini-2.png",
-      "/images/cellphones/apple/iphone12mini/iphone12mini-3.png",
-      "/images/cellphones/apple/iphone12mini/iphone12mini-4.png"
+      "/images/cellphones/apple/iphone12mini/iphone12mini-2.png"
     ],
     "offer": "no"
   },
@@ -144,8 +138,7 @@
     "mainImage": "/images/cellphones/samsung/ZFold/zfold-1.png",
     "images": [
       "/images/cellphones/samsung/ZFold/zfold-2.png",
-      "/images/cellphones/samsung/ZFold/zfold-3.png",
-      "/images/cellphones/samsung/ZFold/zfold-4.png"
+      "/images/cellphones/samsung/ZFold/zfold-3.png"
     ],
     "offer": "si"
   },
@@ -159,8 +152,7 @@
     "mainImage": "/images/cellphones/motorola/edgeS/edgeS-1.png",
     "images": [
       "/images/cellphones/motorola/edgeS/edgeS-2.png",
-      "/images/cellphones/motorola/edgeS/edgeS-3.png",
-      "/images/cellphones/motorola/edgeS/edgeS-4.png"
+      "/images/cellphones/motorola/edgeS/edgeS-3.png"
     ],
     "offer": "si"
   },
@@ -188,9 +180,7 @@
     "ram": "5GB",
     "mainImage": "/images/cellphones/motorola/g100/g100-1.png",
     "images": [
-      "/images/cellphones/motorola/g100/g100-2.png",
-      "/images/cellphones/motorola/g100/g100-3.png",
-      "/images/cellphones/motorola/g100/g100-4.png"
+
     ],
     "offer": "no"
   },
@@ -204,8 +194,7 @@
     "mainImage": "/images/cellphones/pixel/5/5-1.png",
     "images": [
       "/images/cellphones/pixel/5/5-2.png",
-      "/images/cellphones/pixel/5/5-3.png",
-      "/images/cellphones/pixel/5/5-4.png"
+      "/images/cellphones/pixel/5/5-3.png"
     ],
     "offer": "si"
   },
@@ -219,8 +208,7 @@
     "mainImage": "/images/cellphones/pixel/4/4-1.png",
     "images": [
       "/images/cellphones/pixel/4/4-2.png",
-      "/images/cellphones/pixel/4/4-3.png",
-      "/images/cellphones/pixel/4/4-4.png"
+      "/images/cellphones/pixel/4/4-3.png"
     ],
     "offer": "si"
   },
@@ -264,8 +252,7 @@
     "mainImage": "/images/cellphones/LG/W41/w41-1.png",
     "images": [
       "/images/cellphones/LG/W41/w41-2.png",
-      "/images/cellphones/LG/W41/w41-3.png",
-      "/images/cellphones/LG/W41/w41-4.png"
+      "/images/cellphones/LG/W41/w41-3.png"
     ],
     "offer": "si"
   }

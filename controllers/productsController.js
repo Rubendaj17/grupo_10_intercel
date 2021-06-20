@@ -30,10 +30,20 @@ let productController = {
     },
     
     search(req,res){
-        const searchValidation = validationResult(req)
+        let errors = validationResult(req)
 
-        if (!searchValidation.isEmpty()){
-            res.render('soon')
+        if (!errors.isEmpty()){
+
+            const brand = 'Todos los Productos'
+            const productList = productsModel.findAll()
+            
+            if (req.query.userValue == ''){
+                res.redirect('/')
+            }
+            else {
+                res.render('products/products', {error: errors.mapped(), productList, brand})
+            }
+            
             return
         }
 
