@@ -22,7 +22,7 @@
     
  <h3>Domingo 30 de mayo  09.00hs</h3>
         
-    <p><span>Ruben:</span> Corrigió el carrusel y se encargará de subirlo a la branch main para incorporarlo al resto del proyecto. </p>
+   <p><span>Ruben:</span> Corrigió el carrusel y se encargará de subirlo a la branch main para incorporarlo al resto del proyecto. </p>
     <p><span>Justi:</span> Elaboró los formularios de creación de producto y edición de producto. Trabajará en cambiar los colores de los formularios y en agregar el footer y el header a los archivos ejs. en los que se encuentran los formularios.</p>
     <p><span>Ale:</span> Estuvo revisando el trabajo realizado durante las clases prácticas para asegurarse de qué la página de Intercel funcione correctamente. Se encargará de linkear el formulario de creación de usuario al home.</p>
     <p>El equipo seguirá trabajando en finalizar las consignas del sprint  actual y en implementar recomendaciones del sprint pasado.</p>
@@ -49,3 +49,12 @@
 <br>Va a trabajar sobre el formulario de edicion, poniendo las imagenes actuales y multer (mas de una imagen)</p>
 <p><span>Justi:</span> Reviso y termino el formulario de eliminacion (Delete) </p>
 <p><span>Ale:</span> Termino con la accion de formulario de creacion (POST) con multiples archivos</p>
+
+<h3>Jueves 17 de junio 21hs</h3>
+<p><span>Ruben:</span> Estuvo agregando multer a la edición de productos para que las imagenes queden guadadas automáticamente.
+<p><span>Justi:</span> Estuvo trabajando en el formulario de creación de nuevos usuarios </p>
+<p><span>Ale:</span> Estuvo trabajando hacer funcionar el buscador del hombe con express validator</p>
+<br>
+<p>Se pusheraron todos los cambios al main para que la página quedará funcionando correctamente antes del final del sprint</p>
+
+
