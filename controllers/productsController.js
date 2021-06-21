@@ -8,6 +8,11 @@ let productController = {
         const brand = 'Todos los Productos'
         res.render('products/products', {productList, brand})
     },
+    adminList: (req,res)=>{
+        const productList = productsModel.findAll() 
+        const brand = 'Todos los Productos'
+        res.render('products/adminList', {productList, brand})
+    },
     
     brandList: (req, res) => {
         const {brand} = req.params
@@ -24,7 +29,6 @@ let productController = {
         const idDetail = productsModel.findByPk(id)
         const brandList = productsModel.findByBrand(idDetail.brand) 
         const relatedList = productsModel.randomize(brandList,2) 
-        
 
         res.render('products/productDetail', {idDetail, relatedList})
     },
@@ -74,7 +78,7 @@ let productController = {
             ...req.body,
             mainImage,
             images
-    }
+        }
 
         productsModel.storeNew(newProduct)
         
@@ -118,7 +122,7 @@ let productController = {
     destroy(req, res){
         const id = req.params.id;
         productsModel.destroy(id);
-        //res.render('products/list');
+        
         res.redirect('/products/list' )
     },
     
