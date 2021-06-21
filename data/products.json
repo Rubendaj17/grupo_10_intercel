@@ -1,20 +1,5 @@
 [
   {
-    "id": 1,
-    "brand": "samsung",
-    "model": "S20",
-    "color": "Negro",
-    "price": "700",
-    "ram": "8GB",
-    "mainImage": "/images/cellphones/samsung/S20/s20-1.png",
-    "images": [
-      "/images/cellphones/samsung/S20/s20-2.png",
-      "/images/cellphones/samsung/S20/s20-3.png",
-      "/images/cellphones/samsung/S20/s20-4.png"
-    ],
-    "offer": "no"
-  },
-  {
     "id": 2,
     "brand": "apple",
     "model": "Iphone XS",

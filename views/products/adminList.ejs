@@ -3,48 +3,28 @@
 <head>
     <%- include('../partials/head') %>
 
-<!-- nuestros css -->
     <link rel="stylesheet" href="/css/headerFooter.css">
-    <link rel="stylesheet" href="/css/products.css">
+    <link rel="stylesheet" href="/css/productsAdmin.css">
 
     <title>Products</title>
 </head>
-
 <body>
-    <!-- HEADER -->
     <%- include('../partials/header') %>
     
     <main>
-        <p class="blueBar">
-                
-            <% if (locals.error != undefined){%>
+        <p class="blueBar"></p>
 
-                <span class="errorMsg"> <%=error.userValue.msg %></span>
-
-
-            <% } %> 
-        </p>
-        
-        <div class="title">
-            <h2>Productos</h2>
-            <p><%=brand%></p>
+        <div>
+            <button class="button"><a href="/products/create">Agregar</a></button> 
         </div>
+
         <section class="products">
                 
             <% productList.forEach( e => {%>
                 <article>
                 <a href="/products/<%=e.id%>">
-                    <div class="imgContainer">
-                        <img src="<%= e.mainImage %>" alt="<%= e.model %>">
-                        
-                        <% e.images.forEach(i => { %>
-                            
-                            <img src="<%= i %>" alt="<%= e.model %>" class="secImages">   
-                        
-                        <%}); %> 
-                    
-                    </div>
-                    
+                    <img src="<%= e.mainImage %>" alt="<%= e.model %>">
+                </a>
                     <div class="productFeatures">
                         <h3><%= e.model %></h3>
                         <p><%= e.brand %></p>
@@ -59,7 +39,15 @@
                         <p>US$<%= e.price %></p>
                         <input type="button" value="Agregar al carrito">
                     </div>
-                </a>
+                    <div>
+                        <form action="/products/<%=e.id%>/editProduct" method="GET">
+                            <button class="adminButton" type="submit">Editar</button>
+                        </form>
+                        <form action="/products/<%=e.id%>?_method=DELETE" method="POST">
+                            <button class="adminButton" type="submit">Eliminar</button>
+                        </form>
+                    </div>
+            
                 </article>
  
             <%}); %> 

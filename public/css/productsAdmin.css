@@ -1,0 +1,140 @@
+main {
+    background-color:#F8F9FC;
+}
+
+main .blueBar{
+    background-color: #1A70E4;
+    width: 100vw;
+    height: 50px;
+}
+
+main .title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 25px 10px;
+}
+
+main .title h2{
+    font-size: 16px;
+}
+main .title p{
+    color: #868FA0;
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+article{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+    background-color: white;
+    margin: 15px 0px;
+    padding: 15px 0px;
+    
+}
+
+article img{
+    width: 120px;
+}
+
+
+.adminButton{
+    width: 85px;
+    height: 28px;
+    background-color: #71D894;
+    border-radius: 5px;
+    margin: 10px;
+}
+.adminButton:hover{
+    background-color: #33d469;
+}
+
+.productFeatures p,.productFeatures li{
+    color:#868FA0;
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+.button{
+    margin-left: 10px;
+}
+.button a{
+    color:#71D894;
+}
+.productPrice input,
+.button{
+    color:#40B568;
+    border: solid #40B568 1px;
+    background-color: white;
+    font-size: 12px;
+    border-radius: 8px;
+    padding: 5px 9px;
+    margin-top: 15px;
+}
+
+.productPrice p{
+    color:#40B568;
+    font-weight: bold;
+}
+
+.nextPage{
+    display: block;
+    margin-right: 5px;
+    font-size: 12px;
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+
+@media (min-width: 361px){
+
+    main{
+        margin: auto;
+    }
+
+    .productFeatures ul{
+        margin-top: 5px;
+        margin-left: 18px;
+
+    }
+
+    .productPrice input{
+        padding: 8px 12px;
+    
+    }
+
+    section{
+        max-width: 700px;
+        margin: auto;
+    }
+    
+    main .title{
+        max-width: 600px;
+        margin: auto;
+    }  
+    
+    main .title h2, main .title p{
+        margin: 15px 10px;
+    }
+
+
+        
+}
+
+@media (min-width: 769px){
+    article{
+        box-shadow: 0px 2px 7px rgba(70, 102, 133, 0.1);
+        border-radius: 16px;
+        margin-bottom: 25px;
+
+    }
+    article img{
+        width: 145px;
+    }
+
+    .productFeatures{
+        margin-left: -50px;
+    }
+   
+}

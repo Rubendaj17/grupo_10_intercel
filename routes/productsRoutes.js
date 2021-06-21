@@ -24,12 +24,14 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage})
 // listar productos
+productsRouter.get("/adminList", productsController.adminList);
+
 productsRouter.get("/list", productsController.list)
 productsRouter.get("/list/:brand", productsController.brandList)
 
 // formulario crear y envio de creacion
 productsRouter.get("/create", productsController.newProductForm);
-productsRouter.post("/create",upload.fields([{name:'mainImage'},{name:'images'}])  ,productsController.createNewProduct);
+productsRouter.post("/create",upload.fields([{name:'mainImage'},{name:'images'}]), productsController.createNewProduct);
 productsRouter.delete("/:id", productsController.destroy);
 
 // detalle producto
@@ -39,8 +41,8 @@ productsRouter.get("/search/:id", searchBarValidation, productsController.search
 // formulario editar y envio de edicion
 productsRouter.get("/:id/editProduct" , productsController.editProductForm);
 productsRouter.put("/:id/" ,upload.fields([{name:'mainImage', maxCount:1},{name:'images'}]), productsController.updateProduct);
-//planetsRoutes.post('/create', upload.single('image'), planetsController.store);
 
+//vista de admin
 
 
 module.exports = productsRouter
