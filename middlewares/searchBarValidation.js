@@ -10,21 +10,16 @@ const searchBarValidation = [
 
         const brandsList = productsModel.getBrands()
 
-
         if (!modelsList.includes(userValue)) {
 
             if(!brandsList.includes(userValue)) {
-    
-                console.log('validation Brands ',req.query)
-                throw new Error ('Celular inexistente');           
+                return false
             }
         }
         
-        return true
-        
- 
-        
+        return true        
     })
+    .withMessage('Celular inexistente. Revisa el nombre ingresado o busca debajo entre los celulares disponibles.')
 
 
 ]

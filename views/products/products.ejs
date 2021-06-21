@@ -15,8 +15,16 @@
     <%- include('../partials/header') %>
     
     <main>
-        <p class="blueBar"></p>
+        <p class="blueBar">
+                
+            <% if (locals.error != undefined){%>
 
+                <span class="errorMsg"> <%=error.userValue.msg %></span>
+
+
+            <% } %> 
+        </p>
+        
         <div class="title">
             <h2>Productos</h2>
             <p><%=brand%></p>
@@ -26,8 +34,17 @@
             <% productList.forEach( e => {%>
                 <article>
                 <a href="/products/<%=e.id%>">
-                    <img src="<%= e.mainImage %>" alt="<%= e.model %>">
-                </a>
+                    <div class="imgContainer">
+                        <img src="<%= e.mainImage %>" alt="<%= e.model %>">
+                        
+                        <% e.images.forEach(i => { %>
+                            
+                            <img src="<%= i %>" alt="<%= e.model %>" class="secImages">   
+                        
+                        <%}); %> 
+                    
+                    </div>
+                    
                     <div class="productFeatures">
                         <h3><%= e.model %></h3>
                         <p><%= e.brand %></p>
@@ -42,6 +59,7 @@
                         <p>US$<%= e.price %></p>
                         <input type="button" value="Agregar al carrito">
                     </div>
+                </a>
                 </article>
  
             <%}); %> 
