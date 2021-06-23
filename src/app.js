@@ -2,13 +2,13 @@ const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override')
 const app = express();
-const publicPath = path.resolve(__dirname, './public');
+const publicPath = path.resolve(__dirname, '../public');
 
 app.use(methodOverride('_method'))
 app.use(express.static(publicPath));
 
 app.set('view engine','ejs');
-app.set('views','./views');
+app.set('views', path.resolve(__dirname,'views'))
 
 app.listen(process.env.PORT || 3000, function (){
     console.log('Servidor Corriendo')
