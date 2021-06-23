@@ -92,9 +92,9 @@
     "ram": "6GB",
     "mainImage": "/images/cellphones/samsung/a71/a71-1.png",
     "images": [
-      "/images/cellphones/samsung/a71/a71-2.png",
-      "/images/cellphones/samsung/a71/a71-3.png",
-      "/images/cellphones/samsung/a71/a71-4.png"
+      "/images/cellphones/samsung/A71/a71-2.png",
+      "/images/cellphones/samsung/A71/a71-3.png",
+      "/images/cellphones/samsung/A71/a71-4.png"
     ],
     "offer": "no"
   },
@@ -107,9 +107,9 @@
     "ram": "8GB",
     "mainImage": "/images/cellphones/samsung/Note20/note20-1.png",
     "images": [
-      "/images/cellphones/samsung/Note20/note20-2.png",
-      "/images/cellphones/samsung/Note20/note20-3.png",
-      "/images/cellphones/samsung/Note20/note20-4.png"
+      "/images/cellphones/samsung/Note20/Note20-2.png",
+      "/images/cellphones/samsung/Note20/Note20-3.png",
+      "/images/cellphones/samsung/Note20/Note20-4.png"
     ],
     "offer": "si"
   },
@@ -204,11 +204,10 @@
     "color": "Purpura",
     "price": "200",
     "ram": "4GB",
-    "mainImage": "/images/cellphones/LG/K52/k52-1.png",
+    "mainImage": "/images/cellphones/LG/K31/k31-1.png",
     "images": [
-      "/images/cellphones/LG/K52/k52-2.png",
-      "/images/cellphones/LG/K52/k52-3.png",
-      "/images/cellphones/LG/K52/k52-4.png"
+      "/images/cellphones/LG/K31/k31-2.png",
+      "/images/cellphones/LG/K31/k31-3.png"
     ],
     "offer": "no"
   },
