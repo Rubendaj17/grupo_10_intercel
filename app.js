@@ -34,3 +34,5 @@ app.use("/products", productsRoutes)
 const cartRoutes = require('./routes/cartRoutes');
 const { appendFile } = require('fs');
 app.use("/cart", cartRoutes)
+
+
