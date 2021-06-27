@@ -4,6 +4,9 @@ const usersRouter = express.Router();
 const multer = require('multer');
 const path = require('path');
 
+const guestMiddleware = require('../middlewares/guestMiddleware')
+const authMiddleware = require('../middlewares/authMiddleware')
+
 const storage = multer.diskStorage({
     destination(req, file, callback){
         const destinationPath = path.join(__dirname, '../public/images/pp/')
@@ -18,11 +21,13 @@ const storage = multer.diskStorage({
 })
 const upload = multer({storage})
 
-usersRouter.get("/login", usersController.login);
+usersRouter.get("/login", authMiddleware, usersController.login);
+usersRouter.post("/login", authMiddleware, usersController.processLogin);
 
-usersRouter.get("/register", usersController.register);
+usersRouter.get("/register", authMiddleware, usersController.register);
+usersRouter.post("/", authMiddleware, upload.single('photo'), usersController.createNewUser);
 
-usersRouter.post("/", upload.single('photo'), usersController.createNewUser);
+usersRouter.get("/profile/:id", guestMiddleware, usersController.profile);
 
 
 module.exports = usersRouter
