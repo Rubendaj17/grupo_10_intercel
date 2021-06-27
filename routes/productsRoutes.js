@@ -42,7 +42,5 @@ productsRouter.get("/search/:id", searchBarValidation, productsController.search
 productsRouter.get("/:id/editProduct" , productsController.editProductForm);
 productsRouter.put("/:id/" ,upload.fields([{name:'mainImage', maxCount:1},{name:'images'}]), productsController.updateProduct);
 
-//vista de admin
-
 
 module.exports = productsRouter

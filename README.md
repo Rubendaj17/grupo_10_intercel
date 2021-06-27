@@ -1,4 +1,5 @@
 # grupo_10_intercel
+Intercel
 
 <strong> ¿Qué productos o servicios brindará nuestro sitio? </strong>
 <p> Teléfonos celulares de las mejores marcas para ser distribuidos al mejor precio en el mercado latinoamericano.</p> 
@@ -8,6 +9,9 @@
 
 <strong>¿Cómo ajustaremos nuestra oferta a ese público?</strong>
 <p>El sitio web tiene como objetivo acercar a nuestro público a los mejores celulares de las mejores marcas en un solo lugar.</p>
+
+<strong>Link Heroku </strong>
+<p>http://intercelg10.herokuapp.com/</p>
 
 <strong>Link Trello </strong>
 <p>https://trello.com/b/Iy7wxuFf/intercel-ecommerce</p>

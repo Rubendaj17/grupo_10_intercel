@@ -3,15 +3,17 @@ const path = require('path');
 const methodOverride = require('method-override')
 const app = express();
 const publicPath = path.resolve(__dirname, './public');
+const session = require('express-session');
 
 app.use(methodOverride('_method'))
 app.use(express.static(publicPath));
+app.use(session({secret: "frase secreta"}))
 
 app.set('view engine','ejs');
 app.set('views','./views');
 
-app.listen(3000, ()=> {
-    console.log('Servidor corriendo');
+app.listen(process.env.PORT || 3000, function (){
+    console.log('Servidor Corriendo')
 })
 
 // No olvidarse esto para que la data se envie correctamente desde un formulario

@@ -44,5 +44,14 @@
     "password": "colombia",
     "photo": "/images/pp/default.png",
     "id": 6
+  },
+  {
+    "name": "nano",
+    "lastName": "iturrasp",
+    "phoneNumber": "3434456778",
+    "email": "nano@itu.com",
+    "password": "12345678",
+    "photo": "/images/pp/default.png",
+    "id": 7
   }
 ]
