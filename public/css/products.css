@@ -5,6 +5,7 @@ main {
 main .blueBar{
     background-color: #1A70E4;
     height: 50px;
+    padding: 1em;
 }
 
 main .title{
@@ -24,17 +25,38 @@ main .title p{
 }
 
 article{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around; 
     background-color: white;
     margin: 15px 0px;
     padding: 15px 0px;
     
 }
+article a{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+    text-decoration: none;
+    color:inherit;
+}
+article a:hover{
+    text-decoration: none;
+}
 
-article img{
+article a:hover .imgContainer img{
+    animation: showMorePics 7s ease-in-out infinite alternate;
+}
+@keyframes showMorePics {
+    0%{
+    transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-210%);
+    }
+}
+
+.imgContainer{
     width: 120px;
+    display: flex;
+    overflow: hidden;
 }
 
 
@@ -74,6 +96,13 @@ article img{
     text-align: right;
     margin-bottom: 15px;
 }
+.errorMsg{
+    color:#B7BDC7;
+    font-style: italic;
+    font-size: 1em;
+    margin: 3em;
+}
+
 
 
 @media (min-width: 361px){

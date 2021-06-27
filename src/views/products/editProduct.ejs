@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('../partials/head') %> 
+    <title>Intercel - Editar</title>
+    <link rel="stylesheet" href="/css/NewEditProduct.css">
+    <link rel="stylesheet" href="/css/headerFooter.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <%- include('../partials/header') %>
+
+        <div class="container">
+        <a href="/"> <img src="/images/logos/Logo.svg" width="200"> </a>
+        <h2>Editar producto</h2>
+            <form class="createForm" action="/products/<%=idDetail.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <br>
+                <div class="formControl">
+                    <label>Brand</label>
+                    <input value="<%=idDetail.brand %>" type="text" name="brand" class="inputControl" required>
+                </div>
+                <div class="formControl">
+                    <label>Modelo</label>
+                    <input value="<%=idDetail.model %>" type="text" name="model" class="inputControl" required>
+                </div>
+                <div class="formControl">
+                    <label>Color</label>
+                    <input value="<%=idDetail.color %>" type="text" name="color" class="inputControl" minlength="3">
+                </div>
+                <div class="formControl">
+                    <label>Imagen principal</label>
+                    <div class="currentImage">
+                        <img src="<%= idDetail.mainImage%>" alt="">
+                        <span>Imagen actual</span>
+                    </div>  
+                    <input type="file" name="mainImage" accept = ".jpg, .png" class="inputControl" required multiple>                       
+                </div>
+                <div class="formControl">
+                    <label>Imagenes secundarias</label>
+                    <div class="secondaryImage">
+                        <% idDetail.images.forEach( e => {%>
+                            <img src="<%= e %>" alt="Preview ">
+                        <%}) %>
+                    </div> 
+                    <input type="file" name="images" accept = ".jpg, .png" class="inputControl " required multiple >
+                </div>
+                <div class="formControl">
+                    <label>Precio</label>
+                    <input value="<%=idDetail.price%>" type="number" name="price" class="inputControl" minlength="1" required>
+                </div>
+                <div class="formControl">
+                    <label>Almacenamiento</label>
+                    <input value="<%=idDetail.ram %>" type="text" step="0.1" name="ram" class="inputControl" required>
+                </div>
+                <div  class="formControl">
+                    <label for="">Este producto esta en oferta?</label>
+                    <div class="formRadio">
+                        <input type="radio" name="offer" value="si" <%= idDetail.offer == 'si' ? 'checked': '' %> />Si
+                        <input type="radio" name="offer" value="no" <%= idDetail.offer == 'no' ? 'checked': '' %> /> No
+                    </div>
+                </div>
+            
+                <button type="submit" class="formButton">Guardar cambios</button>
+            
+            </form>
+        </div>
+        
+    <!-- FOOTER -->
+    <footer>
+        <%- include('../partials/footer') %>
+    </footer>
+    
+</body>
+</html>

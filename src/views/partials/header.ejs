@@ -1,0 +1,43 @@
+<header>
+    <div class="logoHeader"><a href="/"><img src="/images/logos/Logo.svg" alt="Logo Genial de Intercel"></a></div>
+    
+     <form class="searchBar" action='/products/search/id?query=userValue' method="GET"><input type="text" name="userValue" placeholder="¿Qué buscas?"><button type="submit" id="search-icon"><i class="fas fa-search"></i></button></form>
+
+    <nav class="navHeader">
+        <i class="fas fa-bars" id="hamburgerMenu"></i>
+        <ul>
+            <li id="productosHeader"><a href="/products/list">Productos</a></li>
+            <li id="nosotrosHeader"><a href="/soon">Nosotros</a></li>
+            <li id="loginHeader">
+                <i class="far fa-user" id="userIcon"></i>
+                <a href="/users/login">Iniciar Sesión <span>Mi Cuenta</span></a>
+            </li>
+            <li><a href="/products/adminList"><i class="fas fa-user-cog"></i></a></li>
+            <div class="loginFormContainer">
+                    
+                <form class="loginForm" action="/login" method="POST">
+                    <h2>Iniciar sesión</h2>
+                    <div class="controlForm">
+                        <label>Nombre de usuario</label>
+                        <input type="text" name="usuario" class="control" required>
+                        <span class="controlError">Incorrecto</span>
+                    </div>
+                    <div class="controlForm">
+                        <label>Contraseña</label>
+                        <input type="password" name="contrasena" class="control" required>
+                        
+                        <span class="controlError">Incorrecto</span>
+                    </div>
+                    <div class="remember-pass"><a href="#"> Olvidé mi contraseña</a></div>
+                    <button type="submit" class="botonLogin">Iniciar sesión</button>
+                    <div class="registerContainer"><p>Sin cuenta?</p><a id="registerButton" href="register"> Registrate</a></div>
+        
+                </form>
+            </div>
+            <li id="cartHeader"> 
+                <i class="fas fa-shopping-cart" id="cartIcon"></i>
+                <a href="/cart/list">Carrito</a>
+            </li>
+        </ul>
+    </nav>
+</header>
