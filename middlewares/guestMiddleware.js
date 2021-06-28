@@ -2,7 +2,7 @@ module.exports = (req, res, next)=>{
     const userSession = req.session.logged;
     
     if(!userSession){
-        res.redirect('/products/adminList')
+        res.redirect('/users/login')
     }
     next();
 }

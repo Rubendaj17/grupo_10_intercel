@@ -27,7 +27,7 @@ usersRouter.post("/login", authMiddleware, usersController.processLogin);
 usersRouter.get("/register", authMiddleware, usersController.register);
 usersRouter.post("/", authMiddleware, upload.single('photo'), usersController.createNewUser);
 
-usersRouter.get("/profile/:id", guestMiddleware, usersController.profile);
+usersRouter.get("/profile", guestMiddleware, usersController.profile);
 
 
 module.exports = usersRouter

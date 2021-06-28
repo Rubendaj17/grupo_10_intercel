@@ -3,6 +3,7 @@ const productsRouter = express.Router()
 const path = require('path');
 const multer = require('multer');
 
+const guestMiddleware = require('../middlewares/guestMiddleware')
 const productsController = require('../controllers/productsController');
 const searchBarValidation = require('../middlewares/searchBarValidation');
 
@@ -24,7 +25,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage})
 // listar productos
-productsRouter.get("/adminList", productsController.adminList);
+productsRouter.get("/adminList", guestMiddleware, productsController.adminList);
 
 productsRouter.get("/list", productsController.list)
 productsRouter.get("/list/:brand", productsController.brandList)

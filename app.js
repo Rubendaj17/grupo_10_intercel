@@ -15,10 +15,11 @@ app.set('views','./views');
 app.listen(process.env.PORT || 3000, function (){
     console.log('Servidor Corriendo')
 })
-
+const sessionToLocals = require('./middlewares/sessionToLocalsMiddleware')
 // No olvidarse esto para que la data se envie correctamente desde un formulario
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(sessionToLocals);
 
 // generic
 const intercelRoutes = require('./routes/intercelRoutes');

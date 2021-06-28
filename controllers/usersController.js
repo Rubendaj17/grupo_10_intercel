@@ -35,10 +35,12 @@ let usersController = {
         const user = usersModel.findByField('email', email);
         delete user['password'];
 
+        req.session.logged = user;
+        
         res.redirect('/');
     },
     profile(req, res){
-        res.render('/profile/:id');
+        res.render('users/profile');
     }
 }
 
