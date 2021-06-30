@@ -17,6 +17,14 @@ module.exports = {
         const lastUser = users.pop();
         return lastUser.id + 1;
     },
+
+    findByField (field, value){
+        const users = this.readFile();
+        const userFound = users.find(user => user[field] == value);
+        return userFound
+    },
+
+    
     create(user){
         user.id = this.generateID();
         
