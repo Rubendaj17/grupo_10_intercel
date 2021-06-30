@@ -28,6 +28,19 @@ let usersController = {
         }
         usersModel.create(user);
         res.redirect('/');
+    },
+    processLogin(req, res){
+        const {email, remember } = req.body;
+    
+        const user = usersModel.findByField('email', email);
+        delete user['password'];
+
+        req.session.logged = user;
+        
+        res.redirect('/');
+    },
+    profile(req, res){
+        res.render('users/profile');
     }
 }
 
