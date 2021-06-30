@@ -7,6 +7,7 @@ const session = require('express-session');
 
 app.use(methodOverride('_method'))
 app.use(express.static(publicPath));
+app.use(session({secret: "frase secreta"}))
 
 app.set('view engine','ejs');
 app.set('views', path.resolve(__dirname,'views'))
@@ -14,10 +15,11 @@ app.set('views', path.resolve(__dirname,'views'))
 app.listen(process.env.PORT || 3000, function (){
     console.log('Servidor Corriendo')
 })
-
+const sessionToLocals = require('./middlewares/sessionToLocalsMiddleware')
 // No olvidarse esto para que la data se envie correctamente desde un formulario
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(sessionToLocals);
 
 // generic
 const intercelRoutes = require('./routes/intercelRoutes');

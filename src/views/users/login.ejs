@@ -18,8 +18,8 @@
 
             <form class="createForm" action="/users/login" method="POST">
                 <div class="formControl">
-                    <label>Nombre de usuario</label>
-                    <input type="text" name="usuario" class="control" required>
+                    <label>Email</label>
+                    <input type="email" name="email" class="control" required>
                 </div>
                 <div class="formControl">
                     <label>Contraseña</label>
@@ -27,6 +27,11 @@
                     <div class="texts"><a href="#"> Olvidé mi contraseña</a></div>
                 </div>
             <br>
+                
+                <div class="input-container">
+                    <input type="checkbox" name="remember" id="remember" value="yes"/> Recordar usuario
+                </div>
+
                 <button type="menu" class="formButton">Iniciar sesión</button>
                 <div class="texts">No tienes cuenta?<a href="register"> Registrate</a></div>
 

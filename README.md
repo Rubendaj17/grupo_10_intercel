@@ -1,4 +1,5 @@
 # grupo_10_intercel
+Intercel
 
 <strong> ¿Qué productos o servicios brindará nuestro sitio? </strong>
 <p> Teléfonos celulares de las mejores marcas para ser distribuidos al mejor precio en el mercado latinoamericano.</p> 

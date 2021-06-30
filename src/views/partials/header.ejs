@@ -8,11 +8,13 @@
         <ul>
             <li id="productosHeader"><a href="/products/list">Productos</a></li>
             <li id="nosotrosHeader"><a href="/soon">Nosotros</a></li>
-            <li id="loginHeader">
-                <i class="far fa-user" id="userIcon"></i>
-                <a href="/users/login">Iniciar Sesión <span>Mi Cuenta</span></a>
-            </li>
-            <li><a href="/products/adminList"><i class="fas fa-user-cog"></i></a></li>
+            
+            <% if (locals.logged) { %> 
+                <%- include('./auth')  %> 
+            <% } else{ %> 
+                <%- include('./guest')  %> 
+            <% } %> 
+
             <div class="loginFormContainer">
                     
                 <form class="loginForm" action="/login" method="POST">
