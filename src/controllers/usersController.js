@@ -33,10 +33,15 @@ let usersController = {
         const {email, remember } = req.body;
     
         const user = usersModel.findByField('email', email);
+
         delete user['password'];
 
         req.session.logged = user;
-        
+
+        if (remember){
+            res.cookie('user', user.id, {maxAge:5*6000, signed:true})
+        }
+
         res.redirect('/');
     },
     profile(req, res){
