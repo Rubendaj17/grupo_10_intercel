@@ -19,7 +19,7 @@
             <form class="createForm" action="/users/login" method="POST">
                 <div class="formControl">
                     <label>Email</label>
-                    <input type="email" name="email" class="control">
+                    <input type="email" name="email" class="control"  value="<%= locals.errors && valuesFromUser ? valuesFromUser.email : ''%>">
                     <% if (locals.errors && errors.email) {%>
                         <p class="errorMsg"> <%= errors.email.msg%> </p>
                     <% } %>  
