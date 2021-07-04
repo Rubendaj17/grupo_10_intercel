@@ -14,7 +14,7 @@
         <a href="/"> <img src="/images/logos/Logo.svg" width="200"> </a>
         <h2>Registrarse</h2>
                 
-            <form class="createForm" action="/users" method="POST">
+            <form class="createForm" action="/users" method="POST" enctype="multipart/form-data">
                 <div  class="registerWith" >
                     <div><button class="registerGoogle"><i class="fab fa-google"></i>    Registrate con Google </button></div>
                     <div><button class="registerFacebook"><i class="fab fa-facebook-f"></i>    Registrate con Facebook </button></div>
@@ -52,10 +52,10 @@
                         <p class="errorMsg"> <%= errors.password.msg%> </p>
                     <% } %>
                 </div>
-                <!-- <div class="formControl">
+                <div class="formControl">
                     <label>Avatar</label>
                     <input type="file" name="photo" class="control" accept=".jpg, .png">
-                </div> -->
+                </div>
                 <button type="submit" class="formButton">Registrarse</button>
                 
                 <div class="texts">Ya tienes cuenta?<a href="login"> Iniciar sesión</a></div>

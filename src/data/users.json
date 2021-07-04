@@ -53,14 +53,5 @@
     "password": "12345678",
     "photo": "/images/pp/default.png",
     "id": 7
-  },
-  {
-    "name": "LOLOLOL",
-    "lastName": "PRUEBAL",
-    "phoneNumber": "",
-    "email": "PRUEBA@PRUEBA.COM",
-    "password": "$2a$10$GIKq9zKk0EZnOYHS9x70Nu5xto46HH4lfV0YGvhDAOQiXSqSnZumi",
-    "photo": "/images/pp/default.png",
-    "id": 8
   }
 ]
