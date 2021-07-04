@@ -25,6 +25,7 @@ app.listen(process.env.PORT || 3000, function (){
 })
 
 const sessionToLocals = require('./middlewares/sessionToLocalsMiddleware')
+
 // No olvidarse esto para que la data se envie correctamente desde un formulario
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
