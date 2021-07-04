@@ -24,12 +24,11 @@ let usersController = {
 
         if (!formValidation.isEmpty()){
             photoPath = path.join(__dirname,'../../public', photo)
-            
+
             file ? fs.unlinkSync(photoPath) : ''
 
             return res.render('users/register', {valuesFromUser, errors: formValidation.mapped()})
         }
-        
         
         const {name, lastName, phoneNumber, email, password} = req.body;
         const hashPassword = bcrypt.hashSync(password)
@@ -44,6 +43,11 @@ let usersController = {
         
         }
         usersModel.create(user);
+        
+        delete user ['password']
+        
+        req.session.logged = user;
+        
         res.redirect('/');
     },
     processLogin(req, res){
