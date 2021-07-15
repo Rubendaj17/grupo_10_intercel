@@ -62,5 +62,14 @@
     "password": "$2a$10$6.BMi/UW7xRE/opLg5bMFe8pZZgZ9gfSCLgVVEUC8aXlJJ8fN/fNi",
     "photo": "/images/pp/1625440070244.jpg",
     "id": 8
+  },
+  {
+    "name": "Alejandro",
+    "lastName": "Bullorini",
+    "phoneNumber": "49821391",
+    "email": "a@a.com",
+    "password": "$2a$10$JnIdRMmGmbOB7W1tUvyhX.TUjVL5F0ChWifWaBm9d./caHslMZlUe",
+    "photo": "/images/pp/1626389484251.jpg",
+    "id": 9
   }
 ]
