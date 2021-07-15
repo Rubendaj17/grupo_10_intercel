@@ -19,12 +19,19 @@
             <form class="createForm" action="/users/login" method="POST">
                 <div class="formControl">
                     <label>Email</label>
-                    <input type="email" name="email" class="control" required>
+                    <input type="email" name="email" class="control"  value="<%= locals.errors && valuesFromUser ? valuesFromUser.email : ''%>">
+                    <% if (locals.errors && errors.email) {%>
+                        <p class="errorMsg"> <%= errors.email.msg%> </p>
+                    <% } %>  
                 </div>
                 <div class="formControl">
                     <label>Contraseña</label>
-                    <input type="password" name="contrasena" class="control" required>
+                    <input type="password" name="password" class="control">
                     <div class="texts"><a href="#"> Olvidé mi contraseña</a></div>
+                    <% if (locals.errors && errors.password) {%>
+                        <p class="errorMsg"> <%= errors.password.msg%> </p>
+                    <% } %>
+                
                 </div>
             <br>
                 
