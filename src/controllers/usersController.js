@@ -74,6 +74,12 @@ let usersController = {
     },
     profile(req, res){
         res.render('users/profile');
+    },
+    logout(req, res){
+        req.session.destroy();
+        res.clearCookie('user');
+
+        res.redirect('/');
     }
 }
 

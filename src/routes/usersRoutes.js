@@ -31,5 +31,6 @@ usersRouter.post("/", authMiddleware, upload.single('photo'), validationRegister
 
 usersRouter.get("/profile", guestMiddleware, usersController.profile);
 
+usersRouter.get("/logout", authMiddleware, usersController.logout);
 
 module.exports = usersRouter
