@@ -1,0 +1,38 @@
+main{
+    max-width: 600px;
+    margin: auto;
+    background-color: #71D894;
+}
+
+.mainHeader{
+    margin-top: 50px;
+}
+
+main h2{
+    padding:0px 20px;
+}
+
+main .myProfile{
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+main .accountInfo{
+    background-color: #EFF1F4;
+    padding: 20px
+}
+
+main .accountInfoBox{
+    padding: 5px 0px;
+}
+
+.accountInfo h3{
+    padding-bottom: 5px;
+}
+
+.myProfile img{
+    width: 200px;
+}
