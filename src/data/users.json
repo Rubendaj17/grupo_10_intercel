@@ -16,5 +16,14 @@
     "password": "$2a$10$6.BMi/UW7xRE/opLg5bMFe8pZZgZ9gfSCLgVVEUC8aXlJJ8fN/fNi",
     "photo": "/images/pp/1625440070244.jpg",
     "id": 8
+  },
+  {
+    "name": "justina",
+    "lastName": "iturraspe",
+    "phoneNumber": "3434195970",
+    "email": "justiiturraspe@gmail.com",
+    "password": "$2a$10$i2WIoIa5S0FhVkIR.NaA1uaGP20QwO.fIS8qOk4kwBE4JQb58bRUu",
+    "photo": "/images/pp/default.png",
+    "id": 9
   }
 ]
