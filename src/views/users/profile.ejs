@@ -10,6 +10,10 @@
 </head>
 <body>
     <%- include('../partials/header') %>
-    foto del usuario
+    <main>
+        <h2><%=locals.logged.name%> </h2>
+        <h2><%=locals.logged.lastName%> </h2>
+        <img src="<%=locals.logged.photo%>" alt="">
+    </main>
 </body>
 </html>

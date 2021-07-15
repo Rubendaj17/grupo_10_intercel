@@ -62,5 +62,41 @@
     "password": "$2a$10$6.BMi/UW7xRE/opLg5bMFe8pZZgZ9gfSCLgVVEUC8aXlJJ8fN/fNi",
     "photo": "/images/pp/1625440070244.jpg",
     "id": 8
+  },
+  {
+    "name": "Hello",
+    "lastName": "Jaime",
+    "phoneNumber": "3006114684",
+    "email": "rubendajs@msn.com",
+    "password": "$2a$10$7ZQ6ltgp7gyMwpGgRcx36.sXFD4t5BamwoBy4VdNgFVGrTZzOGbHW",
+    "photo": "/images/pp/default.png",
+    "id": 9
+  },
+  {
+    "name": "Ruben",
+    "lastName": "Jaime",
+    "phoneNumber": "3006114684",
+    "email": "jaimerd@msn.com",
+    "password": "$2a$10$HHhYe4Z3tD3uIFjyB1Rk1eP9MD0D9DWh6mV1E2/TEC/UmtaDqHWMm",
+    "photo": "/images/pp/default.png",
+    "id": 10
+  },
+  {
+    "name": "Ruben",
+    "lastName": "Jaime",
+    "phoneNumber": "3006114684",
+    "email": "jaimerd@us.gov",
+    "password": "$2a$10$3VCWl5N8gAXzXDRFraPxKO7Exk51Su5EVbcnJsQBdBQe5j3U/RDZG",
+    "photo": "/images/pp/1626306482725.jpg",
+    "id": 11
+  },
+  {
+    "name": "aaa",
+    "lastName": "aaa",
+    "phoneNumber": "3006114684",
+    "email": "a@a.com",
+    "password": "$2a$10$lR7LLAHoY64KivWcRUOjn.NQBU4Yhf.W6zLs8xxxgG27wTXtm7Jqi",
+    "photo": "/images/pp/1626307154523.png",
+    "id": 12
   }
 ]
