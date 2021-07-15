@@ -62,5 +62,50 @@
     "password": "$2a$10$6.BMi/UW7xRE/opLg5bMFe8pZZgZ9gfSCLgVVEUC8aXlJJ8fN/fNi",
     "photo": "/images/pp/1625440070244.jpg",
     "id": 8
+  },
+  {
+    "name": "Alejandro",
+    "lastName": "Bullorini",
+    "phoneNumber": "49821391",
+    "email": "a@a.com",
+    "password": "$2a$10$JnIdRMmGmbOB7W1tUvyhX.TUjVL5F0ChWifWaBm9d./caHslMZlUe",
+    "photo": "/images/pp/1626389484251.jpg",
+    "id": 9
+  },
+  {
+    "name": "Alejandro",
+    "lastName": "Bullorini",
+    "phoneNumber": "49821391",
+    "email": "b@b.com",
+    "password": "$2a$10$hn.POqZaOtdnZ0yGmNlyCuJERkw4sHSrMek4L.ExKZXISAm3ovkC.",
+    "photo": "/images/pp/default.png",
+    "id": 10
+  },
+  {
+    "name": "pepe",
+    "lastName": "argento",
+    "phoneNumber": "123445678",
+    "email": "c@c.com",
+    "password": "$2a$10$8tuFLM8hsCc.87Sot7Op7u/LV7/SxKw7Hy3sInWmYDWg1uOhkYHyu",
+    "photo": "/images/pp/default.png",
+    "id": 11
+  },
+  {
+    "name": "JOSE",
+    "lastName": "balsdbaksl",
+    "phoneNumber": "asdasdasdas",
+    "email": "e@e.com",
+    "password": "$2a$10$FbzS3fYgtwhr/hNsYMlAv.feOr39lu2yNV493lnOy3qpY9oXONJyu",
+    "photo": "/images/pp/default.png",
+    "id": 12
+  },
+  {
+    "name": "GONZA",
+    "lastName": "dhasdasd",
+    "phoneNumber": "12314124124",
+    "email": "z@z.com",
+    "password": "$2a$10$aCM955q5oTHeeZjjvNkGlORMjXTFH45HK4O9rXMbf4q3JTym2DbWy",
+    "photo": "/images/pp/default.png",
+    "id": 13
   }
 ]

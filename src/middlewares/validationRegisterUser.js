@@ -21,7 +21,7 @@ const validationRegisterUser = [
     .withMessage('Ingresar Email válido, por favor.')    
     .bail()
     .custom((value, {req})=> {
-        const {email} = req.body
+        const {email, password} = req.body
 
         const userFound = usersModel.findByField('email', email)
 
