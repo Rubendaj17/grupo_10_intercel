@@ -1,5 +1,7 @@
+const fs = require('fs');
 const multer = require('multer');
 const usersModel = require('../model/usersModel');
+const bcrypt = require('bcryptjs');
 
 let usersController = {
     login: (req,res)=>{
@@ -18,12 +20,15 @@ let usersController = {
             photo = '/images/pp/' + file.filename;
         }
 
+        //hashear
+        const hashPassword = bcrypt.hashSync(password)
+
         const user = {
             name, 
             lastName, 
             phoneNumber, 
             email, 
-            password,
+            password: hashPassword,
             photo
         }
         usersModel.create(user);

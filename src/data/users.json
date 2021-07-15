@@ -20,14 +20,6 @@
     "image": ""
   },
   {
-    "name": "justina",
-    "lastName": "iturraspe",
-    "phoneNumber": "01144142021",
-    "email": "justiiturraspe@gmail.com",
-    "password": "somoselmejoreqipo",
-    "id": 4
-  },
-  {
     "name": "Bernardo",
     "lastName": "Iturraspe",
     "phoneNumber": "01144142021",
@@ -53,5 +45,23 @@
     "password": "12345678",
     "photo": "/images/pp/default.png",
     "id": 7
+  },
+  {
+    "name": "justina",
+    "lastName": "iturraspe",
+    "phoneNumber": "3434195970",
+    "email": "justiiturraspe@gmail.com",
+    "password": "$2a$10$H/AsF6jzqYYoevM2PZI0oODGBejxbrXO0RmVe0NPY7J9f69LgXpf.",
+    "photo": "/images/pp/default.png",
+    "id": 8
+  },
+  {
+    "name": "justina",
+    "lastName": "iturraspe",
+    "phoneNumber": "3434195970",
+    "email": "justiiturraspe@gmail.com",
+    "password": "$2a$10$/5QYmW2Pjv592bwi.Fm99uSGIxXObk6XafUvLw2QO747k9CWWdDdO",
+    "photo": "/images/pp/default.png",
+    "id": 9
   }
 ]
