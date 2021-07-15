@@ -98,5 +98,32 @@
     "password": "$2a$10$lR7LLAHoY64KivWcRUOjn.NQBU4Yhf.W6zLs8xxxgG27wTXtm7Jqi",
     "photo": "/images/pp/1626307154523.png",
     "id": 12
+  },
+  {
+    "name": "Hello",
+    "lastName": "Hello",
+    "phoneNumber": "3006114684",
+    "email": "hello@rd.com",
+    "password": "$2a$10$OKTMsoCxJHn3Bx0wfIgpGefDmUkRTy5nRl60x6yFpIxucwJRgWvM.",
+    "photo": "/images/pp/default.png",
+    "id": 13
+  },
+  {
+    "name": "assss",
+    "lastName": "asss",
+    "phoneNumber": "3006114684",
+    "email": "aa@qq.com",
+    "password": "$2a$10$203nytKeYTV3gy7JMiBoE.EQqPCbCrXDCcISubX1kDTwmdAXRyp0y",
+    "photo": "/images/pp/default.png",
+    "id": 14
+  },
+  {
+    "name": "Brad",
+    "lastName": "Pitt",
+    "phoneNumber": "3006114684",
+    "email": "bp@hotmail.com",
+    "password": "$2a$10$ekKEaMc6jEcS3Fg56ExyEuxYu0xBkA8gAR2Ugxhx1FAxWvyli0Wfq",
+    "photo": "/images/pp/1626318950720.jpg",
+    "id": 15
   }
 ]

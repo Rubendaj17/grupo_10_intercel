@@ -4,16 +4,39 @@
     <%- include('../partials/head') %>
 <!-- nuestros css -->
     <link rel="stylesheet" href="/css/headerFooter.css">
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/profile.css">
 
     <title>Intercel</title>
 </head>
 <body>
     <%- include('../partials/header') %>
     <main>
-        <h2><%=locals.logged.name%> </h2>
-        <h2><%=locals.logged.lastName%> </h2>
-        <img src="<%=locals.logged.photo%>" alt="">
+        <div class="mainHeader">
+            <h2>Mi Perfil</h2>
+            <div class="myProfile">
+                <h3><%=locals.logged.name%> </h2>
+                <img src="<%=locals.logged.photo%>" alt="">
+            </div>
+        </div>
+        
+
+        <div class="accountInfo">
+            <h3>Datos de tu cuenta</h3>            
+            <div class="accountInfoBox">
+                <h5>Nombre completo</h5>
+                <p><%=locals.logged.name + " " +locals.logged.lastName %></p>
+            </div>
+            <div class="accountInfoBox">
+                <h5>Email</h5>
+                <p><%=locals.logged.email%></p>
+            </div>
+            <div class="accountInfoBox">
+                <h5>Teléfono</h5>
+                <p><%=locals.logged.phoneNumber%></p>
+            </div>
+        </div>
+       
+
     </main>
 </body>
 </html>
