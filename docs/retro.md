@@ -92,7 +92,37 @@
     
 </ol>
 
+<h3> Retro Sprint 5</h3>
+<ol>
+  <li><b>Comenzar a hacer:</b></li>
+  <p>Definir, desde el inicio, todos los aspectos/tareas fundamentales del sprint, los que afectan todo el proyecto, para poder ejecutarlos antes de cualquier otra tarea</p>
+  <br>
+  <li><b>Hacer más:</b></li>
+  <p>Sesiones de coding que nos permiten aprender y aplicar de manera igualitaria todos los conceptos vistos para el Sprint.
+  Seguir trabajando en mejorar la página visualmente.
+ 
+  
+  
+  <li><b>Continuar haciendo:</b></li>
+  <p>Tener sesiones para mergear las ramas y resolver posibles conflictos en el código.</p>
+  <br>
+  <li><b>Hacer menos:</b></li>
+  <p>Invertir tanto tiempo en problemas de código sin solicitar la ayuda de los compañeros.
+  </p>
+  <br>
+  <li><b>Dejar de hacer:</b></li>
+  <p>De nuevo, no quedarnos solo con lo que nos piden para el Sprint</p>
+  <br>
+
+  <li><b>Action Items:</b></li>
+    <br>
+    Próxima reuniones
+    <br>
+    Weekly Stand-up: Domingo 27 de junio a las 11.00hs
+    <br> 
+    Coding session: Domingo 4 de julio a las 11.00hs
+    <br>
+     Weekly Stand-up: Domingo 11 de julio a las 11.00hs
+    
 
 
-
-.
