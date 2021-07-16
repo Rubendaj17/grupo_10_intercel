@@ -1,4 +1,5 @@
 main{
+    position: relative;
     max-width: 600px;
     margin: auto;
     background-color: #71D894;
@@ -12,6 +13,7 @@ main{
 main h2{
     padding-top: 10px;
     padding-left: 20px;
+    margin-bottom: 20px;
 }
 
 main .myProfile{
@@ -34,11 +36,46 @@ main .accountInfoBox{
 }
 
 .accountInfo h3{
-    padding-bottom: 5px;
+    margin-bottom: 20px;
 }
+
 
 .myProfile img{
     width: 200px;
     margin-bottom: 10px;
-    border-radius: 10%;
+    border-radius: 50%;
+}
+
+.accountInfoBigBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.accountInfoBox p{
+    font-size: 16px;
+}
+
+.backButton{
+    position: absolute;
+    padding: 6px 10px;
+    width: 85px;
+    height: 28px;
+    text-align: left;
+    background-color: #71D894;
+    border-radius: 5%;
+    margin: 10px;
+    right: 0px;
+}
+
+.backButton:hover{
+    background-color: #33d469;
+}
+
+.backButton a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
 }

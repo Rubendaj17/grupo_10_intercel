@@ -11,30 +11,50 @@
 <body>
     <%- include('../partials/header') %>
     <main>
+        
         <div class="mainHeader">
             <h2>Mi Perfil</h2>
             <div class="myProfile">
                 <h3><%=locals.logged.name%> </h2>
-                <img src="<%=locals.logged.photo%>" alt="">
+                <div class="circle">
+                    <img src="<%=locals.logged.photo%>" alt="">
+                </div>    
             </div>
         </div>
         
 
         <div class="accountInfo">
-            <h3>Datos de la cuenta</h3>            
-            <div class="accountInfoBox">
-                <h5>Nombre completo</h5>
-                <p><%=locals.logged.name + " " +locals.logged.lastName %></p>
+            <h3>Datos de la cuenta</h3>  
+            <div class="accountInfoBigBox">        
+                <div class="accountInfoBox">
+                    <h5>Nombre completo:</h5>
+                    <p><%=locals.logged.name + " " +locals.logged.lastName %></p>
+                </div>
+                <a href="#">Editar</a>
+            </div>  
+            <div class="accountInfoBigBox">
+                <div class="accountInfoBox">
+                    <h5>E-mail:</h5>
+                    <p><%=locals.logged.email%></p>
+                </div>
+                <a href="#">Editar</a>
             </div>
-            <div class="accountInfoBox">
-                <h5>Email</h5>
-                <p><%=locals.logged.email%></p>
+            <div class="accountInfoBigBox">
+                <div class="accountInfoBox">
+                    <h5>Teléfono:</h5>
+                    <p><%=locals.logged.phoneNumber%></p>
+                </div>
+                <a href="#">Editar</a>
             </div>
-            <div class="accountInfoBox">
-                <h5>Teléfono</h5>
-                <p><%=locals.logged.phoneNumber%></p>
-            </div>
+            
         </div>
+        
+        <div>
+            <div  class="backButton"><a href="/"><i class="fas fa-arrow-left"></i>    Volver</a></div>
+        </div>
+        
+        
+              
        
 
     </main>
