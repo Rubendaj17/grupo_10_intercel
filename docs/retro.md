@@ -98,9 +98,9 @@
   <p>Definir, desde el inicio, todos los aspectos/tareas fundamentales del sprint, los que afectan todo el proyecto, para poder ejecutarlos antes de cualquier otra tarea</p>
   <br>
   <li><b>Hacer más:</b></li>
-  Sesiones de coding que nos permiten aprender y aplicar de manera igualitaria todos los conceptos vistos para el Sprint.
-  Seguir trabajando en mejorar la página visualmente.</span>
-  <br>
+  <p>Sesiones de coding que nos permiten aprender y aplicar de manera igualitaria todos los conceptos vistos para el Sprint.
+  Seguir trabajando en mejorar la página visualmente.
+ 
   
   
   <li><b>Continuar haciendo:</b></li>
