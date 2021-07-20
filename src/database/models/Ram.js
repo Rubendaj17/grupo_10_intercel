@@ -1,5 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
-    let alias = 'Category'
+
+    let alias = 'Ram'
     
     let cols = {
         id:{
@@ -8,20 +9,19 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true
         },
 
-        name: {
-            type: DataTypes.STRING(5),
+        storage: {
+            type: DataTypes.STRING(15),
             unique: true,
             allowNull: false
         }
     }
 
     let config = {
-        tableName: 'categories',
+        tableName: 'rams',
         timestamps: false
     }
 
-    const Category = sequelize.define(alias, cols, config)
+    const Ram = sequelize.define(alias, cols, config)
 
-    return Category
-
+    return Ram
 }
