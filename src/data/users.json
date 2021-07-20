@@ -1,33 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "Ruben",
-    "lastName": "Jaime",
-    "phoneNumber": "3003116484",
-    "email": "rubendaj@msn.com",
-    "password": "holamundo",
-    "category": "admin",
-    "image": ""
-  },
-  {
-    "id": 3,
-    "name": "Alejandro",
-    "lastName": "Bullorini",
-    "phoneNumber": "3003116481",
-    "email": "ale@msn.com",
-    "password": "holamundo2",
-    "category": "admin",
-    "image": ""
-  },
-  {
-    "name": "justina",
-    "lastName": "iturraspe",
-    "phoneNumber": "01144142021",
-    "email": "justiiturraspe@gmail.com",
-    "password": "somoselmejoreqipo",
-    "id": 4
-  },
-  {
     "name": "Bernardo",
     "lastName": "Iturraspe",
     "phoneNumber": "01144142021",
@@ -35,24 +7,6 @@
     "password": "wergdfcdcs",
     "photo": "/images/pp/1623834397217.jpg",
     "id": 5
-  },
-  {
-    "name": "Pepe",
-    "lastName": "Ramirez",
-    "phoneNumber": "3434195980",
-    "email": "peperamirez@gmail.com",
-    "password": "colombia",
-    "photo": "/images/pp/default.png",
-    "id": 6
-  },
-  {
-    "name": "nano",
-    "lastName": "iturrasp",
-    "phoneNumber": "3434456778",
-    "email": "nano@itu.com",
-    "password": "12345678",
-    "photo": "/images/pp/default.png",
-    "id": 7
   },
   {
     "name": "Alejandro",
