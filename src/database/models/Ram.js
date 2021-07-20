@@ -23,5 +23,14 @@ module.exports = (sequelize, DataTypes) => {
 
     const Ram = sequelize.define(alias, cols, config)
 
+    //Relaciones
+
+    Ram.associate = (models) => {
+        Ram.hasMany(models.Cellphone, {
+            as: "cellphones",
+            foreignKey: "id_ram"
+        })
+    }
+
     return Ram
 }

@@ -61,6 +61,22 @@ module.exports = (sequelize, DataTypes) => {
     const Cellphone = sequelize.define(alias, cols, config)
 
     //Relaciones
+    Cellphone.associate = (models) => {
+        Cellphone.belongsTo(models.Color, {
+            as: "color",
+            foreignKey: "id_color"
+        }),
+
+        Cellphone.belongsTo(models.Ram, {
+            as: "ram",
+            foreignKey: "id_ram"
+        }),
+
+        Cellphone.belongsTo(models.Model, {
+            as: "model",
+            foreignKey: "id_model"
+        })
+    }
 
     return Cellphone
 

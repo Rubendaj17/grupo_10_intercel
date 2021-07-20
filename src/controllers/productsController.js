@@ -1,12 +1,22 @@
 const path = require('path');
 const productsModel = require('../model/productsModel')
 const {validationResult} = require('express-validator')
+const db = require('../database/models')
+
+
+
 
 let productController = {
-    list: (req,res)=>{
-        const productList = productsModel.findAll() 
+    list: async (req,res)=>{
+        // const productList = productsModel.findAll()
+        
+        const productList = await db.Model.findAll({
+            include:['brand']
+        })
+        
         const brand = 'Todos los Productos'
-        res.render('products/products', {productList, brand})
+        res.send(productList)
+        // res.render('products/products', {productList, brand})
     },
     adminList: (req,res)=>{
         const productList = productsModel.findAll() 

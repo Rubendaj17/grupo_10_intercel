@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
 
     let config = {
         tableName: 'models',
+        timestamps: false,
         underscored: true
     }
 
@@ -31,6 +32,19 @@ module.exports = (sequelize, DataTypes) => {
     const Model = sequelize.define(alias, cols, config)
 
     //Relaciones
+
+    Model.associate = (models) => {
+        Model.hasMany(models.Cellphone, {
+            as: "cellphones",
+            foreignKey: "id_model"
+        }),
+        
+        Model.belongsTo(models.Brand,{
+            as: "brand",
+            foreignKey: "id_brand"
+        })
+    }
+    
 
     return Model
 
