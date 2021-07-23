@@ -101,29 +101,63 @@ let productController = {
 
         res.render('products/newProduct', {brandToUse, modelToUse, ramList, colorList})
     },
-    createNewProduct(req, res){
-        console.log('HOLA');
-        const imagePath = `/images/cellphones/${req.body.brand}/${req.body.model}/`
+    createNewProduct: async (req, res) => {
+        // busca Marca elegida por el usuario
+        let brandToSave = await db.Brand.findOne({
+            where: { name:req.body.brand }
+        })
 
-        const mainImageUser = req.files.mainImage[0]
-        const mainImage = imagePath + mainImageUser.filename        
+        // si No existe crea la marca nueva en la BdD
+        if(!brandToSave){
+
+            brandToSave = await db.Brand.create(
+                { 
+                    name: req.body.brand,
+                    logo: req.files.logo[0].filename
+                }
+            )
+        }
+        // guarda el id de la marca
+        const idBrand = brandToSave.id 
         
-        const imagesUser = req.files.images
-        let images = []
-        imagesUser.forEach(e => {
-            let newImage = imagePath + e.filename
-            images.push(newImage)
+        // busca Modelo elegido por el usuario
+        let modelToSave = await db.Model.findOne({
+            where: { model:req.body.model }
         })
         
-        const newProduct = {
-            ...req.body,
-            mainImage,
-            images
-        }
+        // si No existe crea el modelo nuevo en la BdD
+        if(!modelToSave){
+            modelToSave = await db.Model.create(
+                { 
+                    idBrand,
+                    model: req.body.model,
+                    mainImage: req.files.modelMainImage[0].filename
+                }
+                )
+            }
+            
+        //guarda toda la info del nuevo celular
 
-        productsModel.storeNew(newProduct)
+        const idModel = modelToSave.id
+                
+        const idColor = req.body.color
         
-        res.redirect('/products/list')
+        const idRam = req.body.ram
+
+        const price = Number(req.body.price)
+
+        const offer = Number(req.body.offer)
+        
+        const imageOne = req.files.imageOne[0].filename
+        const imageTwo = req.files.imageTwo[0].filename
+        const imageThree = req.files.imageThree[0].filename
+
+        const newProduct = {idModel, idColor, idRam, price, offer, imageOne, imageTwo, imageThree}
+            
+        //crea el nuevo celular en la BdD
+        const newCellphone = await db.Cellphone.create( newProduct )
+        // res.redirect('products/adminList')
+        res.redirect('/products/'+newCellphone.id)
     },
 
     editProductForm (req, res){

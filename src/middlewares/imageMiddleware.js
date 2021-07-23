@@ -14,6 +14,6 @@ module.exports = async (req, res, next)=>{
     const imageTwoPathFinal = await fs.renameSync(req.files.imageTwo[0].path, path.join(imagePath, req.body.brand, req.body.model, req.files.imageTwo[0].filename))
     const imageThreePathFinal = await fs.renameSync(req.files.imageThree[0].path, path.join(imagePath, req.body.brand, req.body.model, req.files.imageThree[0].filename))
 
-
+    
     next()    
 }

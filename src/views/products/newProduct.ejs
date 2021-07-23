@@ -24,7 +24,7 @@
                     <input type="file" name="logo" class="inputControl">
 
                     <div class="currentImage">
-                        <img src="<%= brandToUse ? '/images/logos/'+brandToUse.logo : 'No Logo' %>" alt="Current Image">
+                        <img src="<%= brandToUse ? '/images/logos/'+brandToUse.logo : 'No Logo' %>" alt="">
                         <span><%= brandToUse ? 'Imagen actual' : 'No Logo' %></span>
                     </div> 
 
@@ -39,7 +39,7 @@
                     <input type="file" name="modelMainImage" class="inputControl">
                     
                     <div class="currentImage">
-                        <img src="/images/cellphones/models/<%=modelToUse.mainImage%>" alt="Current Image">
+                        <img src=" <%= modelToUse ? '/images/cellphones/models/'+modelToUse.mainImage : '' %>" alt="">
                         <span>Imagen actual</span>
                     </div> 
 
@@ -50,7 +50,7 @@
                     <select name="color" id="color">
                         <% colorList.forEach( e => { %>
         
-                            <option value="<%=e.name%>"> <%= e.name %> </option>
+                            <option value="<%=e.id%>"> <%= e.name %> </option>
         
                         <% }) %> 
                     </select>        
@@ -61,7 +61,7 @@
                     <select name="ram" id="ram">
                         <% ramList.forEach( e => { %>
         
-                            <option value="<%=e.storage%>"> <%= e.storage %> </option>
+                            <option value="<%=e.id%>"> <%= e.storage %> </option>
         
                         <% }) %> 
                     </select>
@@ -74,8 +74,8 @@
 
                 <div  class="formControl">
                     <label for="">Este producto esta en oferta?</label>
-                    <input type="radio" name="offer" value="si"/>Si
-                    <input type="radio" name="offer" value="no"/>No
+                    <input type="radio" name="offer" value=1/>Si
+                    <input type="radio" name="offer" value=0/>No
                 </div>
 
                 <div class="formControl">
