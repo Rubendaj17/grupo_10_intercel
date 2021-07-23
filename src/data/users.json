@@ -61,5 +61,14 @@
     "password": "$2a$10$aCM955q5oTHeeZjjvNkGlORMjXTFH45HK4O9rXMbf4q3JTym2DbWy",
     "photo": "/images/pp/default.png",
     "id": 13
+  },
+  {
+    "name": "justina",
+    "lastName": "iturraspe",
+    "phoneNumber": "12345678",
+    "email": "justiiturraspe@gmail.com",
+    "password": "$2a$10$6Bl6fx.itD8G88yDCioYhejqgOloomrQfKnb1M6EkszjAXzj1/Rj2",
+    "photo": "/images/pp/default.png",
+    "id": 14
   }
 ]
