@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
 
     let config = {
         tableName: 'colors',
+        timestamps: false
     }
 
 

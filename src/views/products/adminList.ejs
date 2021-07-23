@@ -14,13 +14,37 @@
     <main>
         <p class="blueBar"></p>
 
-        <div>
-            <button class="button"><a href="/products/create">Agregar</a></button> 
-        </div>
+        <form  action="/products/create" method="GET">
+            
+            <label for="brand">Marca</label>
+            
+            <select name="brand" id="brand">
+                <% brandList.forEach( e => { %>
+
+                    <option value="<%=e.name%>"> <%= e.name %> </option>
+
+                <% }) %> 
+                <option value="newBrand">otro</option>            
+            </select>
+            
+            <label for="model">Modelo</label>
+
+            <select name="model" id="model">
+                <% modelList.forEach( e => { %>
+
+                    <option value="<%=e.model%>"> <%= e.model %> </option>
+
+                <% }) %> 
+                <option value="newModel">otro</option>
+            </select>
+
+            <button type="submit" class="button">Agregar</button> 
+
+        </form>
 
         <section class="products">
                 
-            <% productList.forEach( e => {%>
+            <% modelList.forEach( e => {%>
                 <article>
                 <a href="/products/<%=e.id%>">
                     <img src="<%= e.mainImage %>" alt="<%= e.model %>">

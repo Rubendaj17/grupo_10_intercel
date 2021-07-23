@@ -6,18 +6,19 @@ const multer = require('multer');
 const guestMiddleware = require('../middlewares/guestMiddleware')
 const productsController = require('../controllers/productsController');
 const searchBarValidation = require('../middlewares/searchBarValidation');
+const imageMiddleware = require('../middlewares/imageMiddleware');
 
 
 const storage = multer.diskStorage({
     destination: (req, file, cb)=>{
-        const destinationPath= path.join(__dirname, '../public/images/cellphones',req.body.brand, req.body.model)
+        const destinationPath= path.join(__dirname, '../../public/images')
     
         cb(null, destinationPath)
     },
     filename:  (req, file, cb)=>{
         const extension = path.extname(file.originalname)   //El nombre del archivo original es: file.originalname
-        const model = req.body.model+ " - "+ Date.now();
-        const filename = model+extension; //generar un nombre para el archivo
+        const name = Date.now();
+        const filename = name+extension; //generar un nombre para el archivo
 
         cb(null, filename);
     }
@@ -32,7 +33,8 @@ productsRouter.get("/list/:brand", productsController.brandList)
 
 // formulario crear y envio de creacion
 productsRouter.get("/create", productsController.newProductForm);
-productsRouter.post("/create",upload.fields([{name:'mainImage'},{name:'images'}]), productsController.createNewProduct);
+
+productsRouter.post("/create", upload.fields([{name:'logo'},{name:'modelMainImage'},{name:'imageOne'},{name:'imageTwo'},{name:'imageThree'}]), imageMiddleware, productsController.createNewProduct);
 productsRouter.delete("/:id", productsController.destroy);
 
 // detalle producto

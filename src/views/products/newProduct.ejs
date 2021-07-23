@@ -17,38 +17,75 @@
         <form class="createForm" action="/products/create" method="POST" enctype="multipart/form-data">
                 <br>
                 <div class="formControl">
-                    <label>Brand</label>
-                    <input type="text" name="brand" class="inputControl" required>
+                    <label>Marca</label>
+                    <input type="text" name="brand" class="inputControl" value="<%= brandToUse ? brandToUse.name : '' %>">
+
+                    <label>Logo</label>
+                    <input type="file" name="logo" class="inputControl">
+
+                    <div class="currentImage">
+                        <img src="<%= brandToUse ? '/images/logos/'+brandToUse.logo : 'No Logo' %>" alt="Current Image">
+                        <span><%= brandToUse ? 'Imagen actual' : 'No Logo' %></span>
+                    </div> 
+
                 </div>
+
                 <div class="formControl">
                     <label>Modelo</label>
-                    <input type="text" name="model" class="inputControl" required>
+                    <input type="text" name="model" class="inputControl" required value="<%= modelToUse ? modelToUse.model : '' %>">
+                    
+                    <label>Imagen Principal</label>
+                    
+                    <input type="file" name="modelMainImage" class="inputControl">
+                    
+                    <div class="currentImage">
+                        <img src="/images/cellphones/models/<%=modelToUse.mainImage%>" alt="Current Image">
+                        <span>Imagen actual</span>
+                    </div> 
+
                 </div>
+                
                 <div class="formControl">
                     <label>Color</label>
-                    <input type="text" name="color" class="inputControl" minlength="3">
+                    <select name="color" id="color">
+                        <% colorList.forEach( e => { %>
+        
+                            <option value="<%=e.name%>"> <%= e.name %> </option>
+        
+                        <% }) %> 
+                    </select>        
                 </div>
+                
                 <div class="formControl">
-                    <label>Imagen principal</label>
-                    <input type="file" name="mainImage" accept = ".jpg, .png" class="inputControl " required >
+                    <label>Almacenamiento</label>
+                    <select name="ram" id="ram">
+                        <% ramList.forEach( e => { %>
+        
+                            <option value="<%=e.storage%>"> <%= e.storage %> </option>
+        
+                        <% }) %> 
+                    </select>
                 </div>
-                <div class="formControl">
-                    <label>Imagen</label>
-                    <input type="file" name="images" accept = ".jpg, .png" class="inputControl " multiple required>
-                </div>
+
                 <div class="formControl">
                     <label>Precio</label>
                     <input type="tel" name="price" class="inputControl" minlength="1" required>
                 </div>
-                <div class="formControl">
-                    <label>Almacenamiento</label>
-                    <input type="number" step="0.1" name="ram" class="inputControl" minlength="1" required>
-                </div>
+
                 <div  class="formControl">
                     <label for="">Este producto esta en oferta?</label>
                     <input type="radio" name="offer" value="si"/>Si
                     <input type="radio" name="offer" value="no"/>No
                 </div>
+
+                <div class="formControl">
+                    <label>Imagen 1</label>
+                    <input type="file" name="imageOne" accept = ".jpg, .png" class="inputControl " required>
+                    <label>Imagen 2</label>
+                    <input type="file" name="imageTwo" accept = ".jpg, .png" class="inputControl " required>
+                    <label>Imagen 3</label>
+                    <input type="file" name="imageThree" accept = ".jpg, .png" class="inputControl " required>
+                </div>                
             
                 <button type="submit" class="formButton">Crear producto</button>
             

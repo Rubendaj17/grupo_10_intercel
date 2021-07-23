@@ -18,10 +18,17 @@ let productController = {
         res.send(productList)
         // res.render('products/products', {productList, brand})
     },
-    adminList: (req,res)=>{
-        const productList = productsModel.findAll() 
+    adminList: async (req,res)=>{
+        // const productList = productsModel.findAll() 
+        const brandList = await db.Brand.findAll() 
+        
+        const modelList = await db.Model.findAll({
+            include: ['brand']
+        }) 
+
         const brand = 'Todos los Productos'
-        res.render('products/adminList', {productList, brand})
+
+        res.render('products/adminList', {brandList, modelList, brand})
     },
     
     brandList: (req, res) => {
@@ -78,10 +85,24 @@ let productController = {
         
     },
 
-    newProductForm: (req,res)=>{
-        res.render('products/newProduct')
+    newProductForm: async (req,res)=>{
+        const { brand, model } = req.query
+
+        const brandToUse = await db.Brand.findOne({
+            where:{name:brand}
+        })
+
+        const modelToUse = await db.Model.findOne({
+            where:{model}
+        })
+        
+        const ramList = await db.Ram.findAll()
+        const colorList = await db.Color.findAll()
+
+        res.render('products/newProduct', {brandToUse, modelToUse, ramList, colorList})
     },
     createNewProduct(req, res){
+        console.log('HOLA');
         const imagePath = `/images/cellphones/${req.body.brand}/${req.body.model}/`
 
         const mainImageUser = req.files.mainImage[0]
