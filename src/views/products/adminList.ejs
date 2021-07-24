@@ -23,21 +23,21 @@
             <% productList.forEach( e => {%>
                 <article>
                 <a href="/products/<%=e.id%>">
-                    <img src="<%= e.mainImage %>" alt="<%= e.model %>">
+                    <img src="<%= e.imageOne %>" alt="<%= e.model %>">
                 </a>
                     <div class="productFeatures">
-                        <h3><%= e.model %></h3>
-                        <p><%= e.brand %></p>
-                        <ul>
-                            <li><%= e.color %></li>
-                            <li><%= e.ram %></li>
-                        </ul>
+                        <h3><%= e.model.model %></h3>
+                        <p><%= e.model.brand %></p>
+                        
                     </div>
   
                     <div class="productPrice">
-                        <h3>Precio</h3>
-                        <p>US$<%= e.price %></p>
-                        <input type="button" value="Agregar al carrito">
+                        <br>
+                        <ul>
+                            <li><%= e.color.name %></li>
+                            <li><%= e.ram.storage %></li>
+                            <li><%= e.price %></li>
+                        </ul>
                     </div>
                     <div>
                         <form action="/products/<%=e.id%>/editProduct" method="GET">

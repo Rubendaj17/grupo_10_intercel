@@ -35,30 +35,16 @@
                 <article>
                 <a href="/products/<%=e.id%>">
                     <div class="imgContainer">
+
                         <img src="<%= e.mainImage %>" alt="<%= e.model %>">
                         
-                        <% e.images.forEach(i => { %>
-                            
-                            <img src="<%= i %>" alt="<%= e.model %>" class="secImages">   
-                        
-                        <%}); %> 
-                    
                     </div>
                     
                     <div class="productFeatures">
                         <h3><%= e.model %></h3>
-                        <p><%= e.brand %></p>
-                        <ul>
-                            <li><%= e.color %></li>
-                            <li><%= e.ram %></li>
-                        </ul>
+                        <p><%= e.brand.name %></p>
                     </div>
   
-                    <div class="productPrice">
-                        <h3>Precio</h3>
-                        <p>US$<%= e.price %></p>
-                        <input type="button" value="Agregar al carrito">
-                    </div>
                 </a>
                 </article>
  

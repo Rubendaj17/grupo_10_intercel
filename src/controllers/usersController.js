@@ -67,7 +67,7 @@ let usersController = {
         req.session.logged = user;
 
         if (remember){
-            res.cookie('user', user.id, {maxAge:5*6000, signed:true})
+            res.cookie('user', user.id, {maxAge:50*6000, signed:true})
         }
 
         res.redirect('/');
