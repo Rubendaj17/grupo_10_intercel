@@ -88,20 +88,81 @@ let productController = {
     newProductForm: async (req,res)=>{
         const { brand, model } = req.query
 
-        const brandToUse = await db.Brand.findOne({
+        let brandToUse = await db.Brand.findOne({
             where:{name:brand}
         })
-
-        const modelToUse = await db.Model.findOne({
-            where:{model}
-        })
+        if (!brandToUse){
+            brandToUse = {
+                    name:'',
+                    imageToUse: ''
+                }
+        }else{
+            brandToUse.imageToUse = '/images/logos/'+brandToUse.logo
+        } 
         
+        let modelToUse = await db.Model.findOne({
+            where:{model}
+        })        
+        if (!modelToUse){
+            modelToUse = {
+                    model:'',
+                    imageToUse:''
+                }
+        } else{
+            modelToUse.imageToUse = '/images/cellphones/models/'+modelToUse.mainImage
+        } 
+
         const ramList = await db.Ram.findAll()
         const colorList = await db.Color.findAll()
-
+        
         res.render('products/newProduct', {brandToUse, modelToUse, ramList, colorList})
     },
     createNewProduct: async (req, res) => {
+        let errors = validationResult(req)
+
+        if (!errors.isEmpty()){
+
+            let brand = {
+                name: req.body.brand,
+                imageToUse:''
+            }
+            
+            const isBrand = await db.Brand.findOne({
+                where:{name:brand.name}
+            })
+            
+            if(isBrand){
+                brand.imageToUse = '/images/logos/'+isBrand.logo
+            }
+
+            let model = {
+                name: req.body.model,
+                imageToUse:''
+            }
+            
+            const isModel = await db.Model.findOne({
+                where:{model:model.name}
+            })
+            if(isModel){
+                model.imageToUse = '/images/cellphones/models/'+isModel.mainImage
+            }
+
+            const price = req.body.price
+            const offer = req.body.offer
+            const color = req.body.color
+            const ram = req.body.ram
+
+            const userChoices = {brand, model, price, offer, color, ram}
+            
+            const ramList = await db.Ram.findAll()
+            const colorList = await db.Color.findAll()
+            
+            res.render('products/newProduct', {errors:errors.mapped(), userChoices, ramList, colorList})
+            
+            return
+        }
+
+
         // busca Marca elegida por el usuario
         let brandToSave = await db.Brand.findOne({
             where: { name:req.body.brand }

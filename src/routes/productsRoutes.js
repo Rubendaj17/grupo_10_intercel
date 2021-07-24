@@ -5,8 +5,9 @@ const multer = require('multer');
 
 const guestMiddleware = require('../middlewares/guestMiddleware')
 const productsController = require('../controllers/productsController');
-const searchBarValidation = require('../middlewares/searchBarValidation');
+const validationNewProduct = require('../middlewares/validationNewProduct');
 const imageMiddleware = require('../middlewares/imageMiddleware');
+const searchBarValidation = require('../middlewares/searchBarValidation');
 
 
 const storage = multer.diskStorage({
@@ -33,8 +34,8 @@ productsRouter.get("/list/:brand", productsController.brandList)
 
 // formulario crear y envio de creacion
 productsRouter.get("/create", productsController.newProductForm);
+productsRouter.post("/create", validationNewProduct, upload.fields([{name:'logo'},{name:'modelMainImage'},{name:'imageOne'},{name:'imageTwo'},{name:'imageThree'}]), imageMiddleware, productsController.createNewProduct);
 
-productsRouter.post("/create", upload.fields([{name:'logo'},{name:'modelMainImage'},{name:'imageOne'},{name:'imageTwo'},{name:'imageThree'}]), imageMiddleware, productsController.createNewProduct);
 productsRouter.delete("/:id", productsController.destroy);
 
 // detalle producto
