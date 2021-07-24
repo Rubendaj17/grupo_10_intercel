@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs')
 const productsModel = require('../model/productsModel')
 const {validationResult} = require('express-validator')
 const db = require('../database/models')
@@ -121,6 +122,20 @@ let productController = {
         let errors = validationResult(req)
 
         if (!errors.isEmpty()){
+            
+            let images = []
+            
+            req.files.logo ? images.push(req.files.logo[0].path) : ''
+            req.files.modelMainImage ? images.push(req.files.modelMainImage[0].path) : ''
+            req.files.imageOne ? images.push(req.files.imageOne[0].path) : ''
+            req.files.imageTwo ? images.push(req.files.imageTwo[0].path) : ''
+            req.files.imageThree ? images.push(req.files.imageThree[0].path) : ''
+            
+            images.forEach( async e => {    
+                
+                await fs.unlink(e, err => console.log(err))
+
+            })
 
             let brand = {
                 name: req.body.brand,
@@ -148,10 +163,10 @@ let productController = {
             }
 
             const price = req.body.price
-            const offer = req.body.offer
+            const offer = req.body.offer ? req.body.offer : 0
             const color = req.body.color
             const ram = req.body.ram
-
+            
             const userChoices = {brand, model, price, offer, color, ram}
             
             const ramList = await db.Ram.findAll()

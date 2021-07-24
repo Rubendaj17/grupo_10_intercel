@@ -35,7 +35,7 @@ const validationNewProduct = [
     body('imageThree')
     .isEmpty()
     .withMessage('Debe Ingresar una Imagen')
-    .bail(),
+    .bail()
 
 ]
 
