@@ -33,7 +33,17 @@
                         <img src="<%= idDetail.imageOne%>" alt="">
                         <span>Imagen actual</span>
                     </div>  
-                    <input type="file" name="mainImage" accept = ".jpg, .png" class="inputControl" required multiple>                       
+                    <input type="file" name="mainImage" accept = ".jpg, .png" class="inputControl" required multiple>
+                                         
+                </div>
+
+                <div class="formControl">
+                    <label>Imagenes secundarias</label>
+                    <div class="secondaryImage">
+                        <img src="<%= idDetail.imageTwo%>" alt="">
+                        <img src="<%= idDetail.imageThree%>" alt=""> 
+                    </div> 
+                    <input type="file" name="images" accept = ".jpg, .png" class="inputControl " required multiple >
                 </div>
                 
                 <div class="formControl">
