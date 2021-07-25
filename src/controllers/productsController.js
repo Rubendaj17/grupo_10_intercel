@@ -12,7 +12,7 @@ let productController = {
 
         res.render('products/products', {productList, brand})
     },
-    
+
     adminList: async (req, res)=>{
         const productList = await db.Cellphone.findAll({
             include: [{
@@ -29,10 +29,23 @@ let productController = {
         res.render('products/adminList', {productList})
     },
     
-    brandList: (req, res) => {
+    brandList: async (req, res) => {
         const {brand} = req.params
-
-        const productList = productsModel.findByBrand(brand) 
+        //tengo q buscar el id correspondiente al brand que me llega por parametro
+        
+        const myBrand = await db.Brand.findOne({
+            where: {                
+                name: brand
+            }
+        })
+        
+        const productList = await db.Model.findAll({
+            include: ['brand'],
+            where: {                
+                id_brand: myBrand.id
+            }
+        })
+        console.log(productList)
         
         res.render('products/products', {productList, brand})
 
