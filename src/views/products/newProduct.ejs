@@ -30,7 +30,10 @@
                     <div class="currentImage">
                         <img src="<%= locals.errors ? userChoices.brand.imageToUse : brandToUse.imageToUse %>" alt="">
                         <span>'Imagen actual'</span>
-                    </div> 
+                    </div>
+                    <% if (locals.errors && errors.logo) { %>
+                        <p class="errorMsg"> <%= errors.logo.msg %> </p>
+                    <% } %> 
 
                 </div>
 
@@ -49,7 +52,10 @@
                     <div class="currentImage">
                         <img src=" <%= locals.errors ? userChoices.model.imageToUse : modelToUse.imageToUse %>" alt="">
                         <span>Imagen actual</span>
-                    </div> 
+                    </div>
+                    <% if (locals.errors && errors.modelMainImage) { %>
+                        <p class="errorMsg"> <%= errors.modelMainImage.msg %> </p>
+                    <% } %> 
 
                 </div>
                 

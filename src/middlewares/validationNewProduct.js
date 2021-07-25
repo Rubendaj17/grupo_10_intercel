@@ -1,4 +1,5 @@
 const {body} = require('express-validator')
+const {Model, Brand} = require('../database/models')
 
 const validationNewProduct = [
     //validacion nombre marca
@@ -35,8 +36,43 @@ const validationNewProduct = [
     body('imageThree')
     .isEmpty()
     .withMessage('Debe Ingresar una Imagen')
-    .bail()
+    .bail(),
 
+    //validacion logo
+    // body('logo')
+    // .custom( async (value, {req}) => {
+    //     const {brand} = req.body
+    //     const ll = req.files
+    //     const isBrand = await Brand.findOne({
+    //         where: {name:brand}
+    //     })
+
+    //     if( !isBrand && !req.files.logo ){
+    //         return false
+    //         // throw new Error('Debe ingresar una imagen para una nueva Marca')
+    //     }
+    //     return true
+    // })
+    // .withMessage('Debe ingresar una imagen para una nueva Marca')
+    // .bail(),
+
+    // //validacion imagen Modelo
+    // body('modelMainImage')
+    // .custom( async (value, {req}) => {
+    //     const {model} = req.body
+        
+    //     const isModel = await Model.findOne({
+    //         where: {model}
+    //     })
+
+    //     if( !isModel && !req.files.modelMainImage ){
+    //         // throw new Error('Debe ingresar una imagen para un nuevo Modelo')
+    //         return false
+    //     }
+    //     return true
+    // })
+    // .withMessage('Debe ingresar una imagen para un nuevo Modelo')
+    // .bail()
 ]
 
 module.exports = validationNewProduct

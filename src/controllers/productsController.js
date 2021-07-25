@@ -21,10 +21,13 @@ let productController = {
     },
     adminList: async (req,res)=>{
         // const productList = productsModel.findAll() 
-        const brandList = await db.Brand.findAll() 
+        const brandList = await db.Brand.findAll( {
+            order: [['id', 'ASC']]
+        }) 
         
         const modelList = await db.Model.findAll({
-            include: ['brand']
+            include: ['brand'],
+            order: [['id_brand', 'ASC']]
         }) 
 
         const brand = 'Todos los Productos'
@@ -122,21 +125,6 @@ let productController = {
         let errors = validationResult(req)
 
         if (!errors.isEmpty()){
-            
-            let images = []
-            
-            req.files.logo ? images.push(req.files.logo[0].path) : ''
-            req.files.modelMainImage ? images.push(req.files.modelMainImage[0].path) : ''
-            req.files.imageOne ? images.push(req.files.imageOne[0].path) : ''
-            req.files.imageTwo ? images.push(req.files.imageTwo[0].path) : ''
-            req.files.imageThree ? images.push(req.files.imageThree[0].path) : ''
-            
-            images.forEach( async e => {    
-                
-                await fs.unlink(e, err => console.log(err))
-
-            })
-
             let brand = {
                 name: req.body.brand,
                 imageToUse:''
