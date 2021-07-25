@@ -6,12 +6,36 @@ const validationNewProduct = [
     body('brand')
     .notEmpty()
     .withMessage('Debe ingresar una Marca')
+    .bail()
+    .custom( async (value, {req}) => {
+        const {brand} = req.body
+        const ll = req.files
+        const isBrand = await Brand.findOne({
+            where: {name:brand}
+        })
+
+        if( !isBrand && !req.files.logo ){
+            throw new Error('Debe ingresar una imagen para una nueva Marca')
+        }
+    })
     .bail(),
     
     //validacion nombre modelo
     body('model')
     .notEmpty()
     .withMessage('Debe ingresar un Modelo de Celular')
+    .bail()
+    .custom( async (value, {req}) => {
+        const {model} = req.body
+        
+        const isModel = await Model.findOne({
+            where: {model}
+        })
+
+        if( !isModel && !req.files.modelMainImage ){
+            throw new Error('Debe ingresar una imagen para un nuevo Modelo')
+        }
+    })
     .bail(),
 
     //validacion price
@@ -23,56 +47,24 @@ const validationNewProduct = [
     .bail(),
 
     //validacion imagenes
-    body('imageOne')
-    .isEmpty()
-    .withMessage('Debe Ingresar una Imagen')
-    .bail(),
-    //validacion imagenes
-    body('imageTwo')
-    .isEmpty()
-    .withMessage('Debe Ingresar una Imagen')
-    .bail(),
-    //validacion imagenes
-    body('imageThree')
-    .isEmpty()
-    .withMessage('Debe Ingresar una Imagen')
-    .bail(),
+    body('offer')
+    .custom( async (value, {req}) => {
+        let i = 0
+        if(!req.files.imageOne ){
+            i++
+        }
+        if(!req.files.imageTwo ){
+            i++
+        }
+        if(!req.files.imageThree ){
+            i++
+        }
+        if (i >0){
+            throw new Error(`Debe ingresar ${i} imagen/es para el nuevo producto`) 
+        }
+    })
+    
 
-    //validacion logo
-    // body('logo')
-    // .custom( async (value, {req}) => {
-    //     const {brand} = req.body
-    //     const ll = req.files
-    //     const isBrand = await Brand.findOne({
-    //         where: {name:brand}
-    //     })
-
-    //     if( !isBrand && !req.files.logo ){
-    //         return false
-    //         // throw new Error('Debe ingresar una imagen para una nueva Marca')
-    //     }
-    //     return true
-    // })
-    // .withMessage('Debe ingresar una imagen para una nueva Marca')
-    // .bail(),
-
-    // //validacion imagen Modelo
-    // body('modelMainImage')
-    // .custom( async (value, {req}) => {
-    //     const {model} = req.body
-        
-    //     const isModel = await Model.findOne({
-    //         where: {model}
-    //     })
-
-    //     if( !isModel && !req.files.modelMainImage ){
-    //         // throw new Error('Debe ingresar una imagen para un nuevo Modelo')
-    //         return false
-    //     }
-    //     return true
-    // })
-    // .withMessage('Debe ingresar una imagen para un nuevo Modelo')
-    // .bail()
 ]
 
 module.exports = validationNewProduct

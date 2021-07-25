@@ -98,23 +98,18 @@
                 </div>
 
                 <div class="formControl">
+                    <% if (locals.errors && errors.offer) { %>
+                        <p class="errorMsg"> <%= errors.offer.msg %> </p>
+                    <% } %>
                     <label>Imagen 1</label>
                     <input type="file" name="imageOne" accept = ".jpg, .png" class="inputControl ">
-                    <% if (locals.errors && errors.imageOne) { %>
-                        <p class="errorMsg"> <%= errors.imageOne.msg %> </p>
-                    <% } %>
+                    
 
                     <label>Imagen 2</label>
                     <input type="file" name="imageTwo" accept = ".jpg, .png" class="inputControl ">
-                    <% if (locals.errors && errors.imageTwo) { %>
-                        <p class="errorMsg"> <%= errors.imageTwo.msg %> </p>
-                    <% } %>
 
                     <label>Imagen 3</label>
                     <input type="file" name="imageThree" accept = ".jpg, .png" class="inputControl ">
-                    <% if (locals.errors && errors.imageThree) { %>
-                        <p class="errorMsg"> <%= errors.imageThree.msg %> </p>
-                    <% } %>
 
                 </div>                
             
