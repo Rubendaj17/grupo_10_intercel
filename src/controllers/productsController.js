@@ -2,7 +2,8 @@ const path = require('path');
 const fs = require('fs')
 const productsModel = require('../model/productsModel')
 const {validationResult} = require('express-validator')
-const db = require('../database/models')
+const db = require('../database/models');
+const { off } = require('process');
 
 
 
@@ -239,16 +240,23 @@ let productController = {
     editProductForm: async(req, res)=> {
         
         const {id} = req.params;
-        const idDetail = await db.Cellphone.findByPk(id)
-        res.render('products/editProduct',{idDetail})
+        const cellphoneToEdit = await db.Cellphone.findByPk(id,{
+            include: ['color','ram','model']         
+        })
+        const colorList = await db.Color.findAll()
+        const ramList = await db.Ram.findAll()
+        
+        res.render('products/editProduct',{cellphoneToEdit,colorList, ramList})
     },
     
 
-    updateProduct (req,res){
+    updateProduct: (req,res) =>{
 
+        const {id} = req.params;
+        
         const imagePath = `/images/cellphones/${req.body.brand}/${req.body.model}/`
 
-        const mainImageUser = req.files.mainImage[0]
+        const mainImageUser = req.files.mainImage
         const mainImage = imagePath + mainImageUser.filename        
         
         const imagesUser = req.files.images
@@ -257,14 +265,33 @@ let productController = {
             let newImage = imagePath + e.filename
             images.push(newImage)
         })
+                                
+        const {color, price, ram} = req.body
         
-                        
-        const data = req.body
-        const {id} = req.params;
         
-        productsModel.update (data,id,mainImage,images)
 
-        res.redirect('/')
+        const offer = Number(req.body.offer)
+        console.log(offer)
+
+     
+        const propertiesToEdit = {
+            price: price,
+            idColor: color,
+            idRam: ram,
+            offer:offer
+                
+        }
+        
+        console.log(propertiesToEdit)
+
+
+        db.Cellphone.update(propertiesToEdit,{
+            where:{id}
+        })
+        .then(()=>{
+            res.redirect('/')
+        })
+        
         
        
     },
