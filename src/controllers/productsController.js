@@ -4,20 +4,14 @@ const productsModel = require('../model/productsModel')
 const {validationResult} = require('express-validator')
 const db = require('../database/models')
 
-
-
-
 let productController = {
-    list: async (req,res)=>{
-        // const productList = productsModel.findAll()
-        
+    list: async (req, res)=>{ 
         const productList = await db.Model.findAll({
-            include:['brand']
+            include: ['brand', 'cellphones']
         })
-        
         const brand = 'Todos los Productos'
-        res.send(productList)
-        // res.render('products/products', {productList, brand})
+
+        res.render('products/products', {productList, brand})
     },
     adminList: async (req,res)=>{
         // const productList = productsModel.findAll() 
@@ -30,15 +24,38 @@ let productController = {
             order: [['id_brand', 'ASC']]
         }) 
 
-        const brand = 'Todos los Productos'
-
-        res.render('products/adminList', {brandList, modelList, brand})
+        const productList = await db.Cellphone.findAll({
+            include: [{
+                association: 'model',
+            },
+            {
+                association: 'color',
+            },
+            {
+                association: 'ram',
+            }]
+        })
+        
+        res.render('products/adminList', {productList,brandList, modelList})
     },
     
-    brandList: (req, res) => {
+    brandList: async (req, res) => {
         const {brand} = req.params
-
-        const productList = productsModel.findByBrand(brand) 
+        //tengo q buscar el id correspondiente al brand que me llega por parametro
+        
+        const myBrand = await db.Brand.findOne({
+            where: {                
+                name: brand
+            }
+        })
+        
+        const productList = await db.Model.findAll({
+            include: ['brand'],
+            where: {                
+                id_brand: myBrand.id
+            }
+        })
+        console.log(productList)
         
         res.render('products/products', {productList, brand})
 

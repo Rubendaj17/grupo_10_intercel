@@ -23,14 +23,16 @@ const authMiddleware = require('../middlewares/authMiddleware')
 const validationRegister = require('../middlewares/validationRegisterUser')
 const validationLogin = require('../middlewares/validationLoginUser')
 
-usersRouter.get("/login", authMiddleware, usersController.login);
-usersRouter.post("/login", authMiddleware, validationLogin, usersController.processLogin);
+usersRouter.get("/login", guestMiddleware, usersController.login);
+usersRouter.post("/login", guestMiddleware, validationLogin, usersController.processLogin);
 
-usersRouter.get("/register", authMiddleware, usersController.register);
-usersRouter.post("/", authMiddleware, upload.single('photo'), validationRegister, usersController.createNewUser);
-
-usersRouter.get("/profile", guestMiddleware, usersController.profile);
+usersRouter.get("/register", guestMiddleware, usersController.register);
+usersRouter.post("/", guestMiddleware, upload.single('photo'), validationRegister, usersController.createNewUser);
 
 usersRouter.get("/logout", authMiddleware, usersController.logout);
+
+usersRouter.get("/profile", authMiddleware, usersController.profile);
+
+
 
 module.exports = usersRouter
