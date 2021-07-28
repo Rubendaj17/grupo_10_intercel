@@ -1,4 +1,3 @@
-const multer = require('multer');
 const { validationResult } = require('express-validator')
 const bcrypt = require('bcryptjs');
 const usersModel = require('../model/usersModel');
@@ -73,13 +72,15 @@ let usersController = {
         res.redirect('/');
     },
     profile(req, res){
+        //const user = res.locals.logged
         res.render('users/profile');
     },
     logout(req, res){
+        
         req.session.destroy();
         res.clearCookie('user');
-
         res.redirect('/');
+
     }
 }
 
