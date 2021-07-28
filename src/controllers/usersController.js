@@ -1,4 +1,3 @@
-const multer = require('multer');
 const { validationResult } = require('express-validator')
 const bcrypt = require('bcryptjs');
 const usersModel = require('../model/usersModel');
@@ -67,19 +66,21 @@ let usersController = {
         req.session.logged = user;
 
         if (remember){
-            res.cookie('user', user.id, {maxAge:5*6000, signed:true})
+            res.cookie('user', user.id, {maxAge:50*6000, signed:true})
         }
 
         res.redirect('/');
     },
     profile(req, res){
+        //const user = res.locals.logged
         res.render('users/profile');
     },
     logout(req, res){
+        
         req.session.destroy();
         res.clearCookie('user');
-
         res.redirect('/');
+
     }
 }
 
