@@ -85,7 +85,21 @@ article img{
     text-align: right;
     margin-bottom: 15px;
 }
+.newProductForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start;
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;
+    border: solid #40B568 1px;
+    width: 50%;
+}
 
+#newProductButton{
+    margin: 0;
+}
 
 @media (min-width: 361px){
 
@@ -135,6 +149,10 @@ article img{
 
     .productFeatures{
         margin-left: -50px;
+    }
+
+    .newProductForm{
+        width: 15%;
     }
    
 }

@@ -4,12 +4,9 @@ const {validationResult} = require('express-validator')
 const db = require('../database/models')
 
 module.exports = async (req, res, next)=>{
-    console.log('body : ', req.body);
-    console.log('files : ', req.files);
-
+    
     let errors = validationResult(req)
-    console.log('errors : ', errors.mapped());
-
+    
     //chequea si hay errores, para eliminar imagenes
     if (!errors.isEmpty()){
         let images = []

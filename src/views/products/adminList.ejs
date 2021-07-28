@@ -14,31 +14,36 @@
     <main>
         <p class="blueBar"></p>
 
-        <form  action="/products/create" method="GET">
+        <form class="newProductForm" action="/products/create" method="GET">
+            <div class="itemContainer">
+
+                <label for="brand">Marca</label>
+                
+                <select name="brand" id="brand">
+                    <% brandList.forEach( e => { %>
+                        
+                        <option value="<%=e.name%>"> <%= e.name %> </option>
+                        
+                        <% }) %> 
+                        <option value="newBrand">otro</option>            
+                </select>
+            </div>
             
-            <label for="brand">Marca</label>
-            
-            <select name="brand" id="brand">
-                <% brandList.forEach( e => { %>
+            <div class="itemContainer">
 
-                    <option value="<%=e.name%>"> <%= e.name %> </option>
-
-                <% }) %> 
-                <option value="newBrand">otro</option>            
-            </select>
-            
-            <label for="model">Modelo</label>
-
-            <select name="model" id="model">
-                <% modelList.forEach( e => { %>
-
-                    <option value="<%=e.model%>"> <%= e.model %> </option>
-
-                <% }) %> 
-                <option value="newModel">otro</option>
-            </select>
-
-            <button type="submit" class="button">Agregar</button> 
+                <label for="model">Modelo</label>
+                
+                <select name="model" id="model">
+                    <% modelList.forEach( e => { %>
+                        
+                        <option value="<%=e.model%>"> <%= e.model %> </option>
+                        
+                        <% }) %> 
+                        <option value="newModel">otro</option>
+                    </select>
+            </div>
+                    
+            <button id="newProductButton" type="submit" class="button">Agregar</button> 
 
         </form>
 
