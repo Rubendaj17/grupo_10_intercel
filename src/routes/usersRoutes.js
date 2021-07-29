@@ -18,20 +18,23 @@ const storage = multer.diskStorage({
 })
 const upload = multer({storage})
 
+// impedir ingreso a personas logueadas
 const guestMiddleware = require('../middlewares/guestMiddleware')
+// impedir ingreso a personas sin loguearse como admin
 const authMiddleware = require('../middlewares/authMiddleware')
+
 const validationRegister = require('../middlewares/validationRegisterUser')
 const validationLogin = require('../middlewares/validationLoginUser')
 
 usersRouter.get("/login", guestMiddleware, usersController.login);
-usersRouter.post("/login", guestMiddleware, validationLogin, usersController.processLogin);
+usersRouter.post("/login", validationLogin, usersController.processLogin);
 
 usersRouter.get("/register", guestMiddleware, usersController.register);
 usersRouter.post("/", guestMiddleware, upload.single('photo'), validationRegister, usersController.createNewUser);
 
-usersRouter.get("/logout", authMiddleware, usersController.logout);
+usersRouter.get("/logout", usersController.logout);
 
-usersRouter.get("/profile", authMiddleware, usersController.profile);
+usersRouter.get("/profile", guesthMiddleware, usersController.profile);
 
 
 

@@ -1,6 +1,7 @@
 const { validationResult } = require('express-validator')
 const bcrypt = require('bcryptjs');
 const usersModel = require('../model/usersModel');
+const db = require('../database/models')
 const fs = require('fs');
 const path = require('path');
 
@@ -49,7 +50,7 @@ let usersController = {
         
         res.redirect('/');
     },
-    processLogin(req, res){
+    processLogin: async (req, res) => {
         const formValidation = validationResult(req)
         const valuesFromUser = req.body;
         
@@ -59,7 +60,9 @@ let usersController = {
         
         const {email, remember } = req.body;
         
-        const user = usersModel.findByField('email', email);
+        const user = await db.User.findOne({
+            where: {email}
+        });
 
         delete user['password'];
 
