@@ -15,10 +15,10 @@
         <h2>Editar producto</h2>
             <form class="createForm" action="/products/<%=cellphoneToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <br>
-                <!-- <div class="formControl">
+                <div class="formControl">
                     <label>Brand</label>
-                    <input value="<%=cellphoneToEdit.idBrand %>" type="text" name="brand" class="inputControl" required>
-                </div>*/-->
+                    <input value="<%=brandToUse.name%>" type="text" name="brand" class="inputControl" >
+                </div>
                 <div class="formControl">
                     <label>Modelo</label>
                     <input value="<%=cellphoneToEdit.model.model %>" type="text" name="model" class="inputControl" required>
@@ -37,7 +37,7 @@
                 <div class="formControl">
                     <label>Imagen principal</label>
                     <div class="currentImage">
-                        <img src="<%= cellphoneToEdit.imageOne%>" alt="">
+                        <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageOne%>" alt="">
                         <span>Imagen actual</span>
                     </div>  
                     <input type="file" name="mainImage" accept = ".jpg, .png" class="inputControl" required multiple>
@@ -47,8 +47,8 @@
                 <div class="formControl">
                     <label>Imagenes secundarias</label>
                     <div class="secondaryImage">
-                        <img src="<%= cellphoneToEdit.imageTwo%>" alt="">
-                        <img src="<%= cellphoneToEdit.imageThree%>" alt=""> 
+                        <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageTwo%>" alt="">
+                        <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageThree%>" alt=""> 
                     </div> 
                     <input type="file" name="images" accept = ".jpg, .png" class="inputControl " required multiple >
                 </div>
@@ -69,7 +69,7 @@
                     <label for="">Este producto esta en oferta?</label>
                     <div class="formRadio">
                         <input type="radio" name="offer" value='1' <%= cellphoneToEdit.offer == '1' ? 'checked': '' %> />Si
-                        <input type="radio" name="offer" value= '0'<%= cellphoneToEdit.offer == '0' ? 'checked': '' %> /> No
+                        <input type="radio" name="offer" value='0' <%= cellphoneToEdit.offer == '0' ? 'checked': '' %> /> No
                     </div>
                 </div>
             

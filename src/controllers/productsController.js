@@ -263,17 +263,40 @@ let productController = {
     editProductForm: async(req, res)=> {
         
         const {id} = req.params;
+
         const cellphoneToEdit = await db.Cellphone.findByPk(id,{
-            include: ['color','ram','model']         
+            include: ['model','color','ram']         
         })
-        const colorList = await db.Color.findAll()
-        const ramList = await db.Ram.findAll()
+
+        const cellphoneList = await db.Cellphone.findAll({
+            include: ['model','color','ram']         
+        })
         
-        res.render('products/editProduct',{cellphoneToEdit,colorList, ramList})
+        const brandList = await db.Brand.findAll( {
+    
+        }) 
+
+        const brandToUse = await db.Brand.findOne({ where:{
+            id: cellphoneToEdit.model.idBrand        
+        }
+    
+        }) 
+        
+        
+        const modelList = await db.Model.findAll({
+            include: ['brand'],
+    
+        }) 
+
+        const colorList = await db.Color.findAll()
+       
+        const ramList = await db.Ram.findAll()
+    
+        res.render('products/editProduct',{cellphoneToEdit,cellphoneList, brandList, modelList, colorList, ramList, brandToUse })
     },
     
 
-    updateProduct: (req,res) =>{
+    updateProduct: async(req,res) =>{
 
         const {id} = req.params;
         
@@ -289,32 +312,21 @@ let productController = {
             images.push(newImage)
         })
                                 
-        const {color, price, ram} = req.body
-        
-        
-
-        const offer = Number(req.body.offer)
-        console.log(offer)
-
+        const {color, price, ram, offer} = req.body
+  
      
         const propertiesToEdit = {
             price: price,
             idColor: color,
             idRam: ram,
-            offer:offer
-                
+            offer:offer        
         }
         
-        console.log(propertiesToEdit)
 
-
-        db.Cellphone.update(propertiesToEdit,{
+        await db.Cellphone.update(propertiesToEdit,{
             where:{id}
         })
-        .then(()=>{
-            res.redirect('/')
-        })
-        
+        res.redirect('/')       
         
        
     },
