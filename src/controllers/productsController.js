@@ -2,7 +2,8 @@ const path = require('path');
 const fs = require('fs')
 const productsModel = require('../model/productsModel')
 const {validationResult} = require('express-validator')
-const db = require('../database/models')
+const db = require('../database/models');
+const { log } = require('console');
 
 let productController = {
     list: async (req, res)=>{ 
@@ -14,7 +15,7 @@ let productController = {
         res.render('products/products', {productList, brand})
     },
     adminList: async (req,res)=>{
-        // const productList = productsModel.findAll() 
+        
         const brandList = await db.Brand.findAll( {
             order: [['id', 'ASC']]
         }) 
@@ -35,8 +36,10 @@ let productController = {
                 association: 'ram',
             }]
         })
+ 
+        res.render('products/adminList', {productList, brandList, modelList})
+
         
-        res.render('products/adminList', {productList,brandList, modelList})
     },
     
     brandList: async (req, res) => {

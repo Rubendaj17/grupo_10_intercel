@@ -49,14 +49,17 @@
 
         <section class="products">
                 
-            <% modelList.forEach( e => {%>
+            <% productList.forEach( e => {
+                let brand = brandList.find( brandElement => brandElement.id == e.model.idBrand )
+                
+                %>
                 <article>
                 <a href="/products/<%=e.id%>">
-                    <img src="<%= e.imageOne %>" alt="<%= e.model %>">
+                    <img src="/images/cellphones/<%= brand.name %>/<%= e.model.model %>/<%= e.imageOne %>" alt="<%= e.model.name %>">
                 </a>
                     <div class="productFeatures">
                         <h3><%= e.model.model %></h3>
-                        <p><%= e.model.brand %></p>
+                        <p><%= brand.name %></p>
                         
                     </div>
   
