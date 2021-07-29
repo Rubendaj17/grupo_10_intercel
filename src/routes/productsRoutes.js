@@ -37,7 +37,6 @@ productsRouter.get("/list/:brand", productsController.brandList)
 // formulario crear y envio de creacion
 productsRouter.get("/create", productsController.newProductForm);
 productsRouter.post("/create", upload.fields([{name:'logo'},{name:'modelMainImage'},{name:'imageOne'},{name:'imageTwo'},{name:'imageThree'}]), validationNewProduct, foldersMiddleware, imageMiddleware, productsController.createNewProduct);
-
 productsRouter.delete("/:id", productsController.destroy);
 
 // detalle producto
