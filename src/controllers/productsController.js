@@ -73,14 +73,24 @@ let productController = {
 
     },
 
-    detail:(req,res)=>{
+    detail: async(req,res)=>{
         const {id} = req.params
         
-        const idDetail = productsModel.findByPk(id)
-        const brandList = productsModel.findByBrand(idDetail.brand) 
-        const relatedList = productsModel.randomize(brandList,2) 
+        const cellphone = await db.Cellphone.findByPk(id,{
+            include: ['model','color','ram']         
+        })
 
-        res.render('products/productDetail', {idDetail, relatedList})
+        const brand = await db.Brand.findOne({ where:{
+            id: cellphone.model.idBrand        
+        }    
+        }) 
+
+        
+        
+        //const brandList = productsModel.findByBrand(idDetail.brand) 
+        //const relatedList = productsModel.randomize(brandList,2) 
+
+        res.render('products/productDetail', {cellphone, brand})
     },
     
     search(req,res){
