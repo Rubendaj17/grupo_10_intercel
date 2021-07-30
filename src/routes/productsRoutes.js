@@ -3,8 +3,13 @@ const productsRouter = express.Router()
 const path = require('path');
 const multer = require('multer');
 
-const guestMiddleware = require('../middlewares/guestMiddleware')
+
+// impedir ingreso a personas logueadas
+// const guestMiddleware = require('../middlewares/guestMiddleware')
+
+// impedir ingreso a personas sin loguearse como admin
 const authMiddleware = require('../middlewares/authMiddleware')
+
 const productsController = require('../controllers/productsController');
 const validationNewProduct = require('../middlewares/validationNewProduct');
 const foldersMiddleware = require('../middlewares/foldersMiddleware');

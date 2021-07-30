@@ -1,6 +1,6 @@
 const { body } = require('express-validator')
 const bcrypt = require('bcryptjs')
-const usersModel = require('../model/usersModel')
+const { User } = require('../database/models')
 
 const validationLoginUser = [
     body('email')
@@ -14,10 +14,12 @@ const validationLoginUser = [
     .notEmpty()
     .withMessage('Ingresar Contraseña, por favor.')
     .bail()
-    .custom((value, {req})=> {
+    .custom( async (value, {req})=> {
         const {email, password} = req.body
 
-        const userFound = usersModel.findByField('email', email)
+        const userFound = await User.findOne({
+            where: {email}
+        })
 
         if (userFound){
 

@@ -59,7 +59,7 @@ let usersController = {
         }
         
         const {email, remember } = req.body;
-        
+        //busca en base de datos el user con dicho mail
         const user = await db.User.findOne({
             where: {email}
         });
