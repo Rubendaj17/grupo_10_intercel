@@ -3,6 +3,7 @@ const fs = require('fs')
 const productsModel = require('../model/productsModel')
 const {validationResult} = require('express-validator')
 const db = require('../database/models');
+const { off } = require('process');
 const { log } = require('console');
 
 let productController = {
@@ -267,20 +268,48 @@ let productController = {
         }
     },
 
-    editProductForm (req, res){
+    editProductForm: async(req, res)=> {
         
         const {id} = req.params;
-        const idDetail = productsModel.findByPk(id)
+
+        const cellphoneToEdit = await db.Cellphone.findByPk(id,{
+            include: ['model','color','ram']         
+        })
+
+        const cellphoneList = await db.Cellphone.findAll({
+            include: ['model','color','ram']         
+        })
+        
+        const brandList = await db.Brand.findAll( {
     
-        res.render('products/editProduct',{idDetail})
+        }) 
+
+        const brandToUse = await db.Brand.findOne({ where:{
+            id: cellphoneToEdit.model.idBrand        
+        }
+    
+        }) 
+      
+        const modelList = await db.Model.findAll({
+            include: ['brand'],
+    
+        }) 
+
+        const colorList = await db.Color.findAll()
+       
+        const ramList = await db.Ram.findAll()
+    
+        res.render('products/editProduct',{cellphoneToEdit,cellphoneList, brandList, modelList, colorList, ramList, brandToUse })
     },
     
 
-    updateProduct (req,res){
+    updateProduct: async(req,res) =>{
 
+        const {id} = req.params;
+        
         const imagePath = `/images/cellphones/${req.body.brand}/${req.body.model}/`
 
-        const mainImageUser = req.files.mainImage[0]
+        const mainImageUser = req.files.mainImage
         const mainImage = imagePath + mainImageUser.filename        
         
         const imagesUser = req.files.images
@@ -289,14 +318,22 @@ let productController = {
             let newImage = imagePath + e.filename
             images.push(newImage)
         })
+                                
+        const {color, price, ram, offer} = req.body
+  
+     
+        const propertiesToEdit = {
+            price: price,
+            idColor: color,
+            idRam: ram,
+            offer:offer        
+        }
         
-                        
-        const data = req.body
-        const {id} = req.params;
-        
-        productsModel.update (data,id,mainImage,images)
 
-        res.redirect('/')
+        await db.Cellphone.update(propertiesToEdit,{
+            where:{id}
+        })
+        res.redirect('/')       
         
        
     },

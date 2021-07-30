@@ -13,50 +13,63 @@
         <div class="container">
         <a href="/"> <img src="/images/logos/Logo.svg" width="200"> </a>
         <h2>Editar producto</h2>
-            <form class="createForm" action="/products/<%=idDetail.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form class="createForm" action="/products/<%=cellphoneToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <br>
                 <div class="formControl">
                     <label>Brand</label>
-                    <input value="<%=idDetail.brand %>" type="text" name="brand" class="inputControl" required>
+                    <input value="<%=brandToUse.name%>" type="text" name="brand" class="inputControl" >
                 </div>
                 <div class="formControl">
                     <label>Modelo</label>
-                    <input value="<%=idDetail.model %>" type="text" name="model" class="inputControl" required>
+                    <input value="<%=cellphoneToEdit.model.model %>" type="text" name="model" class="inputControl" required>
                 </div>
+                
                 <div class="formControl">
                     <label>Color</label>
-                    <input value="<%=idDetail.color %>" type="text" name="color" class="inputControl" minlength="3">
-                </div>
+                    <select name="color" id="color">
+                        <% colorList.forEach(color => { %>        
+                            <option value="<%=color.id%>"<%= cellphoneToEdit.color.id === color.id ? "selected": "" %>><%= color.name %> </option>     
+                        <% }) %> 
+                    </select>        
+                </div>               
+
+
                 <div class="formControl">
                     <label>Imagen principal</label>
                     <div class="currentImage">
-                        <img src="<%= idDetail.mainImage%>" alt="">
+                        <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageOne%>" alt="">
                         <span>Imagen actual</span>
                     </div>  
-                    <input type="file" name="mainImage" accept = ".jpg, .png" class="inputControl" required multiple>                       
+                    <input type="file" name="mainImage" accept = ".jpg, .png" class="inputControl" required multiple>
+                                         
                 </div>
+
                 <div class="formControl">
                     <label>Imagenes secundarias</label>
                     <div class="secondaryImage">
-                        <% idDetail.images.forEach( e => {%>
-                            <img src="<%= e %>" alt="Preview ">
-                        <%}) %>
+                        <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageTwo%>" alt="">
+                        <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageThree%>" alt=""> 
                     </div> 
                     <input type="file" name="images" accept = ".jpg, .png" class="inputControl " required multiple >
                 </div>
+                
                 <div class="formControl">
                     <label>Precio</label>
-                    <input value="<%=idDetail.price%>" type="number" name="price" class="inputControl" minlength="1" required>
+                    <input value="<%=cellphoneToEdit.price%>" type="number" name="price" class="inputControl" minlength="1" required>
                 </div>
                 <div class="formControl">
                     <label>Almacenamiento</label>
-                    <input value="<%=idDetail.ram %>" type="text" step="0.1" name="ram" class="inputControl" required>
+                    <select name="ram" id="ram">
+                        <% ramList.forEach(ram => { %>        
+                            <option value="<%=ram.id%>"<%= cellphoneToEdit.ram.id === ram.id ? "selected": "" %>><%= ram.storage %> </option>     
+                        <% }) %> 
+                    </select> 
                 </div>
                 <div  class="formControl">
                     <label for="">Este producto esta en oferta?</label>
                     <div class="formRadio">
-                        <input type="radio" name="offer" value="si" <%= idDetail.offer == 'si' ? 'checked': '' %> />Si
-                        <input type="radio" name="offer" value="no" <%= idDetail.offer == 'no' ? 'checked': '' %> /> No
+                        <input type="radio" name="offer" value='1' <%= cellphoneToEdit.offer == '1' ? 'checked': '' %> />Si
+                        <input type="radio" name="offer" value='0' <%= cellphoneToEdit.offer == '0' ? 'checked': '' %> /> No
                     </div>
                 </div>
             
@@ -64,7 +77,8 @@
             
             </form>
         </div>
-        
+
+
     <!-- FOOTER -->
     <footer>
         <%- include('../partials/footer') %>

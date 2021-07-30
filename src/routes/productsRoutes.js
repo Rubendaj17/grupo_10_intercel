@@ -50,7 +50,7 @@ productsRouter.get("/search/:id", searchBarValidation, productsController.search
 
 // formulario editar y envio de edicion
 productsRouter.get("/:id/editProduct" , productsController.editProductForm);
-productsRouter.put("/:id/" ,upload.fields([{name:'mainImage', maxCount:1},{name:'images'}]), productsController.updateProduct);
+productsRouter.put("/:id/" ,upload.fields([{name:'mainImage'},{name:'images'}]), productsController.updateProduct);
 
 
 module.exports = productsRouter

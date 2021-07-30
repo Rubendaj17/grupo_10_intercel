@@ -70,5 +70,14 @@
     "password": "$2a$10$6Bl6fx.itD8G88yDCioYhejqgOloomrQfKnb1M6EkszjAXzj1/Rj2",
     "photo": "/images/pp/default.png",
     "id": 14
+  },
+  {
+    "name": "Ruben",
+    "lastName": "Jaime",
+    "phoneNumber": "3006114684",
+    "email": "r@r.com",
+    "password": "$2a$10$WVapjKlcrJE7a8JdcDTAoe9FAcj9ONlBUJZmNqrdKg0wab4jfJZbm",
+    "photo": "/images/pp/default.png",
+    "id": 15
   }
 ]
