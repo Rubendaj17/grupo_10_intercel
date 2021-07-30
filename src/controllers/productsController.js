@@ -281,8 +281,7 @@ let productController = {
         }
     
         }) 
-        
-        
+      
         const modelList = await db.Model.findAll({
             include: ['brand'],
     
