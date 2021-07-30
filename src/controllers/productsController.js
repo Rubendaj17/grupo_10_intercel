@@ -259,7 +259,7 @@ let productController = {
                 
             //crea el nuevo celular en la BdD
             const newCellphone = await db.Cellphone.create( newProduct )
-            // res.redirect('products/adminList')
+            
             res.redirect('/products/'+newCellphone.id)
             
         } catch (error) {//si hay error, muestra el error en consola y vista de error
