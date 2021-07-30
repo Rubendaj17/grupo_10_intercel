@@ -12,16 +12,20 @@
 <body>
     <!-- HEADER -->
     <%- include('../partials/header') %>
+
+    
     
     <main>
         <a href="/products/list">Volver al Listado</a>
         <section class="productContainer">
-            
-            
+
+            <article class="minorPhotosContainer">
+                <div><img src="/images/cellphones/<%= brand.name %>/<%= cellphone.model.model %>/<%= cellphone.imageTwo%>" alt="Preview <%= cellphone.model.model %>"></div>
+                <div><img src="/images/cellphones/<%= brand.name %>/<%= cellphone.model.model %>/<%= cellphone.imageThree%>" alt="Preview <%= cellphone.model.model %>"></div>                  
+            </article>
+           
             <article class="mainPhotoContainer">
-            
                 <div><img src="/images/cellphones/<%= brand.name %>/<%= cellphone.model.model %>/<%= cellphone.imageOne%>" alt="Celular  <%= cellphone.model.model %>"></div>
-            
             </article>
                 
             <article class="containerInformation">
