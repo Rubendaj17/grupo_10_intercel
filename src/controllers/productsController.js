@@ -93,9 +93,7 @@ let productController = {
         }) 
         
         const relatedList = randomize(modelList,2)
-
-        console.log(relatedList)
-                       
+                     
 
         res.render('products/productDetail', {cellphone, brand, relatedList})
     },

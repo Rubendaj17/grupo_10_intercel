@@ -43,8 +43,8 @@
 
         <section class="brandsContainer">
             
-            <% brandList.forEach( brand => { %>
-                <article class="brandsImgContainer"><a href="/products/list/<%=brand%>"><img src="/images/logos/<%=brand%>.svg" alt="<%=brand%> logo"></a></article>    
+            <% brandsRandomize.forEach( brand => { %>
+                <article class="brandsImgContainer"><a href="/products/list/<%=brand.name%>"><img src="/images/logos/<%=brand.name%>.svg" alt="<%=brand.name%> logo"></a></article>    
             <%}); %> 
 
         </section>
@@ -52,12 +52,12 @@
         <section class="offersContainer">
             <h2>Ofertas</h2>
             
-            <% offerList.forEach( (e) => { %>
+            <% offerRandomize.forEach( (e) => { %>
                 <article class="offersProductContainer">
                     <a href="/products/<%=e.id%>">
-                        <h3 class="offersProductoNombre"><%=e.model%></h3>
+                        <h3 class="offersProductoNombre"><%=e.model.model%></h3>
                         <p class="price"><%=e.price%></p>
-                        <img src="<%= e.mainImage %>" alt="<%= e.model %>">
+                        <img src="/images/cellphones/models/<%=e.model.mainImage%>" alt="<%= e.model.model %>">
                     </a>
                  </article>    
             <%}); %> 
@@ -67,12 +67,12 @@
         <section class="soldContainer">
             <h2>Más Vendidos</h2>
         
-            <% soldProductsList.forEach(e => { %> 
+            <% soldCellphoneList.forEach(e => { %> 
                 
-                <article class="soldProductContainer <%= soldProductsList.indexOf(e)%2 ==0 ? 'par' : 'impar'%> ">
+                <article class="soldProductContainer <%= soldCellphoneList.indexOf(e)%2 ==0 ? 'par' : 'impar'%> ">
                     <a href="/products/<%=e.id%>">
-                        <h3 class="soldProductNombre"><%= e.model%></h3>
-                        <img src="<%= e.mainImage%>" alt="<%= e.model%>">
+                        <h3 class="soldProductNombre"><%= e.model.model%></h3>
+                        <img src="/images/cellphones/models/<%=e.model.mainImage%>" alt="<%= e.model.model%>">
                     </a>
                 </article>
             
