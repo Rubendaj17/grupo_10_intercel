@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs')
 const productsModel = require('../model/productsModel')
+const {randomize} = require('../helpers/randomize')
 const {validationResult} = require('express-validator')
 const db = require('../database/models');
 const { off } = require('process');
@@ -74,10 +75,11 @@ let productController = {
     },
 
     detail: async(req,res)=>{
+        
         const {id} = req.params
         
         const cellphone = await db.Cellphone.findByPk(id,{
-            include: ['model','color','ram']         
+            include: ['model']         
         })
 
         const brand = await db.Brand.findOne({ where:{
@@ -85,12 +87,17 @@ let productController = {
         }    
         }) 
 
+        const modelList = await db.Model.findAll({ where:{
+            idBrand: cellphone.model.idBrand        
+        }    
+        }) 
         
-        
-        //const brandList = productsModel.findByBrand(idDetail.brand) 
-        //const relatedList = productsModel.randomize(brandList,2) 
+        const relatedList = randomize(modelList,2)
 
-        res.render('products/productDetail', {cellphone, brand})
+        console.log(relatedList)
+                       
+
+        res.render('products/productDetail', {cellphone, brand, relatedList})
     },
     
     search(req,res){
@@ -290,14 +297,11 @@ let productController = {
             include: ['model','color','ram']         
         })
         
-        const brandList = await db.Brand.findAll( {
-    
-        }) 
+        const brandList = await db.Brand.findAll() 
 
         const brandToUse = await db.Brand.findOne({ where:{
             id: cellphoneToEdit.model.idBrand        
         }
-    
         }) 
       
         const modelList = await db.Model.findAll({
