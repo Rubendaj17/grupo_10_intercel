@@ -53,7 +53,7 @@ CREATE TABLE intercel_db.cellphones (
   );
 
 CREATE TABLE intercel_db.users (
-	`id` INT(10) UNSIGNED NOT NULL,
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(50) NOT NULL,
 	`last_name` VARCHAR(50) NOT NULL,
 	`phone_number` VARCHAR(15) NOT NULL,
