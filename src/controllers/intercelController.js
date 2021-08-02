@@ -1,7 +1,8 @@
 const path = require('path');
 const productsModel = require('../model/productsModel')
 const db = require('../database/models');
-const {randomize} = require('../helpers/randomize')
+const {randomize} = require('../helpers/randomize');
+const { group } = require('console');
 
 let intercelController = {
     
@@ -10,10 +11,10 @@ let intercelController = {
         const brandsRandomize = randomize(brandList,4)
 
         const offerList = await db.Cellphone.findAll({
-            include: ['model'], 
-            where:{
-                offer: 1        
-            }    
+            include: ['model'],
+            group:['id_model'], 
+            where:{offer: 1        
+            }     
         }) 
 
         const offerRandomize = randomize(offerList, 4)     
@@ -23,10 +24,9 @@ let intercelController = {
             include: ['model']
         });
         
-        const soldCellphoneList = randomize(soldCellphones,4) 
-          
+        const soldCellRandomize = randomize(soldCellphones,4)         
 
-        res.render('home', {brandsRandomize, offerRandomize, soldCellphoneList})
+        res.render('home', {brandsRandomize, offerRandomize, soldCellRandomize})
     },
 
     underConstruction: (req,res) => {

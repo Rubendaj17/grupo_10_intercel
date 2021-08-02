@@ -67,9 +67,9 @@
         <section class="soldContainer">
             <h2>Más Vendidos</h2>
         
-            <% soldCellphoneList.forEach(e => { %> 
+            <% soldCellRandomize.forEach(e => { %> 
                 
-                <article class="soldProductContainer <%= soldCellphoneList.indexOf(e)%2 ==0 ? 'par' : 'impar'%> ">
+                <article class="soldProductContainer <%= soldCellRandomize.indexOf(e)%2 ==0 ? 'par' : 'impar'%> ">
                     <a href="/products/<%=e.id%>">
                         <h3 class="soldProductNombre"><%= e.model.model%></h3>
                         <img src="/images/cellphones/models/<%=e.model.mainImage%>" alt="<%= e.model.model%>">
