@@ -42,12 +42,13 @@ article img{
 .adminButton{
     width: 85px;
     height: 28px;
-    background-color: #71D894;
+    background-color: white;
     border-radius: 5px;
     margin: 10px;
+    border: solid #40B568 1px;
 }
 .adminButton:hover{
-    background-color: #33d469;
+    background-color:#71D894
 }
 
 .productFeatures p,.productFeatures li{
@@ -152,7 +153,10 @@ article img{
     }
 
     .newProductForm{
-        width: 15%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 60px;
     }
    
 }
