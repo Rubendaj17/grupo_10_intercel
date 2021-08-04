@@ -35,6 +35,14 @@ form label{
     font-weight: bold;
 }
 
+.visible {
+    display: block;
+}
+
+.invisible {
+    display: none;
+}
+
 .container{
     margin: auto;
     margin-top:70px;
