@@ -12,84 +12,78 @@
     <%- include('../partials/header') %>
        
         <div class="container">
-        <a href="/"> <img src="/images/logos/Logo.svg" width="200"> </a>
+
+        <a href="/"> <img src="/images/logos/Logo.svg" width="200" class="logoIntercel"> </a>
         <h2>Nuevo producto</h2>
             
         <form class="createForm" action="/products/create" method="POST" enctype="multipart/form-data">
                 <br>
                 <div class="formControl">
                     <label>Marca</label>
+
                     <input type="text" name="brand" class="inputControl" id="brand" value="<%= locals.errors && userChoices ? userChoices.brand.name : brandToUse.name %>">
-                
                     <p id='brandErrorMsg' class="errorMsg invisible"> <%= (locals.errors && errors.brand) ? errors.brand.msg : "" %> </p>
 
                     <label>Logo</label>
-                    <input type="file" name="logo" class="inputControl" id="logo">
 
-                    <div class="currentImage">
-                        <img src="<%= locals.errors ? userChoices.brand.imageToUse : brandToUse.imageToUse %>" alt="">
-                        <span>'Imagen actual'</span>
+                    <div class="logoInput">
+                        <div class="currentImage">
+                            <img src="<%= locals.errors ? userChoices.brand.imageToUse : brandToUse.imageToUse %>" alt="Logo">
+                        </div> 
+                        <div>
+                            <input type="file" name="logo" class="inputControl" id="logo">                        
+                        </div>                   
+                        
                     </div>
                     <p id='logoErrorMsg' class="errorMsg invisible"> <%= (locals.errors && errors.brand) ? errors.brand.msg : "" %> </p>
-                </div>
 
-                <div class="formControl">
                     <label>Modelo</label>
+                    
                     <input type="text" id="model" name="model" class="inputControl" required value="<%= locals.errors ? userChoices.model.name : modelToUse.model %>">
-                
                     <p id='modelErrorMsg' class="errorMsg invisible"> <%= (locals.errors && errors.brand) ? errors.brand.msg : "" %> </p>
 
+                    
                     <label>Imagen Principal</label>
                 
-                    <input type="file" id='modelMainImage' name="modelMainImage" class="inputControl">
-                    
-                    <div class="currentImage">
-                        <img src=" <%= locals.errors ? userChoices.model.imageToUse : modelToUse.imageToUse %>" alt="">
-                        <span>Imagen actual</span>
+                    <div class="imgInput">        
+                        <div class="currentImage">
+                            <img src=" <%= locals.errors ? userChoices.model.imageToUse : modelToUse.imageToUse %>" alt="">
+                        </div>
+                        <div>
+                            <input type="file" id='modelMainImage' name="modelMainImage" class="inputControl">
+                        </div>
                     </div>
-                    <p id='modelMainImageErrorMsg' class="errorMsg invisible"> <%= (locals.errors && errors.brand) ? errors.brand.msg : "" %> </p>
+                    <p id='modelMainImageErrorMsg' class="errorMsg invisible"> <%= (locals.errors && errors.brand) ? errors.brand.msg : "" %> </p>    
 
-                </div>
-                
-                <div class="formControl">
                     <label>Color</label>
+
                     <select name="color" id="color">
                         <% colorList.forEach( e => { %>
-        
                             <option value="<%=e.id%>" <%= locals.errors && userChoices.color == e.id ? 'selected' : '' %> > <%= e.name %> </option>
-        
                         <% }) %> 
                     </select>        
-                </div>
-                
-                <div class="formControl">
+
                     <label>Almacenamiento</label>
+
                     <select name="ram" id="ram">
                         <% ramList.forEach( e => { %>
-        
                             <option value="<%=e.id%>" <%= locals.errors && userChoices.ram == e.id ? 'selected' : '' %>> <%= e.storage %> </option>
-        
                         <% }) %> 
                     </select>
-                </div>
-
-                <div class="formControl">
+                
                     <label>Precio</label>
+                
                     <input type="tel" id="price" name="price" class="inputControl" minlength="1" value="<%= locals.errors ? userChoices.price : '' %>">
-
                     <p id='priceErrorMsg' class="errorMsg invisible"> <%= (locals.errors && errors.brand) ? errors.brand.msg : "" %> </p>
 
-                </div>
-
-                <div  class="formControl">
                     <label for="">Este producto esta en oferta?</label>
-                    <input type="radio" name="offer" value=1 <%= locals.errors && userChoices.offer == 1 ? 'checked' : '' %>/>Si
-                    <input type="radio" name="offer" value=0 <%= locals.errors && userChoices.offer == 0 ? 'checked' : '' %>/>No
-                </div>
-
-                <div class="formControl">
+                    <div class="formRadio">
+                        <input type="radio" name="offer" value=1 <%= locals.errors && userChoices.offer == 1 ? 'checked' : '' %>/>Si
+                        <input type="radio" name="offer" value=0 <%= locals.errors && userChoices.offer == 0 ? 'checked' : '' %>/>No    
+                    </div>
                     
                     <label>Imagen 1</label>
+
                     <input type="file" id="imageOne" name="imageOne" accept = ".jpg, .png" class="inputControl ">
                     <p id='imageOneErrorMsg' class="errorMsg invisible"> <%= (locals.errors && errors.brand) ? errors.brand.msg : "" %> </p>
 
@@ -100,6 +94,7 @@
                     <label>Imagen 3</label>
                     <input type="file" id="imageTwo" name="imageThree" accept = ".jpg, .png" class="inputControl ">
                     <p id='imageThreeErrorMsg' class="errorMsg invisible"> <%= (locals.errors && errors.brand) ? errors.brand.msg : "" %> </p>
+
                 </div>                
             
                 <button type="submit" class="formButton">Crear producto</button>
