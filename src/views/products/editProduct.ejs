@@ -17,11 +17,11 @@
                 <br>
                 <div class="formControl">
                     <label>Brand</label>
-                    <input value="<%=brandToUse.name%>" type="text" name="brand" class="inputControl" >
+                    <p><%=brandToUse.name%></p>
                 </div>
                 <div class="formControl">
                     <label>Modelo</label>
-                    <input value="<%=cellphoneToEdit.model.model %>" type="text" name="model" class="inputControl" required>
+                    <p><%=cellphoneToEdit.model.model%></p>
                 </div>
                 
                 <div class="formControl">
@@ -40,22 +40,29 @@
                         <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageOne%>" alt="">
                         <span>Imagen actual</span>
                     </div>  
-                    <input type="file" name="mainImage" accept = ".jpg, .png" class="inputControl" required multiple>
+                    <input type="file" name="imageOne" accept = ".jpg, .png" class="inputControl">
                                          
                 </div>
 
                 <div class="formControl">
                     <label>Imagenes secundarias</label>
                     <div class="secondaryImage">
-                        <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageTwo%>" alt="">
-                        <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageThree%>" alt=""> 
+                        <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageTwo%>" alt="<%= cellphoneToEdit.imageTwo%>">
                     </div> 
-                    <input type="file" name="images" accept = ".jpg, .png" class="inputControl " required multiple >
+                    <input type="file" name="imageTwo" accept = ".jpg, .png" class="inputControl ">
+
+                </div>
+                <div class="formControl">
+                    <div class="secondaryImage">
+                        <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageThree%>" alt="<%= cellphoneToEdit.imageThree%>"> 
+                    </div> 
+                    <input type="file" name="imageThree" accept = ".jpg, .png" class="inputControl ">
                 </div>
                 
                 <div class="formControl">
                     <label>Precio</label>
-                    <input value="<%=cellphoneToEdit.price%>" type="number" name="price" class="inputControl" minlength="1" required>
+                    <input value="<%= locals.errors ? userInfo : cellphoneToEdit.price%>" type="number" name="price" class="inputControl" minlength="1">
+                    <p class="errorMsg invisible"><%= locals.errors ? errors.price.msg : ""%> </p>
                 </div>
                 <div class="formControl">
                     <label>Almacenamiento</label>

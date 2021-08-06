@@ -289,48 +289,65 @@ let productController = {
 
         const cellphoneToEdit = await db.Cellphone.findByPk(id,{
             include: ['model','color','ram']         
-        })
-
-        const cellphoneList = await db.Cellphone.findAll({
-            include: ['model','color','ram']         
-        })
-        
-        const brandList = await db.Brand.findAll() 
+        })      
 
         const brandToUse = await db.Brand.findOne({ where:{
             id: cellphoneToEdit.model.idBrand        
         }
         }) 
       
-        const modelList = await db.Model.findAll({
-            include: ['brand'],
-    
-        }) 
-
         const colorList = await db.Color.findAll()
        
         const ramList = await db.Ram.findAll()
-    
-        res.render('products/editProduct',{cellphoneToEdit,cellphoneList, brandList, modelList, colorList, ramList, brandToUse })
+
+        
+        req.session.cellphoneToEdit = {
+            model: cellphoneToEdit.model.model,
+            brand: brandToUse.name
+        }
+
+        console.log(req.session)
+        
+        res.render('products/editProduct',{cellphoneToEdit, colorList, ramList, brandToUse })
     },
     
 
     updateProduct: async(req,res) =>{
 
-        const {id} = req.params;
+        const {id} = req.params; 
+        const cellphoneToEdit = await db.Cellphone.findByPk(id,{
+            include: ['model','color','ram']         
+        })  
         
-        const imagePath = `/images/cellphones/${req.body.brand}/${req.body.model}/`
+        
+        let errors = validationResult(req)
+    
+        //chequea si hay errores, para eliminar imagenes
 
-        const mainImageUser = req.files.mainImage
-        const mainImage = imagePath + mainImageUser.filename        
+        if (!errors.isEmpty()){           
+            
+            const brandToUse = await db.Brand.findOne({ where:{
+                id: cellphoneToEdit.model.idBrand        
+            }
+            }) 
+          
+            const colorList = await db.Color.findAll()
+           
+            const ramList = await db.Ram.findAll()
+            
+            res.render('products/editProduct',{cellphoneToEdit, colorList, ramList, brandToUse,userInfo:req.body.price, errors: errors.mapped() })
+
+            return 
+        }
         
-        const imagesUser = req.files.images
-        let images = []
-        imagesUser.forEach(e => {
-            let newImage = imagePath + e.filename
-            images.push(newImage)
-        })
-                                
+
+       
+         
+        const imageOne =  req.files.imageOne ? req.files.imageOne[0].filename : cellphoneToEdit.imageOne
+        const imageTwo =  req.files.imageTwo ? req.files.imageTwo[0].filename : cellphoneToEdit.imageTwo
+        const imageThree =  req.files.imageThree ? req.files.imageThree[0].filename : cellphoneToEdit.imageThree
+          
+                     
         const {color, price, ram, offer} = req.body
   
      
@@ -338,7 +355,11 @@ let productController = {
             price: price,
             idColor: color,
             idRam: ram,
-            offer:offer        
+            offer:offer,
+            imageOne: imageOne,
+            imageTwo: imageTwo,
+            imageThree:imageThree
+
         }
         
 
