@@ -1,7 +1,12 @@
 const fs = require('fs')
 const path = require('path');
 
+
+
 module.exports = async (req, res, next)=>{
+    
+    const brand = req.session.cellphoneToEdit ? req.session.cellphoneToEdit.brand : req.body.brand
+    const model = req.session.cellphoneToEdit ? req.session.cellphoneToEdit.model : req.body.model
 
     const logoPath = path.join(__dirname, '../../public/images/logos')
     if(req.files.logo){
@@ -15,15 +20,17 @@ module.exports = async (req, res, next)=>{
     
     const imagePath = path.join(__dirname, '../../public/images/cellphones')
     if(req.files.imageOne){
-        const imageOnePathFinal = await fs.rename(req.files.imageOne[0].path, path.join(imagePath, req.body.brand, req.body.model, req.files.imageOne[0].filename), err => console.log('3', err))
+        console.log('brand',brand)
+        console.log('model',model)
+
+        const imageOnePathFinal = await fs.rename(req.files.imageOne[0].path, path.join(imagePath, brand, model, req.files.imageOne[0].filename), err => console.log('3', err))
     }
     if(req.files.imageTwo){
-        const imageTwoPathFinal = await fs.rename(req.files.imageTwo[0].path, path.join(imagePath, req.body.brand, req.body.model, req.files.imageTwo[0].filename), err => console.log('4', err))
+        const imageTwoPathFinal = await fs.rename(req.files.imageTwo[0].path, path.join(imagePath, brand, model, req.files.imageTwo[0].filename), err => console.log('4', err))
     }
     if(req.files.imageThree){
-        const imageThreePathFinal = await fs.rename(req.files.imageThree[0].path, path.join(imagePath, req.body.brand, req.body.model, req.files.imageThree[0].filename), err => console.log('5', err))
+        const imageThreePathFinal = await fs.rename(req.files.imageThree[0].path, path.join(imagePath, brand, model, req.files.imageThree[0].filename), err => console.log('5', err))
     }
-
 
     next()    
 }
