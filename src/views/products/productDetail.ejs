@@ -20,36 +20,63 @@
         <section class="productContainer">
 
             <article class="minorPhotosContainer">
-                <div><img src="/images/cellphones/<%= brand.name %>/<%= cellphone.model.model %>/<%= cellphone.imageTwo%>" alt="Preview <%= cellphone.model.model %>"></div>
-                <div><img src="/images/cellphones/<%= brand.name %>/<%= cellphone.model.model %>/<%= cellphone.imageThree%>" alt="Preview <%= cellphone.model.model %>"></div>                  
+                <% cellphones.forEach(cell => { %>
+                    <div class="imgContainer">
+                        <img src="/images/cellphones/<%= brand.name %>/<%= model.model %>/<%= cell.imageOne%>" alt="Preview <%= model.model %>">
+                        <img src="/images/cellphones/<%= brand.name %>/<%= model.model %>/<%= cell.imageTwo%>" alt="Preview <%= model.model %>">
+                        <img src="/images/cellphones/<%= brand.name %>/<%= model.model %>/<%= cell.imageThree%>" alt="Preview <%= model.model %>">
+                    </div>
+                                   
+                <% }) %>
             </article>
            
             <article class="mainPhotoContainer">
-                <div><img src="/images/cellphones/<%= brand.name %>/<%= cellphone.model.model %>/<%= cellphone.imageOne%>" alt="Celular  <%= cellphone.model.model %>"></div>
+                <div>
+                    <img src="/images/cellphones/models/<%= model.mainImage%>" alt="Celular  <%= model.model %>">
+                </div>
             </article>
                 
             <article class="containerInformation">
-                <div>
+                <section>
                     <h2 class="brand"><%= brand.name %></h2>
-                    <h1 class="phoneName"><%= cellphone.model.model %></h1>
-                </div>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum dicta autem commodi eum consequatur deserunt. Qui vitae illo sint tempore accusamus? Cum blanditiis excepturi, nam perferendis doloribus consequatur nulla voluptatum.</p>
+                    <h1 class="phoneName"><%= model.model %></h1>
+                    <p class="description"><%= model.description %></p>
+                </section>
                 
-                <div class="bottomInfo">
-                    <div class="containerPrice">
-                        <h3>Precio</h3>
-                        <p>US$ <%= cellphone.price%></p>
-                    </div>
-            
-                    <button>Agregar al Carrito  <i class="fas fa-shopping-cart" id="carritoIconBody"></i></button>
+                <section class="bottomInfo">
+                    <% if (cellphones.length == 0) { %>
+                        <div>    
+                            <h3 style="color:firebrick">Sin Stock</h3>
+                        </div>
+                        
+                        <% } else { %>            
+                            <% cellphones.forEach(cell => { %>
+                                
+                                <div class="stockContainer">
+                                    <div>    
+                                        <h3>Color</h3>
+                                        <p><%= cell.color.name %> </p>
+                                    </div>
+                                    
+                                    <div>
+                                        <h3>Memoria Ram</h3>
+                                        <p><%= cell.ram.storage %> </p>
+                                    </div>
+                                    
+                                    <div>
+                                        <h3><%= cell.offer == 0 ? 'Precio' : 'En Oferta' %></h3>
+                                        <p>US$ <%= cell.price %> </p>
+                                    </div>
+                                                    
+                                    <button>Agregar al Carrito  <i class="fas fa-shopping-cart" id="carritoIconBody"></i></button>
+                                    
+                                </div>
+                            <% }) %>      
+                        <% } %>
+                
                             
-                </div>
-                <form  class= "bottomInfo" action="/products/<%=cellphone.id%>/editProduct" method="GET">
-                    <button type="submit">Editar</button>
-                </form>
-                <form  class= "bottomInfo" action="/products/<%=cellphone.id%>?_method=DELETE" method="POST">
-                    <button type="submit">Eliminar</button>
-                </form>
+                    </section>
+
                 
             </article>
         

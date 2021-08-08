@@ -1,7 +1,5 @@
 const { validationResult } = require('express-validator')
 const bcrypt = require('bcryptjs');
-const usersModel = require('../model/usersModel');
-
 const { User } = require('../database/models')
 const fs = require('fs');
 const path = require('path');
@@ -10,9 +8,11 @@ let usersController = {
     login: (req,res)=>{
         res.render('users/login');
     },
+
     register: (req,res)=>{
         res.render('users/register');
     },
+
     createNewUser: async (req, res)=>{
         let photo = '/images/pp/default.png';
     
@@ -55,6 +55,7 @@ let usersController = {
         
         res.redirect('/');
     },
+
     processLogin: async (req, res) => {
         const formValidation = validationResult(req)
         const valuesFromUser = req.body;
@@ -65,7 +66,7 @@ let usersController = {
         
         const {email, remember } = req.body;
         //busca en base de datos el user con dicho mail
-        const user = await db.User.findOne({
+        const user = await User.findOne({
             where: {email}
         });
 
@@ -79,10 +80,11 @@ let usersController = {
 
         res.redirect('/');
     },
+
     profile(req, res){
-        //const user = res.locals.logged
         res.render('users/profile');
     },
+    
     logout(req, res){
         
         req.session.destroy();
