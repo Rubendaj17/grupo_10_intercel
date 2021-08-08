@@ -87,25 +87,31 @@ let productController = {
         
         const model = await db.Model.findByPk(id)
 
+        const cellphone = await db.Cellphone.findByPk(id,{
+            include: ['model','color','ram']         
+        })  
+       
         const cellphones = await db.Cellphone.findAll({
-            where: {idModel : id},
+            where: {idModel : cellphone.idModel},
             include: ['color','ram']         
         })
 
-        const brand = await db.Brand.findOne({ where:{
-            id: model.idBrand        
-        }    
+        const brand = await db.Brand.findOne({ 
+            where:{id: cellphone.model.idBrand}    
         }) 
 
-        const modelList = await db.Model.findAll({ where:{
-            idBrand: model.idBrand        
-        }    
+        const modelList = await db.Model.findAll({ 
+            where:{idBrand: cellphone.model.idBrand},
+            include: ['cellphones']         
+            
         }) 
         
+
         const relatedList = randomize(modelList,2)
+        
                      
 
-        res.render('products/productDetail', {model, cellphones, brand, relatedList})
+        res.render('products/productDetail', {model, cellphone, cellphones, brand, relatedList})
     },
     
     search(req,res){
@@ -301,8 +307,8 @@ let productController = {
             include: ['model','color','ram']         
         })      
 
-        const brandToUse = await db.Brand.findOne({ where:{
-            id: cellphoneToEdit.model.idBrand        
+        const brandToUse = await db.Brand.findOne({ 
+            where:{id: cellphoneToEdit.model.idBrand        
         }
         }) 
       
