@@ -1,7 +1,6 @@
 const { validationResult } = require('express-validator')
 const bcrypt = require('bcryptjs');
-const usersModel = require('../model/usersModel');
-const db = require('../database/models')
+const { User } = require('../database/models')
 const fs = require('fs');
 const path = require('path');
 
@@ -9,14 +8,19 @@ let usersController = {
     login: (req,res)=>{
         res.render('users/login');
     },
+
     register: (req,res)=>{
         res.render('users/register');
     },
-    createNewUser:(req, res)=>{
+
+    createNewUser: async (req, res)=>{
         let photo = '/images/pp/default.png';
+    
         const formValidation = validationResult(req)
+    
         const valuesFromUser = req.body
-        const {file} = req;
+    
+        const { file } = req;
 
         if(file){
             photo = '/images/pp/' + file.filename;
@@ -33,16 +37,17 @@ let usersController = {
         const {name, lastName, phoneNumber, email, password} = req.body;
         const hashPassword = bcrypt.hashSync(password)
         
-        const user = {
+        const newUser = {
             name, 
             lastName, 
             phoneNumber, 
             email, 
             password: hashPassword,
-            photo
-        
+            photo,
+            idCategory : 2
         }
-        usersModel.create(user);
+               
+        const user = await User.create({ ...newUser })
         
         delete user ['password']
         
@@ -50,6 +55,7 @@ let usersController = {
         
         res.redirect('/');
     },
+
     processLogin: async (req, res) => {
         const formValidation = validationResult(req)
         const valuesFromUser = req.body;
@@ -60,7 +66,7 @@ let usersController = {
         
         const {email, remember } = req.body;
         //busca en base de datos el user con dicho mail
-        const user = await db.User.findOne({
+        const user = await User.findOne({
             where: {email}
         });
 
@@ -69,15 +75,16 @@ let usersController = {
         req.session.logged = user;
 
         if (remember){
-            res.cookie('user', user.id, {maxAge:50*6000, signed:true})
+            res.cookie('user', user.id, {maxAge:5*60000, signed:true})
         }
 
         res.redirect('/');
     },
+
     profile(req, res){
-        //const user = res.locals.logged
         res.render('users/profile');
     },
+    
     logout(req, res){
         
         req.session.destroy();

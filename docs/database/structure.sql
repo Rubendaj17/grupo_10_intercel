@@ -12,6 +12,7 @@ CREATE TABLE intercel_db.models (
 	`id_brand` INT(10) UNSIGNED NOT NULL,
 	`model` VARCHAR(50) NOT NULL UNIQUE,
 	`main_image` VARCHAR(100) NOT NULL UNIQUE,
+	`description` VARCHAR(400) NOT NULL,
 	PRIMARY KEY (`id`),
    	FOREIGN KEY (`id_brand`) REFERENCES intercel_db.brands (`id`)
   );
@@ -53,7 +54,7 @@ CREATE TABLE intercel_db.cellphones (
   );
 
 CREATE TABLE intercel_db.users (
-	`id` INT(10) UNSIGNED NOT NULL,
+	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(50) NOT NULL,
 	`last_name` VARCHAR(50) NOT NULL,
 	`phone_number` VARCHAR(15) NOT NULL,

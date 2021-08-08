@@ -9,12 +9,19 @@ const { log } = require('console');
 
 let productController = {
     list: async (req, res)=>{ 
-        const productList = await db.Model.findAll({
-            include: ['brand', 'cellphones']
-        })
-        const brand = 'Todos los Productos'
+        try {
+            const productList = await db.Model.findAll({
+                include: ['brand', 'cellphones']
+            })
+            const brand = 'Todos los Productos'
+    
+            res.render('products/products', {productList, brand})
+            
+        } catch (error) {
+            console.log(error);
+            res.status(500).render('soon', {error})
 
-        res.render('products/products', {productList, brand})
+        }
     },
     adminList: async (req,res)=>{
         try {
@@ -78,24 +85,27 @@ let productController = {
         
         const {id} = req.params
         
-        const cellphone = await db.Cellphone.findByPk(id,{
-            include: ['model']         
+        const model = await db.Model.findByPk(id)
+
+        const cellphones = await db.Cellphone.findAll({
+            where: {idModel : id},
+            include: ['color','ram']         
         })
 
         const brand = await db.Brand.findOne({ where:{
-            id: cellphone.model.idBrand        
+            id: model.idBrand        
         }    
         }) 
 
         const modelList = await db.Model.findAll({ where:{
-            idBrand: cellphone.model.idBrand        
+            idBrand: model.idBrand        
         }    
         }) 
         
         const relatedList = randomize(modelList,2)
                      
 
-        res.render('products/productDetail', {cellphone, brand, relatedList})
+        res.render('products/productDetail', {model, cellphones, brand, relatedList})
     },
     
     search(req,res){
@@ -274,7 +284,7 @@ let productController = {
                 
             //crea el nuevo celular en la BdD
             const newCellphone = await db.Cellphone.create( newProduct )
-            // res.redirect('products/adminList')
+            
             res.redirect('/products/'+newCellphone.id)
             
         } catch (error) {//si hay error, muestra el error en consola y vista de error

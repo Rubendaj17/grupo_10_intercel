@@ -39,6 +39,25 @@ main>a{
     margin: 5px 10px 15px;
 }
 
+.imgContainer img{
+    animation: showMorePics 12s ease-in-out infinite alternate;
+}
+@keyframes showMorePics {
+    0%{
+    transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-210%);
+    }
+}
+
+.imgContainer{
+    width: 120px;
+    display: flex;
+    overflow: hidden;
+}
+
+
 
 .containerInformation{
     display: flex;
@@ -63,33 +82,45 @@ main>a{
 }
 .bottomInfo{
     margin-top: 15px;
-    display:flex;
 }
-.containerPrice{
-    width: 40%;
+.stockContainer{
+    margin: 8px 0;
+    padding: 4px 0;
+    display: flex;
+    flex-direction: row;
+
+    border-bottom: 1px solid #2e364660;
 }
 
-.containerPrice h3{
+.stockContainer h3{
     color:#2E3646;
     font-size: 12px;
+    margin: 0;
 }
-.containerPrice p{
+.stockContainer p{
     color:#71D894;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 14px;
     font-weight: 700;
+    margin: 0;
 }
 
-.bottomInfo button{
-    width: 60%;
+.stockContainer div{
+    width: 30%;
+}
+.stockContainer div p{
+    padding: 0 5px;
 
+}
+
+.stockContainer button{
     font-size: 12px;
     font-weight: 700;
-    padding: .25em .5em;
     
     background-color: #71D894;
     border: 1px solid #B7BDC7;
     border-radius: 8px;
+
+    align-self: center;
 }
 #carritoIconBody{
     font-size: 10px;
@@ -190,10 +221,14 @@ main>a{
         flex-grow: 1;
     }
     .containerInformation{
-        width: 35%;
+        width: 40%;
         align-self: stretch;
         justify-content: space-around;
     }
+    .description{
+        margin-top: 20px;
+    }
+
     .InformationRelated{
         align-items: flex-start;
         align-self: auto;

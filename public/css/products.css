@@ -41,25 +41,6 @@ article a:hover{
     text-decoration: none;
 }
 
-article a:hover .imgContainer img{
-    animation: showMorePics 7s ease-in-out infinite alternate;
-}
-@keyframes showMorePics {
-    0%{
-    transform: translateX(0);
-    }
-    100%{
-        transform: translateX(-210%);
-    }
-}
-
-.imgContainer{
-    width: 120px;
-    display: flex;
-    overflow: hidden;
-}
-
-
 .productFeatures p,.productFeatures li{
     color:#868FA0;
     font-size: 12px;

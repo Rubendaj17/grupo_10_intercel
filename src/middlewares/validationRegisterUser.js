@@ -1,6 +1,5 @@
 const { body } = require('express-validator')
-const bcrypt = require('bcryptjs')
-const usersModel = require('../model/usersModel')
+const { User } = require('../database/models')
 
 const validationRegisterUser = [
     body('name')
@@ -20,10 +19,12 @@ const validationRegisterUser = [
     .isEmail()
     .withMessage('Ingresar Email válido, por favor.')    
     .bail()
-    .custom((value, {req})=> {
+    .custom( async (value, {req})=> {
         const {email, password} = req.body
 
-        const userFound = usersModel.findByField('email', email)
+        const userFound = await User.findOne({
+            where: {email}
+        })
 
         if (userFound){
             return false
