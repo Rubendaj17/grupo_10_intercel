@@ -2,7 +2,7 @@ const path = require('path');
 
 let cartController = {
     list: (req,res)=>{
-        res.render('cart/productCart')
+        res.render('productCart')
     }
 
 }
