@@ -85,8 +85,6 @@ let productController = {
         
         const {id} = req.params
         
-        const model = await db.Model.findByPk(id)
-
         const cellphone = await db.Cellphone.findByPk(id,{
             include: ['model','color','ram']         
         })  
@@ -99,19 +97,23 @@ let productController = {
         const brand = await db.Brand.findOne({ 
             where:{id: cellphone.model.idBrand}    
         }) 
+        const brands = await db.Brand.findAll({ 
+            where:{id: cellphone.model.idBrand}    
+        })
 
         const modelList = await db.Model.findAll({ 
             where:{idBrand: cellphone.model.idBrand},
             include: ['cellphones']         
             
         }) 
+
         
+                
 
         const relatedList = randomize(modelList,2)
-        
-                     
+                              
 
-        res.render('products/productDetail', {model, cellphone, cellphones, brand, relatedList})
+        res.render('products/productDetail', {cellphone, cellphones, brand, relatedList})
     },
     
     search(req,res){
