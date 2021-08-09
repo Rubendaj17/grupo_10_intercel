@@ -12,7 +12,9 @@ const authMiddleware = require('../middlewares/authMiddleware')
 
 const productsController = require('../controllers/productsController');
 const validationNewProduct = require('../middlewares/validationNewProduct');
+const validationEditProduct = require('../middlewares/validationEditProduct');
 const foldersMiddleware = require('../middlewares/foldersMiddleware');
+const deleteMiddleware = require('../middlewares/deleteMiddleware');
 const imageMiddleware = require('../middlewares/imageMiddleware');
 const searchBarValidation = require('../middlewares/searchBarValidation');
 
@@ -50,7 +52,7 @@ productsRouter.get("/search/:id", searchBarValidation, productsController.search
 
 // formulario editar y envio de edicion
 productsRouter.get("/:id/editProduct" , productsController.editProductForm);
-productsRouter.put("/:id/" ,upload.fields([{name:'mainImage'},{name:'images'}]), productsController.updateProduct);
+productsRouter.put("/:id/" ,upload.fields([{name:'imageOne'},{name:'imageTwo'}, {name:'imageThree'}]),validationEditProduct, deleteMiddleware, imageMiddleware, productsController.updateProduct);
 
 
 module.exports = productsRouter

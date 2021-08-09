@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs')
 const productsModel = require('../model/productsModel')
+const {randomize} = require('../helpers/randomize')
 const {validationResult} = require('express-validator')
 const db = require('../database/models');
 const { off } = require('process');
@@ -8,12 +9,19 @@ const { log } = require('console');
 
 let productController = {
     list: async (req, res)=>{ 
-        const productList = await db.Model.findAll({
-            include: ['brand', 'cellphones']
-        })
-        const brand = 'Todos los Productos'
+        try {
+            const productList = await db.Model.findAll({
+                include: ['brand', 'cellphones']
+            })
+            const brand = 'Todos los Productos'
+    
+            res.render('products/products', {productList, brand})
+            
+        } catch (error) {
+            console.log(error);
+            res.status(500).render('soon', {error})
 
-        res.render('products/products', {productList, brand})
+        }
     },
     adminList: async (req,res)=>{
         try {
@@ -73,14 +81,31 @@ let productController = {
 
     },
 
-    detail:(req,res)=>{
+    detail: async(req,res)=>{
+        
         const {id} = req.params
         
-        const idDetail = productsModel.findByPk(id)
-        const brandList = productsModel.findByBrand(idDetail.brand) 
-        const relatedList = productsModel.randomize(brandList,2) 
+        const model = await db.Model.findByPk(id)
 
-        res.render('products/productDetail', {idDetail, relatedList})
+        const cellphones = await db.Cellphone.findAll({
+            where: {idModel : id},
+            include: ['color','ram']         
+        })
+
+        const brand = await db.Brand.findOne({ where:{
+            id: model.idBrand        
+        }    
+        }) 
+
+        const modelList = await db.Model.findAll({ where:{
+            idBrand: model.idBrand        
+        }    
+        }) 
+        
+        const relatedList = randomize(modelList,2)
+                     
+
+        res.render('products/productDetail', {model, cellphones, brand, relatedList})
     },
     
     search(req,res){
@@ -259,7 +284,7 @@ let productController = {
                 
             //crea el nuevo celular en la BdD
             const newCellphone = await db.Cellphone.create( newProduct )
-            // res.redirect('products/adminList')
+            
             res.redirect('/products/'+newCellphone.id)
             
         } catch (error) {//si hay error, muestra el error en consola y vista de error
@@ -274,51 +299,65 @@ let productController = {
 
         const cellphoneToEdit = await db.Cellphone.findByPk(id,{
             include: ['model','color','ram']         
-        })
-
-        const cellphoneList = await db.Cellphone.findAll({
-            include: ['model','color','ram']         
-        })
-        
-        const brandList = await db.Brand.findAll( {
-    
-        }) 
+        })      
 
         const brandToUse = await db.Brand.findOne({ where:{
             id: cellphoneToEdit.model.idBrand        
         }
-    
         }) 
       
-        const modelList = await db.Model.findAll({
-            include: ['brand'],
-    
-        }) 
-
         const colorList = await db.Color.findAll()
        
         const ramList = await db.Ram.findAll()
-    
-        res.render('products/editProduct',{cellphoneToEdit,cellphoneList, brandList, modelList, colorList, ramList, brandToUse })
+
+        
+        req.session.cellphoneToEdit = {
+            model: cellphoneToEdit.model.model,
+            brand: brandToUse.name
+        }
+
+        console.log(req.session)
+        
+        res.render('products/editProduct',{cellphoneToEdit, colorList, ramList, brandToUse })
     },
     
 
     updateProduct: async(req,res) =>{
 
-        const {id} = req.params;
+        const {id} = req.params; 
+        const cellphoneToEdit = await db.Cellphone.findByPk(id,{
+            include: ['model','color','ram']         
+        })  
         
-        const imagePath = `/images/cellphones/${req.body.brand}/${req.body.model}/`
+        
+        let errors = validationResult(req)
+    
+        //chequea si hay errores, para eliminar imagenes
 
-        const mainImageUser = req.files.mainImage
-        const mainImage = imagePath + mainImageUser.filename        
+        if (!errors.isEmpty()){           
+            
+            const brandToUse = await db.Brand.findOne({ where:{
+                id: cellphoneToEdit.model.idBrand        
+            }
+            }) 
+          
+            const colorList = await db.Color.findAll()
+           
+            const ramList = await db.Ram.findAll()
+            
+            res.render('products/editProduct',{cellphoneToEdit, colorList, ramList, brandToUse,userInfo:req.body.price, errors: errors.mapped() })
+
+            return 
+        }
         
-        const imagesUser = req.files.images
-        let images = []
-        imagesUser.forEach(e => {
-            let newImage = imagePath + e.filename
-            images.push(newImage)
-        })
-                                
+
+       
+         
+        const imageOne =  req.files.imageOne ? req.files.imageOne[0].filename : cellphoneToEdit.imageOne
+        const imageTwo =  req.files.imageTwo ? req.files.imageTwo[0].filename : cellphoneToEdit.imageTwo
+        const imageThree =  req.files.imageThree ? req.files.imageThree[0].filename : cellphoneToEdit.imageThree
+          
+                     
         const {color, price, ram, offer} = req.body
   
      
@@ -326,7 +365,11 @@ let productController = {
             price: price,
             idColor: color,
             idRam: ram,
-            offer:offer        
+            offer:offer,
+            imageOne: imageOne,
+            imageTwo: imageTwo,
+            imageThree:imageThree
+
         }
         
 

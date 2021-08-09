@@ -47,13 +47,13 @@
                     <label>Imagenes secundarias</label>
                     
                     <div class="secondaryImage">
-                        <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageTwo%>" alt="">
-                        <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageThree%>" alt=""> 
+                        <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageTwo%>" alt="<%= cellphoneToEdit.imageTwo%>">
                     </div> 
                     <input type="file" name="images" accept = ".jpg, .png" class="inputControl " required multiple >
                 
                     <label>Precio</label>
-                    <input value="<%=cellphoneToEdit.price%>" type="number" name="price" class="inputControl" minlength="1" required>
+                    <input value="<%= locals.errors ? userInfo : cellphoneToEdit.price%>" type="number" name="price" class="inputControl" minlength="1">
+                    <p class="errorMsg invisible"><%= locals.errors ? errors.price.msg : ""%> </p>
                 
                     <label>Almacenamiento</label>
                     <select name="ram" id="ram">

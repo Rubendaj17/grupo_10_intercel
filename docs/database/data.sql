@@ -47,26 +47,26 @@ VALUES
 ('pixel', 'Google-Pixel.svg'),
 ('samsung', 'samsung.svg'); 
 
-INSERT INTO intercel_db.models (id_brand, model, main_image)
+INSERT INTO intercel_db.models (id_brand, model, main_image, description)
 VALUES
-(1, 'Iphone XS', 'XS.png'),
-(3, 'E7', 'E7.png'),
-(1, 'Iphone 11', 'Iphone 11.png'),
-(1, 'Iphone 12', 'Iphone 12.png'),
-(1, 'Iphone SE', 'Iphone SE.png'),
-(1, 'Iphone 12 Mini', 'Iphone 12 Mini.png'),
-(5, 'A71', 'A71.png'),
-(5, 'Note 20', 'Note 20.png'),
-(5, 'Z Fold', 'ZFold.png'),
-(3, 'Edge S', 'Edge S.png'),
-(3, 'G60', 'G60.png'),
-(3, 'G100', 'G100.png'),
-(4, '4', '4.png'),
-(4, '5', '5.png'),
-(2, 'K31', 'K31.png'),
-(2, 'K52', 'K52.png'),
-(2, 'K61', 'K61.png'),
-(2, 'W41', 'W41.png');
+(1, 'Iphone XS', 'XS.png', 'Descripcion del Iphone XS. Descripcion del Iphone XS. Descripcion del Iphone XS. Descripcion del Iphone XS. Descripcion del Iphone XS. '),
+(3, 'E7', 'E7.png', 'Descripcion del E7. Descripcion del E7. Descripcion del E7. Descripcion del E7. Descripcion del E7. Descripcion del E7. Descripcion del E7. '),
+(1, 'Iphone 11', 'Iphone 11.png','Descripcion del Iphone 11. Descripcion del Iphone 11. Descripcion del Iphone 11. Descripcion del Iphone 11. Descripcion del Iphone 11. Descripcion del Iphone 11.'),
+(1, 'Iphone 12', 'Iphone 12.png','Descripcion del Iphone 12. Descripcion del Iphone 12. Descripcion del Iphone 12. Descripcion del Iphone 12. Descripcion del Iphone 12. Descripcion del Iphone 12.'),
+(1, 'Iphone SE', 'Iphone SE.png','Descripcion del Iphone SE. Descripcion del Iphone SE. Descripcion del Iphone SE. Descripcion del Iphone SE. Descripcion del Iphone SE.'),
+(1, 'Iphone 12 Mini', 'Iphone 12 Mini.png', 'Description Iphone 12 Mini. Description Iphone 12 Mini. Description Iphone 12 Mini. Description Iphone 12 Mini. Description Iphone 12 Mini. Description Iphone 12 Mini. Description Iphone 12 Mini. Description Iphone 12 Mini.'),
+(5, 'A71', 'A71.png', 'Description A71. Description A71. Description A71. Description A71. Description A71. '),
+(5, 'Note 20', 'Note 20.png', 'Description Samsung Note 20. Description Samsung Note 20. Description Samsung Note 20. Description Samsung Note 20. Description Samsung Note 20. '),
+(5, 'Z Fold', 'ZFold.png','Description Z Fold. Description Z Fold. Description Z Fold. Description Z Fold. Description Z Fold. Description Z Fold. Description Z Fold. Description Z Fold. Description Z Fold. Description Z Fold. '),
+(3, 'Edge S', 'Edge S.png', 'Description Edge S. Description Edge S. Description Edge S. Description Edge S. Description Edge S. Description Edge S. Description Edge S. Description Edge S. Description Edge S. '),
+(3, 'G60', 'G60.png', 'Description G60. Description G60. Description G60. Description G60. Description G60. Description G60. Description G60. Description G60. '),
+(3, 'G100', 'G100.png', 'Description G100. Description G100. Description G100. Description G100. Description G100. Description G100. Description G100. Description G100. Description G100. Description G100. '),
+(4, '4', '4.png', 'Description pixel4. Description pixel4. Description pixel4. Description pixel4. Description pixel4. Description pixel4. Description pixel4. Description pixel4. '),
+(4, '5', '5.png', 'Description pixel5. Description pixel5. Description pixel5. Description pixel5. Description pixel5. Description pixel5. Description pixel5. Description pixel5. Description pixel5. Description pixel5. '),
+(2, 'K31', 'K31.png', 'Description K31. Description K31. Description K31. Description K31. Description K31. Description K31. Description K31. Description K31. Description K31. Description K31. '),
+(2, 'K52', 'K52.png', 'Description K52. Description K52. Description K52. Description K52. Description K52. Description K52. Description K52. Description K52. Description K52. Description K52. Description K52. Description K52. Description K52. '),
+(2, 'K61', 'K61.png', 'Description K61. Description K61. Description K61. Description K61. Description K61. Description K61. Description K61. Description K61. '),
+(2, 'W41', 'W41.png', 'Description W41. Description W41. Description W41. Description W41. Description W41. Description W41. Description W41. Description W41. Description W41. Description W41. Description W41. Description W41. Description W41. Description W41. Description W41. Description W41. Description W41. Description W41. ');
 
 INSERT INTO intercel_db.cellphones (id_model, id_color, id_ram, price, offer, image_one, image_two, image_three)
 VALUES
