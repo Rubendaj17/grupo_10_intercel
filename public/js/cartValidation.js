@@ -40,8 +40,7 @@ function addItemtoCarrito (newItem){
     console.log(carrito)
 }
     
-function renderCarrito(){
 
-}
+
     
 
