@@ -29,6 +29,7 @@ let intercelController = {
         res.render('home', {brandsRandomize, offerRandomize, soldCellRandomize})
     },
 
+
     underConstruction: (req,res) => {
         res.render('soon')
     }

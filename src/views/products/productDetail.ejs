@@ -26,9 +26,9 @@
             <article class="minorPhotosContainer">
                 <% cellphones.forEach(cell => { %>
                     <div class="imgContainer">
-                        <img src="/images/cellphones/<%= brand.name %>/<%= cellphone.model.model %>/<%= cell.imageOne%>" alt="Preview <%= cellphone.model.model %>">
-                        <img src="/images/cellphones/<%= brand.name %>/<%= cellphone.model.model %>/<%= cell.imageTwo%>" alt="Preview <%= cellphone.model.model %>">
-                        <img src="/images/cellphones/<%= brand.name %>/<%= cellphone.model.model %>/<%= cell.imageThree%>" alt="Preview <%= cellphone.model.model %>">
+                        <img src="/images/cellphones/<%= brand.name %>/<%= model.model %>/<%= cell.imageOne%>" alt="Preview <%= model.model %>">
+                        <img src="/images/cellphones/<%= brand.name %>/<%= model.model %>/<%= cell.imageTwo%>" alt="Preview <%= model.model %>">
+                        <img src="/images/cellphones/<%= brand.name %>/<%= model.model %>/<%= cell.imageThree%>" alt="Preview <%= model.model %>">
                     </div>
                                    
                 <% }) %>
@@ -36,15 +36,15 @@
            
             <article class="mainPhotoContainer">
                 <div>
-                    <img src="/images/cellphones/models/<%= cellphone.model.mainImage%>" alt="Celular  <%= cellphone.model.model %>" class="mainImage">
+                    <img src="/images/cellphones/models/<%=model.mainImage%>" alt="Celular  <%= model.model %>" class="mainImage">
                 </div>
             </article>
                 
             <article class="containerInformation">
                 <section>
                     <h2 class="brand"><%= brand.name %></h2>
-                    <h1 class="phoneName"><%= cellphone.model.model %></h1>
-                    <p class="description"><%= cellphone.model.description %></p>
+                    <h1 class="phoneName"><%= model.model %></h1>
+                    <p class="description"><%= model.description %></p>
                 </section>
                 
                 <section class="bottomInfo">
@@ -93,7 +93,7 @@
             </div>
             <% relatedList.forEach(e => {%>
                 <div class="photoContainerRelated">
-                    <a href="/products/list/<%=brand.name%>"><img src="/images/cellphones/models/<%=e.mainImage%>" alt="Preview <%=e.model%>"><p class="NameRelated"><%=e.model%></p></a>   
+                    <a href="/products/<%=e.id%>"><img src="/images/cellphones/models/<%=e.mainImage%>" alt="Preview <%=e.model%>"><p class="NameRelated"><%=e.model%></p></a>  
 
                 </div>
             <%}); %>
