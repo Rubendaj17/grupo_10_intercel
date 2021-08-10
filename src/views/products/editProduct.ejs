@@ -11,7 +11,8 @@
     <%- include('../partials/header') %>
 
         <div class="container">
-        <a href="/"> <img src="/images/logos/Logo.svg" width="200"> </a>
+
+        <a href="/"> <img src="/images/logos/Logo.svg" width="200" class="logoIntercel"> </a>
         <h2>Editar producto</h2>
             <form class="createForm" action="/products/<%=cellphoneToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <br>
@@ -31,21 +32,21 @@
                             <option value="<%=color.id%>"<%= cellphoneToEdit.color.id === color.id ? "selected": "" %>><%= color.name %> </option>     
                         <% }) %> 
                     </select>        
-                </div>               
 
-
-                <div class="formControl">
                     <label>Imagen principal</label>
-                    <div class="currentImage">
-                        <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageOne%>" alt="">
-                        <span>Imagen actual</span>
-                    </div>  
-                    <input type="file" name="imageOne" accept = ".jpg, .png" class="inputControl">
-                                         
-                </div>
+                    
+                    <div class="imgInput">
+                        <div class="currentImage">
+                            <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageOne%>" alt="">
+                        </div>  
+                        <div>
+                            <input type="file" name="mainImage" accept = ".jpg, .png" class="inputControl" required multiple>
+                        </div>                                    
+                    </div>
 
                 <div class="formControl secondaryImages">
                     <label>Imagenes secundarias</label>
+                    
                     <div class="secondaryImage">
                         <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageTwo%>" alt="<%= cellphoneToEdit.imageTwo%>">
                     </div> 
@@ -70,13 +71,13 @@
                             <option value="<%=ram.id%>"<%= cellphoneToEdit.ram.id === ram.id ? "selected": "" %>><%= ram.storage %> </option>     
                         <% }) %> 
                     </select> 
-                </div>
-                <div  class="formControl">
+                
                     <label for="">Este producto esta en oferta?</label>
                     <div class="formRadio">
                         <input type="radio" name="offer" value='1' <%= cellphoneToEdit.offer == '1' ? 'checked': '' %> />Si
                         <input type="radio" name="offer" value='0' <%= cellphoneToEdit.offer == '0' ? 'checked': '' %> /> No
                     </div>
+                
                 </div>
             
                 <button type="submit" class="formButton">Guardar cambios</button>
