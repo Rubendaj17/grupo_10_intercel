@@ -3,7 +3,7 @@
 <head>
     <%- include ('../partials/head') %> 
     <title>Intercel - Editar producto</title>
-    <link rel="stylesheet" href="/css/NewEditProduct.css">
+    <link rel="stylesheet" href="/css/editProduct.css">
     <link rel="stylesheet" href="/css/headerFooter.css">
 </head>
 <body>
@@ -16,18 +16,18 @@
         <h2>Editar producto</h2>
             <form class="createForm" action="/products/<%=cellphoneToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <br>
-                <div class="formControl">
-                    
-                    <label>Marca</label>
-                    
-                    <input value="<%=brandToUse.name%>" type="text" name="brand" class="inputControl" >
-
+                <div class="formControl brand">
+                    <label>Brand</label>
+                    <p><%=brandToUse.name%></p>
+                </div>
+                <div class="formControl model">
                     <label>Modelo</label>
-                    
-                    <input value="<%=cellphoneToEdit.model.model %>" type="text" name="model" class="inputControl" required>
-
+                    <p><%=cellphoneToEdit.model.model%></p>
+                </div>
+                
+                <div class="formControl color">
                     <label>Color</label>
-                    <select name="color" id="color">
+                    <select name="color" id="color" class="dropdown-item">
                         <% colorList.forEach(color => { %>        
                             <option value="<%=color.id%>"<%= cellphoneToEdit.color.id === color.id ? "selected": "" %>><%= color.name %> </option>     
                         <% }) %> 
@@ -40,23 +40,33 @@
                             <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageOne%>" alt="">
                         </div>  
                         <div>
-                            <input type="file" name="mainImage" accept = ".jpg, .png" class="inputControl" required multiple>
+                            <input type="file" name="imageOne" accept = ".jpg, .png" class="inputControl" >
                         </div>                                    
                     </div>
 
+                <div class="formControl secondaryImages">
                     <label>Imagenes secundarias</label>
                     
                     <div class="secondaryImage">
                         <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageTwo%>" alt="<%= cellphoneToEdit.imageTwo%>">
                     </div> 
-                    <input type="file" name="images" accept = ".jpg, .png" class="inputControl " required multiple >
+                    <input type="file" name="imageTwo" accept = ".jpg, .png" class="inputControl ">
+
+                    <div class="secondaryImage">
+                        <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageThree%>" alt="<%= cellphoneToEdit.imageThree%>"> 
+                    </div> 
+                    <input type="file" name="imageThree" accept = ".jpg, .png" class="inputControl ">
+
+                </div>
                 
+                <div class="formControl price">
                     <label>Precio</label>
                     <input value="<%= locals.errors ? userInfo : cellphoneToEdit.price%>" type="number" name="price" class="inputControl" minlength="1">
                     <p class="errorMsg invisible"><%= locals.errors ? errors.price.msg : ""%> </p>
-                
+                </div>
+                <div class="formControl ram">
                     <label>Almacenamiento</label>
-                    <select name="ram" id="ram">
+                    <select name="ram" id="ram" class="dropdown-item >
                         <% ramList.forEach(ram => { %>        
                             <option value="<%=ram.id%>"<%= cellphoneToEdit.ram.id === ram.id ? "selected": "" %>><%= ram.storage %> </option>     
                         <% }) %> 

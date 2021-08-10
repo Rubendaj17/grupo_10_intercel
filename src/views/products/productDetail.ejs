@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="/css/headerFooter.css">
     <link rel="stylesheet" href="/css/productDetail.css">
 
+<!-- nuestros scripts para el carrito -->
+
+    <script src='/js/cartValidation.js'></script>
+
     <title>Intercel - Detalle</title>
 </head>
 <body>
@@ -22,9 +26,9 @@
             <article class="minorPhotosContainer">
                 <% cellphones.forEach(cell => { %>
                     <div class="imgContainer">
-                        <img src="/images/cellphones/<%= brand.name %>/<%= cellphone.model.model %>/<%= cell.imageOne%>" alt="Preview <%= cellphone.model.model %>">
-                        <img src="/images/cellphones/<%= brand.name %>/<%= cellphone.model.model %>/<%= cell.imageTwo%>" alt="Preview <%= cellphone.model.model %>">
-                        <img src="/images/cellphones/<%= brand.name %>/<%= cellphone.model.model %>/<%= cell.imageThree%>" alt="Preview <%= cellphone.model.model %>">
+                        <img src="/images/cellphones/<%= brand.name %>/<%= model.model %>/<%= cell.imageOne%>" alt="Preview <%= model.model %>">
+                        <img src="/images/cellphones/<%= brand.name %>/<%= model.model %>/<%= cell.imageTwo%>" alt="Preview <%= model.model %>">
+                        <img src="/images/cellphones/<%= brand.name %>/<%= model.model %>/<%= cell.imageThree%>" alt="Preview <%= model.model %>">
                     </div>
                                    
                 <% }) %>
@@ -32,15 +36,15 @@
            
             <article class="mainPhotoContainer">
                 <div>
-                    <img src="/images/cellphones/models/<%= cellphone.model.mainImage%>" alt="Celular  <%= cellphone.model.model %>">
+                    <img src="/images/cellphones/models/<%=model.mainImage%>" alt="Celular  <%= model.model %>" class="mainImage">
                 </div>
             </article>
                 
             <article class="containerInformation">
                 <section>
                     <h2 class="brand"><%= brand.name %></h2>
-                    <h1 class="phoneName"><%= cellphone.model.model %></h1>
-                    <p class="description"><%= cellphone.model.description %></p>
+                    <h1 class="phoneName"><%= model.model %></h1>
+                    <p class="description"><%= model.description %></p>
                 </section>
                 
                 <section class="bottomInfo">
@@ -55,20 +59,20 @@
                                 <div class="stockContainer">
                                     <div>    
                                         <h3>Color</h3>
-                                        <p><%= cell.color.name %> </p>
+                                        <p class="color"><%= cell.color.name %> </p>
                                     </div>
                                     
                                     <div>
                                         <h3>Memoria Ram</h3>
-                                        <p><%= cell.ram.storage %> </p>
+                                        <p class="ram"><%= cell.ram.storage %> </p>
                                     </div>
                                     
                                     <div>
                                         <h3><%= cell.offer == 0 ? 'Precio' : 'En Oferta' %></h3>
-                                        <p>US$ <%= cell.price %> </p>
+                                        <p class="price">US$ <%= cell.price %> </p>
                                     </div>
                                                     
-                                    <button>Agregar al Carrito  <i class="fas fa-shopping-cart" id="carritoIconBody"></i></button>
+                                    <button class="button">Agregar al Carrito  <i class="fas fa-shopping-cart" id="carritoIconBody"></i></button>
                                     
                                 </div>
                             <% }) %>      
@@ -89,7 +93,8 @@
             </div>
             <% relatedList.forEach(e => {%>
                 <div class="photoContainerRelated">
-                    <a href="/products/<%=e.id%>"><img src="/images/cellphones/models/<%=e.mainImage%>" alt="Preview <%=e.model%>"><p class="NameRelated"><%=e.model%></p></a>   
+                    <a href="/products/<%=e.id%>"><img src="/images/cellphones/models/<%=e.mainImage%>" alt="Preview <%=e.model%>"><p class="NameRelated"><%=e.model%></p></a>  
+
                 </div>
             <%}); %>
 

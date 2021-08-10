@@ -111,8 +111,19 @@ form label{
     align-items: center;
 }
 
+.currentImage img{
+    width: 35%;
+
+}
+
 .logoInput img {
    width: 27px
+}
+
+.secondaryImage {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .secondaryImage {
@@ -169,5 +180,6 @@ form label{
     }
     form label{
         margin-top:12px;
-    }        
+    }     
+    
 }

@@ -20,14 +20,15 @@ let intercelController = {
         const offerRandomize = randomize(offerList, 4)     
 
         // solucion temporaria para Mas Vendidos
-        const soldCellphones = await db.Cellphone.findAll({
-            include: ['model']
+        const soldCellphones = await db.Model.findAll({
+            include: ['cellphones']
         });
         
         const soldCellRandomize = randomize(soldCellphones,4)         
 
         res.render('home', {brandsRandomize, offerRandomize, soldCellRandomize})
     },
+
 
     underConstruction: (req,res) => {
         res.render('soon')
