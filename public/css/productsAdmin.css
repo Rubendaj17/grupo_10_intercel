@@ -63,7 +63,7 @@ article img{
 .button a{
     color:#71D894;
 }
-.productPrice input,
+
 .button{
     color:#40B568;
     border: solid #40B568 1px;
@@ -114,7 +114,7 @@ article img{
 
     }
 
-    .productPrice input{
+    .productPrice {
         padding: 8px 12px;
     
     }
@@ -131,6 +131,13 @@ article img{
     
     main .title h2, main .title p{
         margin: 15px 10px;
+    }
+
+    .products article{
+        width: 65%;
+    }
+    .products {
+        flex-direction:row;
     }
 
 
