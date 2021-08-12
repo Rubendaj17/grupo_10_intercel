@@ -3,7 +3,7 @@
 <head>
     <%- include ('../partials/head') %> 
     <title>Intercel - Editar producto</title>
-    <link rel="stylesheet" href="/css/NewEditProduct.css">
+    <link rel="stylesheet" href="/css/editProduct.css">
     <link rel="stylesheet" href="/css/headerFooter.css">
 </head>
 <body>
@@ -11,73 +11,73 @@
     <%- include('../partials/header') %>
 
         <div class="container">
-        <a href="/"> <img src="/images/logos/Logo.svg" width="200"> </a>
+
+        <a href="/"> <img src="/images/logos/Logo.svg" width="200" class="logoIntercel"> </a>
         <h2>Editar producto</h2>
             <form class="createForm" action="/products/<%=cellphoneToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <br>
-                <div class="formControl">
+                <div class="formControl brand">
                     <label>Brand</label>
                     <p><%=brandToUse.name%></p>
                 </div>
-                <div class="formControl">
+                <div class="formControl model">
                     <label>Modelo</label>
                     <p><%=cellphoneToEdit.model.model%></p>
                 </div>
                 
-                <div class="formControl">
+                <div class="formControl color">
                     <label>Color</label>
-                    <select name="color" id="color">
+                    <select name="color" id="color" class="dropdown-item">
                         <% colorList.forEach(color => { %>        
                             <option value="<%=color.id%>"<%= cellphoneToEdit.color.id === color.id ? "selected": "" %>><%= color.name %> </option>     
                         <% }) %> 
                     </select>        
-                </div>               
 
-
-                <div class="formControl">
                     <label>Imagen principal</label>
-                    <div class="currentImage">
-                        <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageOne%>" alt="">
-                        <span>Imagen actual</span>
-                    </div>  
-                    <input type="file" name="imageOne" accept = ".jpg, .png" class="inputControl">
-                                         
-                </div>
+                    
+                    <div class="imgInput">
+                        <div class="currentImage">
+                            <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageOne%>" alt="">
+                        </div>  
+                        <div>
+                            <input type="file" name="imageOne" accept = ".jpg, .png" class="inputControl" >
+                        </div>                                    
+                    </div>
 
-                <div class="formControl">
+                <div class="formControl secondaryImages">
                     <label>Imagenes secundarias</label>
+                    
                     <div class="secondaryImage">
                         <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageTwo%>" alt="<%= cellphoneToEdit.imageTwo%>">
                     </div> 
                     <input type="file" name="imageTwo" accept = ".jpg, .png" class="inputControl ">
 
-                </div>
-                <div class="formControl">
                     <div class="secondaryImage">
                         <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageThree%>" alt="<%= cellphoneToEdit.imageThree%>"> 
                     </div> 
                     <input type="file" name="imageThree" accept = ".jpg, .png" class="inputControl ">
+
                 </div>
                 
-                <div class="formControl">
+                <div class="formControl price">
                     <label>Precio</label>
                     <input value="<%= locals.errors ? userInfo : cellphoneToEdit.price%>" type="number" name="price" class="inputControl" minlength="1">
                     <p class="errorMsg invisible"><%= locals.errors ? errors.price.msg : ""%> </p>
                 </div>
-                <div class="formControl">
+                <div class="formControl ram">
                     <label>Almacenamiento</label>
-                    <select name="ram" id="ram">
+                    <select name="ram" id="ram" class="dropdown-item >
                         <% ramList.forEach(ram => { %>        
                             <option value="<%=ram.id%>"<%= cellphoneToEdit.ram.id === ram.id ? "selected": "" %>><%= ram.storage %> </option>     
                         <% }) %> 
                     </select> 
-                </div>
-                <div  class="formControl">
+                
                     <label for="">Este producto esta en oferta?</label>
                     <div class="formRadio">
                         <input type="radio" name="offer" value='1' <%= cellphoneToEdit.offer == '1' ? 'checked': '' %> />Si
                         <input type="radio" name="offer" value='0' <%= cellphoneToEdit.offer == '0' ? 'checked': '' %> /> No
                     </div>
+                
                 </div>
             
                 <button type="submit" class="formButton">Guardar cambios</button>
@@ -87,9 +87,8 @@
 
 
     <!-- FOOTER -->
-    <footer>
-        <%- include('../partials/footer') %>
-    </footer>
+
+    <%- include('../partials/footer') %>
     
 </body>
 </html>

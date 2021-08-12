@@ -43,24 +43,24 @@
                     </select>
             </div>
                     
-            <button id="newProductButton" type="submit" class="button">Agregar</button> 
+            <button id="newProductButton" type="submit" class="adminButton">Agregar</button> 
 
         </form>
 
         <section class="products">
                 
             <% productList.forEach( e => {
-                let brand = brandList.find( brandElement => brandElement.id == e.model.idBrand )
-                
-                %>
+                let brand = brandList.find( brandElement => brandElement.id == e.model.idBrand ) %>
+
                 <article>
                 <a href="/products/<%=e.id%>">
                     <img src="/images/cellphones/<%= brand.name %>/<%= e.model.model %>/<%= e.imageOne %>" alt="<%= e.model.name %>">
                 </a>
+                <div class="info">
+
                     <div class="productFeatures">
                         <h3><%= e.model.model %></h3>
-                        <p><%= brand.name %></p>
-                        
+                        <p><%= brand.name %></p>  
                     </div>
   
                     <div class="productPrice">
@@ -70,7 +70,9 @@
                             <li><%= e.ram.storage %></li>
                             <li><%= e.price %></li>
                         </ul>
-                    </div>
+                    </div>    
+                    
+                </div>
                     <div>
                         <form action="/products/<%=e.id%>/editProduct" method="GET">
                             <button class="adminButton" type="submit">Editar</button>

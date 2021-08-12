@@ -42,12 +42,13 @@ article img{
 .adminButton{
     width: 85px;
     height: 28px;
-    background-color: #71D894;
+    background-color: white;
     border-radius: 5px;
     margin: 10px;
+    border: solid #40B568 1px;
 }
 .adminButton:hover{
-    background-color: #33d469;
+    background-color:#71D894
 }
 
 .productFeatures p,.productFeatures li{
@@ -62,7 +63,7 @@ article img{
 .button a{
     color:#71D894;
 }
-.productPrice input,
+
 .button{
     color:#40B568;
     border: solid #40B568 1px;
@@ -113,7 +114,7 @@ article img{
 
     }
 
-    .productPrice input{
+    .productPrice {
         padding: 8px 12px;
     
     }
@@ -130,6 +131,13 @@ article img{
     
     main .title h2, main .title p{
         margin: 15px 10px;
+    }
+
+    .products article{
+        width: 65%;
+    }
+    .products {
+        flex-direction:row;
     }
 
 
@@ -152,7 +160,10 @@ article img{
     }
 
     .newProductForm{
-        width: 15%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 60px;
     }
    
 }

@@ -103,6 +103,7 @@ let productController = {
         }) 
         
         const relatedList = randomize(modelList,2)
+        
                      
 
         res.render('products/productDetail', {model, cellphones, brand, relatedList})
@@ -301,8 +302,8 @@ let productController = {
             include: ['model','color','ram']         
         })      
 
-        const brandToUse = await db.Brand.findOne({ where:{
-            id: cellphoneToEdit.model.idBrand        
+        const brandToUse = await db.Brand.findOne({ 
+            where:{id: cellphoneToEdit.model.idBrand        
         }
         }) 
       

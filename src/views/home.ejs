@@ -54,7 +54,7 @@
             
             <% offerRandomize.forEach( (e) => { %>
                 <article class="offersProductContainer">
-                    <a href="/products/<%=e.id%>">
+                    <a href="/products/<%=e.model.id%>">
                         <h3 class="offersProductoNombre"><%=e.model.model%></h3>
                         <p class="price"><%=e.price%></p>
                         <img src="/images/cellphones/models/<%=e.model.mainImage%>" alt="<%= e.model.model %>">
@@ -71,12 +71,12 @@
                 
                 <article class="soldProductContainer <%= soldCellRandomize.indexOf(e)%2 ==0 ? 'par' : 'impar'%> ">
                     <a href="/products/<%=e.id%>">
-                        <h3 class="soldProductNombre"><%= e.model.model%></h3>
-                        <img src="/images/cellphones/models/<%=e.model.mainImage%>" alt="<%= e.model.model%>">
+                        <h3 class="soldProductNombre"><%= e.model%></h3>
+                        <img src="/images/cellphones/models/<%=e.mainImage%>" alt="<%= e.model%>">
                     </a>
                 </article>
             
-            <%  }); %>          
+            <%  }); %>               
             
             
         </section>
