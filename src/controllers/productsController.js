@@ -114,6 +114,7 @@ let productController = {
 
         if (!errors.isEmpty()){
 
+            console.log(req.query);
             const brand = 'Todos los Productos'
             const productList = productsModel.findAll()
             
