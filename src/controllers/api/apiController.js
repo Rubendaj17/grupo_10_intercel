@@ -5,6 +5,7 @@ let apiController = {
     searchProduct: async (req,res) => {
         //setea stringQuery "userSearch="
         const { userSearch } = req.query;
+        console.log(req.query);
         
         try {
             
@@ -14,7 +15,8 @@ let apiController = {
                     model: {
                         [Op.like]: `%${userSearch}%`
                     }
-                }
+                },
+                order: [['model', 'ASC']]
             })
             
             //busca las marcas en la Base de Datos que coincidan con la búsqueda del Usuario
@@ -23,7 +25,8 @@ let apiController = {
                     name: {
                         [Op.like]: `%${userSearch}%`
                     }
-                }
+                },
+                order: [['name', 'ASC']]
             })
             
             //arma el objeto de respuesta juntando la info de la BdD
@@ -45,7 +48,7 @@ let apiController = {
             
         //arma el json de error (status y numero total + mensaje error)
         } catch (error) {
-            
+            // console.log(error);
             res.status(500).json({
                 meta:{
                     status:"error",

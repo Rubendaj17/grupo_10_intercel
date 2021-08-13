@@ -1,11 +1,10 @@
-const path = require('path');
-const fs = require('fs')
+// const path = require('path');
+// const fs = require('fs')
 const productsModel = require('../model/productsModel')
 const {randomize} = require('../helpers/randomize')
 const {validationResult} = require('express-validator')
 const db = require('../database/models');
-const { off } = require('process');
-const { log } = require('console');
+
 
 let productController = {
     list: async (req, res)=>{ 

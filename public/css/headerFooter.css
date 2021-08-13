@@ -56,13 +56,13 @@ header input{
 .searchOptions{
     position: absolute;
     top: 35px;
-    left: 20px;
+    left: 8%;
     width: 50%;
     padding: 5px;
     
     z-index: 1;
     
-    border-radius: 8px 0 0 8px ;
+    border-radius: 0 0 8px 8px ;
     border: 1px solid #B7BDC7;
     background-color: #f1f1f1;
     

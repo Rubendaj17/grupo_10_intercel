@@ -4,22 +4,22 @@ window.addEventListener('load',function () {
     
     console.log('Hola desde searchBar.JS');
 
+    const searchContainer = document.querySelector('.searchBar')
     const searchBar = document.querySelector('.searchBar input')
     const searchOptions = document.querySelector('.searchOptions')
 
     searchBar.addEventListener('focus', () => {
         searchOptions.style.display = "block"
     })
-    
-    searchBar.addEventListener('keypress', (e) => {
-        if(e.key ==='Escape'){
-            searchOptions.style.display = "none"
-            searchOptions.innerHTML = ''
-        }
+    searchBar.addEventListener('blur', () => {
+        setTimeout(function(){searchOptions.style.display = "none" }, 150)
+        
     })
     
-    searchBar.addEventListener('keypress', (e) => {
+    
+    searchBar.addEventListener('keyup', (e) => {
         searchOptions.innerHTML = ''
+
         doSearch()
     })
 
