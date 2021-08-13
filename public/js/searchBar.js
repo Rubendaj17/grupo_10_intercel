@@ -40,7 +40,7 @@ window.addEventListener('load',function () {
                     res.data.forEach( e => {
                         e.model ? 
                             searchOptions.innerHTML += `<li><a href='/products/${e.id}'>${e.model}</a></li>` : 
-                            searchOptions.innerHTML += `<li>${e.name}</li>` 
+                            searchOptions.innerHTML += `<li><a href='/products/${e.name}'>${e.name}</a></li>` 
                     });
                 }
 
