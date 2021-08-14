@@ -144,6 +144,9 @@ form label{
 .incorrect{
     border: 3px solid red;
 }
+.errorMsg{
+    color:red;
+}
 @media (min-width: 361px){
     h2{
         margin-top: 40px;  

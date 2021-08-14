@@ -27,15 +27,19 @@ const validationRegisterUser = [
         })
 
         if (userFound){
-            return false
+            return Promise.reject ('Usuario existente.')
         }
         return true
-    })
-    .withMessage('Usuario existente.'),
+    }),
 
     body('password')
     .notEmpty()
-    .withMessage('Ingresar Contraseña, por favor.')
+    .withMessage('Ingresar Contraseña, por favor.'),
+
+    body('phoneNumber')
+    .notEmpty()
+    .withMessage('Ingresar Teléfono, por favor.')
+
 
 ]
 

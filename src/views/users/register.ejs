@@ -4,7 +4,7 @@
     <%- include ('../partials/head') %> 
     <title>Intercel - Registrarse</title>
     <link rel="stylesheet" href="/css/loginRegister.css">
-
+    <script src="/js/register.js"></script>
 </head>
 <body>      
     <div  class="backButton"><a href="/"><i class="fas fa-arrow-left"></i>    Volver</a></div>
@@ -22,41 +22,39 @@
                 <br>
                 <div class="formControl">
                     <label>Nombre</label>
-                    <input type="text" name="name" class="control"  minlength="3" value="<%= locals.errors && valuesFromUser ? valuesFromUser.name : ''%>">
-                    <% if (locals.errors && errors.name) {%>
-                        <p class="errorMsg"> <%= errors.name.msg%> </p>
-                    <% } %>
+                    <input id="name" type="text" name="name" class="control" value="<%= locals.errors && valuesFromUser ? valuesFromUser.name : ''%>">
+                    <p id="nameError" class="errorMsg"> <%= (locals.errors && errors.name) ? errors.name.msg : ''%> </p>
+                    
                 </div>
                 <div class="formControl">
                     <label>Apellido</label>
-                    <input type="text" name="lastName" class="control" minlength="3" value="<%= locals.errors && valuesFromUser ? valuesFromUser.lastName : ''%>">
-                    <% if (locals.errors && errors.lastName) {%>
-                        <p class="errorMsg"> <%= errors.lastName.msg%> </p>
-                    <% } %>
+                    <input id="lastName" type="text" name="lastName" class="control" value="<%= locals.errors && valuesFromUser ? valuesFromUser.lastName : ''%>">
+                    <p id="lastNameError" class="errorMsg"> <%= (locals.errors && errors.lastName) ? errors.lastName.msg : ''%> </p>
+                    
                 </div>
                 <div class="formControl">
                     <label>Teléfono</label>
-                    <input type="tel" name="phoneNumber" class="control" minlength="7" value="<%= locals.errors && valuesFromUser ? valuesFromUser.phoneNumber : ''%>">
+                    <input id="phoneNumber" type="tel" name="phoneNumber" class="control" value="<%= locals.errors && valuesFromUser ? valuesFromUser.phoneNumber : ''%>">
+                    <p id="phoneNumberError" class="errorMsg"> <%= (locals.errors && errors.phoneNumber) ? errors.phoneNumber.msg : ''%> </p>
                 </div>
                 <div class="formControl">
                     <label>Correo electrónico</label>
-                    <input type="email" name="email" class="control" value="<%= locals.errors && valuesFromUser ? valuesFromUser.email : ''%>">
-                    <% if (locals.errors && errors.email) {%>
-                        <p class="errorMsg"> <%= errors.email.msg%> </p>
-                    <% } %>
+                    <input id="email" type="email" name="email" class="control" value="<%= locals.errors && valuesFromUser ? valuesFromUser.email : ''%>">
+                    <p id="emailError" class="errorMsg"> <%= (locals.errors && errors.email) ? errors.email.msg : ''%> </p>
+                
                 </div>
                 <div class="formControl">
                     <label>Contraseña</label>
-                    <input type="password" name="password" class="control" minlength="8">
-                    <% if (locals.errors && errors.password) {%>
-                        <p class="errorMsg"> <%= errors.password.msg%> </p>
-                    <% } %>
+                    <input id="password"  type="password" name="password" class="control">
+                    <p id="passwordError" class="errorMsg"> <%= (locals.errors && errors.password) ? errors.password.msg : ''%> </p>
+                    
                 </div>
                 <div class="formControl">
                     <label>Avatar</label>
                     <input type="file" name="photo" class="control" accept=".jpg, .png">
                 </div>
                 <button type="submit" class="formButton">Registrarse</button>
+                <p id="formError" class="errorMsg"> '' </p>
                 
                 <div class="texts">Ya tienes cuenta?<a href="login"> Iniciar sesión</a></div>
                 

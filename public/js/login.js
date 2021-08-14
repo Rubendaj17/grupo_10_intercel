@@ -6,65 +6,81 @@ window.addEventListener('load', function(){
     const emailError = document.querySelector('#emailError')
     const pass = document.querySelector('#password')
     const passError = document.querySelector('#passwordError')
-
-    email.addEventListener('blur', ()=>{
-        const value = email.value
+    const form = document.querySelector('form')
+    const formError = document.querySelector('#formError')
+    
+    let errores = true
         
-        if(value === ''){
+    function userValidation() {
+        errores = true
+        formError.innerText = ''     
+        console.log('Validartion VALUE : ',email.value);
+        // console.log('1email.Vlaue : ',email);
+        
+        if(email.value === ''){
             emailError.innerText = "Ingrese un Usuario"
             email.classList.remove('correct')
             email.classList.add('incorrect')
-        }else if( value.indexOf('@')<0 && value.indexOf('.com')<0 ){
+            
+        }else if( email.value.indexOf('@')<0 || email.value.indexOf('.com')<0 ){
             emailError.innerText = "Ingrese un mail válido"
             email.classList.remove('correct')
             email.classList.add('incorrect')
+            
         }else{
             
-            fetch(`${API_SEARCH_URL}${value}`)
-                .then( res => res.json())
-                .then( res => {
-    
-                    if(res.meta.total === 0){
-                        emailError.innerText = "Usuario inexistente"                   
-                        email.classList.remove('correct')
-                        email.classList.add('incorrect')
-                    }else{
-                        emailError.innerText = ""
-                        email.classList.remove('incorrect')
-                        email.classList.add('correct')
-                    }
-                })            
+            fetch(`${API_SEARCH_URL}${email.value}`)
+            .then( res => res.json())
+            .then( res => {
+                
+                if(res.meta.total === 0){
+                    emailError.innerText = "Usuario no existente"                   
+                    email.classList.remove('correct')
+                    email.classList.add('incorrect')
+                    
+                }else{
+                    emailError.innerText = ""
+                    email.classList.remove('incorrect')
+                    email.classList.add('correct')
+                    errores = false            
+                }
+            })            
         }
-
-    })
-
-    pass.addEventListener('blur', ()=>{
-        const value = pass.value
+    }    
+    
+    function passValidation() {
+        errores = true
+        formError.innerText = ''     
         
-        if(value === ''){
+        if(pass.value === ''){
             passError.innerText = "Ingrese Contraseña"
             pass.classList.remove('correct')
             pass.classList.add('incorrect')
+            
         }else{   
-            // fetch(`${API_SEARCH_URL}${value}`)
-            //     .then( res => res.json())
-            //     .then( res => {
-    
-            //         if(res.meta.total === 0){
-            //             emailError.innerText = "Usuario inexistente"                   
-            //             email.classList.remove('correct')
-            //             email.classList.add('incorrect')
-            //         }else{
-            //             emailError.innerText = ""
-            //             email.classList.remove('incorrect')
-            //             email.classList.add('correct')
-            //         }
-            //     })            
+            passError.innerText = ""
+            pass.classList.remove('incorrect')
+            errores = false
         }
-
-    })   
-
-
-
-
+    }
+    
+    email.addEventListener('blur', userValidation)
+    
+    pass.addEventListener('blur', passValidation)   
+    
+    form.addEventListener('submit', (e) => {
+        
+        userValidation()
+        
+        passValidation()
+        
+        if(errores){
+            formError.innerText = "Revisar información ingresada"
+            e.preventDefault()
+    
+        } 
+        
+        
+    })
+    
 })
