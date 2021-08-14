@@ -1,7 +1,15 @@
 <header>
     <div class="logoHeader"><a href="/"><img src="/images/logos/Logo.svg" alt="Logo Genial de Intercel"></a></div>
     
-     <form class="searchBar" action='/products/search/id?query=userValue' method="GET"><input type="text" name="userValue" placeholder="¿Qué buscas?"><button type="submit" id="search-icon"><i class="fas fa-search"></i></button></form>
+    <!-- <form class="searchBar" action='/products/search/id?query=userValue' method="GET"><input type="text" name="userValue" placeholder="¿Qué buscas?"><button type="submit" id="search-icon"><i class="fas fa-search"></i></button></form> -->
+    <div class="searchBar">
+        <input autocomplete="off" type="text" name="userValue" placeholder="¿Qué buscas?"><button id="search-icon"><i class="fas fa-search"></i></button>
+    
+        <ul class="searchOptions">
+            <li><a href="/products/list">Productos</a></li>
+        </ul>
+    </div>
+    
 
     <nav class="navHeader">
         <i class="fas fa-bars" id="hamburgerMenu"></i>
