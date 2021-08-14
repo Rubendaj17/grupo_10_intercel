@@ -2,7 +2,7 @@ const API_SEARCH_URL = 'http://localhost:3000/api/search?userSearch='
 
 window.addEventListener('load',function () {
     
-    console.log('Hola desde searchBar.JS');
+    // console.log('Hola desde searchBar.JS');
 
     const searchContainer = document.querySelector('.searchBar')
     const searchBar = document.querySelector('.searchBar input')
