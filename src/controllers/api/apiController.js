@@ -5,7 +5,6 @@ let apiController = {
     searchProduct: async (req,res) => {
         //setea stringQuery "userSearch="
         const { userSearch } = req.query;
-        console.log(req.query);
         
         try {
             

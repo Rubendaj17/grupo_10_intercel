@@ -14,8 +14,6 @@ window.addEventListener('load', function(){
     function userValidation() {
         errores = true
         formError.innerText = ''     
-        console.log('Validartion VALUE : ',email.value);
-        // console.log('1email.Vlaue : ',email);
         
         if(email.value === ''){
             emailError.innerText = "Ingrese un Usuario"

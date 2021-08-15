@@ -123,7 +123,6 @@ window.addEventListener('load', function(){
         }else{
             passError.style.color = 'orange'
             passError.innerText = 'Contraseña Débil'
-            console.log("auqi");
         }
     }
     
