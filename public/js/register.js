@@ -1,4 +1,4 @@
-const API_SEARCH_URL = 'http://localhost:3000/api/register?email='
+const API_SEARCH_URL = 'http://localhost:3000/api/users?email='
 
 window.addEventListener('load', function(){
     

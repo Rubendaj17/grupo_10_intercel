@@ -61,6 +61,7 @@ let usersController = {
         const valuesFromUser = req.body;
         
         if (!formValidation.isEmpty()){
+            console.log('hola');
             return res.render('users/login', {valuesFromUser, errors: formValidation.mapped()})
         }
         

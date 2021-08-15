@@ -101,12 +101,89 @@ let apiController = {
     
             })
             
+        }   
+    },
+    brands: async (req,res) => {
+        const { brand } = req.query
+    
+        try {
+            //busca las marcas en la Base de Datos que coincidan con la búsqueda del Usuario
+            const brandList = await db.Brand.findAndCountAll({
+                where: {
+                    name: {
+                        [Op.like]: `%${brand}%`
+                    }
+                },
+                order: [['name', 'ASC']]
+            })
+
+            //arma el json de respuesta (status y numero total + info)
+            res.status(200).json({
+                meta:{
+                    status:"success",
+                    total: brandList.count
+                },
+                data: brandList.rows
+                
+                
+            })
+
+            
+        } catch (error) {
+            res.status(500).json({
+                meta:{
+                    status:"error",
+                    total: 0
+                },
+                error:{
+                    msg: "No se pudo conectar a la Base de Datos",
+                    error
+                }
+    
+            })
         }
     
+    },
+
+    products: async (req,res) => {
+        const { product } = req.query
     
+        try {
+            //busca los modelos en la Base de Datos que coincidan con la búsqueda del Usuario
+            const modelList = await db.Model.findAndCountAll({
+                where: {
+                    model: {
+                        [Op.like]: `%${product}%`
+                    }
+                },
+                order: [['model', 'ASC']]
+            })
+
+            //arma el json de respuesta (status y numero total + info)
+            res.status(200).json({
+                meta:{
+                    status:"success",
+                    total: modelList.count
+                },
+                data: modelList.rows
+            })
+            
+        } catch (error) {
+            res.status(500).json({
+                meta:{
+                    status:"error",
+                    total: 0
+                },
+                error:{
+                    msg: "No se pudo conectar a la Base de Datos",
+                    error
+                }
     
+            })
+        }
     
-    }
+    },
+
 
 
 }
