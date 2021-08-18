@@ -97,7 +97,7 @@ let productController = {
         }) 
 
         const modelList = await db.Model.findAll({ where:{
-            idBrand: model.idBrand        
+            idBrand: model.idBrand   
         }    
         }) 
         
