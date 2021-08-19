@@ -13,6 +13,9 @@ window.addEventListener('load', function(){
     const imgTwoInput = form.querySelector('#imageTwo')
     const imgThreeInput = form.querySelector('#imageThree')
 
+    const currentImgLogo = document.querySelector('.logoInput .currentImage')
+    const currentImgModel = document.querySelector('.imgInput .currentImage')
+
     const brandError = form.querySelector('#brandErrorMsg')
     const logoError = form.querySelector('#logoErrorMsg')
     const modelError = form.querySelector('#modelErrorMsg')
@@ -45,17 +48,26 @@ window.addEventListener('load', function(){
         imgOneError.innerHTML = ''
         imgTwoError.innerHTML = ''
         imgThreeError.innerHTML = ''
+//        msgErrorsArray.forEach(msg => {
+//            msg.innerText = ""
+//        })
     }
-    console.log(colorInput)
-    console.log(colorError, 'hola')
+
+    if(brandInput.value != '' ){
+        document.querySelector(".existsBrand").style.display = 'flex';
+        document.querySelector(".existsMarginBrand").style.marginRight = '80px';
+        document.querySelector(".existsInputLogo").style.display = 'none';
+    }
+
+    if(modelInput.value != ''){
+        document.querySelector(".existsModel").style.display = 'flex';
+        document.querySelector(".existsMarginModel").style.marginRight = '80px';
+        document.querySelector(".existsInputImg").style.display = 'none';
+    }
 
     form.addEventListener('submit', function(e){
 
         let hasErrors = false
-    
-//        msgErrorsArray.forEach(msg => {
-//            msg.innerText = ""
-//        })
 
         resetErrors() ;
 
@@ -68,7 +80,7 @@ window.addEventListener('load', function(){
             hasErrors = true;
         }
 
-        if(!logoInput.value){
+        if(!logoInput.value && !currentImgLogo){
             logoError.innerHTML = "Completa el logo"
             
             if(!hasErrors){
@@ -87,7 +99,7 @@ window.addEventListener('load', function(){
             hasErrors = true;            
         }
 
-        if(!imgInput.value){
+        if(!imgInput.value && !currentImgModel){
             imgError.innerHTML = "Completa la imagen"
 
             if(!hasErrors){
@@ -98,6 +110,18 @@ window.addEventListener('load', function(){
 
         if(!colorInput.value){
             colorError.innerHTML = "Seleccione un color"
+            
+            hasErrors = true;
+        }
+        
+        if(!ramInput.value){
+            ramError.innerHTML = "Seleccione un tamano"
+            
+            hasErrors = true;
+        }
+
+        if(!priceInput.value){
+            priceError.innerHTML = "Ingrese el precio"
             
             hasErrors = true;
         }
