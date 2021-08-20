@@ -13,9 +13,6 @@ window.addEventListener('load', function(){
     const imgTwoInput = form.querySelector('#imageTwo')
     const imgThreeInput = form.querySelector('#imageThree')
 
-    const currentImgLogo = document.querySelector('.logoInput .currentImage')
-    const currentImgModel = document.querySelector('.imgInput .currentImage')
-
     const brandError = form.querySelector('#brandErrorMsg')
     const logoError = form.querySelector('#logoErrorMsg')
     const modelError = form.querySelector('#modelErrorMsg')
@@ -27,30 +24,15 @@ window.addEventListener('load', function(){
     const imgTwoError = form.querySelector('#imgTwoErrorMsg')
     const imgThreeError = form.querySelector('#imgThreeErrorMsg')
 
-    let inputArray = [
-        brandInput, logoInput, modelInput, imgInput, colorInput, 
-        ramInput, priceInput, imgOneInput, imgTwoInput, imgThreeInput
-    ]
-
     let msgErrorsArray = [
         brandError, logoError, modelError, imgError, colorError, 
         ramError, priceError, imgOneError, imgTwoError, imgThreeError
     ] 
 
     function resetErrors(){
-        brandError.innerHTML = ''
-        logoError.innerHTML = ''
-        modelError.innerHTML = ''
-        imgError.innerHTML = ''
-        colorError.innerHTML = ''
-        ramError.innerHTML = ''
-        priceError.innerHTML = ''
-        imgOneError.innerHTML = ''
-        imgTwoError.innerHTML = ''
-        imgThreeError.innerHTML = ''
-//        msgErrorsArray.forEach(msg => {
-//            msg.innerText = ""
-//        })
+        msgErrorsArray.forEach(msg => {
+            msg.innerText = ""
+        })
     }
 
     if(brandInput.value != '' ){    //si no es 'otro'. si ya existe la marca
