@@ -14,6 +14,7 @@
         <div class="container">
 
         <a href="/"> <img src="/images/logos/Logo.svg" width="200" class="logoIntercel"> </a>
+        
         <h2>Nuevo producto</h2>
             
         <form id="newProductForm" action="/products/create" method="POST" enctype="multipart/form-data">
@@ -23,7 +24,7 @@
                     <div class="existsBrand">
                         <div class="existsMarginBrand">
                             <label>Marca</label>
-                            <input type="text" name="brand" class="inputControl" id="brand" value="<%= locals.errors && userChoices ? userChoices.brand.name : brandToUse.name %>" <%= brandToUse.name != '' ? 'disabled' : '' %>  >
+                            <input type="text" name="brand" class="inputControl" id="brand" value="<%=locals.errors && userChoices ? userChoices.brand.name : brandToUse.name %>" <%= brandToUse.name != '' ? 'disabled' : '' %> >
                             <p id='brandErrorMsg' class="errorMsg "> <%= (locals.errors && errors.brand) ? errors.brand.msg : "" %> </p>    
                         </div>
 

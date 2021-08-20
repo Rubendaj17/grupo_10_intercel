@@ -53,16 +53,18 @@ window.addEventListener('load', function(){
 //        })
     }
 
-    if(brandInput.value != '' ){
+    if(brandInput.value != '' ){    //si no es 'otro'. si ya existe la marca
         document.querySelector(".existsBrand").style.display = 'flex';
         document.querySelector(".existsMarginBrand").style.marginRight = '80px';
         document.querySelector(".existsInputLogo").style.display = 'none';
+        document.querySelector("#logoErrorMsg").style.display = 'none';
     }
 
     if(modelInput.value != ''){
         document.querySelector(".existsModel").style.display = 'flex';
         document.querySelector(".existsMarginModel").style.marginRight = '80px';
         document.querySelector(".existsInputImg").style.display = 'none';
+        document.querySelector("#modelMainImageErrorMsg").style.display = 'none';
     }
 
     form.addEventListener('submit', function(e){
@@ -72,7 +74,7 @@ window.addEventListener('load', function(){
         resetErrors() ;
 
         if(!brandInput.value){
-            brandInput.innerHTML = "Completa la marca"
+            brandError.innerHTML = "Completa la marca"
             
             if(!hasErrors){
                 brandInput.focus()
@@ -80,7 +82,7 @@ window.addEventListener('load', function(){
             hasErrors = true;
         }
 
-        if(!logoInput.value && !currentImgLogo){
+        if(!logoInput.value){
             logoError.innerHTML = "Completa el logo"
             
             if(!hasErrors){
@@ -99,7 +101,7 @@ window.addEventListener('load', function(){
             hasErrors = true;            
         }
 
-        if(!imgInput.value && !currentImgModel){
+        if(!imgInput.value){
             imgError.innerHTML = "Completa la imagen"
 
             if(!hasErrors){
