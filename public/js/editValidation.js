@@ -1,11 +1,8 @@
-const { reset } = require("nodemon")
-
 window.addEventListener('load', function(){
 
     const form = document.querySelector('.createForm')
     
     const inputPrice = document.querySelector('#precio.inputControl')
-    const main = document.querySelector('main')
     const errorPrice = document.querySelector('#priceError')
 
 
@@ -18,21 +15,17 @@ window.addEventListener('load', function(){
 
     }
 
-
-
     form.addEventListener('submit', (e)=> {
         let hasErrors = false
         resetErrors()
 
         // precio
 
-        if (!isNumeric(inputPrice.value) || inputPrice.value < 0){
+        if (!isNumeric(inputPrice.value) || inputPrice.value < 100){
+            errorPrice.innerHTML = "Por favor ingrese un precio válido (número mayor a 100) "
             hasErrors = true
-            errorPrice.innerHTML = "Por favor ingrese un precio válido"
             inputPrice.focus()
         }       
-        
-        
         
         if(hasErrors){
             e.preventDefault()
@@ -41,10 +34,5 @@ window.addEventListener('load', function(){
 
     })
 
-    
-
-        
-
-    
 
 })

@@ -10,6 +10,7 @@ const validationEditProduct = [
     .withMessage('Debe ingresar un número')
     .bail(),
 
+
 ]
 
 module.exports = validationEditProduct
