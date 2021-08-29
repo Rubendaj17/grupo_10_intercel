@@ -5,6 +5,10 @@ const apiRouter = express.Router()
 
 apiRouter.get('/search', apiController.searchProduct)
 
-apiRouter.get('/register', apiController.register)
+apiRouter.get('/users', apiController.register)
+
+apiRouter.get('/brands', apiController.brands)
+
+apiRouter.get('/products', apiController.products)
 
 module.exports = apiRouter

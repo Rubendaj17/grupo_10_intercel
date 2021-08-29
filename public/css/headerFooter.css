@@ -53,11 +53,11 @@ header input{
     border: 1px solid #B7BDC7;
     background-color: #71D894;
 }
-.searchOptions{
+.options{
     position: absolute;
     top: 35px;
     left: 8%;
-    width: 50%;
+    width: 65%;
     padding: 5px;
     
     z-index: 1;
@@ -67,11 +67,17 @@ header input{
     background-color: #f1f1f1;
     
     list-style: none;
-
+    text-transform: capitalize;
     display: none;
     
 }
 
+.brandOptions,
+.options li{
+    border-bottom: .5px dashed #2E3646;
+    padding: 2px 0;
+    text-align: left !important;
+}
 
 header .navHeader{
     flex-grow: 1;
@@ -232,6 +238,9 @@ footer .navFooter{
         flex-grow: 1;
         border-right: none;
         padding-right: 1px;
+    }
+    #productosHeader{
+        position: relative;
     }
     
     /* FOOTER */

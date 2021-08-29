@@ -74,7 +74,6 @@ let productController = {
                 id_brand: myBrand.id
             }
         })
-        console.log(productList)
         
         res.render('products/products', {productList, brand})
 
@@ -113,7 +112,6 @@ let productController = {
 
         if (!errors.isEmpty()){
 
-            console.log(req.query);
             const brand = 'Todos los Productos'
             const productList = productsModel.findAll()
             
@@ -316,8 +314,6 @@ let productController = {
             model: cellphoneToEdit.model.model,
             brand: brandToUse.name
         }
-
-        console.log(req.session)
         
         res.render('products/editProduct',{cellphoneToEdit, colorList, ramList, brandToUse })
     },
