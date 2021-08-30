@@ -20,9 +20,6 @@ module.exports = async (req, res, next)=>{
     
     const imagePath = path.join(__dirname, '../../public/images/cellphones')
     if(req.files.imageOne){
-        console.log('brand',brand)
-        console.log('model',model)
-
         const imageOnePathFinal = await fs.rename(req.files.imageOne[0].path, path.join(imagePath, brand, model, req.files.imageOne[0].filename), err => console.log('3', err))
     }
     if(req.files.imageTwo){

@@ -1,12 +1,11 @@
 <header>
     <div class="logoHeader"><a href="/"><img src="/images/logos/Logo.svg" alt="Logo Genial de Intercel"></a></div>
     
-    <!-- <form class="searchBar" action='/products/search/id?query=userValue' method="GET"><input type="text" name="userValue" placeholder="¿Qué buscas?"><button type="submit" id="search-icon"><i class="fas fa-search"></i></button></form> -->
     <div class="searchBar">
         <input autocomplete="off" type="text" name="userValue" placeholder="¿Qué buscas?"><button id="search-icon"><i class="fas fa-search"></i></button>
     
-        <ul class="searchOptions">
-            <li><a href="/products/list">Productos</a></li>
+        <ul class="options">
+            <a href="/products/list"><li>Productos</li></a>
         </ul>
     </div>
     
@@ -14,7 +13,11 @@
     <nav class="navHeader">
         <i class="fas fa-bars" id="hamburgerMenu"></i>
         <ul>
-            <li id="productosHeader"><a href="/products/list">Productos</a></li>
+            <li id="productosHeader"><a href="/products/list">Productos</a>
+                <div class="options">
+                </div>        
+            </li>
+
             <li id="nosotrosHeader"><a href="/soon">Nosotros</a></li>
             
             <% if (locals.logged) { %> 

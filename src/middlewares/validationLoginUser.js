@@ -30,9 +30,8 @@ const validationLoginUser = [
             }
 
         }
-        return false
+        return Promise.reject ('Usuario o Contraseña incorrecta.')
     })
-    .withMessage('Usuario o Contraseña incorrecta.')
 
 ]
 
