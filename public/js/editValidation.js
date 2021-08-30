@@ -1,26 +1,38 @@
-const form = document.querySelector('.createForm')
+window.addEventListener('load', function(){
 
-// inputs
-
-const inputColor = form.querySelector('#color')
-const inputMainImage = form.querySelector('.currentImage') 
-const inputPrice = form.querySelector('.price')
-const inputRam = form.querySelector('.ram')
-
-// mensajes de error
-
-const errorColor = form.querySelector('.msgErrorColor')
-const errorMainImage = form.querySelector('.msgErrorImage') 
-const errorPrice = form.querySelector('.msgErrorPrice')
-const errorRam = form.querySelector('.msgErrorRam')
-
-form.addEventListener('submit', (e) =>{
-    let hasErrors = false
+    const form = document.querySelector('.editForm')
+    
+    const inputPrice = document.querySelector('#precio.inputControl')
+    const errorPrice = document.querySelector('#priceError')
 
 
-    if(hasErrors){
-        e.preventDefault()
+    function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
     }
+
+    function resetErrors(){
+        errorPrice.innerHTML = ""
+
+    }
+
+    form.addEventListener('submit', (e)=> {
+        let hasErrors = false
+        resetErrors()
+
+        // precio
+
+        if (!isNumeric(inputPrice.value) || inputPrice.value < 100){
+            errorPrice.innerHTML = "Por favor ingrese un precio válido (número mayor a 100) "
+            hasErrors = true
+            inputPrice.focus()
+        }       
+        
+        if(hasErrors){
+            e.preventDefault()
+        }
+
+
+    })
 
 
 })

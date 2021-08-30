@@ -62,18 +62,28 @@ form label{
     padding:20px 20px;
 }
 
+.editForm{
+    padding:20px 20px;
+}
+
 .formControl{
     margin-bottom: 10px;
 }
+
+.brand p{
+    text-transform: capitalize;
+
+}
+#priceError{
+    color: red;
+    font-weight: bold;
+}
+
 
 .formControl label{
     display: block;
 }
 
-.formControl input{
-    text-transform: capitalize;
-
-}
 
 .inputControl{
     width:100%;
@@ -138,7 +148,7 @@ form label{
 
 .logoInput, .imgInput {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
 .imgInput img {
@@ -160,6 +170,9 @@ form label{
     .createForm{
         padding: 25px 35px;
     }
+    .editForm{
+        padding: 25px 40px;
+    }
     .formButton{
         width: 160px;
     }
@@ -168,6 +181,9 @@ form label{
 @media (min-width: 769px){
     .createForm{
         padding: 30px 80px;
+    }
+    .editForm{
+        padding: 30px 60px;
     }
     .container{
         width: 50vw;
