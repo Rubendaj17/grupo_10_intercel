@@ -74,7 +74,7 @@ form label{
     text-transform: capitalize;
 
 }
-#priceError{
+#priceError, #imageOneError, #imageTwoError, #imageThreeError{
     color: red;
     font-weight: bold;
 }

@@ -46,7 +46,8 @@
                             <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageOne%>" alt="">
                         </div>  
                         <div>
-                            <input type="file" name="imageOne" accept = ".jpg, .png" class="inputControl" >
+                            <input type="file" name="imageOne" id="imageOne" accept = ".jpg, .png" class="inputControl" >
+                            <span id="imageOneError"></span> 
                         </div>                                    
                     </div>
 
@@ -56,20 +57,21 @@
                     <div class="secondaryImage">
                         <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageTwo%>" alt="<%= cellphoneToEdit.imageTwo%>">
                     </div> 
-                    <input type="file" name="imageTwo" accept = ".jpg, .png" class="inputControl ">
+                    <input type="file" name="imageTwo" id="imageTwo" accept = ".jpg, .png" class="inputControl ">
+                    <span id="imageTwoError"></span> 
 
                     <div class="secondaryImage">
-                        <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageThree%>" alt="<%= cellphoneToEdit.imageThree%>"> 
+                        <img src="/images/cellphones/<%= brandToUse.name %>/<%= cellphoneToEdit.model.model %>/<%= cellphoneToEdit.imageThree%>" alt="<%= cellphoneToEdit.imageThree%>">
                     </div> 
-                    <input type="file" name="imageThree" accept = ".jpg, .png" class="inputControl ">
+                    <input type="file" name="imageThree"  id="imageThree" accept = ".jpg, .png" class="inputControl ">
+                    <span id="imageThreeError"></span> 
 
                 </div>
                 
                 <div class="formControl price">
                     <label>Precio</label>
-                    <input value="<%= locals.errors ? userInfo : cellphoneToEdit.price%>" id="precio" type="text" name="price" class="inputControl" minlength="1">
+                    <input value="<%= locals.errors ? userInfo : cellphoneToEdit.price%>" id="price" type="text" name="price" class="inputControl" minlength="1">
                     <p id="priceError" class="errorMsg "><%= locals.errors ? errors.price.msg : ""%> </p>
-                    <p></p>
                 </div>
                 <div class="formControl ram">
                     <label>Almacenamiento</label>
