@@ -35,6 +35,10 @@ app.use(sessionToLocals);
 const intercelRoutes = require('./routes/intercelRoutes');
 app.use("/", intercelRoutes)
 
+// api
+const apiRoutes = require('./routes/api/apiRoutes');
+app.use("/api", apiRoutes)
+
 //user/
 const usersRoutes = require('./routes/usersRoutes');
 app.use("/users", usersRoutes)

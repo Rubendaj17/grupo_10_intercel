@@ -5,12 +5,16 @@
     <%- include('partials/head') %>
 <!-- nuestros css -->
     <link rel="stylesheet" href="/css/headerFooter.css">
+     
+    <!-- JS front search (todas las vistas) -->
+    <script src="/js/headerDropdowns.js"></script>
+
     <title>Intercel - Proximamente</title>
 </head>
 <body>
     <!-- HEADER -->
     <%- include('partials/header') %>
-    <% if (error) { %>
+    <% if (locals.error) { %>
         <main style="margin:auto; width: 90vw;display:flex;flex-direction:column;justify-content:center;">
 
             <h2>Ups... algo salió mal</h2>

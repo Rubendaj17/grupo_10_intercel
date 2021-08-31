@@ -1,12 +1,10 @@
 {
   "name": "intercel",
   "version": "1.0.0",
-  "description": "",
+  "description": "Intercel",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/app",
-    "dev": "nodemon src/app"
+    "start": "nodemon src/app"
   },
   "keywords": [],
   "author": "",
@@ -23,5 +21,16 @@
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.12",
     "sequelize": "^6.6.5"
-  }
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rubendaj17/grupo_10_intercel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Rubendaj17/grupo_10_intercel/issues"
+  },
+  "homepage": "https://github.com/Rubendaj17/grupo_10_intercel#readme"
 }

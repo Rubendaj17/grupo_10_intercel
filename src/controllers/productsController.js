@@ -1,11 +1,10 @@
-const path = require('path');
-const fs = require('fs')
+// const path = require('path');
+// const fs = require('fs')
 const productsModel = require('../model/productsModel')
 const {randomize} = require('../helpers/randomize')
 const {validationResult} = require('express-validator')
 const db = require('../database/models');
-const { off } = require('process');
-const { log } = require('console');
+
 
 let productController = {
     list: async (req, res)=>{ 
@@ -75,7 +74,6 @@ let productController = {
                 id_brand: myBrand.id
             }
         })
-        console.log(productList)
         
         res.render('products/products', {productList, brand})
 
@@ -98,13 +96,11 @@ let productController = {
         }) 
 
         const modelList = await db.Model.findAll({ where:{
-            idBrand: model.idBrand        
+            idBrand: model.idBrand   
         }    
         }) 
         
         const relatedList = randomize(modelList,2)
-        
-                     
 
         res.render('products/productDetail', {model, cellphones, brand, relatedList})
     },
@@ -316,8 +312,6 @@ let productController = {
             model: cellphoneToEdit.model.model,
             brand: brandToUse.name
         }
-
-        console.log(req.session)
         
         res.render('products/editProduct',{cellphoneToEdit, colorList, ramList, brandToUse })
     },
