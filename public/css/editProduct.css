@@ -36,6 +36,30 @@ form label{
     font-weight: bold;
 }
 
+.errorMsg{
+    color:#f82e20;
+    font-style: italic;
+    font-size: 1em;
+    margin: 1em;
+    text-align: left;
+}
+
+select{
+    text-align: left;
+}
+
+.existsBrand,
+.existsModel,
+.existsInputLogo,
+.existsInputImg{
+    display: block;
+}
+
+.existsMarginBrand,
+.existsMarginModel{
+    margin-right: 0px;
+}
+
 .visible {
     display: block;
 }
@@ -58,7 +82,8 @@ form label{
     margin-bottom: 60px;
 }
 
-.createForm{
+.createForm,
+#newProductForm{
     padding:20px 20px;
 }
 
@@ -167,7 +192,8 @@ form label{
         width: 70vw;
         margin-top:100px;
     }
-    .createForm{
+    .createForm,
+    #newProductForm{
         padding: 25px 35px;
     }
     .editForm{
@@ -179,7 +205,8 @@ form label{
   
 }
 @media (min-width: 769px){
-    .createForm{
+    .createForm,
+    #newProductForm{
         padding: 30px 80px;
     }
     .editForm{

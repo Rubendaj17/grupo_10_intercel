@@ -96,13 +96,11 @@ let productController = {
         }) 
 
         const modelList = await db.Model.findAll({ where:{
-            idBrand: model.idBrand        
+            idBrand: model.idBrand   
         }    
         }) 
         
         const relatedList = randomize(modelList,2)
-        
-                     
 
         res.render('products/productDetail', {model, cellphones, brand, relatedList})
     },
