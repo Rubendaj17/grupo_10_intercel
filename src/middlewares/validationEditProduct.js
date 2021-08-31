@@ -9,7 +9,7 @@ const validationEditProduct = [
         .isNumeric()
         .withMessage('Debe ingresar un número')
         .bail(), 
-     .
+     
 ]
 
 module.exports = validationEditProduct
