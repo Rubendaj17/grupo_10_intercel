@@ -5,6 +5,8 @@
     <title>Intercel - Editar producto</title>
     <link rel="stylesheet" href="/css/editProduct.css">
     <link rel="stylesheet" href="/css/headerFooter.css">
+    <!-- JS Validación de Edit -->
+    <script src="/js/editValidation.js"></script>
     <!-- JS front search (todas las vistas) -->
     <script src="/js/headerDropdowns.js"></script>
 </head>
@@ -12,11 +14,13 @@
     <!-- HEADER -->
     <%- include('../partials/header') %>
 
+    <main>
+
         <div class="container">
 
         <a href="/"> <img src="/images/logos/Logo.svg" width="200" class="logoIntercel"> </a>
         <h2>Editar producto</h2>
-            <form class="createForm" action="/products/<%=cellphoneToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form class="editForm" action="/products/<%=cellphoneToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <br>
                 <div class="formControl brand">
                     <label>Brand</label>
@@ -63,14 +67,15 @@
                 
                 <div class="formControl price">
                     <label>Precio</label>
-                    <input value="<%= locals.errors ? userInfo : cellphoneToEdit.price%>" type="number" name="price" class="inputControl" minlength="1">
-                    <p class="errorMsg invisible"><%= locals.errors ? errors.price.msg : ""%> </p>
+                    <input value="<%= locals.errors ? userInfo : cellphoneToEdit.price%>" id="precio" type="text" name="price" class="inputControl" minlength="1">
+                    <p id="priceError" class="errorMsg "><%= locals.errors ? errors.price.msg : ""%> </p>
+                    <p></p>
                 </div>
                 <div class="formControl ram">
                     <label>Almacenamiento</label>
                     <select name="ram" id="ram" class="dropdown-item >
                         <% ramList.forEach(ram => { %>        
-                            <option value="<%=ram.id%>"<%= cellphoneToEdit.ram.id === ram.id ? "selected": "" %>><%= ram.storage %> </option>     
+                            <option value="<%=ram.id%>" <%= cellphoneToEdit.ram.id === ram.id ? "selected": "" %>><%= ram.storage %> </option>     
                         <% }) %> 
                     </select> 
                 
@@ -87,7 +92,7 @@
             </form>
         </div>
 
-
+    </main>
     <!-- FOOTER -->
 
     <%- include('../partials/footer') %>
