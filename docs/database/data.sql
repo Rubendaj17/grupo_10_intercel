@@ -3,9 +3,9 @@ VALUES
 (1, 'admin'),
 (2, 'user');
 
-INSERT INTO intercel_db.users VALUES (1, 'Justina', 'Iturraspe', '+5493434195970', 'justi@admin.com', '$2a$10$Dq3buOMWrxfO5qLQe4Cq2OoLvmESr/czN2BS2grPyLaJlXYowRfYi', '/images/pp/justi.png', 1, DEFAULT, DEFAULT);
-INSERT INTO intercel_db.users VALUES (2, 'Ruben', 'Jaime', '+573006114684', 'ruben@admin.com', '$2a$10$Dq3buOMWrxfO5qLQe4Cq2OoLvmESr/czN2BS2grPyLaJlXYowRfYi', '/images/pp/ruben.png', 1, DEFAULT, DEFAULT);
-INSERT INTO intercel_db.users VALUES (3, 'Ale', 'Bullorini', '+5491155661334', 'ale@admin.com', '$2a$10$Dq3buOMWrxfO5qLQe4Cq2OoLvmESr/czN2BS2grPyLaJlXYowRfYi', '/images/pp/ale.png', 1, DEFAULT, DEFAULT);
+INSERT INTO intercel_db.users VALUES (1, 'Justina', 'Iturraspe', '+5493434195970', 'justi@admin.com', '$2a$10$kH4orr.jEUvIRHAuaz5yguuxFE3s0xJWk6fy6y9XMo8djj7.VbQYu', '/images/pp/justi.png', 1, DEFAULT, DEFAULT);
+INSERT INTO intercel_db.users VALUES (2, 'Ruben', 'Jaime', '+573006114684', 'ruben@admin.com', '$2a$10$kH4orr.jEUvIRHAuaz5yguuxFE3s0xJWk6fy6y9XMo8djj7.VbQYu', '/images/pp/ruben.png', 1, DEFAULT, DEFAULT);
+INSERT INTO intercel_db.users VALUES (3, 'Ale', 'Bullorini', '+5491155661334', 'ale@admin.com', '$2a$10$kH4orr.jEUvIRHAuaz5yguuxFE3s0xJWk6fy6y9XMo8djj7.VbQYu', '/images/pp/ale.png', 1, DEFAULT, DEFAULT);
 INSERT INTO intercel_db.users VALUES (4, 'Juan', 'Perez', '44331265', 'JPerez@gmail.com', '$2a$10$sHACn9dssHkJM8fKTD3T2uolxpjzvFG3e7eKKZeBX9pfOPXBmH1yS', DEFAULT, 2, DEFAULT, DEFAULT);
 INSERT INTO intercel_db.users VALUES (5, 'Maria', 'Hernandez', '54110303456', 'hernandez-77@gmail.com', '$2a$10$DcJMGj1G2Jq70rQn.qDmMuc5gifLF8UKu29WFo4BREhittZgwEAai', DEFAULT, 2, DEFAULT, DEFAULT);
 
