@@ -34,7 +34,10 @@ usersRouter.post("/", guestMiddleware, upload.single('photo'), validationRegiste
 
 usersRouter.get("/logout", usersController.logout);
 
-usersRouter.get("/profile", authMiddleware, usersController.profile);
+usersRouter.get("/profile/:id", authMiddleware, usersController.profile);
+
+usersRouter.get("/:id/edit", authMiddleware, usersController.edit);
+usersRouter.post("/profile/:id", authMiddleware, usersController.processEdit);
 
 
 

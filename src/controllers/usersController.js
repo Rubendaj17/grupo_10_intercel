@@ -81,8 +81,10 @@ let usersController = {
         res.redirect('/');
     },
 
-    profile(req, res){
-        res.render('users/profile');
+    async profile(req, res){
+        const id = req.params.id
+        const user = await User.findByPk(id)
+        res.render('users/profile', {user})
     },
     
     logout(req, res){
@@ -91,7 +93,31 @@ let usersController = {
         res.clearCookie('user');
         res.redirect('/');
 
+    },
+
+    async edit(req, res){
+        const id = req.params.id
+        const user = await User.findByPk(id)
+        res.render('users/editUser', {user})
+    },
+
+    processEdit(req, res){
+        const {email, name, lastName, phoneNumber} = req.body;
+
+        User.update({
+                email: email,
+                name: name,
+                lastName,
+                phoneNumber
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            })
+            console.log(User.name);
+        res.redirect('/users/profile/' + req.params.id)
     }
+
 }
 
 module.exports = usersController
