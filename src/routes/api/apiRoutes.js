@@ -8,7 +8,7 @@ apiRouter.get('/search', apiController.searchProduct)
 
 apiRouter.get('/users', apiUserController.allUsers)
 
-// apiRouter.get('/users/:id', apiController.uniqueUser)
+apiRouter.get('/users/:id', apiUserController.uniqueUser)
 
 // cambiar nombre de ruta para js front Login/register
 apiRouter.get('/user', apiController.register)
