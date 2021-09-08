@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="/css/headerFooter.css">
     <link rel="stylesheet" href="/css/productDetail.css">
 
+<<<<<<< HEAD
+=======
 <!-- nuestros scripts para el carrito -->
 
     <script src='/js/cartValidation.js'></script>
@@ -14,6 +16,7 @@
     <!-- JS front search (todas las vistas) -->
     <script src="/js/headerDropdowns.js"></script>
 
+>>>>>>> f4a6bdb453f97f67da4321642bd763bd679e9be4
     <title>Intercel - Detalle</title>
 </head>
 <body>
@@ -39,7 +42,7 @@
            
             <article class="mainPhotoContainer">
                 <div>
-                    <img src="/images/cellphones/models/<%=model.mainImage%>" alt="Celular  <%= model.model %>" class="mainImage">
+                    <img src="/images/cellphones/models/<%= model.mainImage%>" alt="Celular  <%= model.model %>">
                 </div>
             </article>
                 
@@ -62,20 +65,20 @@
                                 <div class="stockContainer">
                                     <div>    
                                         <h3>Color</h3>
-                                        <p class="color"><%= cell.color.name %> </p>
+                                        <p><%= cell.color.name %> </p>
                                     </div>
                                     
                                     <div>
                                         <h3>Memoria Ram</h3>
-                                        <p class="ram"><%= cell.ram.storage %> </p>
+                                        <p><%= cell.ram.storage %> </p>
                                     </div>
                                     
                                     <div>
                                         <h3><%= cell.offer == 0 ? 'Precio' : 'En Oferta' %></h3>
-                                        <p class="price">US$ <%= cell.price %> </p>
+                                        <p>US$ <%= cell.price %> </p>
                                     </div>
                                                     
-                                    <button class="button">Agregar al Carrito  <i class="fas fa-shopping-cart" id="carritoIconBody"></i></button>
+                                    <button>Agregar al Carrito  <i class="fas fa-shopping-cart" id="carritoIconBody"></i></button>
                                     
                                 </div>
                             <% }) %>      
@@ -96,8 +99,7 @@
             </div>
             <% relatedList.forEach(e => {%>
                 <div class="photoContainerRelated">
-                    <a href="/products/<%=e.id%>"><img src="/images/cellphones/models/<%=e.mainImage%>" alt="Preview <%=e.model%>"><p class="NameRelated"><%=e.model%></p></a>  
-
+                    <a href="/products/<%=e.id%>"><img src="/images/cellphones/models/<%=e.mainImage%>" alt="Preview <%=e.model%>"><p class="NameRelated"><%=e.model%></p></a>   
                 </div>
             <%}); %>
 
