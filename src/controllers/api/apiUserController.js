@@ -51,14 +51,12 @@ let apiUserController = {
     uniqueUser: async (req,res) => {
         const id = req.params.id
 
-
-
-
+        
         let user = await db.User.findByPk(id,{
             attributes: ["id","name","lastName", "phoneNumber", "email", "photo", "createdAt", "updatedAt"]
         })
 
-        user.photo = `http://localhost:3000/${user.photo}`
+        user.photo = `http://localhost:3000${user.photo}`
 
         try {
 
