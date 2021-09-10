@@ -18,9 +18,9 @@
         <div class="mainHeader">
             <h2>Mi Perfil</h2>
             <div class="myProfile">
-                <h3><%=locals.logged.name%> </h3>
+                <h3><%=user.name%> </h3>
                 <div class="circle">
-                    <img src="<%=locals.logged.photo%>" alt="">
+                    <img src="<%=user.photo%>" alt="">
                 </div>    
             </div>
         </div>
@@ -31,25 +31,26 @@
             <div class="accountInfoBigBox">        
                 <div class="accountInfoBox">
                     <h5>Nombre completo:</h5>
-                    <p><%=locals.logged.name + " " +locals.logged.lastName %></p>
+                    <p><%=user.name + " " +user.lastName %></p>
                 </div>
-                <a href="#">Editar</a>
+                
             </div>  
             <div class="accountInfoBigBox">
                 <div class="accountInfoBox">
                     <h5>E-mail:</h5>
-                    <p><%=locals.logged.email%></p>
+                    <p><%=user.email%></p>
                 </div>
-                <a href="#">Editar</a>
             </div>
             <div class="accountInfoBigBox">
                 <div class="accountInfoBox">
                     <h5>Teléfono:</h5>
-                    <p><%=locals.logged.phoneNumber%></p>
+                    <p><%=user.phoneNumber%></p>
                 </div>
-                <a href="#">Editar</a>
             </div>
-            
+            <form action="/users/<%=user.id%>/edit" method="GET">
+                <button type="submit" class="formButton">Editar</button>
+            </form>
+
         </div>
         
         <div>
