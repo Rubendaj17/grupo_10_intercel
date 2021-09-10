@@ -1,22 +1,39 @@
-const path = require('path');
-const productsModel = require('../model/productsModel')
+const db = require('../database/models');
+const {randomize} = require('../helpers/randomize');
+
 
 let intercelController = {
     
-    home: (req,res) => {
-        const brands = productsModel.getBrands()
-        const brandList = productsModel.randomize(brands, 4)
+    home: async (req,res) => {
+        try {
+            const brandList = await db.Brand.findAll() 
+            const brandsRandomize = randomize(brandList,4)
+    
+            const offerList = await db.Cellphone.findAll({
+                include: ['model'],
+                group:['id_model'], 
+                where:{offer: 1        
+                }     
+            }) 
+    
+            const offerRandomize = randomize(offerList, 4)     
+    
+            const soldCellphones = await db.Model.findAll({
+                include: ['cellphones']
+            });
+            
+            // solucion temporaria para Mas Vendidos
+            const soldCellRandomize = randomize(soldCellphones,4)         
 
-        const offers = productsModel.offers();
-        const offerList = productsModel.randomize(offers, 4)     
-
-        // solucion temporaria para Mas Vendidos
-        const soldProducts = productsModel.findAll();
-        const soldProductsList = productsModel.randomize(soldProducts,4) 
-          
-
-        res.render('home', {brandList, offerList, soldProductsList})
+            res.render('home', {brandsRandomize, offerRandomize, soldCellRandomize})
+            
+        } catch (error) {
+            console.log(error);
+            res.status(500).render('soon', {error})            
+        }    
+        
     },
+
 
     underConstruction: (req,res) => {
         res.render('soon')

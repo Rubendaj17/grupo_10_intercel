@@ -3,21 +3,32 @@ const productsRouter = express.Router()
 const path = require('path');
 const multer = require('multer');
 
-const guestMiddleware = require('../middlewares/guestMiddleware')
+
+// impedir ingreso a personas logueadas
+// const guestMiddleware = require('../middlewares/guestMiddleware')
+
+// impedir ingreso a personas sin loguearse como admin
+const authMiddleware = require('../middlewares/authMiddleware')
+
 const productsController = require('../controllers/productsController');
+const validationNewProduct = require('../middlewares/validationNewProduct');
+const validationEditProduct = require('../middlewares/validationEditProduct');
+const foldersMiddleware = require('../middlewares/foldersMiddleware');
+const deleteMiddleware = require('../middlewares/deleteMiddleware');
+const imageMiddleware = require('../middlewares/imageMiddleware');
 const searchBarValidation = require('../middlewares/searchBarValidation');
 
 
 const storage = multer.diskStorage({
     destination: (req, file, cb)=>{
-        const destinationPath= path.join(__dirname, '../public/images/cellphones',req.body.brand, req.body.model)
+        const destinationPath= path.join(__dirname, '../../public/images')
     
         cb(null, destinationPath)
     },
     filename:  (req, file, cb)=>{
         const extension = path.extname(file.originalname)   //El nombre del archivo original es: file.originalname
-        const model = req.body.model+ " - "+ Date.now();
-        const filename = model+extension; //generar un nombre para el archivo
+        const name = Date.now();
+        const filename = name+extension; //generar un nombre para el archivo
 
         cb(null, filename);
     }
@@ -25,14 +36,14 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage})
 // listar productos
-productsRouter.get("/adminList", guestMiddleware, productsController.adminList);
+productsRouter.get("/adminList", authMiddleware, productsController.adminList);
 
 productsRouter.get("/list", productsController.list)
 productsRouter.get("/list/:brand", productsController.brandList)
 
 // formulario crear y envio de creacion
 productsRouter.get("/create", productsController.newProductForm);
-productsRouter.post("/create",upload.fields([{name:'mainImage'},{name:'images'}]), productsController.createNewProduct);
+productsRouter.post("/create", upload.fields([{name:'logo'},{name:'modelMainImage'},{name:'imageOne'},{name:'imageTwo'},{name:'imageThree'}]), validationNewProduct, foldersMiddleware, imageMiddleware, productsController.createNewProduct);
 productsRouter.delete("/:id", productsController.destroy);
 
 // detalle producto
@@ -41,7 +52,7 @@ productsRouter.get("/search/:id", searchBarValidation, productsController.search
 
 // formulario editar y envio de edicion
 productsRouter.get("/:id/editProduct" , productsController.editProductForm);
-productsRouter.put("/:id/" ,upload.fields([{name:'mainImage', maxCount:1},{name:'images'}]), productsController.updateProduct);
+productsRouter.put("/:id/" ,upload.fields([{name:'imageOne'},{name:'imageTwo'}, {name:'imageThree'}]),validationEditProduct, deleteMiddleware, imageMiddleware, productsController.updateProduct);
 
 
 module.exports = productsRouter

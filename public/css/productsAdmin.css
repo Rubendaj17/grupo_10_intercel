@@ -24,30 +24,16 @@ main .title p{
     text-transform: capitalize;
 }
 
-article{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around; 
-    background-color: white;
-    margin: 15px 0px;
-    padding: 15px 0px;
-    
-}
-
-article img{
-    width: 120px;
-}
-
-
 .adminButton{
     width: 85px;
     height: 28px;
-    background-color: #71D894;
+    background-color: white;
     border-radius: 5px;
-    margin: 10px;
+    margin: 8px;
+    border: solid #40B568 1px;
 }
 .adminButton:hover{
-    background-color: #33d469;
+    background-color:#71D894
 }
 
 .productFeatures p,.productFeatures li{
@@ -62,7 +48,7 @@ article img{
 .button a{
     color:#71D894;
 }
-.productPrice input,
+
 .button{
     color:#40B568;
     border: solid #40B568 1px;
@@ -76,6 +62,7 @@ article img{
 .productPrice p{
     color:#40B568;
     font-weight: bold;
+    margin-left: 3px
 }
 
 .nextPage{
@@ -85,30 +72,62 @@ article img{
     text-align: right;
     margin-bottom: 15px;
 }
+.newProductForm{
+    display: flex;
+    width: 90vw;
+    align-items:flex-start;
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;
+    border: solid #40B568 1px;
+    justify-content: space-around;
+}
 
+img{
+    margin-bottom:5px;
+    width: 120px;
+    margin: 10px;
+
+}
+
+.info{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;    
+    padding: 5px;
+}
+.products{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+.products article{
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: stretch;
+    margin: 10px;
+    justify-content: space-between;
+    width: 100%;
+}
+#newProductButton{
+    margin: 0;
+}
 
 @media (min-width: 361px){
 
     main{
         margin: auto;
     }
-
     .productFeatures ul{
         margin-top: 5px;
         margin-left: 18px;
-
     }
-
-    .productPrice input{
-        padding: 8px 12px;
-    
+    .productPrice {
+        padding: 0px 10px;
     }
-
-    section{
-        max-width: 700px;
-        margin: auto;
-    }
-    
     main .title{
         max-width: 600px;
         margin: auto;
@@ -117,24 +136,49 @@ article img{
     main .title h2, main .title p{
         margin: 15px 10px;
     }
-
-
-        
+    .products {
+        flex-direction: row;
+        align-items: baseline;
+    }
+   
+    .products article{
+        width: 50%;
+    }
+  
+    .info{
+        width: 40%;
+    }
+ 
 }
 
 @media (min-width: 769px){
-    article{
-        box-shadow: 0px 2px 7px rgba(70, 102, 133, 0.1);
-        border-radius: 16px;
-        margin-bottom: 25px;
 
+    h3{
+        font-size: 1em;
     }
-    article img{
-        width: 145px;
+    .newProductForm{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 60px;
+    }
+    .products article{
+        width: 40.3%;
+        justify-content: space-between;
+        height: 150px;
+    }
+    
+    .info{
+        flex-direction: column;
     }
 
     .productFeatures{
-        margin-left: -50px;
+        display: flex;
     }
-   
+
+    img{
+        margin-bottom:5px;
+        width: 120px;
+        margin: 10px;
+    }
 }

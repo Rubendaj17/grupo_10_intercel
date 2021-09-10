@@ -4,16 +4,13 @@ const usersRouter = express.Router();
 const multer = require('multer');
 const path = require('path');
 
-const guestMiddleware = require('../middlewares/guestMiddleware')
-const authMiddleware = require('../middlewares/authMiddleware')
 
 const storage = multer.diskStorage({
     destination(req, file, callback){
-        const destinationPath = path.join(__dirname, '../public/images/pp/')
+        const destinationPath = path.join(__dirname, '../../public/images/pp/')
         callback(null, destinationPath);
     },
     filename(req, file, callback){
-        //file.originalname     automaticamente viene el nombre del archivo q sube el usuario
         const extension = path.extname(file.originalname)
         const filename = Date.now() + extension;
         callback(null, filename);
@@ -21,13 +18,27 @@ const storage = multer.diskStorage({
 })
 const upload = multer({storage})
 
-usersRouter.get("/login", authMiddleware, usersController.login);
-usersRouter.post("/login", authMiddleware, usersController.processLogin);
+// permite acceder a usuarios sin loguearse
+const guestMiddleware = require('../middlewares/guestMiddleware')
+// permite acceder a usuarios logueados
+const authMiddleware = require('../middlewares/authMiddleware')
 
-usersRouter.get("/register", authMiddleware, usersController.register);
-usersRouter.post("/", authMiddleware, upload.single('photo'), usersController.createNewUser);
+const validationRegister = require('../middlewares/validationRegisterUser')
+const validationLogin = require('../middlewares/validationLoginUser')
 
-usersRouter.get("/profile", guestMiddleware, usersController.profile);
+usersRouter.get("/login", guestMiddleware, usersController.login);
+usersRouter.post("/login", validationLogin, usersController.processLogin);
+
+usersRouter.get("/register", guestMiddleware, usersController.register);
+usersRouter.post("/", guestMiddleware, upload.single('photo'), validationRegister, usersController.createNewUser);
+
+usersRouter.get("/logout", usersController.logout);
+
+usersRouter.get("/profile/:id", authMiddleware, usersController.profile);
+
+usersRouter.get("/:id/edit", authMiddleware, usersController.edit);
+usersRouter.post("/profile/:id", authMiddleware, usersController.processEdit);
+
 
 
 module.exports = usersRouter

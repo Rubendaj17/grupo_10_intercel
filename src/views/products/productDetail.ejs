@@ -7,72 +7,106 @@
     <link rel="stylesheet" href="/css/headerFooter.css">
     <link rel="stylesheet" href="/css/productDetail.css">
 
-    <title>Intercel</title>
+<<<<<<< HEAD
+=======
+<!-- nuestros scripts para el carrito -->
+
+    <script src='/js/cartValidation.js'></script>
+
+    <!-- JS front search (todas las vistas) -->
+    <script src="/js/headerDropdowns.js"></script>
+
+>>>>>>> f4a6bdb453f97f67da4321642bd763bd679e9be4
+    <title>Intercel - Detalle</title>
 </head>
 <body>
     <!-- HEADER -->
     <%- include('../partials/header') %>
+
+    
     
     <main>
         <a href="/products/list">Volver al Listado</a>
         <section class="productContainer">
+
             <article class="minorPhotosContainer">
-                <% idDetail.images.forEach( e => {%>
-                    <div><img src="<%= e %>" alt="Preview <%= idDetail.model %>"></div>
-                <%}) %> 
-                <!-- <div><img src="<%= idDetail.image %>" alt="Preview <%= idDetail.model %>"></div> -->
-                <!-- <div><img src="<%= idDetail.image %>" alt="Preview <%= idDetail.model %>"></div> -->
-                <!-- <div><img src="<%= idDetail.image %>" alt="Preview <%= idDetail.model %>"></div> -->
-            
+                <% cellphones.forEach(cell => { %>
+                    <div class="imgContainer">
+                        <img src="/images/cellphones/<%= brand.name %>/<%= model.model %>/<%= cell.imageOne%>" alt="Preview <%= model.model %>">
+                        <img src="/images/cellphones/<%= brand.name %>/<%= model.model %>/<%= cell.imageTwo%>" alt="Preview <%= model.model %>">
+                        <img src="/images/cellphones/<%= brand.name %>/<%= model.model %>/<%= cell.imageThree%>" alt="Preview <%= model.model %>">
+                    </div>
+                                   
+                <% }) %>
             </article>
-            
+           
             <article class="mainPhotoContainer">
-            
-                <div><img src="<%= idDetail.mainImage %>" alt="Celular  <%= idDetail.model %>"></div>
-            
+                <div>
+                    <img src="/images/cellphones/models/<%= model.mainImage%>" alt="Celular  <%= model.model %>">
+                </div>
             </article>
                 
             <article class="containerInformation">
-                <div>
-                    <h2 class="brand"><%= idDetail.brand %></h2>
-                    <h1 class="phoneName"><%= idDetail.model %></h1>
-                </div>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum dicta autem commodi eum consequatur deserunt. Qui vitae illo sint tempore accusamus? Cum blanditiis excepturi, nam perferendis doloribus consequatur nulla voluptatum.</p>
+                <section>
+                    <h2 class="brand"><%= brand.name %></h2>
+                    <h1 class="phoneName"><%= model.model %></h1>
+                    <p class="description"><%= model.description %></p>
+                </section>
                 
-                <div class="bottomInfo">
-                    <div class="containerPrice">
-                        <h3>Precio</h3>
-                        <p>US$ <%= idDetail.price %></p>
-                    </div>
-            
-                    <button>Agregar al Carrito  <i class="fas fa-shopping-cart" id="carritoIconBody"></i></button>
+                <section class="bottomInfo">
+                    <% if (cellphones.length == 0) { %>
+                        <div>    
+                            <h3 style="color:firebrick">Sin Stock</h3>
+                        </div>
+                        
+                        <% } else { %>            
+                            <% cellphones.forEach(cell => { %>
+                                
+                                <div class="stockContainer">
+                                    <div>    
+                                        <h3>Color</h3>
+                                        <p><%= cell.color.name %> </p>
+                                    </div>
+                                    
+                                    <div>
+                                        <h3>Memoria Ram</h3>
+                                        <p><%= cell.ram.storage %> </p>
+                                    </div>
+                                    
+                                    <div>
+                                        <h3><%= cell.offer == 0 ? 'Precio' : 'En Oferta' %></h3>
+                                        <p>US$ <%= cell.price %> </p>
+                                    </div>
+                                                    
+                                    <button>Agregar al Carrito  <i class="fas fa-shopping-cart" id="carritoIconBody"></i></button>
+                                    
+                                </div>
+                            <% }) %>      
+                        <% } %>
+                
                             
-                </div>
-                <form  class= "bottomInfo" action="/products/<%=idDetail.id%>/editProduct" method="GET">
-                    <button type="submit">Editar</button>
-                </form>
-                <form  class= "bottomInfo" action="/products/<%=idDetail.id%>?_method=DELETE" method="POST">
-                    <button type="submit">Eliminar</button>
-                </form>
+                    </section>
+
                 
             </article>
         
         </section>
-        
         <section class="containerRelated">
             
             <div class="InformationRelated">
-                <p class="brandRelated">Más de <span><%=idDetail.brand %></span></p>
-                <div class="logoRelated"><img src="/images/logos/<%=idDetail.brand %>.svg" alt="Samsung Logo"></div>
+                <p class="brandRelated">Más de <span><%= brand.name %></span></p>
+                <div class="logoRelated"><img src="/images/logos/<%=brand.name %>.svg" alt="Samsung Logo"></div>
             </div>
-
             <% relatedList.forEach(e => {%>
                 <div class="photoContainerRelated">
-                    <a href="/products/<%=e.id%>"><img src="<%=e.mainImage%>" alt="Preview <%=e.model%>"><p class="NameRelated"><%=e.model%></p></a>    
+                    <a href="/products/<%=e.id%>"><img src="/images/cellphones/models/<%=e.mainImage%>" alt="Preview <%=e.model%>"><p class="NameRelated"><%=e.model%></p></a>   
                 </div>
-            <%}); %>                
-        
+            <%}); %>
+
+
         </section>
+        
+
     </main>
 
     <!-- FOOTER -->

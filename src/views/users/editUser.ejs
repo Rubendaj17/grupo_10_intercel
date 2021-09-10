@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('../partials/head') %> 
+    <title>Intercel - Editar usuario</title>
+    <link rel="stylesheet" href="/css/editProduct.css">
+    <link rel="stylesheet" href="/css/headerFooter.css">
+
+        <!-- JS front search (todas las vistas) -->
+        <script src="/js/headerDropdowns.js"></script>
+
+</head>
+<body>
+    <header>
+        <%- include('../partials/header') %>
+    </header>
+    <main>
+        <div class="container">
+            <a href="/"> <img src="/images/logos/Logo.svg" width="200"> </a>
+            <h2>Editar usuario</h2>
+                <form class="createForm" action="/users/profile/<%=user.id %>" method="POST">
+                    <br>
+                    <div class="formControl">
+                        <label>Nombre</label>
+                        <input value="<%=user.name %>" type="text" name="name" class="inputControl">
+                    </div>
+                    <div class="formControl">
+                        <label>Apellido</label>
+                        <input value="<%=user.lastName %>" type="text" name="lastName" class="inputControl">
+                    </div>
+                    <div class="formControl">
+                        <label>Teléfono</label>
+                        <input value="<%=user.phoneNumber %>" type="tel" name="phoneNumber" class="inputControl" minlength="8">
+                    </div>
+                    <div class="formControl">
+                        <label>Email</label>
+                        <input value="<%=user.email%>" type="email" name="email" class="inputControl">
+                    </div>
+                    <div class="formControl">
+                        <label>Avatar</label>
+                        <div class="currentImage">
+                            <img src="<%= user.photo%>" alt="">
+                            <span>Avatar actual</span>
+                        </div>  
+                        <input type="file" name="photo" accept = ".jpg, .png" class="inputControl" >                       
+                    </div>
+                
+                    <button type="submit" class="formButton">Guardar cambios</button>
+                
+                </form>
+        </div>
+           
+
+    </main>
+         
+    <footer>
+        <%- include('../partials/footer') %>
+    </footer>
+    
+</body>
+</html>

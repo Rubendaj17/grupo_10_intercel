@@ -1,0 +1,81 @@
+main{
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    background-color: #71D894;
+}
+
+.mainHeader{
+    margin-top: 50px;
+    box-shadow: 0px 0px 10px 0px #919191;
+}
+
+main h2{
+    padding-top: 10px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+main .myProfile{
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+
+main .accountInfo{
+    background-color: #EFF1F4;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px #919191;
+}
+
+main .accountInfoBox{
+    padding: 5px 0px;
+}
+
+.accountInfo h3{
+    margin-bottom: 20px;
+}
+
+
+.myProfile img{
+    width: 200px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+
+.accountInfoBigBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.accountInfoBox p{
+    font-size: 16px;
+}
+
+.backButton{
+    position: absolute;
+    padding: 6px 10px;
+    width: 85px;
+    height: 28px;
+    text-align: left;
+    background-color: #71D894;
+    border-radius: 5%;
+    margin: 10px;
+    right: 0px;
+}
+
+.backButton:hover{
+    background-color: #33d469;
+}
+
+.backButton a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}

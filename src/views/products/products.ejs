@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="/css/headerFooter.css">
     <link rel="stylesheet" href="/css/products.css">
 
-    <title>Products</title>
+    <!-- JS front search (todas las vistas) -->
+    <script src="/js/headerDropdowns.js"></script>
+
+    <title>Intercel - Productos</title>
 </head>
 
 <body>
@@ -35,30 +38,16 @@
                 <article>
                 <a href="/products/<%=e.id%>">
                     <div class="imgContainer">
-                        <img src="<%= e.mainImage %>" alt="<%= e.model %>">
+
+                        <img src="/images/cellphones/models/<%= e.mainImage %>" alt="<%= e.model %>">
                         
-                        <% e.images.forEach(i => { %>
-                            
-                            <img src="<%= i %>" alt="<%= e.model %>" class="secImages">   
-                        
-                        <%}); %> 
-                    
                     </div>
                     
                     <div class="productFeatures">
                         <h3><%= e.model %></h3>
-                        <p><%= e.brand %></p>
-                        <ul>
-                            <li><%= e.color %></li>
-                            <li><%= e.ram %></li>
-                        </ul>
+                        <p><%= e.brand.name %></p>
                     </div>
   
-                    <div class="productPrice">
-                        <h3>Precio</h3>
-                        <p>US$<%= e.price %></p>
-                        <input type="button" value="Agregar al carrito">
-                    </div>
                 </a>
                 </article>
  
@@ -68,5 +57,10 @@
 
     <!-- FOOTER -->
     <%- include('../partials/footer') %>
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <script src="/lib/ReactSection.js"></script>
 </body>
 </html>

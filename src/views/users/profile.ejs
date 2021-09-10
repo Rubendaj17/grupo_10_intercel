@@ -4,12 +4,60 @@
     <%- include('../partials/head') %>
 <!-- nuestros css -->
     <link rel="stylesheet" href="/css/headerFooter.css">
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/profile.css">
 
-    <title>Intercel</title>
+    <!-- JS front search (todas las vistas) -->
+    <script src="/js/headerDropdowns.js"></script>
+
+    <title>Intercel - Profile</title>
 </head>
 <body>
     <%- include('../partials/header') %>
-    foto del usuario
+    <main>
+        
+        <div class="mainHeader">
+            <h2>Mi Perfil</h2>
+            <div class="myProfile">
+                <h3><%=user.name%> </h3>
+                <div class="circle">
+                    <img src="<%=user.photo%>" alt="">
+                </div>    
+            </div>
+        </div>
+        
+
+        <div class="accountInfo">
+            <h3>Datos de la cuenta</h3>  
+            <div class="accountInfoBigBox">        
+                <div class="accountInfoBox">
+                    <h5>Nombre completo:</h5>
+                    <p><%=user.name + " " +user.lastName %></p>
+                </div>
+                
+            </div>  
+            <div class="accountInfoBigBox">
+                <div class="accountInfoBox">
+                    <h5>E-mail:</h5>
+                    <p><%=user.email%></p>
+                </div>
+            </div>
+            <div class="accountInfoBigBox">
+                <div class="accountInfoBox">
+                    <h5>Teléfono:</h5>
+                    <p><%=user.phoneNumber%></p>
+                </div>
+            </div>
+            <form action="/users/<%=user.id%>/edit" method="GET">
+                <button type="submit" class="formButton">Editar</button>
+            </form>
+
+        </div>
+        
+        <div>
+            <div  class="backButton"><a href="/"><i class="fas fa-arrow-left"></i>    Volver</a></div>
+        </div>
+        
+
+    </main>
 </body>
 </html>

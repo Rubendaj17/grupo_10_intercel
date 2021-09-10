@@ -5,15 +5,32 @@
     <%- include('partials/head') %>
 <!-- nuestros css -->
     <link rel="stylesheet" href="/css/headerFooter.css">
-    <title>Intercel</title>
+     
+    <!-- JS front search (todas las vistas) -->
+    <script src="/js/headerDropdowns.js"></script>
+
+    <title>Intercel - Proximamente</title>
 </head>
 <body>
     <!-- HEADER -->
     <%- include('partials/header') %>
-    <h2>Próximamente en Intercel...</h2>
-    <img src="/images/home/soon.png" alt="proximamente" style="width: 100%;">
-    <h3>...el resto de la página.</h3>
-    <p style="margin-bottom:15px">Stay tuned!</p>
+    <% if (locals.error) { %>
+        <main style="margin:auto; width: 90vw;display:flex;flex-direction:column;justify-content:center;">
+
+            <h2>Ups... algo salió mal</h2>
+            <img src="/images/home/notWorking.jpg" alt="Error" style="width: 25%; margin:auto;">
+            <h3 style="align-self: flex-end;">Continuamos trabajando para mejorar cada día</h3>
+            
+        </main>
+
+    <% }else{ %>
+        <h2>Próximamente en Intercel...</h2>
+        <img src="/images/home/soon.png" alt="proximamente" style="width: 100%;">
+        <h3>...el resto de la página.</h3>
+        <p style="margin-bottom:15px">Stay tuned!</p>
+    <% } %>
+    
+    
     <!-- FOOTER -->
     <%- include('partials/footer') %>
     

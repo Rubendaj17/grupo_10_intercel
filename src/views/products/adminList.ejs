@@ -5,8 +5,9 @@
 
     <link rel="stylesheet" href="/css/headerFooter.css">
     <link rel="stylesheet" href="/css/productsAdmin.css">
-
-    <title>Products</title>
+    <!-- JS front search (todas las vistas) -->
+    <script src="/js/headerDropdowns.js"></script>
+    <title>Intercel - Products</title>
 </head>
 <body>
     <%- include('../partials/header') %>
@@ -14,31 +15,65 @@
     <main>
         <p class="blueBar"></p>
 
-        <div>
-            <button class="button"><a href="/products/create">Agregar</a></button> 
-        </div>
+        <form class="newProductForm" action="/products/create" method="GET">
+            <div class="itemContainer">
+
+                <label for="brand">Marca</label>
+                
+                <select name="brand" id="brand">
+                    <% brandList.forEach( e => { %>
+                        
+                        <option value="<%=e.name%>"> <%= e.name %> </option>
+                        
+                        <% }) %> 
+                        <option value="newBrand">otro</option>            
+                </select>
+            </div>
+            
+            <div class="itemContainer">
+
+                <label for="model">Modelo</label>
+                
+                <select name="model" id="model">
+                    <% modelList.forEach( e => { %>
+                        
+                        <option value="<%=e.model%>"> <%= e.model %> </option>
+                        
+                        <% }) %> 
+                        <option value="newModel">otro</option>
+                    </select>
+            </div>
+                    
+            <button id="newProductButton" type="submit" class="adminButton">Agregar</button> 
+
+        </form>
 
         <section class="products">
                 
-            <% productList.forEach( e => {%>
+            <% productList.forEach( e => {
+                let brand = brandList.find( brandElement => brandElement.id == e.model.idBrand ) %>
+
                 <article>
                 <a href="/products/<%=e.id%>">
-                    <img src="<%= e.mainImage %>" alt="<%= e.model %>">
+                    <img src="/images/cellphones/<%= brand.name %>/<%= e.model.model %>/<%= e.imageOne %>" alt="<%= e.model.name %>">
                 </a>
+                <div class="info">
+
                     <div class="productFeatures">
-                        <h3><%= e.model %></h3>
-                        <p><%= e.brand %></p>
-                        <ul>
-                            <li><%= e.color %></li>
-                            <li><%= e.ram %></li>
-                        </ul>
+                        <h3><%= e.model.model %></h3>
+                        <p><%= brand.name %></p>  
                     </div>
   
                     <div class="productPrice">
-                        <h3>Precio</h3>
-                        <p>US$<%= e.price %></p>
-                        <input type="button" value="Agregar al carrito">
-                    </div>
+                        <br>
+                        <ul>
+                            <li><%= e.color.name %></li>
+                            <li><%= e.ram.storage %></li>
+                            <li><%= e.price %></li>
+                        </ul>
+                    </div>    
+                    
+                </div>
                     <div>
                         <form action="/products/<%=e.id%>/editProduct" method="GET">
                             <button class="adminButton" type="submit">Editar</button>

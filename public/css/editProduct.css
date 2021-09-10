@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+}
+
+body{
+    min-width: 290px;
+    background-color: #F8F9FC;
+}
+
+.logoIntercel{
+    margin-top: 5px;
+    margin-left: 5px;
+    text-align: center;
+}
+
+h2{
+    margin-top: 30px;
+    margin-bottom: 16px;
+    font-size: 21px;
+    text-align: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+form label{
+    text-align: left;
+    padding: 5px;
+    margin-top:7px;
+    font-weight: bold;
+}
+
+.errorMsg{
+    color:#f82e20;
+    font-style: italic;
+    font-size: 1em;
+    margin: 1em;
+    text-align: left;
+}
+
+select{
+    text-align: left;
+}
+
+.existsBrand,
+.existsModel,
+.existsInputLogo,
+.existsInputImg{
+    display: block;
+}
+
+.existsMarginBrand,
+.existsMarginModel{
+    margin-right: 0px;
+}
+
+.visible {
+    display: block;
+}
+
+.invisible {
+    display: none;
+}
+
+.container{
+    margin: auto;
+    margin-top:70px;
+    text-align: center;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 15px;
+    width: 80vw;
+    box-shadow: 0px 0px 15px 2px #919191;
+    margin-bottom: 60px;
+}
+
+.createForm,
+#newProductForm{
+    padding:20px 20px;
+}
+
+.editForm{
+    padding:20px 20px;
+}
+
+.formControl{
+    margin-bottom: 10px;
+}
+
+.brand p{
+    text-transform: capitalize;
+
+}
+#priceError, #imageOneError, #imageTwoError, #imageThreeError{
+    color: red;
+    font-weight: bold;
+}
+
+
+.formControl label{
+    display: block;
+}
+
+
+.inputControl{
+    width:100%;
+    padding:8px 8px;
+    border-radius: 5px;
+}
+
+.formRadio{
+    text-align: left;
+}
+
+.formRadio input {
+    margin: 4px;
+}
+
+.formButton{
+    background-color: #71D894;
+    border: none;
+    color: black;
+    padding: 10px 10px;
+    font-size:18px;
+    border-radius: 5px;
+    width: 140px;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.formButton:hover{
+    background-color: #33d469;
+}
+
+.currentImage {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.currentImage img{
+    width: 35%;
+
+}
+
+.logoInput img {
+   width: 27px
+}
+
+.secondaryImage {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.secondaryImage {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.secondaryImage img {
+    width: 70px;
+}
+
+.logoInput, .imgInput {
+    display: flex;
+    flex-direction: column;
+}
+
+.imgInput img {
+    width: 100px;
+}
+
+
+@media (min-width: 361px){
+    h2{
+        margin-top: 40px;  
+      }
+    form label{
+        padding: 2px;
+    }
+    .container{
+        width: 70vw;
+        margin-top:100px;
+    }
+    .createForm,
+    #newProductForm{
+        padding: 25px 35px;
+    }
+    .editForm{
+        padding: 25px 40px;
+    }
+    .formButton{
+        width: 160px;
+    }
+  
+}
+@media (min-width: 769px){
+    .createForm,
+    #newProductForm{
+        padding: 30px 80px;
+    }
+    .editForm{
+        padding: 30px 60px;
+    }
+    .container{
+        width: 50vw;
+    }
+    .formButton{
+        width: 200px;
+    }
+    .logoInput img {
+        width: 50px
+    }
+    form label{
+        margin-top:12px;
+    }     
+    
+}

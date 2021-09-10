@@ -1,33 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "Ruben",
-    "lastName": "Jaime",
-    "phoneNumber": "3003116484",
-    "email": "rubendaj@msn.com",
-    "password": "holamundo",
-    "category": "admin",
-    "image": ""
-  },
-  {
-    "id": 3,
-    "name": "Alejandro",
-    "lastName": "Bullorini",
-    "phoneNumber": "3003116481",
-    "email": "ale@msn.com",
-    "password": "holamundo2",
-    "category": "admin",
-    "image": ""
-  },
-  {
-    "name": "justina",
-    "lastName": "iturraspe",
-    "phoneNumber": "01144142021",
-    "email": "justiiturraspe@gmail.com",
-    "password": "somoselmejoreqipo",
-    "id": 4
-  },
-  {
     "name": "Bernardo",
     "lastName": "Iturraspe",
     "phoneNumber": "01144142021",
@@ -37,21 +9,75 @@
     "id": 5
   },
   {
-    "name": "Pepe",
-    "lastName": "Ramirez",
-    "phoneNumber": "3434195980",
-    "email": "peperamirez@gmail.com",
-    "password": "colombia",
-    "photo": "/images/pp/default.png",
-    "id": 6
+    "name": "Alejandro",
+    "lastName": "Bullorini",
+    "phoneNumber": "49821391",
+    "email": "PRUEBA@PRUEBA.COM",
+    "password": "$2a$10$6.BMi/UW7xRE/opLg5bMFe8pZZgZ9gfSCLgVVEUC8aXlJJ8fN/fNi",
+    "photo": "/images/pp/1625440070244.jpg",
+    "id": 8
   },
   {
-    "name": "nano",
-    "lastName": "iturrasp",
-    "phoneNumber": "3434456778",
-    "email": "nano@itu.com",
-    "password": "12345678",
+    "name": "Alejandro",
+    "lastName": "Bullorini",
+    "phoneNumber": "49821391",
+    "email": "a@a.com",
+    "password": "$2a$10$JnIdRMmGmbOB7W1tUvyhX.TUjVL5F0ChWifWaBm9d./caHslMZlUe",
+    "photo": "/images/pp/1626389484251.jpg",
+    "id": 9
+  },
+  {
+    "name": "Alejandro",
+    "lastName": "Bullorini",
+    "phoneNumber": "49821391",
+    "email": "b@b.com",
+    "password": "$2a$10$hn.POqZaOtdnZ0yGmNlyCuJERkw4sHSrMek4L.ExKZXISAm3ovkC.",
     "photo": "/images/pp/default.png",
-    "id": 7
+    "id": 10
+  },
+  {
+    "name": "pepe",
+    "lastName": "argento",
+    "phoneNumber": "123445678",
+    "email": "c@c.com",
+    "password": "$2a$10$8tuFLM8hsCc.87Sot7Op7u/LV7/SxKw7Hy3sInWmYDWg1uOhkYHyu",
+    "photo": "/images/pp/default.png",
+    "id": 11
+  },
+  {
+    "name": "JOSE",
+    "lastName": "balsdbaksl",
+    "phoneNumber": "asdasdasdas",
+    "email": "e@e.com",
+    "password": "$2a$10$FbzS3fYgtwhr/hNsYMlAv.feOr39lu2yNV493lnOy3qpY9oXONJyu",
+    "photo": "/images/pp/default.png",
+    "id": 12
+  },
+  {
+    "name": "GONZA",
+    "lastName": "dhasdasd",
+    "phoneNumber": "12314124124",
+    "email": "z@z.com",
+    "password": "$2a$10$aCM955q5oTHeeZjjvNkGlORMjXTFH45HK4O9rXMbf4q3JTym2DbWy",
+    "photo": "/images/pp/default.png",
+    "id": 13
+  },
+  {
+    "name": "justina",
+    "lastName": "iturraspe",
+    "phoneNumber": "12345678",
+    "email": "justiiturraspe@gmail.com",
+    "password": "$2a$10$6Bl6fx.itD8G88yDCioYhejqgOloomrQfKnb1M6EkszjAXzj1/Rj2",
+    "photo": "/images/pp/default.png",
+    "id": 14
+  },
+  {
+    "name": "Ruben",
+    "lastName": "Jaime",
+    "phoneNumber": "3006114684",
+    "email": "r@r.com",
+    "password": "$2a$10$WVapjKlcrJE7a8JdcDTAoe9FAcj9ONlBUJZmNqrdKg0wab4jfJZbm",
+    "photo": "/images/pp/default.png",
+    "id": 15
   }
 ]

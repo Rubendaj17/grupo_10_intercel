@@ -1,2 +1,6 @@
-<li><a href="/products/adminList"><i class="fas fa-user-cog"></i></a></li>
-<li>    <a href="/users/profile"><i class="far fa-user" id="userIcon"></i>    </a>    </li>
+<% if (locals.logged && locals.logged.idCategory == 1) { %>
+    <li><a href="/products/adminList"><i class="fas fa-user-cog"></i></a></li>
+<% } %>
+
+<li><a href="/users/profile/<%=locals.logged.id %>"><i class="far fa-user" id="userIcon"></i> <%=locals.logged.name%>    </a>    </li>
+<li><a href="/users/logout"><i class="fas fa-sign-out-alt"></i></a></li>

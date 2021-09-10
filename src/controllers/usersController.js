@@ -1,47 +1,123 @@
-const multer = require('multer');
-const usersModel = require('../model/usersModel');
+const { validationResult } = require('express-validator')
+const bcrypt = require('bcryptjs');
+const { User } = require('../database/models')
+const fs = require('fs');
+const path = require('path');
 
 let usersController = {
     login: (req,res)=>{
         res.render('users/login');
     },
+
     register: (req,res)=>{
         res.render('users/register');
     },
-    createNewUser:(req, res)=>{
-        const {name, lastName, phoneNumber, email, password} = req.body;
-        
-        const {file} = req;
 
-        const photo = '/images/pp/default.png';
+    createNewUser: async (req, res)=>{
+        let photo = '/images/pp/default.png';
+    
+        const formValidation = validationResult(req)
+    
+        const valuesFromUser = req.body
+    
+        const { file } = req;
+
         if(file){
             photo = '/images/pp/' + file.filename;
         }
 
-        const user = {
+        if (!formValidation.isEmpty()){
+            photoPath = path.join(__dirname,'../../public', photo)
+
+            file ? fs.unlinkSync(photoPath) : ''
+
+            return res.render('users/register', {valuesFromUser, errors: formValidation.mapped()})
+        }
+        
+        const {name, lastName, phoneNumber, email, password} = req.body;
+        const hashPassword = bcrypt.hashSync(password)
+        
+        const newUser = {
             name, 
             lastName, 
             phoneNumber, 
             email, 
-            password,
-            photo
+            password: hashPassword,
+            photo,
+            idCategory : 2
         }
-        usersModel.create(user);
-        res.redirect('/');
-    },
-    processLogin(req, res){
-        const {email, remember } = req.body;
-    
-        const user = usersModel.findByField('email', email);
-        delete user['password'];
-
+               
+        const user = await User.create({ ...newUser })
+        
+        delete user ['password']
+        
         req.session.logged = user;
         
         res.redirect('/');
     },
-    profile(req, res){
-        res.render('users/profile');
+
+    processLogin: async (req, res) => {
+        const formValidation = validationResult(req)
+        const valuesFromUser = req.body;
+        
+        if (!formValidation.isEmpty()){
+            return res.render('users/login', {valuesFromUser, errors: formValidation.mapped()})
+        }
+        
+        const {email, remember } = req.body;
+        //busca en base de datos el user con dicho mail
+        const user = await User.findOne({
+            where: {email}
+        });
+
+        delete user['password'];
+
+        req.session.logged = user;
+
+        if (remember){
+            res.cookie('user', user.id, {maxAge:5*60000, signed:true})
+        }
+
+        res.redirect('/');
+    },
+
+    async profile(req, res){
+        const id = req.params.id
+        const user = await User.findByPk(id)
+        res.render('users/profile', {user})
+    },
+    
+    logout(req, res){
+        
+        req.session.destroy();
+        res.clearCookie('user');
+        res.redirect('/');
+
+    },
+
+    async edit(req, res){
+        const id = req.params.id
+        const user = await User.findByPk(id)
+        res.render('users/editUser', {user})
+    },
+
+    processEdit(req, res){
+        const {email, name, lastName, phoneNumber} = req.body;
+
+        User.update({
+                email: email,
+                name: name,
+                lastName,
+                phoneNumber
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            })
+            console.log(User.name);
+        res.redirect('/users/profile/' + req.params.id)
     }
+
 }
 
 module.exports = usersController
