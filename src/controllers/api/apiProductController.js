@@ -18,11 +18,11 @@ let apiProductController = {
             let countByBrand = []
             brandsAll.forEach(brand => {
                 let cellphonesByBrand = 0
-                let models = {}
+                let models = []
 
                 brand.models.forEach(model => {
                     cellphonesByBrand = cellphonesByBrand + model.cellphones.length
-                    models[model.model] = model.cellphones.length
+                    models.push({[model.model]: model.cellphones.length})
                 })
                 countByBrand.push({
                     brand: brand.name,
