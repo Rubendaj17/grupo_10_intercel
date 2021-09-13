@@ -35,7 +35,9 @@ let apiProductController = {
                     model:db.Model, as:'model', attributes:['model','description'],include:[{
                         model:db.Brand, as:'brand', attributes:['name']}
                 ]}],
-                attributes: ['id','price','offer']
+                attributes: ['id','price','offer'], 
+                limit: 10,
+    
             })
             
             const products = productsAll.rows.map(product => {
