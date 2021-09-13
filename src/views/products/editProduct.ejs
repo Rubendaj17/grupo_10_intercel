@@ -3,10 +3,8 @@
 <head>
     <%- include ('../partials/head') %> 
     <title>Intercel - Editar producto</title>
-    <link rel="stylesheet" href="/css/headerFooter.css">
-
     <link rel="stylesheet" href="/css/editProduct.css">
-
+    <link rel="stylesheet" href="/css/headerFooter.css">
     <!-- JS Validación de Edit -->
     <script src="/js/editValidation.js"></script>
     <!-- JS front search (todas las vistas) -->
@@ -19,9 +17,7 @@
     <main>
 
         <div class="container">
-            <a href="/"> <img src="/images/logos/Logo.svg" width="200" class="logoIntercel"> </a>
-            <h2>Editar producto</h2>
-            <form class="createForm" action="/products/<%=cellphoneToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+
         <a href="/"> <img src="/images/logos/Logo.svg" width="200" class="logoIntercel"> </a>
         <h2>Editar producto</h2>
             <form class="editForm" action="/products/<%=cellphoneToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
@@ -74,9 +70,6 @@
                 
                 <div class="formControl price">
                     <label>Precio</label>
-                    <input id="precio" value="<%= locals.errors ? userInfo : cellphoneToEdit.price%>" type="text" name="price" class="inputControl" minlength="1">
-                    <p class="errorMsg " id="priceError"><%= locals.errors ? errors.price.msg : ""%> </p>
-
                     <input value="<%= locals.errors ? userInfo : cellphoneToEdit.price%>" id="price" type="text" name="price" class="inputControl" minlength="1">
                     <p id="priceError" class="errorMsg "><%= locals.errors ? errors.price.msg : ""%> </p>
                 </div>
@@ -102,11 +95,9 @@
         </div>
 
     </main>
-    
     <!-- FOOTER -->
-    
+
     <%- include('../partials/footer') %>
-    
     
 </body>
 </html>
