@@ -4,9 +4,12 @@ const path = require('path');
 
 
 module.exports = async (req, res, next)=>{
-    
     const brand = req.session.cellphoneToEdit ? req.session.cellphoneToEdit.brand : req.body.brand
     const model = req.session.cellphoneToEdit ? req.session.cellphoneToEdit.model : req.body.model
+    console.log('SESSION',req.session.cellphoneToEdit);
+    console.log(req.body);
+    // console.log(req.body.brand);
+    console.log(model);
 
     const logoPath = path.join(__dirname, '../../public/images/logos')
     if(req.files.logo){

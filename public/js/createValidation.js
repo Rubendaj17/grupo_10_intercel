@@ -1,5 +1,5 @@
 window.addEventListener('load', function(){
-  
+
     const form = document.querySelector('#newProductForm')
 
     const brandInput = form.querySelector('#brand')
@@ -52,7 +52,7 @@ window.addEventListener('load', function(){
     form.addEventListener('submit', function(e){
 
         let hasErrors = false
-
+        console.log(0, hasErrors);
         resetErrors() ;
 
         if(!brandInput.value){
@@ -62,15 +62,18 @@ window.addEventListener('load', function(){
                 brandInput.focus()
             }
             hasErrors = true;
+            console.log(1);
         }
 
-        if(!logoInput.value){
+        let needsLogoImg = !document.querySelector(".existsInputLogo").style.display === 'none'
+        if(!logoInput.value && needsLogoImg){
             logoError.innerHTML = "Completa el logo"
             
             if(!hasErrors){
                 logoInput.focus()
             }
             hasErrors = true;
+            console.log(2);
         }
 
         if(!modelInput.value){
@@ -80,34 +83,40 @@ window.addEventListener('load', function(){
             if(!hasErrors){
                 modelInput.focus()
             }
-            hasErrors = true;            
+            hasErrors = true;
+            console.log(3);            
         }
 
-        if(!imgInput.value){
+        let needsModelImg = !document.querySelector(".existsInputImg").style.display == 'none'
+        if(!imgInput.value && needsModelImg){
             imgError.innerHTML = "Completa la imagen"
 
             if(!hasErrors){
                 imgInput.focus()
             }
             hasErrors = true;
+            console.log(4);
         }
 
         if(!colorInput.value){
             colorError.innerHTML = "Seleccione un color"
             
             hasErrors = true;
+            console.log(5);
         }
         
         if(!ramInput.value){
             ramError.innerHTML = "Seleccione un tamano"
             
             hasErrors = true;
+            console.log(6);
         }
 
         if(!priceInput.value){
             priceError.innerHTML = "Ingrese el precio"
             
             hasErrors = true;
+            console.log(7);
         }
         
         if(!imgOneInput.value){
@@ -117,6 +126,7 @@ window.addEventListener('load', function(){
                 imgOneInput.focus()
             }
             hasErrors = true;
+            console.log(8);
         }
         
         if(!imgTwoInput.value){
@@ -126,6 +136,7 @@ window.addEventListener('load', function(){
                 imgTwoInput.focus()
             }
             hasErrors = true;
+            console.log(9);
         }
         
         if(!imgThreeInput.value){
@@ -135,8 +146,10 @@ window.addEventListener('load', function(){
                 imgThreeInput.focus()
             }
             hasErrors = true;
+            console.log(10);
         }
 
+        console.log(1, hasErrors);
         if(hasErrors){
             e.preventDefault();
         }

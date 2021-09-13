@@ -187,6 +187,7 @@ let productController = {
             let errors = validationResult(req)
             //Si ha errores, guarda valores del usuario para volver a mostrar
             if (!errors.isEmpty()){
+
                 let brand = {
                     name: req.body.brand,
                     imageToUse:''
@@ -244,7 +245,7 @@ let productController = {
             }
             // guarda el id de la marca
             const idBrand = brandToSave.id 
-            
+
             // busca Modelo elegido por el usuario
             let modelToSave = await db.Model.findOne({
                 where: { model:req.body.model }
@@ -282,7 +283,7 @@ let productController = {
             //crea el nuevo celular en la BdD
             const newCellphone = await db.Cellphone.create( newProduct )
             
-            res.redirect('/products/'+newCellphone.id)
+            res.redirect('/products/'+newCellphone.idModel)
             
         } catch (error) {//si hay error, muestra el error en consola y vista de error
             console.log(error);
