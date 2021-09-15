@@ -55,6 +55,11 @@ select{
     display: block;
 }
 
+.existsBrand,
+.existsModel{
+    display: flex;
+    flex-direction: column;
+}
 .existsMarginBrand,
 .existsMarginModel{
     margin-right: 0px;
@@ -208,6 +213,12 @@ select{
     .createForm,
     #newProductForm{
         padding: 30px 80px;
+    }
+    
+    .existsBrand,
+    .existsModel{
+        display: flex;
+        flex-direction: row;
     }
     .editForm{
         padding: 30px 60px;

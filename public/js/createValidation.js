@@ -39,6 +39,7 @@ window.addEventListener('load', function(){
         document.querySelector(".existsBrand").style.display = 'flex';
         document.querySelector(".existsMarginBrand").style.marginRight = '80px';
         document.querySelector(".existsInputLogo").style.display = 'none';
+        document.querySelector(".inputControl").style.border = 'none';
         document.querySelector("#logoErrorMsg").style.display = 'none';
     }
 
@@ -46,6 +47,7 @@ window.addEventListener('load', function(){
         document.querySelector(".existsModel").style.display = 'flex';
         document.querySelector(".existsMarginModel").style.marginRight = '80px';
         document.querySelector(".existsInputImg").style.display = 'none';
+        document.querySelector("#model").style.border = 'none';
         document.querySelector("#modelMainImageErrorMsg").style.display = 'none';
     }
 
