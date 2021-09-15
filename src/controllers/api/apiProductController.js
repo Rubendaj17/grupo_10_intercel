@@ -30,6 +30,7 @@ let apiProductController = {
                     models
                 })
             })
+            
 // calcular total productos
             const productsAll = await db.Cellphone.findAndCountAll({
                 include: [{

@@ -3,19 +3,12 @@
 <head>
     <%- include ('../partials/head') %> 
     <title>Intercel - Editar producto</title>
-    <link rel="stylesheet" href="/css/headerFooter.css">
-<<<<<<< HEAD
     <link rel="stylesheet" href="/css/editProduct.css">
-=======
-<<<<<<< HEAD
-    <script src="/js/editValidation.js"></script>
-=======
->>>>>>> 3d3138fec857ad82f85b0d25cd3c77be021dd3e8
+    <link rel="stylesheet" href="/css/headerFooter.css">
     <!-- JS Validación de Edit -->
     <script src="/js/editValidation.js"></script>
     <!-- JS front search (todas las vistas) -->
     <script src="/js/headerDropdowns.js"></script>
->>>>>>> f4a6bdb453f97f67da4321642bd763bd679e9be4
 </head>
 <body>
     <!-- HEADER -->
@@ -25,15 +18,9 @@
 
         <div class="container">
 
-<<<<<<< HEAD
-            <a href="/"> <img src="/images/logos/Logo.svg" width="200" class="logoIntercel"> </a>
-            <h2>Editar producto</h2>
-            <form class="createForm" action="/products/<%=cellphoneToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-=======
         <a href="/"> <img src="/images/logos/Logo.svg" width="200" class="logoIntercel"> </a>
         <h2>Editar producto</h2>
             <form class="editForm" action="/products/<%=cellphoneToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
->>>>>>> f4a6bdb453f97f67da4321642bd763bd679e9be4
                 <br>
                 <div class="formControl brand">
                     <label>Brand</label>
@@ -83,13 +70,8 @@
                 
                 <div class="formControl price">
                     <label>Precio</label>
-<<<<<<< HEAD
-                    <input id="precio" value="<%= locals.errors ? userInfo : cellphoneToEdit.price%>" type="text" name="price" class="inputControl" minlength="1">
-                    <p class="errorMsg " id="priceError"><%= locals.errors ? errors.price.msg : ""%> </p>
-=======
                     <input value="<%= locals.errors ? userInfo : cellphoneToEdit.price%>" id="price" type="text" name="price" class="inputControl" minlength="1">
                     <p id="priceError" class="errorMsg "><%= locals.errors ? errors.price.msg : ""%> </p>
->>>>>>> f4a6bdb453f97f67da4321642bd763bd679e9be4
                 </div>
                 <div class="formControl ram">
                     <label>Almacenamiento</label>
@@ -113,17 +95,9 @@
         </div>
 
     </main>
-<<<<<<< HEAD
-    
-    <!-- FOOTER -->
-    
-    <%- include('../partials/footer') %>
-    
-=======
     <!-- FOOTER -->
 
     <%- include('../partials/footer') %>
->>>>>>> f4a6bdb453f97f67da4321642bd763bd679e9be4
     
 </body>
 </html>
