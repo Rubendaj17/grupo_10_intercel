@@ -13,8 +13,8 @@ let apiProductController = {
                         model:db.Cellphone, as:'cellphones', attributes:['id']}]
             }],
                 attributes: ['name']
+                
             })
-
             let countByBrand = []
             brandsAll.forEach(brand => {
                 let cellphonesByBrand = 0
@@ -37,7 +37,7 @@ let apiProductController = {
                     model:db.Model, as:'model', attributes:['model','description'],include:[{
                         model:db.Brand, as:'brand', attributes:['name']}
                 ]}],
-                attributes: ['id','price','offer', 'updatedAt']
+                attributes: ['id','price','offer', 'updatedAt', 'imageOne']
             })
     // console.log(productsAll);            
             const products = productsAll.rows.map(product => {
@@ -57,7 +57,8 @@ let apiProductController = {
                     offer,
                     description,
                     updatedAt,
-                    'detail': `http://localhost:3001/api/products/${product.id}`
+                    'detail': `http://localhost:3001/api/products/${product.id}`,
+                    'image': `http://localhost:3001/images/cellphones/${product.model.brand.name}/${product.model.model}/${product.imageOne}`
                 }
 
             });
@@ -107,8 +108,8 @@ let apiProductController = {
                 color: product.color.name,
                 createdAt: product.createdAt,
                 updatedAt: product.updatedAt,
-                imageOne: `http://localhost:3001/images/cellphones/${product.model.brand.name}/${product.model.model}/${product.imageOne}`,
-                webLink:`http://localhost:3001/products/${product.model.id}`
+                webLink:`http://localhost:3001/products/${product.model.id}`,
+                imageOne: `http://localhost:3001/images/cellphones/${product.model.brand.name}/${product.model.model}/${product.imageOne}`
             })
             
         } catch (error) {
