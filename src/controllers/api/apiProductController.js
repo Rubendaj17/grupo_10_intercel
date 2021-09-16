@@ -4,6 +4,8 @@ const { products } = require('./apiController');
 let apiProductController = {
     allProducts: async (req,res) => {
         try { 
+
+
 // calcular total por categoria
 
             const brandsAll = await db.Brand.findAll({
@@ -35,8 +37,10 @@ let apiProductController = {
                     model:db.Model, as:'model', attributes:['model','description'],include:[{
                         model:db.Brand, as:'brand', attributes:['name']}
                 ]}],
-                attributes: ['id','price','offer']
+                attributes: ['id','price','offer'], 
+                
             })
+
             
             const products = productsAll.rows.map(product => {
                 const {model} = product.model
