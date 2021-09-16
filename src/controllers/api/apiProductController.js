@@ -172,8 +172,8 @@ let apiProductController = {
             const maxPage = Math.round(Number(productsAll.count ) / end )  
 
 
-            const next = `http://localhost:3001/api/products/list?page=${Number(page) >= maxPage ? maxPage : Number(page) +1 }`
-            const previous = `http://localhost:3001/api/products/list?page=${ Number(page) === 1 ? 1 : Number(page) - 1}`
+            const next = `${Number(page) >= maxPage ? maxPage : Number(page) +1 }`
+            const previous = `${ Number(page) === 1 ? 1 : Number(page) - 1}`
 
 
             res.status(200).json({
