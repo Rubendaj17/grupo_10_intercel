@@ -17,31 +17,39 @@ let apiProductController = {
                 attributes: ['name']
             })
 
-            let countByBrand = {}
+            let countByBrand = []
             brandsAll.forEach(brand => {
                 let cellphonesByBrand = 0
-                let models = {}
+                let models = []
 
                 brand.models.forEach(model => {
                     cellphonesByBrand = cellphonesByBrand + model.cellphones.length
-                    models[model.model] = model.cellphones.length
+                    models.push({model :model.model, count: model.cellphones.length})
                 })
-                countByBrand[brand.name] = {
-                        count: cellphonesByBrand,
-                        models
-                    }
+                countByBrand.push({
+                    brand: brand.name,
+                    count: cellphonesByBrand,
+                    models
+                })
             })
+            
 // calcular total productos
             const productsAll = await db.Cellphone.findAndCountAll({
                 include: [{
                     model:db.Model, as:'model', attributes:['model','description'],include:[{
                         model:db.Brand, as:'brand', attributes:['name']}
                 ]}],
+<<<<<<< HEAD
                 attributes: ['id','price','offer'], 
                 
             })
 
             
+=======
+                attributes: ['id','price','offer', 'updatedAt']
+            })
+    // console.log(productsAll);            
+>>>>>>> 9e40312e42970ca95bdad222cd71a31454d86ef8
             const products = productsAll.rows.map(product => {
                 const {model} = product.model
                 const {description} = product.model
@@ -49,6 +57,7 @@ let apiProductController = {
                 const {id} = product
                 const {price} = product
                 const {offer} = product
+                const {updatedAt} = product
                 
                 return {
                     id,
@@ -57,8 +66,8 @@ let apiProductController = {
                     price,
                     offer,
                     description,
-                    'detail': `http://localhost:3000/api/products/${product.id}`,
-                    'associations': ['model', 'brand']
+                    updatedAt,
+                    'detail': `http://localhost:3001/api/products/${product.id}`
                 }
 
             });
@@ -90,7 +99,7 @@ let apiProductController = {
                 include: [
                     {model:db.Color, as:'color', attributes:['name']},
                     {model:db.Ram, as:'ram', attributes:['storage']},
-                    {model:db.Model, as:'model',attributes:['model','description'], include:[{
+                    {model:db.Model, as:'model',attributes:['id','model','description'], include:[{
                         model:db.Brand, as:'brand', attributes:['name','logo']}
                 ]}],
                 attributes:['id','price', 'offer', 'imageOne','createdAt', 'updatedAt']
@@ -107,8 +116,9 @@ let apiProductController = {
                 ram: product.ram.storage,
                 color: product.color.name,
                 createdAt: product.createdAt,
-                uptdateddAt: product.uptdateddAt,
-                imageOne: `http://localhost:3000/images/cellphones/${product.model.brand.name}/${product.model.model}/${product.imageOne}`,
+                updatedAt: product.updatedAt,
+                imageOne: `http://localhost:3001/images/cellphones/${product.model.brand.name}/${product.model.model}/${product.imageOne}`,
+                webLink:`http://localhost:3001/products/${product.model.id}`
             })
             
         } catch (error) {

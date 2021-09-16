@@ -5,6 +5,7 @@ const app = express();
 const publicPath = path.resolve(__dirname, '../public');
 const session = require('express-session');
 const cookieParser = require('cookie-parser')
+const cors = require('cors')
  
 
 app.use(methodOverride('_method'))
@@ -13,6 +14,8 @@ app.use(session({secret: "Secret Session"}))
 
 app.use(cookieParser("Secret Cookies"))
 
+app.use(cors())
+
 const cookiesSessionMiddleware = require('./middlewares/cookiesSessionMiddleware')
 
 app.use(cookiesSessionMiddleware)
@@ -20,7 +23,7 @@ app.use(cookiesSessionMiddleware)
 app.set('view engine','ejs');
 app.set('views', path.resolve(__dirname,'views'))
 
-app.listen(process.env.PORT || 3000, function (){
+app.listen(process.env.PORT || 3001, function (){
     console.log('Servidor Corriendo')
 })
 

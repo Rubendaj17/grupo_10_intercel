@@ -1,5 +1,5 @@
-const API_SEARCH_URL = 'http://localhost:3000/api/search?userSearch='
-const API_BRANDS_URL = 'http://localhost:3000/api/brands?brand='
+const API_SEARCH_URL = 'http://localhost:3001/api/search?userSearch='
+const API_BRANDS_URL = 'http://localhost:3001/api/brands?brand='
 
 window.addEventListener('load',function () {
     // console.log('Hola desde searchBar.JS');
