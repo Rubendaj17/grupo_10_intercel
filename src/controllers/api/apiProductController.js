@@ -13,8 +13,8 @@ let apiProductController = {
                         model:db.Cellphone, as:'cellphones', attributes:['id']}]
             }],
                 attributes: ['name']
+                
             })
-
             let countByBrand = []
             brandsAll.forEach(brand => {
                 let cellphonesByBrand = 0
@@ -30,13 +30,14 @@ let apiProductController = {
                     models
                 })
             })
+            
 // calcular total productos
             const productsAll = await db.Cellphone.findAndCountAll({
                 include: [{
                     model:db.Model, as:'model', attributes:['model','description'],include:[{
                         model:db.Brand, as:'brand', attributes:['name']}
                 ]}],
-                attributes: ['id','price','offer', 'updatedAt']
+                attributes: ['id','price','offer', 'updatedAt', 'imageOne']
             })
     // console.log(productsAll);            
             const products = productsAll.rows.map(product => {
@@ -56,7 +57,8 @@ let apiProductController = {
                     offer,
                     description,
                     updatedAt,
-                    'detail': `http://localhost:3001/api/products/${product.id}`
+                    'detail': `http://localhost:3001/api/products/${product.id}`,
+                    'image': `http://localhost:3001/images/cellphones/${product.model.brand.name}/${product.model.model}/${product.imageOne}`
                 }
 
             });
@@ -106,8 +108,8 @@ let apiProductController = {
                 color: product.color.name,
                 createdAt: product.createdAt,
                 updatedAt: product.updatedAt,
-                imageOne: `http://localhost:3001/images/cellphones/${product.model.brand.name}/${product.model.model}/${product.imageOne}`,
-                webLink:`http://localhost:3001/products/${product.model.id}`
+                webLink:`http://localhost:3001/products/${product.model.id}`,
+                imageOne: `http://localhost:3001/images/cellphones/${product.model.brand.name}/${product.model.model}/${product.imageOne}`
             })
             
         } catch (error) {
@@ -124,9 +126,79 @@ let apiProductController = {
             })
         }
 
+    },
+
+    paginate: async (req,res) => {
+        try {
+
+            let end = 10
+            let page = req.query.page
+            let start = (Number(!page ? page = 1 : page ) -1) * end 
+            
+
+            let productsAll = await db.Cellphone.findAndCountAll({
+                include: [{
+                    model:db.Model, as:'model', attributes:['model','description'],include:[{
+                    model:db.Brand, as:'brand', attributes:['name']}
+                ]}],
+                attributes: ['id','price','offer', 'updatedAt', 'imageOne'],
+                limit : end,
+                offset: start
+
+            })
+
+            const products = productsAll.rows.map(p =>{
+                const {model} = p.model
+                const {description} = p.model
+                const brand = p.model.brand.name
+                const {id} = p
+                const {price} = p
+                const {offer} = p 
+                const {updatedAt} = p 
+
+                return {
+                    id,
+                    brand,
+                    model,
+                    price,
+                    offer,
+                    description,
+                    updatedAt,
+                    "detail":`http://localhost:3001/api/products/${id}`,
+                    "image": `http://localhost:3001/images/cellphones/${brand}/${model}/${p.imageOne}`
+                }
+            })
+
+            const maxPage = Math.round(Number(productsAll.count ) / end )  
+
+
+            const next = `${Number(page) >= maxPage ? maxPage : Number(page) +1 }`
+            const previous = `${ Number(page) === 1 ? 1 : Number(page) - 1}`
+
+
+            res.status(200).json({
+                products,
+                previous,
+                next,
+            })
+
+            } catch (error) {
+                res.status(500).json({
+                    error:{
+                     msg: "No se pudo conectar a la Base de Datos",
+                    error
+                }
+    
+            })
+        }
+
     }
 
    
 }
 
 module.exports = apiProductController
+
+
+
+

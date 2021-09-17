@@ -42,16 +42,16 @@ productsRouter.get("/list", productsController.list)
 productsRouter.get("/list/:brand", productsController.brandList)
 
 // formulario crear y envio de creacion
-productsRouter.get("/create", productsController.newProductForm);
+productsRouter.get("/create", authMiddleware, productsController.newProductForm);
 productsRouter.post("/create", upload.fields([{name:'logo'},{name:'modelMainImage'},{name:'imageOne'},{name:'imageTwo'},{name:'imageThree'}]), validationNewProduct, foldersMiddleware, imageMiddleware, productsController.createNewProduct);
-productsRouter.delete("/:id", productsController.destroy);
+productsRouter.delete("/:id", authMiddleware, productsController.destroy);
 
 // detalle producto
 productsRouter.get("/:id", productsController.detail)
 productsRouter.get("/search/:id", searchBarValidation, productsController.search)
 
 // formulario editar y envio de edicion
-productsRouter.get("/:id/editProduct" , productsController.editProductForm);
+productsRouter.get("/:id/editProduct", authMiddleware, productsController.editProductForm);
 productsRouter.put("/:id/" ,upload.fields([{name:'imageOne'},{name:'imageTwo'}, {name:'imageThree'}]),validationEditProduct, deleteMiddleware, imageMiddleware, productsController.updateProduct);
 
 

@@ -13,6 +13,8 @@ apiRouter.get('/users/:id', apiUserController.uniqueUser)
 
 apiRouter.get('/products', apiProductController.allProducts)
 
+apiRouter.get('/products/list', apiProductController.paginate)
+
 apiRouter.get('/products/:id', apiProductController.uniqueProduct)
 
 // cambiar nombre de ruta para js front Login/register
