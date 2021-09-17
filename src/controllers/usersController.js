@@ -115,7 +115,7 @@ let usersController = {
                 }
             })
             console.log(User.name);
-        res.redirect('/users/profile/' + req.params.id)
+        res.redirect('/users/' + req.params.id)
     }
 
 }
