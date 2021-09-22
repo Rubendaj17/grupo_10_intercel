@@ -9,7 +9,7 @@ const cors = require('cors')
  
 
 app.use(methodOverride('_method'))
-app.use(express.static(publicPath));
+app.use(express.static(publicPath))
 app.use(session({secret: "Secret Session"}))
 
 app.use(cookieParser("Secret Cookies"))
@@ -20,7 +20,7 @@ const cookiesSessionMiddleware = require('./middlewares/cookiesSessionMiddleware
 
 app.use(cookiesSessionMiddleware)
 
-app.set('view engine','ejs');
+app.set('view engine','ejs')
 app.set('views', path.resolve(__dirname,'views'))
 
 app.listen(process.env.PORT || 3001, function (){
@@ -30,9 +30,9 @@ app.listen(process.env.PORT || 3001, function (){
 const sessionToLocals = require('./middlewares/sessionToLocalsMiddleware')
 
 // No olvidarse esto para que la data se envie correctamente desde un formulario
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-app.use(sessionToLocals);
+app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
+app.use(sessionToLocals)
 
 // generic
 const intercelRoutes = require('./routes/intercelRoutes');
