@@ -15,7 +15,7 @@ let apiUserController = {
                 id: u.dataValues.id,
                 name: u.dataValues.name,
                 email: u.dataValues.email,
-                detail: `http://localhost:3000/api/user/${u.dataValues.id}`
+                detail: `http://localhost:3001/api/users/${u.dataValues.id}`
             }
 
             usersToReturn.push(infoToReturn)
@@ -56,7 +56,7 @@ let apiUserController = {
             attributes: ["id","name","lastName", "phoneNumber", "email", "photo", "createdAt", "updatedAt"]
         })
 
-        user.photo = `http://localhost:3000${user.photo}`
+        user.photo = `http://localhost:3001${user.photo}`
 
         try {
 
